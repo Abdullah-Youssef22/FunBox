@@ -72,3 +72,5 @@ set(SOURCES
 | 6    | `CMakeLists.txt`               | Add new `.cpp` files                                              |
 
 
+> ![NOTE]
+> Make sure at the end that for every `new` there is a `delete` so that we don't leave pointers and cause memory leaks.
