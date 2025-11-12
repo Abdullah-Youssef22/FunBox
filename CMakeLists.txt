@@ -1,17 +1,21 @@
 ﻿cmake_minimum_required(VERSION 3.15)
 project(BoardGameApp)
-# C++17
+
+#  C++17
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# header files
-include_directories(include)
 
-# source files
+set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
+set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
+#Header files
+include_directories(${INCLUDE_DIR})
+
+# Src files
 set(SOURCES
-    src/Main.cpp
-    src/XO_Classes.cpp
+    ${SRC_DIR}/Main.cpp
+    ${SRC_DIR}/XO_Classes.cpp
 )
 
-# create executable
+# Create executable
 add_executable(BoardGameApp ${SOURCES})
