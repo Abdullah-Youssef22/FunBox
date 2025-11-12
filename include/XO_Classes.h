@@ -11,6 +11,7 @@
 #define XO_CLASSES_H
 
 #include "BoardGame_Classes.h"
+#include"colors.h"
 using namespace std;
 
 /**

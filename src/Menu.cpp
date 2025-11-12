@@ -1,4 +1,4 @@
-#include "../include/Menu.h"
+﻿#include "../include/Menu.h"
 #include <iostream>
 
 #ifdef _WIN32
@@ -98,21 +98,22 @@ int Menu::display() {
         clearScreen();
         
         std::cout << "\n\n";
-        std::cout << "  ======================================\n";
-        std::cout << "      FUNBOX GAME COLLECTION\n";
-        std::cout << "  ======================================\n\n";
-        
-        for(size_t i = 0; i < options.size(); i++) {
-            if(i == currentSelection) {
-                std::cout << "    --> ";
-            } else {
-                std::cout << "        ";
+        std::cout << "  " << BLUE << "======================================" << RESET << "\n";
+        std::cout << "      " << CYAN << "FUNBOX GAME COLLECTION" << RESET << "\n";
+        std::cout << "  " << BLUE << "======================================" << RESET << "\n\n";
+
+        for (size_t i = 0; i < options.size(); i++) {
+            if (i == currentSelection) {
+                std::cout << "    " << BRIGHT_GREEN << "--> " << options[i] << RESET << "\n";
             }
-            std::cout << options[i] << "\n";
+            else {
+                std::cout << "        " << WHITE << options[i] << RESET << "\n";
+            }
         }
-        
-        std::cout << "\n  Use W/S or Arrow Keys, Enter to select\n";
-        std::cout << "  ======================================\n";
+
+        std::cout << "\n  " << YELLOW << "Use W/S or Arrow Keys, Enter to select" << RESET << "\n";
+        std::cout << "  " << BLUE << "======================================" << RESET << "\n";
+
         
         int key = getKeyPress();
         
@@ -127,7 +128,7 @@ int Menu::display() {
                 break;
             case '\r':
             case '\n':
-                clearScreen();
+               /* clearScreen();*/
                 return currentSelection;
         }
     }

@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-
+#include"colors.h"
 class Menu {
 private:
     std::vector<std::string> options;
@@ -16,6 +16,7 @@ public:
     Menu();
     void addOption(const std::string& option);
     int display();
+    int getOptionCount() const { return options.size(); }
     ~Menu();
 };
 

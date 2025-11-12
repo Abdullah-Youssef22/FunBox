@@ -22,14 +22,17 @@ int main() {
     while (running) {
         int selection = mainMenu.display();
 
-        switch (selection) {
-            case 0: GameLaunchers::launch_xo_game(); break;
-            // case 1: GameLaunchers::launch_sus_game(); break; // we uncomment this
-            // case 2: GameLaunchers::launch_connect4_game(); break; // and this, once we finished makign the games
-            // case 3, 4, 5 ... etc ... same as above
-
-            case 9: running = false; break; // last case for exit
-            default: std::cout << "Invalid selection\n"; break;
+        if (selection == mainMenu.getOptionCount() - 1) {
+            running = false;
         }
+        else {
+            switch (selection) {
+            case 0: GameLaunchers::launch_xo_game(); break;
+
+                // other cases...
+            default: std::cout << "Invalid selection\n"; break;
+            }
+        }
+
     }
 }
