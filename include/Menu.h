@@ -16,6 +16,7 @@ public:
     Menu();
     void addOption(const std::string& option);
     int display();
+    int getOptionCount() const { return options.size(); }
     ~Menu();
 };
 
