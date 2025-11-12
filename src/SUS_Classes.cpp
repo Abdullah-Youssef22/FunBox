@@ -1,33 +1,32 @@
 //--------------------------------------- IMPLEMENTATION
-
 #include <iostream>
 #include <iomanip>
 #include <cctype>  // for toupper()
-#include "../include/XO_Classes.h"
+#include "../include/SUS_Classes.h"
 
 using namespace std;
 
-//--------------------------------------- X_O_Board Implementation
+//--------------------------------------- SUS_Board Implementation
 
-X_O_Board::X_O_Board() : Board(3, 3) {
+SUS_Board::SUS_Board() : Board(3, 3) {
     // Initialize all cells with blank_symbol
     for (auto& row : board)
         for (auto& cell : row)
-            cell = blank_symbol;
+            cell = start_symbol;
 }
 
-bool X_O_Board::update_board(Move<char>* move) {
+bool SUS_Board::update_board(Move<char>* move) {
     int x = move->get_x();
     int y = move->get_y();
     char mark = move->get_symbol();
 
     // Validate move and apply if valid
     if (!(x < 0 || x >= rows || y < 0 || y >= columns) &&
-        (board[x][y] == blank_symbol || mark == 0)) {
+        (board[x][y] == start_symbol || mark == 0)) {
 
         if (mark == 0) { // Undo move
             n_moves--;
-            board[x][y] = blank_symbol;
+            board[x][y] = start_symbol;
         }
         else {         // Apply move
             n_moves++;
@@ -38,41 +37,42 @@ bool X_O_Board::update_board(Move<char>* move) {
     return false;
 }
 
-bool X_O_Board::is_win(Player<char>* player) {
+bool SUS_Board::is_win(Player<char>* player) {
     const char sym = player->get_symbol();
 
-    auto all_equal = [&](char a, char b, char c) {
-        return a == b && b == c && a != blank_symbol;
-        };
+    auto SUS_win = [&](char a, char b, char c) {
+        return (a=='S' && b=='U' && c=='S'&& sym=='S') ||
+               (a=='U' && b=='S' && c=='U'&& sym=='U');
+    };
 
     // Check rows and columns
     for (int i = 0; i < rows; ++i) {
-        if ((all_equal(board[i][0], board[i][1], board[i][2]) && board[i][0] == sym) ||
-            (all_equal(board[0][i], board[1][i], board[2][i]) && board[0][i] == sym))
+        if ((SUS_win(board[i][0], board[i][1], board[i][2]) && board[i][0] == sym) ||
+            (SUS_win(board[0][i], board[1][i], board[2][i]) && board[0][i] == sym))
             return true;
     }
 
     // Check diagonals
-    if ((all_equal(board[0][0], board[1][1], board[2][2]) && board[1][1] == sym) ||
-        (all_equal(board[0][2], board[1][1], board[2][0]) && board[1][1] == sym))
+    if ((SUS_win(board[0][0], board[1][1], board[2][2]) && board[1][1] == sym) ||
+        (SUS_win(board[0][2], board[1][1], board[2][0]) && board[1][1] == sym))
         return true;
 
     return false;
 }
 
-bool X_O_Board::is_draw(Player<char>* player) {
+bool SUS_Board::is_draw(Player<char>* player) {
     return (n_moves == 9 && !is_win(player));
 }
 
-bool X_O_Board::game_is_over(Player<char>* player) {
+bool SUS_Board::game_is_over(Player<char>* player) {
     return is_win(player) || is_draw(player);
 }
 
-//--------------------------------------- XO_UI Implementation
+//--------------------------------------- SUS_UI Implementation
 
-XO_UI::XO_UI() : UI<char>("Weclome to FCAI X-O Game by Dr El-Ramly", 3) {}
+SUS_UI::SUS_UI() : UI<char>("Weclome to FCAI SUS Game in FUN BOX", 3) {}
 
-Player<char>* XO_UI::create_player(string& name, char symbol, PlayerType type) {
+Player<char>* SUS_UI::create_player(string& name, char symbol, PlayerType type) {
     // Create player based on type
     cout << "Creating " << (type == PlayerType::HUMAN ? "human" : "computer")
         << " player: " << name << " (" << symbol << ")\n";
@@ -80,11 +80,11 @@ Player<char>* XO_UI::create_player(string& name, char symbol, PlayerType type) {
     return new Player<char>(name, symbol, type);
 }
 
-Move<char>* XO_UI::get_move(Player<char>* player) {
+Move<char>* SUS_UI::get_move(Player<char>* player) {
     int x, y;
-    
+
     if (player->get_type() == PlayerType::HUMAN) {
-        cout << "\nPlease enter your move x and y (0 to 2): ";
+        cout << "\nPlease enter your move x access and y access (0 to 2): ";
         cin >> x >> y;
     }
     else if (player->get_type() == PlayerType::COMPUTER) {
