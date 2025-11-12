@@ -15,6 +15,16 @@ Menu::Menu() : currentSelection(0) {
         "Play SUS",
         "Play Connect 4",
     };
+    
+    #ifdef _WIN32
+        SetConsoleOutputCP(CP_UTF8);
+        
+        HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+        DWORD dwMode = 0;
+        GetConsoleMode(hOut, &dwMode);
+        dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+        SetConsoleMode(hOut, dwMode);
+    #endif
 }
 
 void Menu::addOption(const std::string& option) {
@@ -23,7 +33,19 @@ void Menu::addOption(const std::string& option) {
 
 void Menu::clearScreen() {
 #ifdef _WIN32
-    system("cls");
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD coordScreen = { 0, 0 };
+    DWORD cCharsWritten;
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    DWORD dwConSize;
+
+    GetConsoleScreenBufferInfo(hConsole, &csbi);
+    dwConSize = csbi.dwSize.X * csbi.dwSize.Y;
+    
+    FillConsoleOutputCharacter(hConsole, (TCHAR)' ', dwConSize, coordScreen, &cCharsWritten);
+    GetConsoleScreenBufferInfo(hConsole, &csbi);
+    FillConsoleOutputAttribute(hConsole, csbi.wAttributes, dwConSize, coordScreen, &cCharsWritten);
+    SetConsoleCursorPosition(hConsole, coordScreen);
 #else
     system("clear");
 #endif
@@ -32,23 +54,29 @@ void Menu::clearScreen() {
 int Menu::getKeyPress() {
 #ifdef _WIN32
     int key = _getch();
+    
+    // Handle arrow keys (they send two bytes: 224 then the key code)
     if (key == 0 || key == 224) {
         key = _getch();
         switch(key) {
-            case 72: return 'w';
-            case 80: return 's';
+            case 72: return 'w';  // Up arrow
+            case 80: return 's';  // Down arrow
         }
     }
+    
+    // ADDED: Handle both \r and \n for Enter key
+    if (key == 13) {  // 13 is \r on Windows
+        return '\n';
+    }
+    
     return key;
 #else
-    // =============================== linux terminal version
     struct termios oldt, newt;
     tcgetattr(STDIN_FILENO, &oldt);
     newt = oldt;
     newt.c_lflag &= ~(ICANON | ECHO);
     tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-    // ====================================== ignore this pls :)
-
+    
     int key = getchar();
     
     if (key == 27) {
@@ -59,9 +87,8 @@ int Menu::getKeyPress() {
             case 'B': key = 's'; break;
         }
     }
-    // ========================================  
-    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);  // just another linux bit to restore
-    // ======================================== // the previous terminal settings 
+    
+    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
     return key;
 #endif
 }
@@ -71,20 +98,21 @@ int Menu::display() {
         clearScreen();
         
         std::cout << "\n\n";
-        std::cout << "        ╔═══════════════════════════════╗\n";
-        std::cout << "        ║     FUNBOX GAME COLLECTION    ║\n";
-        std::cout << "        ╚═══════════════════════════════╝\n\n";
+        std::cout << "  ======================================\n";
+        std::cout << "      FUNBOX GAME COLLECTION\n";
+        std::cout << "  ======================================\n\n";
         
         for(size_t i = 0; i < options.size(); i++) {
             if(i == currentSelection) {
-                std::cout << "        ► ";
+                std::cout << "    --> ";
             } else {
-                std::cout << "          ";
+                std::cout << "        ";
             }
             std::cout << options[i] << "\n";
         }
         
-        std::cout << "\n\n        Use ↑↓ or W/S to navigate, Enter to select\n";
+        std::cout << "\n  Use W/S or Arrow Keys, Enter to select\n";
+        std::cout << "  ======================================\n";
         
         int key = getKeyPress();
         
@@ -104,5 +132,4 @@ int Menu::display() {
         }
     }
 }
-
 Menu::~Menu() {}
