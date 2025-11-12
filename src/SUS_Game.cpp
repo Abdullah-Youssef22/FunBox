@@ -3,6 +3,7 @@
 #include <vector>   // Required for vector
 #include <memory>   // Required for unique_ptr
 #include "../include/BoardGame_Classes.h"
+#include "../include/GameLaunchers.h"
 #include "../include/SUS_Classes.h"
 using namespace std;
 
@@ -18,7 +19,7 @@ using namespace std;
  *
  * @return int Returns 0 on successful execution.
  */
-int main() {
+void GameLaunchers::launch_sus_game() {
     srand(static_cast<unsigned int>(time(0)));  // Seed the random number generator
 
     UI<char>* game_ui = new SUS_UI();
@@ -43,5 +44,4 @@ int main() {
     // Delete the dynamically allocated array of player pointers itself.
     delete[] players;
 
-    return 0; // Exit successfully
 }
