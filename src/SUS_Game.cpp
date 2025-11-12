@@ -2,7 +2,7 @@
 #include <string>   // Required for string
 #include <vector>   // Required for vector
 #include <memory>   // Required for unique_ptr
-#include "../include/BoardGame_Classes.h"
+#include "../include/BoardSUS.h"
 #include "../include/GameLaunchers.h"
 #include "../include/SUS_Classes.h"
 using namespace std;

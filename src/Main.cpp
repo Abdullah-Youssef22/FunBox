@@ -28,7 +28,7 @@ int main() {
         else {
             switch (selection) {
             case 0: GameLaunchers::launch_xo_game(); break;
-
+            case 1: GameLaunchers::launch_sus_game(); break;
                 // other cases...
             default: std::cout << "Invalid selection\n"; break;
             }
