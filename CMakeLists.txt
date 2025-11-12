@@ -28,5 +28,5 @@ set(SOURCES
 )
 
 # Create executable
-add_executable(BoardGameApp ${SOURCES})
+add_executable(BoardGameApp ${SOURCES} "include/colors.h")
 
