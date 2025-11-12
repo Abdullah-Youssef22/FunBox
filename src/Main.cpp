@@ -12,8 +12,8 @@
 #include <vector>   // Required for vector
 #include <memory>   // Required for unique_ptr
 
-#include "BoardGame_Classes.h"
-#include "XO_Classes.h"
+#include "../include/BoardGame_Classes.h"
+#include "../include/XO_Classes.h"
 using namespace std;
 
 /**
