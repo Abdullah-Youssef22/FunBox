@@ -14,7 +14,6 @@ Menu::Menu() : currentSelection(0) {
         "Play XO",
         "Play SUS",
         "Play Connect 4",
-        "Exit"
     };
 }
 

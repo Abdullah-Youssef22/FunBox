@@ -13,8 +13,9 @@ int main() {
     // ======== we use the "add option" method to add a new game 
     //  ======   this way we don't touch the Menu.cpp file.
     mainMenu.addOption("Play XYZ"); 
-
-
+    // we add our now options IN ORDER here. dont add options after "Exit" because it's the last option
+  
+    mainMenu.addOption("Exit"); 
     // ===============
     bool running = true;
 
