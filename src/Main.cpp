@@ -11,9 +11,8 @@
 #include <string>   // Required for string
 #include <vector>   // Required for vector
 #include <memory>   // Required for unique_ptr
-
 #include "BoardGame_Classes.h"
-#include "XO_Classes.h"
+#include "SUS.h"
 using namespace std;
 
 /**
@@ -29,14 +28,12 @@ using namespace std;
  * @return int Returns 0 on successful execution.
  */
 int main() {
-
     srand(static_cast<unsigned int>(time(0)));  // Seed the random number generator
 
-    // Create an instance of the specific UI for X-O using a pointer 
-    UI<char>* game_ui = new XO_UI();
+    UI<char>* game_ui = new SUS_UI();
 
     // Create the game board. For X-O, this is an X_O_Board.
-    Board<char>* xo_board = new X_O_Board();
+    Board<char>* xo_board = new SUS_Board();
 
     // Use the UI to set up the players for the game.
     // The UI returns a dynamically allocated array of Player pointers.
@@ -61,5 +58,3 @@ int main() {
 
     return 0; // Exit successfully
 }
-
-// =====================================================================
