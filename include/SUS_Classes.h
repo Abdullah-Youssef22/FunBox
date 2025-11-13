@@ -20,6 +20,7 @@ public:
     bool is_draw(Player<char>* player);
 
     bool game_is_over(Player<char>* player);
+    int calculate_score(char sym);
 };
 
 

@@ -126,7 +126,7 @@ class Player {
 protected:
     string name;         ///< Player name
     PlayerType type;     ///< Player type (e.g., HUMAN or COMPUTER)
-    T symbol;            ///< Player’s symbol on board
+    T symbol;            ///< Player¿s symbol on board
     Board<T>* boardPtr;  ///< Pointer to the game board
 
 public:
@@ -268,34 +268,29 @@ public:
      * @brief Run the main game loop until someone wins or the game ends.
      */
     void run() {
-        ui->display_board_matrix(boardPtr->get_board_matrix());
-        Player<T>* currentPlayer = players[0];
+     ui->display_board_matrix(boardPtr->get_board_matrix());
 
         while (true) {
             for (int i : {0, 1}) {
-                currentPlayer = players[i];
+                Player<T>* currentPlayer = players[i];
                 Move<T>* move = ui->get_move(currentPlayer);
 
                 while (!boardPtr->update_board(move))
-                    move = ui->get_move(currentPlayer);
+                move = ui->get_move(currentPlayer);
 
                 ui->display_board_matrix(boardPtr->get_board_matrix());
 
-                if (boardPtr->is_win(currentPlayer)) {
-                    ui->display_message(currentPlayer->get_name() + " wins!");
-                    return;
-                }
-                if (boardPtr->is_lose(currentPlayer)) {
-                    ui->display_message(players[1 - i]->get_name() + " wins!");
-                    return;
-                }
-                if (boardPtr->is_draw(currentPlayer)) {
-                    ui->display_message("Draw!");
-                    return;
-                }
+                if (boardPtr->game_is_over(currentPlayer)) {
+                    if (boardPtr->is_win(currentPlayer)) {
+                        ui->display_message(currentPlayer->get_name() + " wins!");
+                    } else {
+                        ui->display_message("Draw!");
+                    }
+                    return; 
             }
         }
     }
+}
 };
 
 //-----------------------------------------------------
@@ -307,14 +302,13 @@ Player<T>** UI<T>::setup_players() {
     Player<T>** players = new Player<T>*[2];
     vector<string> type_options = { "Human", "Computer" };
 
-    string nameX = get_player_name("Player X");
-    PlayerType typeX = get_player_type_choice("Player X", type_options);
-    players[0] = create_player(nameX, static_cast<T>('X'), typeX);
+    string nameX = get_player_name("Player S");
+    PlayerType typeX = get_player_type_choice("Player S", type_options);
+    players[0] = create_player(nameX, static_cast<T>('S'), typeX);
 
-    string nameO = get_player_name("Player O");
-    PlayerType typeO = get_player_type_choice("Player O", type_options);
-    players[1] = create_player(nameO, static_cast<T>('O'), typeO);
-
+    string nameO = get_player_name("Player U");
+    PlayerType typeO = get_player_type_choice("Player U", type_options);
+    players[1] = create_player(nameO, static_cast<T>('U'), typeO);
     return players;
 }
 

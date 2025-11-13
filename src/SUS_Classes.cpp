@@ -10,6 +10,7 @@ using namespace std;
 
 SUS_Board::SUS_Board() : Board(3, 3) {
     // Initialize all cells with blank_symbol
+    cout << "debug: SUS" << endl;
     for (auto& row : board)
         for (auto& cell : row)
             cell = start_symbol;
@@ -37,36 +38,50 @@ bool SUS_Board::update_board(Move<char>* move) {
     return false;
 }
 
-bool SUS_Board::is_win(Player<char>* player) {
-    const char sym = player->get_symbol();
+int SUS_Board::calculate_score(char sym) {
+    int score = 0;
 
     auto SUS_win = [&](char a, char b, char c) {
-        return (a=='S' && b=='U' && c=='S'&& sym=='S') ||
-               (a=='U' && b=='S' && c=='U'&& sym=='U');
+        return (a=='S' && b=='U' && c=='S' && sym=='S') ||
+               (a=='U' && b=='S' && c=='U' && sym=='U');
     };
 
-    // Check rows and columns
     for (int i = 0; i < rows; ++i) {
-        if ((SUS_win(board[i][0], board[i][1], board[i][2]) && board[i][0] == sym) ||
-            (SUS_win(board[0][i], board[1][i], board[2][i]) && board[0][i] == sym))
-            return true;
+        if (SUS_win(board[i][0], board[i][1], board[i][2])) score++;
+        if (SUS_win(board[0][i], board[1][i], board[2][i])) score++;
     }
 
-    // Check diagonals
-    if ((SUS_win(board[0][0], board[1][1], board[2][2]) && board[1][1] == sym) ||
-        (SUS_win(board[0][2], board[1][1], board[2][0]) && board[1][1] == sym))
-        return true;
+    if (SUS_win(board[0][0], board[1][1], board[2][2])) score++;
+    if (SUS_win(board[0][2], board[1][1], board[2][0])) score++;
 
-    return false;
+    return score;
 }
+
+
+bool SUS_Board::is_win(Player<char>* player) {
+
+    if (n_moves < rows * columns)
+        return false;
+
+    int score_S = calculate_score('S');
+    int score_U = calculate_score('U');
+
+    if (player->get_symbol() == 'S')
+        return score_S > score_U;
+    else
+        return score_U > score_S;
+}
+
 
 bool SUS_Board::is_draw(Player<char>* player) {
-    return (n_moves == 9 && !is_win(player));
+    return (n_moves == rows * columns && !is_win(player));
 }
+
 
 bool SUS_Board::game_is_over(Player<char>* player) {
     return is_win(player) || is_draw(player);
 }
+
 
 //--------------------------------------- SUS_UI Implementation
 
