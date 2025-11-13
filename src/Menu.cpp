@@ -10,11 +10,6 @@
 #endif
 
 Menu::Menu() : currentSelection(0) {
-    options = {
-        "Play XO",
-        "Play SUS",
-        "Play Connect 4",
-    };
     
     #ifdef _WIN32
         SetConsoleOutputCP(CP_UTF8);
