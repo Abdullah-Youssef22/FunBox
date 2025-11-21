@@ -3,7 +3,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cctype>  // for toupper()
-#include "../include/XO_Classes.h"
+#include "../../include/XO_Classes.h"
 
 using namespace std;
 

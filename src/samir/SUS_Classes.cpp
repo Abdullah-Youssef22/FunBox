@@ -2,7 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cctype>  // for toupper()
-#include "../include/SUS_Classes.h"
+#include "../../include/SUS_Classes.h"
 
 using namespace std;
 

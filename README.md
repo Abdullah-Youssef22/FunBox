@@ -11,9 +11,38 @@ Funbox is a board games project that utilizes a reusable OOP framework in C++ fo
 > [!IMPORTANT]
 > These are instructions related to the developement of our game, meant for my fellow developers.
 
-Suppose we are creating a new game, called XYZ, there are files that need to be created or changed each time.
+
+# NEW INSTRUCTIONS 
+
+Just edit the files related to your game (..._Classes.h, ..._Classes.cpp, ..._Game.cpp) ***ONLY***
+
+> [!WARNING]
+> DO NOT EDIT ANY OTHER FILES RELATED TO THE MENU OR ANYTHING ELSE.
+
+As help, you will need to use those names in your function in ..._Game.cpp 
+
+```
+GameLaunchers::launch_four_in_a_row()'
+GameLaunchers::launch_5x5_tic_tac_toe()'
+GameLaunchers::launch_word_tic_tac_toe()'
+GameLaunchers::launch_misere_tic_tac_toe()'
+GameLaunchers::launch_diamond_tic_tac_toe()'
+GameLaunchers::launch_4x4_tic_tac_toe()'
+GameLaunchers::launch_pyramid_tic_tac_toe()'
+GameLaunchers::launch_numerical_tic_tac_toe()'
+GameLaunchers::launch_obstacles_tic_tac_toe()'
+GameLaunchers::launch_infinity_tic_tac_toe()'
+GameLaunchers::launch_ultimate_tic_tac_toe()'
+GameLaunchers::launch_memory_tic_tac_toe()'
+```
 
 
+
+
+
+#### Old instructions, ignore those:
+<details>
+<summary>old instructions</summary>
 #### (1) The following files need to be made every time we make a new game. For the game "XYZ" for example:
 
 ```bash
@@ -76,3 +105,5 @@ set(SOURCES
 > [!CAUTION]
 > Make sure at the end that for every `new` there is a `delete` so that we don't leave pointers and cause memory leaks.
 > 
+
+</details>

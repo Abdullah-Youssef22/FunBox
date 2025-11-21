@@ -10,8 +10,8 @@
 #ifndef XO_CLASSES_H
 #define XO_CLASSES_H
 
-#include "BoardGame_Classes.h"
-#include"colors.h"
+#include "util/BoardGame_Classes.h"
+#include"util/colors.h"
 using namespace std;
 
 /**
