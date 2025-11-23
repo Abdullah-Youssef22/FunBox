@@ -10,7 +10,6 @@ using namespace std;
 //--------------------------------------- X_O_Board Implementation
 
 //======================================================================== 
-//FORWARD DECLARATIONS
 class Token {
 private: 
   int x_pos;
@@ -25,18 +24,26 @@ public:
   }
 };
 
+
+//FORWARD DECLARATIONS
 void setInitialPositions();
 void putTokensAtPositions();
 void findAndUpdateToken(int y, int x, int targetY, int targetX);
+Token* getTokenAtPosition(int y, int x);
+void errorNoTokenHere(int y, int x);
+void errorInvalidMove();
+void debugPrint();
+void debugIsTokenAtYX(int y, int x);
 bool checkTargetTokenValidity(int y, int x, char);
+
 typedef vector<pair<int, int>> positionsArray;
 positionsArray getOPositions();
 positionsArray getXPositions();
+
 Token O1, O2, O3, O4, X1, X2, X3, X4; 
 //========================================================================
 
 FourByFour_Board::FourByFour_Board() : Board(4, 4) {
-  cout << GREEN << "** Debug: inside 4x4 board constructor" << RESET << endl;
   setInitialPositions();
   putTokensAtPositions();
 }
@@ -56,10 +63,12 @@ bool FourByFour_Board::update_board(Move<char>* move) {
         }
         else {         // Apply move
             n_moves++;
-            board[x][y] = toupper(mark);
+            // board[x][y] = toupper(mark);
+            putTokensAtPositions();
         }
         return true;
     }
+    errorInvalidMove();
     return false;
 }
 
@@ -93,6 +102,25 @@ bool FourByFour_Board::game_is_over(Player<char>* player) {
     return is_win(player) || is_draw(player);
 }
 
+void FourByFour_Board::putTokensAtPositions() {
+  positionsArray oSpots = getOPositions();
+  positionsArray xSpots = getXPositions();
+  for (int i = 0; i < board.size(); i++) {
+    vector<char>& row = board[i];
+    for (int j = 0; j < row.size(); j++) {
+      char& cell = row[j];
+      cell =  blank_symbol; 
+      for (int k = 0; k < 4; k++) {
+        if (i == oSpots[k].first && j == oSpots[k].second) {
+          cell = 'O';
+        } else if (i == xSpots[k].first && j == xSpots[k].second) {
+          cell = 'X';
+        }
+      }
+    }
+  }
+}
+
 //--------------------------------------- XO_UI Implementation
 
 FourByFour_UI::FourByFour_UI() : UI<char>("Weclome to 4x4 tic tac toe game by Ammen", 3) {}
@@ -109,15 +137,16 @@ Move<char>* FourByFour_UI::get_move(Player<char>* player) {
     int x, y, targetX, targetY;
     char symbol = player->get_symbol(); 
     if (player->get_type() == PlayerType::HUMAN) {
-        cout << "\nPlayer X: please enter target token position (row, column): ";
+        cout << GREEN << "\nPlayer " << symbol << RESET << ": please enter target token position (row, column): ";
         cin >> y >> x;
         if (!checkTargetTokenValidity(y, x, symbol)) {
-          cout << RED << "\nplease select a valid " << symbol << " token" << RESET;
+          cout << RED << "** ERROR: please select a valid " << symbol << " token" << RESET;
         } else {
           cout << "\nWhere do you want to move it? (row, column): ";
           cin >> targetY >> targetX;
+          findAndUpdateToken(y, x, targetY, targetX);
+          debugIsTokenAtYX(targetY, targetX); 
         }
-        findAndUpdateToken(x, y, targetX, targetY);
     }
     else if (player->get_type() == PlayerType::COMPUTER) {
         x = rand() % player->get_board_ptr()->get_rows();
@@ -181,53 +210,56 @@ bool checkTargetTokenValidity(int y, int x, char symbol) {
     for(auto tok : oPos) {
       if (tok.first == y && tok.second == x) {
         return true;
-      } else {
-        return false;
-      }
+      } 
     }
+    return false;
   } else {
     positionsArray xPos = getXPositions();
     for(auto tok : xPos) {
       if (tok.first == y && tok.second == x) {
         return true;
-      }  else {
-        return false;
-      }
+      } 
     }
+    return false;
+  }
+}
+
+void findAndUpdateToken(int y, int x, int targetY, int targetX) {
+  Token* tok = getTokenAtPosition(y, x);
+  if (tok != nullptr) {
+    tok->move(targetY, targetX);
   }
 }
 
 Token* getTokenAtPosition(int y, int x) {
-    Token* tokens[] = {&O1, &O2, &O3, &O4, &X1, &X2, &X3, &X4};
-    for (Token* token : tokens) {
-        auto pos = token->getPos();
-        if (pos.first == y && pos.second == x) {
-            return token;
-        }
-    }
-    return nullptr;
-}
-
-void findAndUpdateToken(int y, int x, int targetY, int targetX) {
-    Token* tok = getTokenAtPosition(y, x);
-    tok->move(targetY, targetX);
-}
-
-void FourByFour_Board::putTokensAtPositions() {
-  positionsArray oSpots = getOPositions();
-  positionsArray xSpots = getXPositions();
-  for (int i = 0; i < board.size(); i++) {
-    vector<char>& row = board[i];
-    for (int j = 0; j < row.size(); j++) {
-      char& cell = row[j];
-      cell =  blank_symbol; 
-      for (int k = 0; k < 4; k++) {
-        if (i == oSpots[k].first && j == oSpots[k].second) {
-          cell = 'O';
-        } else if (i == xSpots[k].first && j == xSpots[k].second) {
-          cell = 'X';
-        }
-      }
+  Token* tokens[] = {&O1, &O2, &O3, &O4, &X1, &X2, &X3, &X4};
+  for (Token* token : tokens) {
+    auto pos = token->getPos();
+    if (pos.first == y && pos.second == x) {
+      return token;
+    } else {
+      return nullptr;
     }
   }
+}
+
+/////////////////////////////////////////////////////
+/// Exception handling 
+/// ////////////////////////////////////////////////
+void errorInvalidMove() {
+  cout << RED << "\n** ERROR: invalid move, please re-enter your move" << RESET;
+}
+
+void errorNoTokenHere(int y, int x) {
+  cout << RED << "** ERROR: no token at row " << y << " column " << x << RESET;
+} 
+
+void debugPrint(string message) {
+  cout << GREEN << "** Debug: " << message << RESET << endl;
+}
+
+void debugIsTokenAtYX(int y, int x) {
+  const Token* tok = getTokenAtPosition(y, x);
+  pair<int, int> pos = tok->getPos();
+  cout << GREEN << "\n** Debug: token found at y x: " << pos.first << " "<< pos.second << RESET << endl;
 }
