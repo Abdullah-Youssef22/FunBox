@@ -32,7 +32,7 @@ void findAndUpdateToken(int y, int x, int targetY, int targetX);
 Token* getTokenAtPosition(int y, int x);
 void errorNoTokenHere(int y, int x);
 void errorInvalidMove();
-void debugPrint();
+void debugPrint(string message);
 void debugIsTokenAtYX(int y, int x);
 bool checkTargetTokenValidity(int y, int x, char);
 
@@ -226,6 +226,7 @@ bool checkTargetTokenValidity(int y, int x, char symbol) {
 
 void findAndUpdateToken(int y, int x, int targetY, int targetX) {
   Token* tok = getTokenAtPosition(y, x);
+  debugPrint("inside findAndUpdateToken");
   if (tok != nullptr) {
     tok->move(targetY, targetX);
   }
