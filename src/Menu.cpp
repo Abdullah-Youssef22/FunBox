@@ -90,7 +90,7 @@ int Menu::getKeyPress() {
 
 int Menu::display() {
     while(true) {
-        clearScreen();
+        //clearScreen();
         
         std::cout << "\n\n";
         std::cout << "  " << BLUE << "======================================" << RESET << "\n";
@@ -123,7 +123,7 @@ int Menu::display() {
                 break;
             case '\r':
             case '\n':
-               /* clearScreen();*/
+                clearScreen();
                 return currentSelection;
         }
     }
