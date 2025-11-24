@@ -16,8 +16,8 @@ private:
   int y_pos;
 public:
   void move(int y, int x) {
-    x_pos = x;
     y_pos = y;
+    x_pos = x;
   }
   pair<int, int> getPos() const {
     return {y_pos, x_pos};
@@ -28,6 +28,7 @@ public:
 //FORWARD DECLARATIONS
 void setInitialPositions();
 void putTokensAtPositions();
+void pressToFinish();
 void findAndUpdateToken(int y, int x, int targetY, int targetX);
 Token* getTokenAtPosition(int y, int x);
 void errorNoTokenHere(int y, int x);
@@ -35,6 +36,7 @@ void errorInvalidMove();
 void debugPrint(string message);
 void debugIsTokenAtYX(int y, int x);
 bool checkTargetTokenValidity(int y, int x, char);
+bool isTokenAtYX(int y, int x);
 
 typedef vector<pair<int, int>> positionsArray;
 positionsArray getOPositions();
@@ -54,9 +56,7 @@ bool FourByFour_Board::update_board(Move<char>* move) {
     char mark = move->get_symbol();
 
     // Validate move and apply if valid
-    if (!(x < 0 || x >= rows || y < 0 || y >= columns) &&
-        (board[x][y] == blank_symbol || mark == 0)) {
-
+    if (!(x < 0 || x >= rows || y < 0 || y >= columns)) {
         if (mark == 0) { // Undo move
             n_moves--;
             board[x][y] = blank_symbol;
@@ -64,7 +64,7 @@ bool FourByFour_Board::update_board(Move<char>* move) {
         else {         // Apply move
             n_moves++;
             // board[x][y] = toupper(mark);
-            putTokensAtPositions();
+            putTokensAtPositions(); // NOTE: IMPLEMENT SMTH THAT MAKES SURE TOKENS DONT WRITE ON EACH OTHER. Currently, they can exist on top of each other
         }
         return true;
     }
@@ -77,19 +77,23 @@ bool FourByFour_Board::is_win(Player<char>* player) {
 
     auto all_equal = [&](char a, char b, char c) {
         return a == b && b == c && a != blank_symbol;
-        };
+    };
 
     // Check rows and columns
     for (int i = 0; i < rows; ++i) {
         if ((all_equal(board[i][0], board[i][1], board[i][2]) && board[i][0] == sym) ||
-            (all_equal(board[0][i], board[1][i], board[2][i]) && board[0][i] == sym))
+            (all_equal(board[0][i], board[1][i], board[2][i]) && board[0][i] == sym)) {
+            pressToFinish();
             return true;
+        }
     }
 
     // Check diagonals
     if ((all_equal(board[0][0], board[1][1], board[2][2]) && board[1][1] == sym) ||
-        (all_equal(board[0][2], board[1][1], board[2][0]) && board[1][1] == sym))
+        (all_equal(board[0][2], board[1][1], board[2][0]) && board[1][1] == sym)) {
+        pressToFinish();
         return true;
+    }
 
     return false;
 }
@@ -144,15 +148,20 @@ Move<char>* FourByFour_UI::get_move(Player<char>* player) {
         } else {
           cout << "\nWhere do you want to move it? (row, column): ";
           cin >> targetY >> targetX;
+          while (isTokenAtYX(targetY, targetX)) {
+            errorInvalidMove(); 
+            cout << "\nWhere do you want to move it? (row, column): ";
+            cin >> targetY >> targetX;
+          }      
           findAndUpdateToken(y, x, targetY, targetX);
-          debugIsTokenAtYX(targetY, targetX); 
+          return new Move<char>(targetX, targetY, symbol);
         }
     }
     else if (player->get_type() == PlayerType::COMPUTER) {
         x = rand() % player->get_board_ptr()->get_rows();
         y = rand() % player->get_board_ptr()->get_columns();
+        return new Move<char>(x, y, symbol);
     }
-    return new Move<char>(targetX, targetY, symbol);
 }
 
 
@@ -226,7 +235,6 @@ bool checkTargetTokenValidity(int y, int x, char symbol) {
 
 void findAndUpdateToken(int y, int x, int targetY, int targetX) {
   Token* tok = getTokenAtPosition(y, x);
-  debugPrint("inside findAndUpdateToken");
   if (tok != nullptr) {
     tok->move(targetY, targetX);
   }
@@ -238,12 +246,25 @@ Token* getTokenAtPosition(int y, int x) {
     auto pos = token->getPos();
     if (pos.first == y && pos.second == x) {
       return token;
-    } else {
-      return nullptr;
     }
+  }
+  return nullptr;
+}
+
+bool isTokenAtYX(int y, int x) {
+  const Token* tmptok = getTokenAtPosition(y, x);
+  if (tmptok != nullptr) {
+    return true;
+  } else {
+    return false;
   }
 }
 
+void pressToFinish() {
+  int dummy;
+  cout << "\nYou win! Press Enter to finish!";
+  cin >> dummy;
+}
 /////////////////////////////////////////////////////
 /// Exception handling 
 /// ////////////////////////////////////////////////
@@ -260,7 +281,8 @@ void debugPrint(string message) {
 }
 
 void debugIsTokenAtYX(int y, int x) {
-  const Token* tok = getTokenAtPosition(y, x);
-  pair<int, int> pos = tok->getPos();
-  cout << GREEN << "\n** Debug: token found at y x: " << pos.first << " "<< pos.second << RESET << endl;
+  if (isTokenAtYX(y, x)) {
+    cout << GREEN << "\n** Debug: token found at y x: " << y << " "<< x << RESET << endl;
+  }
 }
+
