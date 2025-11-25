@@ -40,14 +40,14 @@ void TicTacToe5x5_Board::update_scores()
 
 bool TicTacToe5x5_Board::is_draw(Player<char>* player)
 {
-    if (n_moves < 24) return false;
+    if (n_moves < 23) return false;
 
     return player1_score == player2_score;
 }
 
 bool TicTacToe5x5_Board::is_win(Player<char>* player)
 {
-    if (n_moves < 24) return false; 
+    if (n_moves < 23) return false; 
 
     const char sym = player->get_symbol();
 
@@ -77,7 +77,7 @@ bool TicTacToe5x5_Board::is_win(Player<char>* player)
 
 bool TicTacToe5x5_Board::game_is_over(Player<char>* player)
 {
-	if (n_moves < 24) return false;
+	if (n_moves < 23) return false;
     else
     {
         int end;
