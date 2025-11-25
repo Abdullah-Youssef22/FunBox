@@ -123,7 +123,7 @@ int Menu::display() {
                 break;
             case '\r':
             case '\n':
-               /* clearScreen();*/
+                /*clearScreen();*/
                 return currentSelection;
         }
     }
