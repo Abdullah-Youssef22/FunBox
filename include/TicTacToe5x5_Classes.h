@@ -23,6 +23,7 @@ public:
 	void set_score(Player<char>* player);
 	void get_score(Player<char>* player);
 	void update_scores();
+	void desplay_scores();
 };
 
 class TicTacToe5x5_UI : public UI<char> 
