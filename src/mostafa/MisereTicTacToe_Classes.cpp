@@ -1,5 +1,6 @@
 #include "MisereTicTacToe_Classes.h"
 #include <iostream>
+#include "InfinityTicTacToe_Classes.h"
 
 using namespace std;
 
@@ -34,6 +35,9 @@ bool MisereTicTacToeBoard::update_board(Move<char>* move)
     }
     return false;
 }
+
+
+
 
 bool MisereTicTacToeBoard::check_three_in_row(char sym)
 {
@@ -79,17 +83,13 @@ bool MisereTicTacToeBoard::game_is_over(Player<char>* player)
 
 }
 
-
-
-
-
 MisereTicTacToeUI::MisereTicTacToeUI()
     : UI<char>("Welcome to Misère Tic Tac Toe!", 3)
 {}
 
 Move<char>* MisereTicTacToeUI::get_move(Player<char>* player)
 {
-    int x, y; 
+    int x, y;
     if (player->get_type() == PlayerType::HUMAN)
     {
         cout << "\nPlease enter your move x and y (0 to 2): ";
