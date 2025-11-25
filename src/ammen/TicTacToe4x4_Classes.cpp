@@ -63,8 +63,7 @@ bool FourByFour_Board::update_board(Move<char>* move) {
         }
         else {         // Apply move
             n_moves++;
-            // board[x][y] = toupper(mark);
-            putTokensAtPositions(); // NOTE: IMPLEMENT SMTH THAT MAKES SURE TOKENS DONT WRITE ON EACH OTHER. Currently, they can exist on top of each other
+            putTokensAtPositions(); 
         }
         return true;
     }
