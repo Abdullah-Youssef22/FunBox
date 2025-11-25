@@ -4,6 +4,7 @@
 using namespace std;
 
 
+void pressToFinish();
 
 MisereTicTacToeBoard::MisereTicTacToeBoard()
     : Board<char>(3, 3)
@@ -65,11 +66,13 @@ bool MisereTicTacToeBoard::is_win(Player<char>* player)
 bool MisereTicTacToeBoard::is_lose(Player<char>* player)
 {
     char s = player->get_symbol();
+	pressToFinish();
     return check_three_in_row(s);
 }
 
 bool MisereTicTacToeBoard::is_draw(Player<char>* player)
 {
+	pressToFinish();
     return n_moves == rows * columns && !check_three_in_row('X') && !check_three_in_row('O');
 }
 
@@ -83,7 +86,7 @@ bool MisereTicTacToeBoard::game_is_over(Player<char>* player)
 
 
 MisereTicTacToeUI::MisereTicTacToeUI()
-    : UI<char>("Welcome to Misère Tic Tac Toe!", 3)
+    : UI<char>("Welcome to MisÃ¨re Tic Tac Toe!", 3)
 {}
 
 Move<char>* MisereTicTacToeUI::get_move(Player<char>* player)
@@ -108,4 +111,11 @@ Player<char>* MisereTicTacToeUI::create_player(string& name, char symbol, Player
         << " player: " << name << " (" << symbol << ")\n";
 
     return new MiserePlayer(name, symbol, type);
+}
+
+
+void pressToFinish() {
+  int dummy;
+  cout << "\nYou win! Press Enter to finish!";
+  cin >> dummy;
 }
