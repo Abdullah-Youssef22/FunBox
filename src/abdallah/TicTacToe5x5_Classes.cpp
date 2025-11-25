@@ -40,36 +40,21 @@ void TicTacToe5x5_Board::update_scores()
 
 bool TicTacToe5x5_Board::is_draw(Player<char>* player)
 {
-    if (n_moves < 23) return false;
+    if (!end()) return false;
 
     return player1_score == player2_score;
 }
 
 bool TicTacToe5x5_Board::is_win(Player<char>* player)
 {
-    if (n_moves < 23) return false; 
+    if (!end()) return false; 
 
     const char sym = player->get_symbol();
 
     if ((sym == 'X' || sym == 'x') && player1_score > player2_score) {
-        int end;
-        char x = 'X', o = 'O';
-        count_sequences(x);
-        count_sequences(o);
-        desplay_scores();
-        cout << "Press enter to end the game " << "\n";
-        cin >> end;
-        return true;
+        
     }
     else if ((sym == 'Y' || sym == 'y') && player2_score > player1_score) {
-        int end;
-        char x = 'X', o = 'O';
-        count_sequences(x);
-        count_sequences(o);
-        desplay_scores();
-        cout << "Press enter to end the game " << "\n";
-        cin >> end;
-        return true;
     }
 
     return false;
@@ -77,19 +62,28 @@ bool TicTacToe5x5_Board::is_win(Player<char>* player)
 
 bool TicTacToe5x5_Board::game_is_over(Player<char>* player)
 {
-	if (n_moves < 23) return false;
+	if (!end()) return false;
+    else
+    {
+        end();
+        return true;
+    }
+
+}
+bool TicTacToe5x5_Board::end()
+{
+    if (n_moves < 24) return false;
     else
     {
         int end;
         char x = 'X', o = 'O';
-        count_sequences(x);
-        count_sequences(o);
+        player1_score = count_sequences(x);
+        player2_score = count_sequences(o);
         desplay_scores();
         cout << "Press enter to end the game " << "\n";
         cin >> end;
-        return 1;
+        return true;
     }
-
 }
 void TicTacToe5x5_Board::desplay_scores()
 {
