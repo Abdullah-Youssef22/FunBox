@@ -9,7 +9,7 @@ private:
 
 public:
 
-    SUS_Board();
+    SUS_Board(); 
 
     bool update_board(Move<char>* move);
 
