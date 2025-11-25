@@ -28,7 +28,6 @@ public:
 //FORWARD DECLARATIONS
 void setInitialPositions();
 void putTokensAtPositions();
-void pressToFinish();
 void findAndUpdateToken(int y, int x, int targetY, int targetX);
 Token* getTokenAtPosition(int y, int x);
 void errorNoTokenHere(int y, int x);
@@ -82,7 +81,6 @@ bool FourByFour_Board::is_win(Player<char>* player) {
     for (int i = 0; i < rows; ++i) {
         if ((all_equal(board[i][0], board[i][1], board[i][2]) && board[i][0] == sym) ||
             (all_equal(board[0][i], board[1][i], board[2][i]) && board[0][i] == sym)) {
-            pressToFinish();
             return true;
         }
     }
@@ -90,7 +88,6 @@ bool FourByFour_Board::is_win(Player<char>* player) {
     // Check diagonals
     if ((all_equal(board[0][0], board[1][1], board[2][2]) && board[1][1] == sym) ||
         (all_equal(board[0][2], board[1][1], board[2][0]) && board[1][1] == sym)) {
-        pressToFinish();
         return true;
     }
 
@@ -143,18 +140,24 @@ Move<char>* FourByFour_UI::get_move(Player<char>* player) {
         cout << GREEN << "\nPlayer " << symbol << RESET << ": please enter target token position (row, column): ";
         cin >> y >> x;
         if (!checkTargetTokenValidity(y, x, symbol)) {
-          cout << RED << "** ERROR: please select a valid " << symbol << " token" << RESET;
-        } else {
+          while (true) {
+            cout << RED << "** ERROR: please select a valid " << symbol << " token" << RESET;
+            cout << "\nPlease select a valid target token (row, column): ";
+            cin >> y >> x;
+            if (isTokenAtYX(y, x)) {
+              break;
+            }
+          }      
+        } 
+        cout << "\nWhere do you want to move it? (row, column): ";
+        cin >> targetY >> targetX;
+        while (isTokenAtYX(targetY, targetX)) {
+          errorInvalidMove(); 
           cout << "\nWhere do you want to move it? (row, column): ";
           cin >> targetY >> targetX;
-          while (isTokenAtYX(targetY, targetX)) {
-            errorInvalidMove(); 
-            cout << "\nWhere do you want to move it? (row, column): ";
-            cin >> targetY >> targetX;
-          }      
-          findAndUpdateToken(y, x, targetY, targetX);
-          return new Move<char>(targetX, targetY, symbol);
-        }
+        }      
+        findAndUpdateToken(y, x, targetY, targetX);
+        return new Move<char>(targetX, targetY, symbol);
     }
     else if (player->get_type() == PlayerType::COMPUTER) {
         x = rand() % player->get_board_ptr()->get_rows();
@@ -259,11 +262,6 @@ bool isTokenAtYX(int y, int x) {
   }
 }
 
-void pressToFinish() {
-  int dummy;
-  cout << "\nYou win! Press Enter to finish!";
-  cin >> dummy;
-}
 /////////////////////////////////////////////////////
 /// Exception handling 
 /// ////////////////////////////////////////////////
