@@ -43,8 +43,7 @@ public:
 
     Move<char>* get_move(Player<char>* player) override;
 
-    Player<char>* create_player(string& name, char symbol,
-        PlayerType type) override;
+    Player<char>* create_player(string& name, char symbol, PlayerType type) override;
 };
 
 #endif // MISERE_TICTACTOE_H
