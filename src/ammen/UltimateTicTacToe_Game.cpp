@@ -20,32 +20,65 @@ using namespace std;
  * @return int Returns 0 on successful execution.
  */
 void GameLaunchers::launch_ultimate_tic_tac_toe() {
-    srand(static_cast<unsigned int>(time(0)));  // Seed the random number generator
+    srand(static_cast<unsigned int>(time(0)));
+    
+    // Create UI
+    Ultimate_UI* ui = new Ultimate_UI();
+    
+    // Create board
+    Ultimate_Board* board = new Ultimate_Board();
+    
+    // Setup players
+    Player<char>** players = ui->setup_players();
+    
+    // Set board pointers for players
+    players[0]->set_board_ptr(board);
+    players[1]->set_board_ptr(board);
+    
 
-    // Create an instance of the specific UI for X-O using a pointer 
-    UI<char>* game_ui = new Ultimate_UI();
-
-    // Create the game board. For X-O, this is an X_O_Board.
-    Board<char>* xo_board = new Ultimate_Board();
-
-    // Use the UI to set up the players for the game.
-    // The UI returns a dynamically allocated array of Player pointers.
-    Player<char>** players = game_ui->setup_players();
-
-    // Create the game manager with the board and the array of players.
-    GameManager<char> x_o_game(xo_board, players, game_ui);
-
-    // Run the game loop.
-    x_o_game.run();
-
-    // --- Cleanup ---
-    // Delete the dynamically allocated board object.
-    delete xo_board;
-
-    // Delete the individual player objects.
-    for (int i = 0; i < 2; ++i) {
-        delete players[i];
+    // we need custom display logic and a custom game loop, thus we dont use the typical game-manager loop
+    ui->display_ultimate_board(board);
+    
+    int currentPlayerIndex = 0;
+    while (true) {
+        Player<char>* currentPlayer = players[currentPlayerIndex];
+        
+        // get move
+        Move<char>* move = ui->get_move(currentPlayer);
+        
+        // validate and apply
+        while (!board->update_board(move)) {
+            delete move;
+            move = ui->get_move(currentPlayer);
+        }
+        
+        ui->display_ultimate_board(board);
+        
+        // check if game over
+        if (board->is_win(currentPlayer)) {
+            ui->display_message(currentPlayer->get_name() + " WINS THE ULTIMATE GAME!");
+            break;
+        }
+        
+        if (board->is_draw(currentPlayer)) {
+            ui->display_message("ULTIMATE DRAW!");
+            break;
+        }
+        
+        // Switch player
+        currentPlayerIndex = 1 - currentPlayerIndex;
+        
+        delete move;
     }
-    // Delete the dynamically allocated array of player pointers itself.
+    
+    // Cleanup
+    delete board;
+    delete players[0];
+    delete players[1];
     delete[] players;
+    delete ui;
+    
+    cout << "\nGame Over! Press Enter to continue...";
+    cin.ignore();
+    cin.get();
 }

@@ -4,7 +4,7 @@
 #include <iomanip>
 #include <cctype>  // for toupper()
 #include "../../include/TicTacToe4x4_Classes.h"
-
+#include "../../include/util/util.h"
 using namespace std;
 
 //--------------------------------------- X_O_Board Implementation
@@ -30,9 +30,6 @@ void setInitialPositions();
 void putTokensAtPositions();
 void findAndUpdateToken(int y, int x, int targetY, int targetX);
 Token* getTokenAtPosition(int y, int x);
-void errorNoTokenHere(int y, int x);
-void errorInvalidMove();
-void debugPrint(string message);
 void debugIsTokenAtYX(int y, int x);
 bool checkTargetTokenValidity(int y, int x, char);
 bool isTokenAtYX(int y, int x);
@@ -66,7 +63,7 @@ bool FourByFour_Board::update_board(Move<char>* move) {
         }
         return true;
     }
-    errorInvalidMove();
+    util::errorInvalidMove();
     return false;
 }
 
@@ -152,7 +149,7 @@ Move<char>* FourByFour_UI::get_move(Player<char>* player) {
         cout << "\nWhere do you want to move it? (row, column): ";
         cin >> targetY >> targetX;
         while (isTokenAtYX(targetY, targetX)) {
-          errorInvalidMove(); 
+          util::errorInvalidMove(); 
           cout << "\nWhere do you want to move it? (row, column): ";
           cin >> targetY >> targetX;
         }      
@@ -265,21 +262,10 @@ bool isTokenAtYX(int y, int x) {
 /////////////////////////////////////////////////////
 /// Exception handling 
 /// ////////////////////////////////////////////////
-void errorInvalidMove() {
-  cout << RED << "\n** ERROR: invalid move, please re-enter your move" << RESET;
-}
-
-void errorNoTokenHere(int y, int x) {
-  cout << RED << "** ERROR: no token at row " << y << " column " << x << RESET;
-} 
-
-void debugPrint(string message) {
-  cout << GREEN << "** Debug: " << message << RESET << endl;
-}
 
 void debugIsTokenAtYX(int y, int x) {
   if (isTokenAtYX(y, x)) {
-    cout << GREEN << "\n** Debug: token found at y x: " << y << " "<< x << RESET << endl;
+    std::cout << GREEN << "\n** Debug: token found at y x: " << y << " "<< x << RESET << std::endl;
   }
 }
 
