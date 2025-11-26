@@ -6,11 +6,12 @@ using namespace std;
 class SUS_Board : public Board<char> {
 private:
     char start_symbol = '.'; 
-
+    bool winner_printed = false;
+    SUS_UI* ui_ptr;
 public:
 
-    SUS_Board(); 
-
+    SUS_Board(SUS_UI* ui);
+    
     bool update_board(Move<char>* move);
 
     bool is_win(Player<char>* player);
@@ -36,6 +37,7 @@ public:
 
     Player<char>* create_player(string& name, char symbol, PlayerType type);
 
+    Player<char> **setup_players() override;
 
     virtual Move<char>* get_move(Player<char>* player);
 };
