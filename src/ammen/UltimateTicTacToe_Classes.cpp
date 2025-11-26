@@ -224,72 +224,8 @@ void Ultimate_Board::updateMetaBoard(int miniRow, int miniCol) {
 
 
 
-/////////////////////////////////// logic 1
-// imma keep this in commit hist
-// bool Ultimate_Board::update_board(Move<char>* move) {
-//     int globalX = move->get_x();
-//     int globalY = move->get_y();
-//     char symbol = move->get_symbol();
-//
-//     // Validate global coordinates
-//     if (globalX < 0 || globalX >= 9 || globalY < 0 || globalY >= 9) {
-//         cout << RED << "\n** ERROR: Invalid coordinates! Must be 0-8.\n" << RESET;
-//         return false;
-//     }
-//
-//     int miniRow = getMiniRow(globalX);
-//     int miniCol = getMiniCol(globalY);
-//
-//
-//
-//     if (!isMiniboardPlayable(miniRow, miniCol)) {
-//         if (activeMiniRow != -1 && activeMiniCol != -1) {
-//             cout <<  RED << "** ERROR: You must play in mini-board (" << activeMiniRow << ", " << activeMiniCol << ")!\n" << RESET;
-//         } else {
-//             cout << RED << "** ERROR: This mini-board is already decided!\n" << RESET;
-//         }
-//         return false;
-//     }
-//
-//
-//
-//     // after all the bounds checking and error handling above 
-//     // now that we've verified the move is valid 
-//     int localX = getLocalX(globalX);
-//     int localY = getLocalY(globalY);
-//
-//     Move<char> localMove(localX, localY, symbol);
-//
-//     // NOTE: the update_board method returns a boolean flag but also applies the move 
-//     // which is a poor design choice imo but we have to deal with it
-//     if (!miniBoards[miniRow][miniCol]->update_board(&localMove)) {
-//         cout << "Invalid move in mini-board!\n";
-//         return false;
-//     }
-//
-//     // update meta-board if mini-board is now decided
-//     updateMetaBoard(miniRow, miniCol);
-//
-//     // set next active mini-board based on where the move was made
-//     activeMiniRow = localX;
-//     activeMiniCol = localY;
-//
-//     // If that mini-board is decided, any board becomes playable
-//     // thus we set the -1 flag
-//     if (miniBoards[activeMiniRow][activeMiniCol]->is_decided()) {
-//         activeMiniRow = -1;
-//         activeMiniCol = -1;
-//     }
-//
-//
-//
-//     board[globalX][globalY] = symbol;
-//     n_moves++;  
-//     return true;
-// }
-//
+///////////////////////////////////
 
-//////////////////////////////// Logic 2 
 bool Ultimate_Board::update_board(Move<char>* move) {
     int globalX = move->get_x();
     int globalY = move->get_y();
@@ -343,11 +279,6 @@ bool Ultimate_Board::update_board(Move<char>* move) {
     n_moves++;  
     return true;
 }
-///////////////////////////////// end of logic 2
-
-
-
-
 
 
 
