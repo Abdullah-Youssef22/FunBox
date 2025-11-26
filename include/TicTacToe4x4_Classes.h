@@ -69,6 +69,12 @@ public:
      * @return true if the game has ended, false otherwise.
      */
     bool game_is_over(Player<char>* player);
+
+    
+    /**
+     * @brief Updates token positions
+     */
+    void putTokensAtPositions();
 };
 
 
