@@ -4,7 +4,7 @@
 #include <memory>   // Required for unique_ptr
 #include "../../include/util/BoardGame_Classes.h"
 #include "../../include/util/GameLaunchers.h"
-#include "InfinityTicTacToe_Classes.h"
+#include "../../include/InfinityTicTacToe_Classes.h"
 
 using namespace std;
 

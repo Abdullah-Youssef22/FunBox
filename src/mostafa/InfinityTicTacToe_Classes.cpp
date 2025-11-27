@@ -1,4 +1,4 @@
-#include "InfinityTicTacToe_Classes.h"
+#include "../../include/InfinityTicTacToe_Classes.h"
 
 Infinity_TicTacToe_Board::Infinity_TicTacToe_Board()
     : Board<char>(3, 3)
