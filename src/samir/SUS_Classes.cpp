@@ -8,7 +8,7 @@ using namespace std;
 
 //--------------------------------------- SUS_Board Implementation
 
-SUS_Board::SUS_Board(SUS_UI* ui) : Board(3, 3), ui_ptr(ui) {
+SUS_Board::SUS_Board() : Board(3, 3) {
     // Initialize all cells with blank_symbol
     cout << "debug: SUS" << endl;
     for (auto& row : board)
