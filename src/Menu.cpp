@@ -1,5 +1,17 @@
 ﻿#include "../include/util/Menu.h"
 #include <iostream>
+#include <string>
+#include <vector>
+#include <thread> 
+#include <chrono>
+#include <future>
+
+
+
+#ifndef _WIN32
+    #include <fcntl.h>
+    #include <unistd.h>
+#endif
 
 #ifdef _WIN32
     #include <windows.h>
@@ -9,8 +21,13 @@
     #include <unistd.h>
 #endif
 
-Menu::Menu() : currentSelection(0) {
-    
+
+
+
+bool Menu::noOptionChosen = true;
+
+Menu::Menu() {
+    currentSelection = 0;  
     #ifdef _WIN32
         SetConsoleOutputCP(CP_UTF8);
         
@@ -46,21 +63,49 @@ void Menu::clearScreen() {
 #endif
 }
 
+bool Menu::kbhit() {
+#ifdef _WIN32
+    return _kbhit() != 0;
+#else
+    struct termios oldt, newt;
+    int ch;
+    int oldf;
+    
+    tcgetattr(STDIN_FILENO, &oldt);
+    newt = oldt;
+    newt.c_lflag &= ~(ICANON | ECHO);
+    tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+    oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
+    fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
+    
+    ch = getchar();
+    
+    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+    fcntl(STDIN_FILENO, F_SETFL, oldf);
+    
+    if(ch != EOF) {
+        ungetc(ch, stdin);
+        return true;
+    }
+    
+    return false;
+#endif
+}
+
+
 int Menu::getKeyPress() {
 #ifdef _WIN32
     int key = _getch();
     
-    // Handle arrow keys (they send two bytes: 224 then the key code)
     if (key == 0 || key == 224) {
         key = _getch();
         switch(key) {
-            case 72: return 'w';  // Up arrow
-            case 80: return 's';  // Down arrow
+            case 72: return 'w';
+            case 80: return 's';
         }
     }
     
-    // ADDED: Handle both \r and \n for Enter key
-    if (key == 13) {  // 13 is \r on Windows
+    if (key == 13) {
         return '\n';
     }
     
@@ -88,7 +133,40 @@ int Menu::getKeyPress() {
 #endif
 }
 
-int Menu::display() {
+
+int Menu::getOptionCount() const {
+  return options.size(); 
+}
+
+
+int Menu::displayMenu() {
+    std::vector<std::string> asciiArt = {
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣶⣶⣶⣶⣶⣶⣆⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⣿⠋⠁⠀⣀⠀⢹⣿⣿⣿⠀⢀⡀⠀⠉⢻⡇⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⢹⣆⡀⠀⠉⠀⣾⡟⠙⣿⡄⠈⠁⠀⣀⣾⠁⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⢠⣿⡟⢯⣭⣾⣿⣀⣀⣻⣿⣮⣽⠛⢿⣧⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠸⣧⣄⠒⢠⣙⢛⡛⣛⣛⢛⡋⡄⣠⣴⡟⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀ ⢀⣶⣦⡀⠙⠿⣷⣶⣭⣘⣃⣘⣃⣘⣥⣾⡿⠏⣡⣾⠟⠒⠀⠀⠀⠀",
+        "⠀⠀⠀ ⠀⠂⠈⠙⠛⢶⣄⠀⠀⠛⡛⠛⠋⣛⠛⠃⠀⢀⣠⡿⠃⠀⠀⢦⡀⠀⠀",
+        "⠀⠀ ⡠⠊⠀⠀⣴⠀⠀⠈⡟⠒⡤⠙⠿⠿⠁⠤⢶⠚⠉⠉⠀⢠⠁⠀⠀⠱⣄⠀",
+        "⠀ ⢠⠁⠀⠀⠀⣿⡀⣀⣀⡁⠤⡇⢰⣷⣶⡄⣴⢼⠀⠀⢀⣠⢿⠀⠀⠀⠀⢹⡄",
+        " ⠰⢿⠀⠀⠀⢠⡉⠉⠀⠀⠀⡄⢺⢸⣿⣿⡇⡗⢺⢰⠈⠉⠀⠘⡆⠀⠀⠀⠀⡇",
+        "⠀ ⠈⠳⣄⡀⢸⡇⠀⠀⠀⠀⣡⢚⢸⣿⣿⠇⠗⣆⠆⠀⠀⠀⠀⡇⠀⠀⢀⡴⠃",
+        "⠀ ⠀⠀⠈⠃⠘⣷⣤⠀⠀⠀⢹⣾⣶⠒⠒⠀⢳⣧⣤⣄⣠⣄⣾⠃⢴⠆⠉⠀⠀",
+        "⠀⠀⠀⠀⠀ ⠀⠈⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⢉⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀ ⠀⠀⢰⠀⢠⡟⠀⠀⠀⠀⢀⢄⠀⠀⠀⢸⡇⠀⠀⠨⡆⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀ ⡘⢀⣜⠇⠀⠀⠀⠀⢸⠸⡀⠀⠀⢸⣿⠀⠀⠀⢡⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀ ⠀⡇⢸⣿⠀⠀⠀⠀⠠⡇⠀⡇⠀⠀⠈⣿⠀⠀⠀⢸⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀ ⠀⠀⠙⠛⠋⠤⠤⠤⠤⠄⠁⠀⠁⠤⠄⠠⠿⠧⠄⠛⠛⠀⠀⠀⠀⠀",
+        "⠀⠀⠀ ⠀ ⢀⣴⣶⣦⣄⠲⣶⠀⠀⠀⠀⠀⠀⠀⢠⣷⣶⡶⢂⣠⣴⣶⣤⡀⠀⠀",
+        "⠀⠀⠀⠀  ⠸⠿⠿⠿⠿⠧⠠⠄⠀⠀⠀⠀⠀⠀⠤⠤⠤⠐⠿⠿⠿⠿⠿⠿⠃⠀⠀"
+    };
+    
+    int bobOffset = 0;
+    bool bobDirection = true;
+    
     while(true) {
         clearScreen();
         
@@ -107,25 +185,67 @@ int Menu::display() {
         }
 
         std::cout << "\n  " << YELLOW << "Use W/S or Arrow Keys, Enter to select" << RESET << "\n";
-        std::cout << "  " << BLUE << "======================================" << RESET << "\n";
+        std::cout << "  " << BLUE << "======================================" << RESET << "\n\n";
+        
 
+
+        std::vector<int> offsets(asciiArt.size(), 0); 
+        int linesFromTop = 8;
+        for (int i = 0; i < linesFromTop; i++) offsets[i] = 2;
+        for (int i = linesFromTop; i < 19; i++) offsets[i] = 1;
         
-        int key = getKeyPress();
-        
-        switch(key) {
-            case 'w':
-            case 'W':
-                currentSelection = (currentSelection - 1 + options.size()) % options.size();
-                break;
-            case 's':
-            case 'S':
-                currentSelection = (currentSelection + 1) % options.size();
-                break;
-            case '\r':
-            case '\n':
-                /*clearScreen();*/
-                return currentSelection;
+        int lines = asciiArt.size();
+        for (size_t i = 0; i < asciiArt.size(); i++) {
+            std::cout << WHITE << std::string(offsets[i] * bobOffset, ' ') << asciiArt[i] << "\n" << RESET;
         }
+
+
+        // for (const std::string& line : asciiArt) {
+        //       std::cout << std::string(bobOffset, ' ') << line << "\n";
+        // }
+
+        std::cout.flush();
+        
+        if (bobDirection) {
+            bobOffset++;
+            if (bobOffset >= 2) bobDirection = false;
+        } else {
+            bobOffset--;
+            if (bobOffset <= 0) bobDirection = true;
+        }
+        
+        if (kbhit()) {
+            int key = getKeyPress();
+            
+            switch(key) {
+                case 'w':
+                case 'W':
+                    currentSelection = (currentSelection - 1 + options.size()) % options.size();
+                    break;
+                case 's':
+                case 'S':
+                    currentSelection = (currentSelection + 1) % options.size();
+                    break;
+                case '\r':
+                case '\n':
+                    return currentSelection;
+            }
+        }
+        
+        // Small delay for animation timing
+        std::this_thread::sleep_for(std::chrono::milliseconds(250));
     }
 }
+
+
+
+
+int Menu::display() {
+  std::future<int> menuResult = std::async(std::launch::async, &Menu::displayMenu, this);
+  int value = menuResult.get();
+
+  return value;
+}
+
+
 Menu::~Menu() {}
