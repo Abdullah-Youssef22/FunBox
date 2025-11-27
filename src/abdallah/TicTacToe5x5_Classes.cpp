@@ -151,7 +151,7 @@ int TicTacToe5x5_Board::count_sequences(char symbol)
 }
 
 
-TicTacToe5x5_UI::TicTacToe5x5_UI() : UI<char>("Weclome to FCAI X-O Game by Dr El-Ramly", 5) {}
+TicTacToe5x5_UI::TicTacToe5x5_UI() : UI<char>("Weclome to FCAI TicTacToe5x5 Game by Abdallah Youssef", 5) {}
 
 TicTacToe5x5_UI::~TicTacToe5x5_UI()
 {

@@ -3,11 +3,20 @@
 
 #include "util/BoardGame_Classes.h"
 #include "util/colors.h"
+#include <vector>
+#include <string>
+#include <fstream>
 using namespace std;
 class WordTicTacToe_board : public Board<char>
 {
 private:
 	char blank_symbol = '.';
+	vector<string> dictionary ;
+
+
+	bool load_dictionary();
+	bool is_valid_word(const string& word);
+	bool check_all_words();
 	
 public:
 	WordTicTacToe_board();
@@ -18,7 +27,6 @@ public:
 	bool is_draw(Player<char>* player);
 	bool game_is_over(Player<char>* player);
 	void desplay_winner(Player<char>* player);
-	bool end();
 };
 
 class WordTicTacToe_UI : public UI<char>
