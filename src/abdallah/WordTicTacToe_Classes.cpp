@@ -1,32 +1,9 @@
-#include"WordTicTacToe_Classes.h"
+﻿#include"WordTicTacToe_Classes.h"
 #include <iostream>
 #include <iomanip>
 #include <cctype>
 #include <fstream>
 #include <algorithm>
-
-
-
-
-bool WordTicTacToe_board::load_dictionary() {
-    ifstream file("dic.txt");
-    if (!file.is_open()) {
-        cout << "Error: Could not open dictionary file 'dic.txt'" << endl;
-        return false;
-    }
-	string word;
-    while (file >> word)
-    {
-        if (word.length() == 3) {
-            for (char& c : word) c = toupper(c);
-            dictionary.push_back(word);
-        }
-    }
-    file.close();
-    cout << "Loaded " << dictionary.size() << " valid 3-letter words from dictionary." << endl;
-    return true;
-
-}
 
 bool WordTicTacToe_board::is_valid_word(const string& word) {
     return find(dictionary.begin(), dictionary.end(), word) != dictionary.end();
@@ -91,12 +68,6 @@ WordTicTacToe_board::WordTicTacToe_board() : Board(3, 3) {
     for (auto& row : board)
         for (auto& cell : row)
             cell = blank_symbol;
-
-    if (!load_dictionary()) 
-    {
-        cout << "Warning: Using fallback dictionary." << endl;
-        dictionary = { "CAT", "DOG", "SUN", "CAR", "BED", "EGG", "FLY", "HAT", "ICE", "JOB" };
-    }
 }
 
 WordTicTacToe_board::~WordTicTacToe_board()
@@ -132,7 +103,12 @@ bool WordTicTacToe_board::update_board(Move<char>* move) {
 }
 
 bool WordTicTacToe_board::is_win(Player<char>* player) {
-    return check_all_words();
+    if (check_all_words())
+    {
+		desplay_winner(player);
+		return true;
+    }
+	return false;
 }
 
 bool WordTicTacToe_board::is_draw(Player<char>* player) {
