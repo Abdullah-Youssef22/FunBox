@@ -51,23 +51,20 @@ bool TicTacToe5x5_Board::is_win(Player<char>* player)
 
     const char sym = player->get_symbol();
 
-    if ((sym == 'X' || sym == 'x') && player1_score > player2_score) {
-        
+    if ((sym == 'X' || sym == 'x') && player1_score > player2_score && end()) {
+        end();
+		return true;
     }
-    else if ((sym == 'Y' || sym == 'y') && player2_score > player1_score) {
+    else if ((sym == 'Y' || sym == 'y') && player2_score > player1_score && end()) {
+		end();
+		return true;
     }
 
-    return false;
 }
 
 bool TicTacToe5x5_Board::game_is_over(Player<char>* player)
 {
-	if (!end()) return false;
-    else
-    {
-        end();
-        return true;
-    }
+        return is_win(player) || is_draw(player);
 
 }
 bool TicTacToe5x5_Board::end()
@@ -75,12 +72,12 @@ bool TicTacToe5x5_Board::end()
     if (n_moves < 24) return false;
     else
     {
-        int end;
+        char end;
         char x = 'X', o = 'O';
         player1_score = count_sequences(x);
         player2_score = count_sequences(o);
         desplay_scores();
-        cout << "Press enter to end the game " << "\n";
+        cout << "enter any number to end the game " << "\n";
         cin >> end;
         return true;
     }
@@ -154,7 +151,7 @@ int TicTacToe5x5_Board::count_sequences(char symbol)
 }
 
 
-TicTacToe5x5_UI::TicTacToe5x5_UI() : UI<char>("Weclome to FCAI X-O Game by Dr El-Ramly", 5) {}
+TicTacToe5x5_UI::TicTacToe5x5_UI() : UI<char>("Weclome to FCAI TicTacToe5x5 Game by Abdallah Youssef", 5) {}
 
 TicTacToe5x5_UI::~TicTacToe5x5_UI()
 {
