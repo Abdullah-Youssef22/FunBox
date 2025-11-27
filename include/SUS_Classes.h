@@ -7,10 +7,10 @@ class SUS_Board : public Board<char> {
 private:
     char start_symbol = '.'; 
     bool winner_printed = false;
-    SUS_UI* ui_ptr;
+    
 public:
 
-    SUS_Board(SUS_UI* ui);
+    SUS_Board();
     
     bool update_board(Move<char>* move);
 

@@ -1,6 +1,6 @@
-#include "MisereTicTacToe_Classes.h"
+#include "../../include/MisereTicTacToe_Classes.h"
 #include <iostream>
-#include "InfinityTicTacToe_Classes.h"
+#include "../../include/InfinityTicTacToe_Classes.h"
 
 using namespace std;
 

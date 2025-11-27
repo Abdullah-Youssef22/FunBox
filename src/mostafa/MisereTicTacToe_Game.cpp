@@ -1,7 +1,7 @@
 
 #include "../../include/util/GameLaunchers.h"
 #include "../../include/util/BoardGame_Classes.h"
-#include "MisereTicTacToe_Classes.h"
+#include "../../include/MisereTicTacToe_Classes.h"
 /**
  * @brief Main function to run the X-O game.
  *
