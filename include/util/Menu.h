@@ -14,9 +14,12 @@ private:
     
 public:
     Menu();
+    static bool noOptionChosen;
     void addOption(const std::string& option);
     int display();
-    int getOptionCount() const { return options.size(); }
+    bool kbhit();
+    int displayMenu();
+    int getOptionCount() const;
     ~Menu();
 };
 
