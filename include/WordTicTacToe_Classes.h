@@ -124,6 +124,8 @@ public:
 	bool is_draw(Player<char>* player);
 	bool game_is_over(Player<char>* player);
 	void desplay_winner(Player<char>* player);
+    void display_draw();
+
 };
 
 class WordTicTacToe_UI : public UI<char>
