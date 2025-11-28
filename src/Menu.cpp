@@ -226,30 +226,30 @@ int Menu::displayMenu() {
 
 
 
-        std::vector<int> offsets(asciiArt.size(), 0); 
-        int linesFromTop = 14;
-        for (int i = 0; i < linesFromTop; i++) offsets[i] = 2;
-        for (int i = linesFromTop; i < 19; i++) offsets[i] = 1;
-        
-        int lines = asciiArt.size();
-        for (size_t i = 0; i < asciiArt.size(); i++) {
-            std::cout << WHITE << std::string(offsets[i] * bobOffset, ' ') << asciiArt[i] << "\n" << RESET;
-        }
+        // std::vector<int> offsets(asciiArt.size(), 0); 
+        // int linesFromTop = 14;
+        // for (int i = 0; i < linesFromTop; i++) offsets[i] = 2;
+        // for (int i = linesFromTop; i < 19; i++) offsets[i] = 1;
+        //
+        // int lines = asciiArt.size();
+        // for (size_t i = 0; i < asciiArt.size(); i++) {
+        //     std::cout << WHITE << std::string(offsets[i] * bobOffset, ' ') << asciiArt[i] << "\n" << RESET;
+        // }
 
 
         // for (const std::string& line : asciiArt) {
         //       std::cout << std::string(bobOffset, ' ') << line << "\n";
         // }
 
-        std::cout.flush();
-        
-        if (bobDirection) {
-            bobOffset++;
-            if (bobOffset >= 2) bobDirection = false;
-        } else {
-            bobOffset--;
-            if (bobOffset <= 0) bobDirection = true;
-        }
+        // std::cout.flush();
+        //
+        // if (bobDirection) {
+        //     bobOffset++;
+        //     if (bobOffset >= 2) bobDirection = false;
+        // } else {
+        //     bobOffset--;
+        //     if (bobOffset <= 0) bobDirection = true;
+        // }
         
         if (kbhit()) {
             int key = getKeyPress();
