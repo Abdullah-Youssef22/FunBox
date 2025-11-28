@@ -16,9 +16,9 @@ public:
     Menu();
     static bool noOptionChosen;
     void addOption(const std::string& option);
-    int display();
+    int display(bool enhanced);
     bool kbhit();
-    int displayMenu();
+    int displayMenu(bool enhancedMenu);
     int getOptionCount() const;
     ~Menu();
 };

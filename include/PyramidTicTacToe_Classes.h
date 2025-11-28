@@ -18,6 +18,7 @@ using namespace std;
 class Pyramid_Board : public Board<char> {
 private:
     char blank_symbol = ' '; ///< Character used to represent an empty cell on the board.
+    static std::vector<std::pair<int, int>> printable;
 
 public:
     /**
@@ -59,6 +60,9 @@ public:
      * @return true if the game has ended, false otherwise.
      */
     bool game_is_over(Player<char>* player);
+
+    friend bool isPrintable(int y, int x);
+    friend void initPrintableLocations();
 };
 
 
@@ -99,7 +103,7 @@ public:
      * @param player Pointer to the player whose move is being requested.
      * @return A pointer to a new `Move<char>` object representing the player's action.
      */
-    virtual Move<char>* get_move(Player<char>* player);
+    virtual Move<char>* get_move(Player<char>* player) override;
 
 
 

@@ -12,19 +12,13 @@
 using namespace std;
 
 //--------------------------------------- X_O_Board Implementation
+// forward declaration 
+bool isPrintable(int y, int x);
+void initPrintableLocations();
+std::vector<std::pair<int, int>> Pyramid_Board::printable;
 
 Pyramid_Board::Pyramid_Board() : Board(5, 5) {
-    std::vector<std::pair<int, int>> printable = {
-        {2, 2},
-        {3, 1},
-        {3, 2},
-        {3, 3},
-        {4, 0},
-        {4, 1},
-        {4, 2},
-        {4, 3},
-        {4, 4}
-    };
+    initPrintableLocations();
 
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {
@@ -42,43 +36,34 @@ bool Pyramid_Board::update_board(Move<char>* move) {
     int x = move->get_x();
     int y = move->get_y();
     char mark = move->get_symbol();
-
-    // Validate move and apply if valid
-    if (!(x < 0 || x >= rows || y < 0 || y >= columns) &&
-        (board[x][y] == blank_symbol || mark == 0)) {
-
-        if (mark == 0) { // Undo move
-            n_moves--;
-            board[x][y] = blank_symbol;
-        }
-        else {         // Apply move
-            n_moves++;
-            board[x][y] = toupper(mark);
-        }
-        return true;
+    if (board[x][y] == blank_symbol) {
+      n_moves++;
+      board[x][y] = toupper(mark);
+      return true;
+    } else {
+      return false;
     }
-    return false;
 }
 
 bool Pyramid_Board::is_win(Player<char>* player) {
-    const char sym = player->get_symbol();
-
-    auto all_equal = [&](char a, char b, char c) {
-        return a == b && b == c && a != blank_symbol;
-        };
-
-    // Check rows and columns
-    for (int i = 0; i < rows; ++i) {
-        if ((all_equal(board[i][0], board[i][1], board[i][2]) && board[i][0] == sym) ||
-            (all_equal(board[0][i], board[1][i], board[2][i]) && board[0][i] == sym))
-            return true;
-    }
-
-    // Check diagonals
-    if ((all_equal(board[0][0], board[1][1], board[2][2]) && board[1][1] == sym) ||
-        (all_equal(board[0][2], board[1][1], board[2][0]) && board[1][1] == sym))
-        return true;
-
+    const char sym = toupper(player->get_symbol());
+    
+    auto check = [&](int r1, int c1, int r2, int c2, int r3, int c3) {
+        return board[r1][c1] == sym && 
+               board[r2][c2] == sym && 
+               board[r3][c3] == sym;
+    };
+    
+    if (check(4,0, 4,1, 4,2)) return true;  
+    if (check(4,1, 4,2, 4,3)) return true;
+    if (check(4,2, 4,3, 4,4)) return true;  
+    if (check(3,1, 3,2, 3,3)) return true;
+    if (check(2,2, 3,2, 4,2)) return true;  
+    if (check(2,2, 3,1, 4,0)) return true;  
+    if (check(2,2, 3,3, 4,4)) return true;  
+    if (check(4,0, 3,1, 2,2)) return true;  
+    if (check(4,4, 3,3, 2,2)) return true;  
+    
     return false;
 }
 
@@ -106,14 +91,28 @@ Move<char>* Pyramid_UI::get_move(Player<char>* player) {
     int x, y;
     
     if (player->get_type() == PlayerType::HUMAN) {
-        cout << "\nPlease enter your move x and y (0 to 2): ";
-        cin >> x >> y;
+        cout << "\nPlease enter your move row and column: ";
+        cin >> y >> x;
+        if (!isPrintable(y, x)) {
+          while (true) {
+            util::errorInvalidMove();
+            cout << "\nPlease enter your move row and column: ";
+            cin >> y >> x;
+            if (isPrintable(y, x)) { 
+              break;
+            }
+          }
+        }
     }
     else if (player->get_type() == PlayerType::COMPUTER) {
         x = rand() % player->get_board_ptr()->get_rows();
         y = rand() % player->get_board_ptr()->get_columns();
+        while (!isPrintable(x, y)) {
+          x = rand() % player->get_board_ptr()->get_rows();
+          y = rand() % player->get_board_ptr()->get_columns();
+        }
     }
-    return new Move<char>(x, y, player->get_symbol());
+    return new Move<char>(y, x, player->get_symbol());
 }
 
 
@@ -136,3 +135,27 @@ Player<char>** Pyramid_UI::setup_players() {
     return players;
 }
 
+
+
+
+bool isPrintable(int y, int x) {
+  for (const auto& p : Pyramid_Board::printable) {
+    if (p.first == y && p.second == x) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
+void initPrintableLocations() {
+  Pyramid_Board::printable.push_back({2, 2});
+  Pyramid_Board::printable.push_back({3, 1});
+  Pyramid_Board::printable.push_back({3, 2});
+  Pyramid_Board::printable.push_back({3, 3});
+  Pyramid_Board::printable.push_back({4, 0});
+  Pyramid_Board::printable.push_back({4, 1});
+  Pyramid_Board::printable.push_back({4, 2});
+  Pyramid_Board::printable.push_back({4, 3});
+  Pyramid_Board::printable.push_back({4, 4});
+}

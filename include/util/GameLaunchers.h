@@ -22,5 +22,9 @@ namespace GameLaunchers {
     // group bonsu
     void launch_ultimate_tic_tac_toe();
     void launch_memory_tic_tac_toe();
+
+   // ammen: some extras 
+    void launch_labyrinth();
+
 }
 

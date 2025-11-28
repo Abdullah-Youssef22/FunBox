@@ -49,6 +49,10 @@ set(SOURCES
     ${SRC_DIR}/ammen/TicTacToe4x4_Game.cpp
     ${SRC_DIR}/ammen/UltimateTicTacToe_Classes.cpp
     ${SRC_DIR}/ammen/UltimateTicTacToe_Game.cpp
+    ${SRC_DIR}/ammen/extras/snake.cpp
+    ${SRC_DIR}/ammen/extras/spaceship.cpp 
+    ${SRC_DIR}/ammen/extras/maze.cpp
+    ${SRC_DIR}/ammen/extras/maze_classes.cpp
 
     # ========================
     # Samir 
