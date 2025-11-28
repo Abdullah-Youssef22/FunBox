@@ -89,15 +89,15 @@ void TicTacToe5x5_Board::desplay_scores()
     cout << "Player O: " << player2_score << "\n";
     if (player1_score> player2_score)
     {
-        cout << "Player X is the winner" << "\n";
+        cout << GREEN << "Player X is the winner" << RESET << "\n";
     }
     else if (player2_score > player1_score)
     {
-        cout << "Player O is the winner" << "\n";
+        cout << GREEN << "Player O is the winner" << RESET   << "\n";
     }
     else
     {
-        cout << "The game is a draw" << "\n";
+        cout << YELLOW << "The game is a draw" << RESET << "\n";
     }
 }
 
