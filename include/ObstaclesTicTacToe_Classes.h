@@ -11,7 +11,6 @@ class ObstaclesTicTacToeBoard : public Board<char> {
 private:
     char blank_symbol = '.'; 
 	char obstacle_symbol = '#';
-    bool game_ended = false;
 public:
     ObstaclesTicTacToeBoard();
     bool update_board(Move<char>* move);
@@ -19,10 +18,8 @@ public:
     bool is_lose(Player<char>* player) { return false; };
     bool is_draw(Player<char>* player);
     bool game_is_over(Player<char>* player);
-	void display_winner(Player<char>* player);
+    void display_winner(Player<char>* player);
 	void display_draw();
-    void handle_game_end(Player<char>* current_player);  
-
 };
 
 

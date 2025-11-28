@@ -65,6 +65,7 @@ bool ObstaclesTicTacToeBoard::is_win(Player<char>* player) {
         for (int j = 0; j < 3; ++j) {
             if (board[i][j] == sym && board[i][j + 1] == sym &&
                 board[i][j + 2] == sym && board[i][j + 3] == sym) {
+                display_winner(player);
                 return true;
             }
         }
@@ -74,6 +75,7 @@ bool ObstaclesTicTacToeBoard::is_win(Player<char>* player) {
         for (int i = 0; i < 3; ++i) {
             if (board[i][j] == sym && board[i + 1][j] == sym &&
                 board[i + 2][j] == sym && board[i + 3][j] == sym) {
+                display_winner(player);
                 return true;
             }
         }
@@ -83,6 +85,7 @@ bool ObstaclesTicTacToeBoard::is_win(Player<char>* player) {
         for (int j = 0; j < 3; ++j) {
             if (board[i][j] == sym && board[i + 1][j + 1] == sym &&
                 board[i + 2][j + 2] == sym && board[i + 3][j + 3] == sym) {
+                display_winner(player);
                 return true;
             }
         }
@@ -92,6 +95,7 @@ bool ObstaclesTicTacToeBoard::is_win(Player<char>* player) {
         for (int j = 3; j < 6; ++j) {
             if (board[i][j] == sym && board[i + 1][j - 1] == sym &&
                 board[i + 2][j - 2] == sym && board[i + 3][j - 3] == sym) {
+                display_winner(player);
                 return true;
             }
         }
@@ -101,8 +105,7 @@ bool ObstaclesTicTacToeBoard::is_win(Player<char>* player) {
 }
 
 bool ObstaclesTicTacToeBoard::is_draw(Player<char>* player) {
-   
-
+    if(n_moves == 36 && !is_win(player))    { display_draw();}
 	return n_moves == 36 && !is_win(player);
 }
 
@@ -132,30 +135,22 @@ Move<char>* ObstaclesTicTacToeUI::get_move(Player<char>* player) {
 }
 
 bool ObstaclesTicTacToeBoard::game_is_over(Player<char>* player) {
-	handle_game_end(player);    
-    return game_ended;
+    return is_win(player) || is_draw(player);
 }
 
-void ObstaclesTicTacToeBoard::handle_game_end(Player<char>* current_player) {
-    if (!game_ended) {
-        if (is_win(current_player)) {
-            display_winner(current_player);
-        }
-        else if (is_draw(current_player)) {
-            display_draw();
-        }
-        cout << "Enter any character to exit the game: ";
-        char exit_char;
-        cin >> exit_char;
-        game_ended = true;
-    }
-}
-
-void ObstaclesTicTacToeBoard::display_winner(Player<char>* player) {
+void ObstaclesTicTacToeBoard::display_winner(Player<char>* player)
+{
     cout << GREEN << "Congratulations! " << player->get_name()
         << " You win the Obstacles Tic Tac Toe game!" << RESET << endl;
+    cout << "Press any character to continue...";
+    char end;
+    cin >> end;
 }
 
-void ObstaclesTicTacToeBoard::display_draw() {
+void ObstaclesTicTacToeBoard::display_draw()
+{
     cout << YELLOW << "The game ended in a draw!" << RESET << endl;
+    cout << "Press any character to continue...";
+    char end;
+    cin >> end;
 }

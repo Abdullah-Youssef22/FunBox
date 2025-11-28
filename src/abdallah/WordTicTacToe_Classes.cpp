@@ -155,6 +155,8 @@ bool WordTicTacToe_board::is_win(Player<char>* player) {
 }
 
 bool WordTicTacToe_board::is_draw(Player<char>* player) {
+    if (n_moves == 9 && !is_win(player))   
+        {display_draw();}
     return (n_moves == 9 && !is_win(player));
 }
 
@@ -165,6 +167,14 @@ bool WordTicTacToe_board::game_is_over(Player<char>* player) {
 void WordTicTacToe_board::desplay_winner(Player<char>* player)
 {
     cout << "\n*** " << player->get_name() << " wins by forming a valid 3-letter word! ***" << endl;
+    cout << "Press any character to continue...";
+    char end;
+    cin >> end;
+}
+
+void WordTicTacToe_board::display_draw()
+{
+    cout << YELLOW << "The game ended in a draw!" << RESET << endl;
     cout << "Press any character to continue...";
     char end;
     cin >> end;
@@ -203,3 +213,4 @@ Move<char>* WordTicTacToe_UI::get_move(Player<char>* player) {
 
     return new Move<char>(x, y, letter);
 }
+
