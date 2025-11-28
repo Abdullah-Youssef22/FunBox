@@ -15,6 +15,19 @@ SUS_Board::SUS_Board() : Board(3, 3) {
         for (auto& cell : row)
             cell = start_symbol;
 }
+Player<char> **SUS_UI::setup_players() {
+  Player<char> **players = new Player<char> *[2];
+  vector<string> type_options = {"Human", "Computer"};
+
+  string nameS = get_player_name("Player S");
+  PlayerType typeS = get_player_type_choice("Player S", type_options);
+  players[0] = create_player(nameS, static_cast<char>('S'), typeS);
+
+  string nameU = get_player_name("Player U");
+  PlayerType typeU = get_player_type_choice("Player U", type_options);
+  players[1] = create_player(nameU, static_cast<char>('U'), typeU);
+  return players;
+}
 
 bool SUS_Board::update_board(Move<char>* move) {
     int x = move->get_x();
