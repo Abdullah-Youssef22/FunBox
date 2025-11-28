@@ -170,56 +170,41 @@ int Menu::displayMenu() {
     while(true) {
         clearScreen();
         
+        // std::cout << "\n\n";
+        // std::cout << "  " << BLUE << "======================================" << RESET << "\n";
+        // std::cout << "      " << CYAN << "FUNBOX GAME COLLECTION" << RESET << "\n";
+        // std::cout << "  " << BLUE << "======================================" << RESET << "\n\n";
+        //
+        // for (size_t i = 0; i < options.size(); i++) {
+        //     if (i == currentSelection) {
+        //         std::cout << "    " << BRIGHT_GREEN << "--> " << options[i] << RESET << "\n";
+        //     }
+        //     else {
+        //         std::cout << "        " << WHITE << options[i] << RESET << "\n";
+        //     }
+        // }
+        //
+        // std::cout << "\n  " << YELLOW << "Use W/S or Arrow Keys, Enter to select" << RESET << "\n";
+        // std::cout << "  " << BLUE << "======================================" << RESET << "\n\n";
+        
+
+        
         std::cout << "\n\n";
-        std::cout << "  " << BLUE << "======================================" << RESET << "\n";
-        std::cout << "      " << CYAN << "FUNBOX GAME COLLECTION" << RESET << "\n";
-        std::cout << "  " << BLUE << "======================================" << RESET << "\n\n";
+        std::cout << "  " << BLUE << "╔══════════════════════════════════════╗" << RESET << "\n";
+        std::cout << CYAN <<       "  ║        FUNBOX GAME COLLECTION        ║" << RESET << "\n";
+        std::cout << "  " << BLUE << "╠══════════════════════════════════════╣" << RESET << "\n";
 
         for (size_t i = 0; i < options.size(); i++) {
             if (i == currentSelection) {
-                std::cout << "    " << BRIGHT_GREEN << "--> " << options[i] << RESET << "\n";
+                std::cout << BRIGHT_GREEN << "  ║    " << "--> " << options[i] << " ║ " << RESET << "\n";
             }
             else {
-                std::cout << "        " << WHITE << options[i] << RESET << "\n";
+                std::cout << WHITE << "  ║        "  << options[i]  << " ║ " << RESET << "\n";
             }
         }
 
         std::cout << "\n  " << YELLOW << "Use W/S or Arrow Keys, Enter to select" << RESET << "\n";
-        std::cout << "  " << BLUE << "======================================" << RESET << "\n\n";
-        
-
-
-
-
-        /////////////////////////////////////////////// NON ASCII VERSION OF MENU
-        // int choiceWidth = 26; 
-        // std::cout << "\n\n";
-        // std::cout << "  " << BLUE << "╔══════════════════════════════════════╗" << RESET << "\n";
-        // std::cout << BLUE <<       "  ║        FUNBOX GAME COLLECTION        ║" << RESET << "\n";
-        // std::cout << "  " << BLUE << "╠══════════════════════════════════════╣" << RESET << "\n";
-        //
-        //
-        // for (size_t i = 0; i < options.size(); i++) {
-        //     std::string option = options[i];
-        //
-        //     // Calculate how much whitespace to append
-        //     int spacesToAdd = choiceWidth - option.length();
-        //     if (spacesToAdd > 0) {
-        //         // Append spaces to make the option the desired width
-        //         option.append(spacesToAdd, ' ');
-        //     }
-        //
-        //     if (i == currentSelection) {
-        //         // Highlight the selected option
-        //         std::cout << BLUE << "  ║  " << CYAN << "  > " << BG_WHITE << BLACK << "  " << option  << RESET << BLUE  << "    ║" << RESET << "\n";
-        //     } else {
-        //         // Regular option
-        //         std::cout << BLUE << "  ║       " << WHITE  << option << RESET << BLUE  << "     ║ \n" << RESET ;
-        //     }
-        // }
-        //
-        // std::cout << BLUE <<  "  ║  " << YELLOW << "Use up/down Keys, Enter to select" << BLUE << "   ║ " << RESET << "\n";
-        // std::cout << "  " << BLUE << "╚══════════════════════════════════════╝" << RESET << "\n";
+        std::cout << "  " << BLUE << "╚══════════════════════════════════════╝" << RESET << "\n\n";
 
 
 
