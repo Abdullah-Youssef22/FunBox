@@ -74,7 +74,17 @@ cmake --build .
 ./BoardGameApp
 
 📸 Screenshots
+## Menu
+![Menu](Menu.jpg)
 
+## Obstacles Tic Tac Toe
+![Obstacles Tic Tac Toe](Obstacles Tic Tac Toe.jpg)
+
+## Word Tic Tac Toe
+![Word Tic Tac Toe](Word Tic Tac Toe.jpg)
+
+## Labyrinth
+![Labyrinth](labyrinth.jpg)
 
 👨‍💻 Developers
 
