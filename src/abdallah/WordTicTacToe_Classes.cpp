@@ -22,12 +22,14 @@ bool WordTicTacToe_board::check_all_words() {
 
         if (row_word_1[0] != blank_symbol && row_word_1[1] != blank_symbol && row_word_1[2] != blank_symbol) {
             if (is_valid_word(row_word_1)) {
+				valid_word = row_word_1;
                 cout << "Valid word found in row " << i << ": " << row_word_1 << endl;
                 return true;
             }
         }
         if (row_word_2[0] != blank_symbol && row_word_2[1] != blank_symbol && row_word_2[2] != blank_symbol) {
             if (is_valid_word(row_word_2)) {
+                valid_word = row_word_2;
                 cout << "Valid word found in row " << i << ": " << row_word_2 << endl;
                 return true;
             }
@@ -47,12 +49,14 @@ bool WordTicTacToe_board::check_all_words() {
 
         if (col_word_1[0] != blank_symbol && col_word_1[1] != blank_symbol && col_word_1[2] != blank_symbol) {
             if (is_valid_word(col_word_1)) {
+                valid_word = col_word_1;
                 cout << "Valid word found in column " << j << ": " << col_word_1 << endl;
                 return true;
             }
         }
         if (col_word_2[0] != blank_symbol && col_word_2[1] != blank_symbol && col_word_2[2] != blank_symbol) {
             if (is_valid_word(col_word_2)) {
+                valid_word = col_word_2;
                 cout << "Valid word found in column " << j << ": " << col_word_2 << endl;
                 return true;
             }
@@ -65,6 +69,7 @@ bool WordTicTacToe_board::check_all_words() {
     diag1 += board[2][2];
     if (diag1[0] != blank_symbol && diag1[1] != blank_symbol && diag1[2] != blank_symbol) {
         if (is_valid_word(diag1)) {
+            valid_word = diag1;
             cout << "Valid word found in main diagonal: " << diag1 << endl;
             return true;
         }
@@ -76,6 +81,7 @@ bool WordTicTacToe_board::check_all_words() {
     diag2 += board[2][0];
     if (diag2[0] != blank_symbol && diag2[1] != blank_symbol && diag2[2] != blank_symbol) {
         if (is_valid_word(diag2)) {
+            valid_word = diag2;
             cout << "Valid word found in secondary diagonal: " << diag2 << endl;
             return true;
         }
@@ -87,6 +93,7 @@ bool WordTicTacToe_board::check_all_words() {
     diag3 += board[0][0];
     if (diag3[0] != blank_symbol && diag3[1] != blank_symbol && diag3[2] != blank_symbol) {
         if (is_valid_word(diag3)) {
+            valid_word = diag3;
             cout << "Valid word found in main diagonal: " << diag3 << endl;
             return true;
         }
@@ -98,6 +105,7 @@ bool WordTicTacToe_board::check_all_words() {
     diag4 += board[0][2];
     if (diag4[0] != blank_symbol && diag4[1] != blank_symbol && diag4[2] != blank_symbol) {
         if (is_valid_word(diag4)) {
+            valid_word = diag4;
             cout << "Valid word found in main diagonal: " << diag4 << endl;
             return true;
         }
@@ -155,8 +163,10 @@ bool WordTicTacToe_board::is_win(Player<char>* player) {
 }
 
 bool WordTicTacToe_board::is_draw(Player<char>* player) {
-    if (n_moves == 9 && !is_win(player))   
-        {display_draw();}
+    if (n_moves == 9 && !is_win(player))
+    {
+        display_draw();
+    }
     return (n_moves == 9 && !is_win(player));
 }
 
@@ -166,7 +176,7 @@ bool WordTicTacToe_board::game_is_over(Player<char>* player) {
 
 void WordTicTacToe_board::desplay_winner(Player<char>* player)
 {
-    cout << "\n*** " << player->get_name() << " wins by forming a valid 3-letter word! ***" << endl;
+    cout << "\n"<< GREEN << "***" << player->get_name() << " wins by forming a valid 3 - letter word!("<< valid_word <<")***" << RESET << endl;
     cout << "Press any character to continue...";
     char end;
     cin >> end;

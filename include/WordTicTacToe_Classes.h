@@ -110,7 +110,7 @@ private:
     "ZAG", "ZAP", "ZAX", "ZED", "ZEE", "ZEK", "ZIG", "ZIN", "ZIP", "ZIT",
     "ZOA", "ZOO"
     };
-
+	string valid_word = "";
 
 	bool is_valid_word(const string& word);
 	bool check_all_words();
