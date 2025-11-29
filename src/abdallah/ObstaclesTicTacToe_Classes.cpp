@@ -143,14 +143,16 @@ void ObstaclesTicTacToeBoard::display_winner(Player<char>* player)
     cout << GREEN << "Congratulations! " << player->get_name()
         << " You win the Obstacles Tic Tac Toe game!" << RESET << endl;
     cout << "Press any character to continue...";
-    char end;
-    cin >> end;
+    cin.ignore();
+    cin.get();
+
 }
 
 void ObstaclesTicTacToeBoard::display_draw()
 {
     cout << YELLOW << "The game ended in a draw!" << RESET << endl;
     cout << "Press any character to continue...";
-    char end;
-    cin >> end;
+    cin.ignore();
+    cin.get();
+
 }
