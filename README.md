@@ -11,20 +11,31 @@ A comprehensive C++ game framework featuring 15+ strategic board games built on 
 
 🔵 Four-in-a-Row - Connect four pieces in a row to win
 ⭕ 5×5 Tic-Tac-Toe - Extended grid tactical gameplay
+
 📝 Word Tic-Tac-Toe - Strategic word-building variant
+
 🔄 Misère Tic-Tac-Toe - Reverse objective: avoid three in a row
+
 💎 Diamond Tic-Tac-Toe - Unique diamond-shaped board layout
+
 🟦 4×4 Tic-Tac-Toe - Compact strategy challenge
+
 🔺 Pyramid Tic-Tac-Toe - Multi-level 3D gameplay
+
 🔢 Numerical Tic-Tac-Toe - Number-based strategic variant
-🚧 Obstacles Tic-Tac-Toe - Navigate blocked squares
+
+🚧 Obstacles Tic-Tac-Toe - Navigate blocked square
+
 ♾️ Infinity Tic-Tac-Toe - Endless expandable grid
+
 🎯 Ultimate Tic-Tac-Toe - Meta-game with 9 sub-boards
+
 🧠 Memory Tic-Tac-Toe - Hidden pieces memory challenge
 
 🏃 Action & Puzzle
 
 🌀 Labyrinth - Navigate through maze challenges
+
 🐍 Snake - Classic arcade growth game
 
 ⚙️ Features
