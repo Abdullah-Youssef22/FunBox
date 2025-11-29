@@ -72,9 +72,7 @@ cmake --build .
 ./BoardGameApp
 
 📸 Screenshots
-## Menu
 
-![Menu](Menu.jpg)
 
 👨‍💻 Developers
 
