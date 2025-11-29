@@ -76,7 +76,7 @@ cmake --build .
 📸 Screenshots
 
 ## Menu
-![Menu](Menu_.jpg)
+<img src="Menu.jpg" width="300">
 
 
 ## Obstacles Tic Tac Toe
