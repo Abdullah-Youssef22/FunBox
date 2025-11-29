@@ -71,6 +71,11 @@ cmake --build .
 # Run the application
 ./BoardGameApp
 
+📸 Screenshots
+## Menu
+
+![Menu](Menu.jpg)
+
 👨‍💻 Developers
 
 Fun Box was developed by:
