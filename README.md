@@ -1,90 +1,104 @@
-### CS213-FunBox
+🎮 Fun Box Collection
+
+A comprehensive C++ game framework featuring 15+ strategic board games built on the BoardGame_Classes.h architecture
+
+🎯 Featured Games
+🎭 Social Deduction
+
+🔴 SUS - Among Us inspired deduction game with impostor mechanics
+
+🎲 Strategy Classics
+
+🔵 Four-in-a-Row - Connect four pieces in a row to win
 
 
-> Game Dev assignment as part of the OOP course in FCAI - CU, 2025.
+⭕ 5×5 Tic-Tac-Toe - Extended grid tactical gameplay
 
-Funbox is a board games project that utilizes a reusable OOP framework in C++ for individual and group games.
+📝 Word Tic-Tac-Toe - Strategic word-building variant
 
+🔄 Misère Tic-Tac-Toe - Reverse objective: avoid three in a row
 
-# NEW INSTRUCTIONS 
-#### Instructions related to the developement of our game, meant for my fellow developers.
+💎 Diamond Tic-Tac-Toe - Unique diamond-shaped board layout
 
+🟦 4×4 Tic-Tac-Toe - Compact strategy challenge
 
-Just edit the files related to your game (..._Classes.h, ..._Classes.cpp, ..._Game.cpp) ***ONLY***
+🔺 Pyramid Tic-Tac-Toe - Multi-level 3D gameplay
 
-> [!WARNING]
-> DO NOT EDIT ANY OTHER FILES RELATED TO THE MENU OR ANYTHING ELSE.
+🔢 Numerical Tic-Tac-Toe - Number-based strategic variant
 
+🚧 Obstacles Tic-Tac-Toe - Navigate blocked square
 
+♾️ Infinity Tic-Tac-Toe - Endless expandable grid
 
+🎯 Ultimate Tic-Tac-Toe - Meta-game with 9 sub-boards
 
+🧠 Memory Tic-Tac-Toe - Hidden pieces memory challenge
 
+🏃 Action & Puzzle
 
+🌀 Labyrinth - Navigate through maze challenges
 
-#### Old instructions, ignore those:
-<details>
-<summary>old instructions</summary>
-#### (1) The following files need to be made every time we make a new game. For the game "XYZ" for example:
+🐍 Snake - Classic arcade growth game
 
-```bash
-include/XYZ_Classes.h       # make a header file for the game’s classes
-src/XYZ_Classes.cpp         # class implementation
-src/XYZ_Game.cpp            # launch function (calls GameManager, launches game)
-```
+⚙️ Features
 
-#### (2) Every time we make a game, we need to add a function for it in `include/GameLaunchers.h`. we follow this pattern:
+AI Player support in selected games for challenging gameplay.
 
-```cpp
-namespace GameLaunchers {
-    void launch_xo_game();
-    void launch_sus_game();
-    // ... more of our games
-    void launch_xyz_game(); // << we add a new launch for the new game
-}
-```
+Text-based interface: easy to navigate and interact with.
 
-#### (3) We add a new case in the switch statement in main.cpp:
+Multiple board sizes and game variations: from 3x3 up to infinity boards!
 
-```cpp
-case 3: GameLaunchers::launch_xyz_game(); break;
-```
-Everytime, also in main.cpp, we add a new option to the menu by using:
+Extensible design: add new games easily.
 
-`mainMenu.addOption("Play XYZ");`
+Fun Factor: games combine strategy, logic, and entertainment.
 
+🚀 Quick Start
+Prerequisites
 
+C++17 compatible compiler (GCC 7+, Clang 5+, MSVC 2017+)
+CMake 3.10 or higher
 
-#### (4) when making any new source file (any new file that has the extension .cpp) 
-##### you must add it in cmakelists.txt
+Build Instructions
+bash# Clone the repository
+git clone https://github.com/Nytril-ark/FunBox.git
+cd FunBox
 
-```
-set(SOURCES
-    ${SRC_DIR}/Main.cpp
-    // ...
-    // other .cpp files 
-    ${SRC_DIR}/XYZ_Game.cpp    # << we add the newly created files
-    ${SRC_DIR}/XYZ_Classes.cpp # << any .cpp file in /src is added.
-)
+# Create build directory
+mkdir build && cd build
 
-```
+# Configure and build
+cmake ..
+cmake --build .
 
-> [!WARNING]
-> MAKE SURE TO FOLLOW THIS CHECKLIST WHEN CREATING A NEW GAME SO THAT WE DONT RUN INTO BUILD ERRORS
+# Run the application
+./BoardGameApp
 
-| Step | File                           | Change                                                            |
-| ---- | ------------------------------ | ----------------------------------------------------------------- |
-| 1    | `include/XYZ_Classes.h`        | Create new header                                                 |
-| 2    | `src/XYZ_Classes.cpp`          | Create implementation                                             |
-| 3    | `src/XYZ_Game.cpp`             | Create launcher                                                   |
-| 4    | `include/GameLaunchers.h`      | Add `launch_xyz_game()`                                           |
-| 5    | `src/Main.cpp`                 | Add new `switch` case for game                                    |
-| 5    | `src/Main.cpp`                 | Add new `mainMenu.addOption("game name")`                         |
-| 6    | `CMakeLists.txt`               | Add new `.cpp` files                                              |
+📸 Screenshots
+
+## Menu
+<img src="Menu.jpg" width="300">
 
 
+## Obstacles Tic Tac Toe
+![Obstacles Tic Tac Toe](Obsatcles_Tic_Tac_Toe.jpg)
 
-> [!CAUTION]
-> Make sure at the end that for every `new` there is a `delete` so that we don't leave pointers and cause memory leaks.
-> 
+## Word Tic Tac Toe
+![Word Tic Tac Toe](Word_Tic_Tac_Toe.jpg)
 
-</details>
+## Labyrinth
+![Labyrinth](labyrinth.jpg)
+
+👨‍💻 Developers
+
+Fun Box was developed by:
+
+. Mostafa Ahmed
+
+. Samir Kahlawy
+
+. Ammen
+
+. Abdallah Youssef
+
+Faculty: Faculty of Computers and Artificial Intelligence, Cairo University
+Supervisor: Dr. Mohamed Elramly
