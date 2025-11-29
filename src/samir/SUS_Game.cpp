@@ -48,4 +48,7 @@ void GameLaunchers::launch_sus_game() {
     }
     // Delete the dynamically allocated array of player pointers itself.
     delete[] players;
+    cout << "\nGame Over! Press Enter to continue...";
+    cin.ignore();
+    cin.get();
 }

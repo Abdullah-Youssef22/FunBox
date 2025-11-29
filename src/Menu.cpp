@@ -211,7 +211,7 @@ int Menu::displayMenu(bool enhancedMenu) {
 
               if (i == currentSelection) {
                   // Highlight the selected option
-                  std::cout << BLUE << "  ║  " << CYAN << "  > " << BG_WHITE << BLACK << "  " << option  << RESET << BLUE  << "    ║" << RESET << "\n";
+                  std::cout << BLUE << "  ║  " << CYAN << "  > " << BG_WHITE << BLUE << "  " << option  << RESET << BLUE  << "    ║" << RESET << "\n";
               } else {
                   // Regular option
                   std::cout << BLUE << "  ║       " << WHITE  << option << RESET << BLUE  << "     ║ \n" << RESET ;
