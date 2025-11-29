@@ -29,6 +29,8 @@ int main() {
     mainMenu.addOption("12) Ultimate Tic Tac Toe");
     mainMenu.addOption("13) Memory Tic-Tac-Toe");
     mainMenu.addOption("14) EXTRA: labyrinth");
+    mainMenu.addOption("15) EXTRA: spaceship");
+    mainMenu.addOption("16) EXTRA: snake");
     // ===== exit option: do not move 
     mainMenu.addOption("Exit"); 
     // ===============
@@ -71,7 +73,11 @@ int main() {
               // ===== BONUS GROUP GAMES:
               case 11: GameLaunchers::launch_ultimate_tic_tac_toe(); break;
               case 12: GameLaunchers::launch_memory_tic_tac_toe(); break;
+
+              // extras        
               case 13: GameLaunchers::launch_labyrinth(); break;
+              case 14: GameLaunchers::launch_spaceship(); break;
+              case 15: GameLaunchers::launch_snake(); break;
 
               default: std::cout << "Invalid selection\n"; break;
             }

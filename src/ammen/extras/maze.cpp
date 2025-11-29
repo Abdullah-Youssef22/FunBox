@@ -20,7 +20,7 @@
 using namespace std;
 using namespace std::chrono;
 
-void clearScreen() {
+static void clearScreen() {
 #ifdef _WIN32
     system("cls");
 #else
@@ -29,7 +29,7 @@ void clearScreen() {
 }
 
 // Non-blocking keyboard input
-bool kbhit() {
+static bool kbhit() {
 #ifdef _WIN32
     return _kbhit() != 0;
 #else
@@ -58,7 +58,7 @@ bool kbhit() {
 #endif
 }
 
-char getKey() {
+static char getKey() {
 #ifdef _WIN32
     return _getch();
 #else
