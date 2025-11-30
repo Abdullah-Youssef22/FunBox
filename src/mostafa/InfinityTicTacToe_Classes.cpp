@@ -43,12 +43,12 @@ bool Infinity_TicTacToe_Board::update_board(Move<char>* move)
 
     board[x][y] = toupper(mark);
     n_moves++;
-
+	counter++;
     moveQueue.push({ x, y });
 
    
    
-    if (moveQueue.size() > 3)
+    if (counter > 3)
     {
         auto oldest = moveQueue.front();
         moveQueue.pop(); // each three moving --> remove old moving
@@ -57,6 +57,7 @@ bool Infinity_TicTacToe_Board::update_board(Move<char>* move)
         int oy = oldest.second;
         board[ox][oy] = '.'; 
         n_moves--;
+        counter = 0;
     }
 
     return true;
