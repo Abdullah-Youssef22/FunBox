@@ -48,8 +48,11 @@ bool Infinity_TicTacToe_Board::update_board(Move<char>* move)
 
    
    
-    if (counter > 3)
+    if (counter % 3 == 0)
     {
+        checking('X');
+        checking('O');
+
         auto oldest = moveQueue.front();
         moveQueue.pop(); // each three moving --> remove old moving
 
@@ -57,7 +60,6 @@ bool Infinity_TicTacToe_Board::update_board(Move<char>* move)
         int oy = oldest.second;
         board[ox][oy] = '.'; 
         n_moves--;
-        counter = 0;
     }
 
     return true;
@@ -70,7 +72,7 @@ bool Infinity_TicTacToe_Board::is_lose(Player<char>* player)
 
 bool Infinity_TicTacToe_Board::is_draw(Player<char>* player)
 {
-	return rows * columns == n_moves && !checking('X') && !checking('O');
+	return counter==13 && !checking('X') && !checking('O');
 }
 
 bool Infinity_TicTacToe_Board::game_is_over(Player<char>* player)
