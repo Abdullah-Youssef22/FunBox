@@ -1,6 +1,7 @@
 //--------------------------------------- IMPLEMENTATION
 #include <iostream>
-#include <iomanip>
+#include <iomanip> 
+#include <limits>
 #include <cctype>  // for toupper()
 #include "../../include/NumericalTicTacToe_Classes.h"
 
