@@ -256,26 +256,26 @@ score++;
 }
 
 void GameLaunchers::launch_spaceship() {
-srand(time(0));
-
-cout << "=== SPACESHIP GAME ===\n";
-cout << "Controls: W/A/S/D to move, X to quit\n";
-cout << "Avoid the falling asteroids (*)\n";
-cout << "Press any key to start...\n";
-cin.get();
-
-while (!gameOver) {
-    draw();
-    input();
-    logic();
-    
-    this_thread::sleep_for(chrono::milliseconds(100));
-}
-
-system("clear");
-cout << "\n=== GAME OVER ===\n";
-cout << "Final Score: " << score << endl;
-cout << "Thanks for playing!\n";
+// srand(time(0));
+//
+// cout << "=== SPACESHIP GAME ===\n";
+// cout << "Controls: W/A/S/D to move, X to quit\n";
+// cout << "Avoid the falling asteroids (*)\n";
+// cout << "Press any key to start...\n";
+// cin.get();
+//
+// while (!gameOver) {
+//     draw();
+//     input();
+//     logic();
+//
+//     this_thread::sleep_for(chrono::milliseconds(100));
+// }
+//
+// system("clear");
+// cout << "\n=== GAME OVER ===\n";
+// cout << "Final Score: " << score << endl;
+// cout << "Thanks for playing!\n";
   return;
 }
 
