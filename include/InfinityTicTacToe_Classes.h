@@ -16,6 +16,7 @@ public :
     bool is_draw(Player<char>* player) override;
     bool game_is_over(Player<char>* player) override;
 private:
+    int counter = 0;
     bool checking(char sym);
     queue<pair<int, int>> moveQueue;	
 };
