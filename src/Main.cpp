@@ -28,14 +28,27 @@ int main() {
     // ===== BONUS GROUP GAMES:
     mainMenu.addOption("12) Ultimate Tic Tac Toe");
     mainMenu.addOption("13) Memory Tic-Tac-Toe");
-
+    mainMenu.addOption("14) EXTRA: labyrinth");
+    mainMenu.addOption("15) EXTRA: spaceship");
+    mainMenu.addOption("16) EXTRA: snake");
     // ===== exit option: do not move 
     mainMenu.addOption("Exit"); 
     // ===============
     bool running = true;
+    bool asciiArt = false;
+    int menuType;
+    std::cout << GREEN << "\n=======Welcome!=========" << RESET;
+    std::cout << GREEN << "\nDisplay enhanced menu?\n1. yes\n2. no\n enter your choice: " << RESET;
+    std::cin >> menuType;
+    if (menuType == 1) {
+      asciiArt = true;
+    } else {
+      asciiArt = false;
+    }
+    std::cin.ignore();
 
     while (running) {
-        int selection = mainMenu.display();
+        int selection = mainMenu.display(asciiArt);
 
         if (selection == mainMenu.getOptionCount() - 1) {
             running = false;
@@ -60,6 +73,11 @@ int main() {
               // ===== BONUS GROUP GAMES:
               case 11: GameLaunchers::launch_ultimate_tic_tac_toe(); break;
               case 12: GameLaunchers::launch_memory_tic_tac_toe(); break;
+
+              // extras        
+              case 13: GameLaunchers::launch_labyrinth(); break;
+              case 14: GameLaunchers::launch_spaceship(); break;
+              case 15: GameLaunchers::launch_snake(); break;
 
               default: std::cout << "Invalid selection\n"; break;
             }

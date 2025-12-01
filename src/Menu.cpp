@@ -1,4 +1,4 @@
-﻿#include "../include/util/Menu.h"
+#include "../include/util/Menu.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -139,15 +139,15 @@ int Menu::getOptionCount() const {
 }
 
 
-int Menu::displayMenu() {
-    /*std::vector<std::string> asciiArt = {
-        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣶⣶⣶⣶⣶⣶⣆⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-        "⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀",
-        "⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀",
-        "⠀⠀⠀⠀⠀⠀⠀⣿⠋⠁⠀⣀⠀⢹⣿⣿⣿⠀⢀⡀⠀⠉⢻⡇⠀⠀⠀⠀⠀⠀",
-        "⠀⠀⠀⠀⠀⠀⠀⢹⣆⡀⠀⠉⠀⣾⡟⠙⣿⡄⠈⠁⠀⣀⣾⠁⠀⠀⠀⠀⠀⠀",
-        "⠀⠀⠀⠀⠀⠀⠀⢠⣿⡟⢯⣭⣾⣿⣀⣀⣻⣿⣮⣽⠛⢿⣧⠀⠀⠀⠀⠀⠀⠀",
-        "⠀⠀⠀⠀⠀⠀⠀⠸⣧⣄⠒⢠⣙⢛⡛⣛⣛⢛⡋⡄⣠⣴⡟⠀⠀⠀⠀⠀⠀⠀",
+int Menu::displayMenu(bool enhancedMenu) {
+    std::vector<std::string> asciiArt = {
+        "⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⣀⣀⣶⣶⣶⣶⣶⣶⣆⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀ ⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀ ⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀ ⠀⠀⣿⠋⠁⠀⣀⠀⢹⣿⣿⣿⠀⢀⡀⠀⠉⢻⡇⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀ ⠀⠀⢹⣆⡀⠀⠉⠀⣾⡟⠙⣿⡄⠈⠁⠀⣀⣾⠁⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀ ⠀⠀⢠⣿⡟⢯⣭⣾⣿⣀⣀⣻⣿⣮⣽⠛⢿⣧⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀ ⠀⠀⠀⠸⣧⣄⠒⢠⣙⢛⡛⣛⣛⢛⡋⡄⣠⣴⡟⠀⠀⠀⠀⠀⠀⠀",
         "⠀⠀⠀⠀ ⢀⣶⣦⡀⠙⠿⣷⣶⣭⣘⣃⣘⣃⣘⣥⣾⡿⠏⣡⣾⠟⠒⠀⠀⠀⠀",
         "⠀⠀⠀ ⠀⠂⠈⠙⠛⢶⣄⠀⠀⠛⡛⠛⠋⣛⠛⠃⠀⢀⣠⡿⠃⠀⠀⢦⡀⠀⠀",
         "⠀⠀ ⡠⠊⠀⠀⣴⠀⠀⠈⡟⠒⡤⠙⠿⠿⠁⠤⢶⠚⠉⠉⠀⢠⠁⠀⠀⠱⣄⠀",
@@ -163,56 +163,88 @@ int Menu::displayMenu() {
         "⠀⠀⠀ ⠀ ⢀⣴⣶⣦⣄⠲⣶⠀⠀⠀⠀⠀⠀⠀⢠⣷⣶⡶⢂⣠⣴⣶⣤⡀⠀⠀",
         "⠀⠀⠀⠀  ⠸⠿⠿⠿⠿⠧⠠⠄⠀⠀⠀⠀⠀⠀⠤⠤⠤⠐⠿⠿⠿⠿⠿⠿⠃⠀⠀"
     };
-    */
+    
     int bobOffset = 0;
     bool bobDirection = true;
     
     while(true) {
         clearScreen();
         
-        std::cout << "\n\n";
-        std::cout << "  " << BLUE << "======================================" << RESET << "\n";
-        std::cout << "      " << CYAN << "FUNBOX GAME COLLECTION" << RESET << "\n";
-        std::cout << "  " << BLUE << "======================================" << RESET << "\n\n";
+        if (!enhancedMenu) {
+          std::cout << "\n\n";
+          std::cout << "  " << BLUE << "======================================" << RESET << "\n";
+          std::cout << "      " << CYAN << "FUNBOX GAME COLLECTION" << RESET << "\n";
+          std::cout << "  " << BLUE << "======================================" << RESET << "\n\n";
 
-        for (size_t i = 0; i < options.size(); i++) {
-            if (i == currentSelection) {
-                std::cout << "    " << BRIGHT_GREEN << "--> " << options[i] << RESET << "\n";
-            }
-            else {
-                std::cout << "        " << WHITE << options[i] << RESET << "\n";
-            }
+          for (size_t i = 0; i < options.size(); i++) {
+              if (i == currentSelection) {
+                  std::cout << "    " << BRIGHT_GREEN << "--> " << options[i] << RESET << "\n";
+              }
+              else {
+                  std::cout << "        " << WHITE << options[i] << RESET << "\n";
+              }
+          }
+
+          std::cout << "\n  " << YELLOW << "Use W/S or Arrow Keys, Enter to select" << RESET << "\n";
+
+
+
+        } else { 
+
+          ///////////////////////////////////////////// NON ASCII VERSION OF MENU
+          int choiceWidth = 26; 
+          std::cout << "\n\n";
+          std::cout << "  " << BLUE << "╔══════════════════════════════════════╗" << RESET << "\n";
+          std::cout << BLUE <<       "  ║        FUNBOX GAME COLLECTION        ║" << RESET << "\n";
+          std::cout << "  " << BLUE << "╠══════════════════════════════════════╣" << RESET << "\n";
+
+
+          for (size_t i = 0; i < options.size(); i++) {
+              std::string option = options[i];
+
+              // Calculate how much whitespace to append
+              int spacesToAdd = choiceWidth - option.length();
+              if (spacesToAdd > 0) {
+                  // Append spaces to make the option the desired width
+                  option.append(spacesToAdd, ' ');
+              }
+
+              if (i == currentSelection) {
+                  // Highlight the selected option
+                  std::cout << BLUE << "  ║  " << CYAN << "  > " << BG_WHITE << BLUE << "  " << option  << RESET << BLUE  << "    ║" << RESET << "\n";
+              } else {
+                  // Regular option
+                  std::cout << BLUE << "  ║       " << WHITE  << option << RESET << BLUE  << "     ║ \n" << RESET ;
+              }
+          }
+
+          std::cout << BLUE <<  "  ║  " << YELLOW << "Use up/down Keys, Enter to select" << BLUE << "   ║ " << RESET << "\n";
+          std::cout << "  " << BLUE << "╚══════════════════════════════════════╝" << RESET << "\n";
+
+          std::vector<int> offsets(asciiArt.size(), 0); 
+          int linesFromTop = 14;
+          for (int i = 0; i < linesFromTop; i++) offsets[i] = 2;
+          for (int i = linesFromTop; i < 19; i++) offsets[i] = 1;
+
+          int lines = asciiArt.size();
+          for (size_t i = 0; i < asciiArt.size(); i++) {
+              std::cout << WHITE << std::string(offsets[i] * bobOffset, ' ') << asciiArt[i] << "\n" << RESET;
+          }
+
+
+          std::cout.flush();
+
+          if (bobDirection) {
+              bobOffset++;
+              if (bobOffset >= 2) bobDirection = false;
+          } else {
+              bobOffset--;
+              if (bobOffset <= 0) bobDirection = true;
+          }
         }
 
-        std::cout << "\n  " << YELLOW << "Use W/S or Arrow Keys, Enter to select" << RESET << "\n";
-        std::cout << "  " << BLUE << "======================================" << RESET << "\n\n";
-        
 
 
-        /*std::vector<int> offsets(asciiArt.size(), 0); 
-        int linesFromTop = 8;
-        for (int i = 0; i < linesFromTop; i++) offsets[i] = 2;
-        for (int i = linesFromTop; i < 19; i++) offsets[i] = 1;
-        
-        int lines = asciiArt.size();
-        for (size_t i = 0; i < asciiArt.size(); i++) {
-            std::cout << WHITE << std::string(offsets[i] * bobOffset, ' ') << asciiArt[i] << "\n" << RESET;
-        }*/
-
-
-        // for (const std::string& line : asciiArt) {
-        //       std::cout << std::string(bobOffset, ' ') << line << "\n";
-        // }
-
-        std::cout.flush();
-        
-        if (bobDirection) {
-            bobOffset++;
-            if (bobOffset >= 2) bobDirection = false;
-        } else {
-            bobOffset--;
-            if (bobOffset <= 0) bobDirection = true;
-        }
         
         if (kbhit()) {
             int key = getKeyPress();
@@ -230,20 +262,16 @@ int Menu::displayMenu() {
                 case '\n':
                     return currentSelection;
             }
-        }
-        
-        // Small delay for animation timing
-        std::this_thread::sleep_for(std::chrono::milliseconds(250));
+        } 
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
     }
 }
 
 
 
 
-int Menu::display() {
-  std::future<int> menuResult = std::async(std::launch::async, &Menu::displayMenu, this);
-  int value = menuResult.get();
-
+int Menu::display(bool enhanced) {
+  int value = Menu::displayMenu(enhanced);
   return value;
 }
 

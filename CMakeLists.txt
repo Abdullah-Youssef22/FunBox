@@ -5,7 +5,6 @@ project(BoardGameApp)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-
 set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
 set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
 #Header files
@@ -50,6 +49,10 @@ set(SOURCES
     ${SRC_DIR}/ammen/TicTacToe4x4_Game.cpp
     ${SRC_DIR}/ammen/UltimateTicTacToe_Classes.cpp
     ${SRC_DIR}/ammen/UltimateTicTacToe_Game.cpp
+    ${SRC_DIR}/ammen/extras/snake.cpp
+    ${SRC_DIR}/ammen/extras/spaceship.cpp 
+    ${SRC_DIR}/ammen/extras/maze.cpp
+    ${SRC_DIR}/ammen/extras/maze_classes.cpp
 
     # ========================
     # Samir 

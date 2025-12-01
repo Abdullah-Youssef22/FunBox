@@ -110,7 +110,7 @@ private:
     "ZAG", "ZAP", "ZAX", "ZED", "ZEE", "ZEK", "ZIG", "ZIN", "ZIP", "ZIT",
     "ZOA", "ZOO"
     };
-
+	string valid_word = "";
 
 	bool is_valid_word(const string& word);
 	bool check_all_words();
@@ -124,6 +124,8 @@ public:
 	bool is_draw(Player<char>* player);
 	bool game_is_over(Player<char>* player);
 	void desplay_winner(Player<char>* player);
+    void display_draw();
+
 };
 
 class WordTicTacToe_UI : public UI<char>
