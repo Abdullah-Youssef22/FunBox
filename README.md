@@ -1,58 +1,47 @@
-🎮 Fun Box Collection
+# Fun Box Collection
 
 A comprehensive C++ game framework featuring 15+ strategic board games built on the BoardGame_Classes.h architecture
 
-🎯 Featured Games
-🎭 Social Deduction
-
-🔴 SUS - Among Us inspired deduction game with impostor mechanics
-
-🎲 Strategy Classics
-
-🔵 Four-in-a-Row - Connect four pieces in a row to win
 
 
-⭕ 5×5 Tic-Tac-Toe - Extended grid tactical gameplay
+- SUS tic tac toe
 
-📝 Word Tic-Tac-Toe - Strategic word-building variant
+- Strategy Classics
 
-🔄 Misère Tic-Tac-Toe - Reverse objective: avoid three in a row
+- Four-in-a-Row - Connect four pieces in a row to win
 
-💎 Diamond Tic-Tac-Toe - Unique diamond-shaped board layout
+- 5×5 Tic-Tac-Toe - Extended grid tactical gameplay
 
-🟦 4×4 Tic-Tac-Toe - Compact strategy challenge
+- Word Tic-Tac-Toe - Strategic word-building variant
 
-🔺 Pyramid Tic-Tac-Toe - Multi-level 3D gameplay
+- Misère Tic-Tac-Toe - Reverse objective: avoid three in a row
 
-🔢 Numerical Tic-Tac-Toe - Number-based strategic variant
+- Diamond Tic-Tac-Toe - Unique diamond-shaped board layout
 
-🚧 Obstacles Tic-Tac-Toe - Navigate blocked square
+- 4×4 Tic-Tac-Toe - Compact strategy challenge
 
-♾️ Infinity Tic-Tac-Toe - Endless expandable grid
+- Pyramid Tic-Tac-Toe - Multi-level 3D gameplay
 
-🎯 Ultimate Tic-Tac-Toe - Meta-game with 9 sub-boards
+- Numerical Tic-Tac-Toe - Number-based strategic variant
 
-🧠 Memory Tic-Tac-Toe - Hidden pieces memory challenge
+- Obstacles Tic-Tac-Toe - Navigate blocked square
 
-🏃 Action & Puzzle
+- Infinity Tic-Tac-Toe - Endless expandable grid
 
-🌀 Labyrinth - Navigate through maze challenges
+- Ultimate Tic-Tac-Toe - Meta-game with 9 sub-boards
 
-🐍 Snake - Classic arcade growth game
+- Memory Tic-Tac-Toe - Hidden pieces memory challenge
 
-⚙️ Features
 
-AI Player support in selected games for challenging gameplay.
+### Extras
 
-Text-based interface: easy to navigate and interact with.
+- Labyrinth - Navigate through maze challenges
 
-Multiple board sizes and game variations: from 3x3 up to infinity boards!
+- Snake - Classic arcade growth game
 
-Extensible design: add new games easily.
 
-Fun Factor: games combine strategy, logic, and entertainment.
 
-🚀 Quick Start
+## Quick Start
 Prerequisites
 
 C++17 compatible compiler (GCC 7+, Clang 5+, MSVC 2017+)
@@ -63,17 +52,17 @@ bash# Clone the repository
 git clone https://github.com/Nytril-ark/FunBox.git
 cd FunBox
 
-# Create build directory
+### Create build directory
 mkdir build && cd build
 
-# Configure and build
+### Configure and build
 cmake ..
 cmake --build .
 
-# Run the application
+### Run the application
 ./BoardGameApp
 
-📸 Screenshots
+# Screenshots
 
 ## Menu
 <img src="Menu.jpg" width="300">
@@ -88,7 +77,7 @@ cmake --build .
 ## Labyrinth
 ![Labyrinth](labyrinth.jpg)
 
-👨‍💻 Developers
+#### Developers
 
 Fun Box was developed by:
 
