@@ -1,4 +1,4 @@
-﻿#include "../include/util/Menu.h"
+#include "../include/util/Menu.h"
 #include <iostream>
 #include <string>
 #include <vector>

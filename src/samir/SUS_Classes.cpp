@@ -10,7 +10,6 @@ using namespace std;
 
 SUS_Board::SUS_Board() : Board(3, 3) {
     // Initialize all cells with blank_symbol
-    cout << "debug: SUS" << endl;
     for (auto& row : board)
         for (auto& cell : row)
             cell = start_symbol;
@@ -56,10 +55,11 @@ int SUS_Board::calculate_score(char sym) {
 
     auto SUS_win = [&](char a, char b, char c) {
         return (a=='S' && b=='U' && c=='S' && sym=='S') ||
-               (a=='U' && b=='S' && c=='U' && sym=='U');
+               (a=='S' && b=='U' && c=='S' && sym=='U');
     };
 
     for (int i = 0; i < rows; ++i) {
+        
         if (SUS_win(board[i][0], board[i][1], board[i][2])) score++;
         if (SUS_win(board[0][i], board[1][i], board[2][i])) score++;
     }
@@ -98,7 +98,7 @@ bool SUS_Board::game_is_over(Player<char>* player) {
 
 //--------------------------------------- SUS_UI Implementation
 
-SUS_UI::SUS_UI() : UI<char>("Weclome to FCAI SUS Game in FUN BOX", 3) {}
+SUS_UI::SUS_UI() : UI<char>("Weclome to FCAI SUS Game in FUN BOX By SAMIR", 3) {}
 
 Player<char>* SUS_UI::create_player(string& name, char symbol, PlayerType type) {
     // Create player based on type
