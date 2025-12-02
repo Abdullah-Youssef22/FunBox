@@ -89,8 +89,8 @@ void MemoryTicTacToeBoard::display_draw()
     reveal_final_board();
     cout << "\nFinal Board Revealed!\n";
     cout << YELLOW << "\nThe game ended in a draw!" << RESET << endl;
-    cout << "Press any key to continue...";
-    cin.ignore();  
+    cout << "Press enter to continue...";
+    cin.ignore();
     cin.get();     
 }
 
