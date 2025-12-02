@@ -1,4 +1,4 @@
-#include "../../../include/util/GameLaunchers.h"
+//#include "../../../include/util/GameLaunchers.h"
 // #include "../../../include/maze.h"
 // #include "../../../include/util/Menu.h"
 // #include <iostream> // Required for input/output operations (cout, cin)
@@ -186,7 +186,7 @@
 //     cout << "\nChoice: ";
 // }
 //
-void GameLaunchers::launch_labyrinth() {
+//void GameLaunchers::launch_labyrinth() {
     // MazeSolver solver;
     // string mazePath;
     //
@@ -247,6 +247,6 @@ void GameLaunchers::launch_labyrinth() {
     //     }
     // }
     
-    return;
-}
+ /*   return;
+}*/
 

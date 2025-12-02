@@ -24,8 +24,8 @@ namespace GameLaunchers {
     void launch_memory_tic_tac_toe();
 
    // ammen: some extras 
-    void launch_labyrinth();
-    void launch_spaceship();
-    void launch_snake();
+    //void launch_labyrinth();
+    //void launch_spaceship();
+    //void launch_snake();
 }
 
