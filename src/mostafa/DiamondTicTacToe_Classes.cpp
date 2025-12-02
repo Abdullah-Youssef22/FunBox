@@ -1,17 +1,33 @@
 #include "../../include/DiamondTicTacToe_Classes.h"
 
 
+
+bool insideDiamond(int r, int c) {
+    int mid = 2;
+    return abs(mid - r) + abs(mid - c) <= 2;
+}
+
+
 DimaondUI::DimaondUI()
     : UI<char>("Welcome to Diamond Tic Tac Toe!", 3)
 {}
 
-DimaondTicTacToe_Board :: DimaondTicTacToe_Board() 
+DimaondTicTacToe_Board::DimaondTicTacToe_Board()
     : Board<char>(5, 5)
 {
-    for (auto& row : board)
-        for (auto& cell : row)
-            cell = '.';
+    for (int r = 0; r < 5; r++) {
+        for (int c = 0; c < 5; c++) {
+            board[r][c] = '#';
+
+            
+            int mid = 2;
+            if (abs(mid - r) + abs(mid - c) <= 2) {
+                board[r][c] = '.';
+            }
+        }
+    }
 }
+
 
 bool DimaondTicTacToe_Board::update_board(Move<char>* move)
 {
@@ -46,9 +62,15 @@ Move<char>* DimaondUI::get_move(Player<char>* player)
     }
     else if (player->get_type() == PlayerType::COMPUTER)
     {
-        x = rand() % player->get_board_ptr()->get_rows();
-        y = rand() % player->get_board_ptr()->get_columns();
+        DimaondTicTacToe_Board* b =
+            dynamic_cast<DimaondTicTacToe_Board*>(player->get_board_ptr());
+
+        do {
+            x = rand() % b->get_rows();
+            y = rand() % b->get_columns();
+        } while (!b->is_valid_cell(x, y));
     }
+
     return new Move<char>(x, y, player->get_symbol());
 }
 
@@ -68,13 +90,18 @@ bool DimaondTicTacToe_Board::checkThreeinrows(char sym)
     {
         for (int j = 0; j < columns - 2; j++)
         {
-            if (board[i][j] == sym && board[i][j + 1] == sym && board[i][j + 2] == sym)
-            {
+            if (!insideDiamond(i, j) ||
+                !insideDiamond(i, j + 1) ||
+                !insideDiamond(i, j + 2))
+                continue;
+
+            if (board[i][j] == sym &&
+                board[i][j + 1] == sym &&
+                board[i][j + 2] == sym)
                 return true;
-            }
         }
     }
-    return false; 
+    return false;
 }
 
 bool DimaondTicTacToe_Board::checkThreeincolumns(char sym)
@@ -83,40 +110,60 @@ bool DimaondTicTacToe_Board::checkThreeincolumns(char sym)
     {
         for (int j = 0; j < columns; j++)
         {
-            if (board[i][j] == sym && board[i + 1][j] == sym && board[i + 2][j] == sym)
-            {
+            if (!insideDiamond(i, j) ||
+                !insideDiamond(i + 1, j) ||
+                !insideDiamond(i + 2, j))
+                continue;
+
+            if (board[i][j] == sym &&
+                board[i + 1][j] == sym &&
+                board[i + 2][j] == sym)
                 return true;
-            }
         }
     }
     return false;
 }
+
 
 bool DimaondTicTacToe_Board::checkThreeindiagonals(char sym)
 {
-    for (int i = 0; i <= rows - 3; i++)
+    // main diagonal
+    for (int i = 0; i < rows - 2; i++)
     {
-        for (int j = 0; j <= columns - 3; j++)
+        for (int j = 0; j < columns - 2; j++)
         {
-            if (board[i][j] == sym &&board[i + 1][j + 1] == sym &&board[i + 2][j + 2] == sym)
-            {
+            if (!insideDiamond(i, j) ||
+                !insideDiamond(i + 1, j + 1) ||
+                !insideDiamond(i + 2, j + 2))
+                continue;
+
+            if (board[i][j] == sym &&
+                board[i + 1][j + 1] == sym &&
+                board[i + 2][j + 2] == sym)
                 return true;
-            }
         }
     }
-    for (int i = 0; i <= rows - 3; i++)
+
+    // anti diagonal
+    for (int i = 0; i < rows - 2; i++)
     {
         for (int j = 2; j < columns; j++)
         {
-            if (board[i][j] == sym && board[i + 1][j - 1] == sym &&board[i + 2][j - 2] == sym)
-            {
+            if (!insideDiamond(i, j) ||
+                !insideDiamond(i + 1, j - 1) ||
+                !insideDiamond(i + 2, j - 2))
+                continue;
+
+            if (board[i][j] == sym &&
+                board[i + 1][j - 1] == sym &&
+                board[i + 2][j - 2] == sym)
                 return true;
-            }
         }
     }
 
     return false;
 }
+
 
 
 bool DimaondTicTacToe_Board::checkFourincolumns(char sym)
@@ -125,6 +172,12 @@ bool DimaondTicTacToe_Board::checkFourincolumns(char sym)
     {
         for (int j = 0; j < columns; j++)
         {
+            if (!insideDiamond(i, j) ||
+                !insideDiamond(i + 1, j) ||
+                !insideDiamond(i + 2, j) ||
+                !insideDiamond(i + 3, j))
+
+                continue;
             if (board[i][j] == sym && board[i + 1][j] == sym && board[i + 2][j]== sym && board[i + 3][j] == sym)
             {
                 return true;
@@ -141,6 +194,11 @@ bool DimaondTicTacToe_Board::checkFourinrows(char sym)
     {
         for (int j = 0; j < columns - 3; j++)
         {
+            if (!insideDiamond(i, j) ||
+                !insideDiamond(i, j + 1) ||
+                !insideDiamond(i, j + 2) ||
+                !insideDiamond(i, j + 3))
+                continue;
             if (board[i][j] == sym && board[i][j + 1] == sym && board[i][j + 2] == sym && board[i][j + 3] == sym)
             {
                 return true;
@@ -156,6 +214,12 @@ bool DimaondTicTacToe_Board::checkFourindiagonals(char sym)
     {
         for (int j = 0; j <= columns - 4; j++)
         {
+            if (!insideDiamond(i, j) ||
+                !insideDiamond(i + 1, j + 1) ||
+                !insideDiamond(i + 2, j + 2) ||
+                !insideDiamond(i + 3, j + 3))
+
+                continue;
             if (board[i][j] == sym &&board[i + 1][j + 1] == sym &&board[i + 2][j + 2] == sym &&board[i + 3][j + 3] == sym)
             {
                 return true;
@@ -168,6 +232,11 @@ bool DimaondTicTacToe_Board::checkFourindiagonals(char sym)
     {
         for (int j = 3; j < columns; j++)
         {
+            if (!insideDiamond(i, j) ||
+                !insideDiamond(i + 1, j - 1) ||
+                !insideDiamond(i + 2, j - 2) ||
+                !insideDiamond(i + 3, j - 3))
+                continue;
             if (board[i][j] == sym && board[i + 1][j - 1] == sym &&board[i + 2][j - 2] == sym &&board[i + 3][j - 3] == sym)
             {
                 return true;
@@ -220,7 +289,13 @@ bool DimaondTicTacToe_Board::is_lose(Player<char>* player)
 
 bool DimaondTicTacToe_Board::is_draw(Player<char>* player)
 {
-    return n_moves == rows * columns && !is_win(player);
+    
+    for (int r = 0; r < rows; r++)
+        for (int c = 0; c < columns; c++)
+            if (board[r][c] == '.') 
+                return false;
+
+    return !is_win(player);
 }
 
 bool DimaondTicTacToe_Board::game_is_over(Player<char>* player)
