@@ -1,28 +1,22 @@
-#include "../../include/DiamondTicTacToe_Classes.h"
+﻿#include "../../include/DiamondTicTacToe_Classes.h"
 
 
 
 bool insideDiamond(int r, int c) {
-    int mid = 2;
-    return abs(mid - r) + abs(mid - c) <= 2;
+    int mid = 3; 
+    return abs(mid - r) + abs(mid - c) <= 3;
 }
 
+DimaondUI::DimaondUI() : UI("Welcome to Diamond Tic Tac Toe!", 3) {}
 
-DimaondUI::DimaondUI()
-    : UI<char>("Welcome to Diamond Tic Tac Toe!", 3)
-{}
-
-DimaondTicTacToe_Board::DimaondTicTacToe_Board()
-    : Board<char>(5, 5)
-{
-    for (int r = 0; r < 5; r++) {
-        for (int c = 0; c < 5; c++) {
-            board[r][c] = '#';
-
-            
-            int mid = 2;
-            if (abs(mid - r) + abs(mid - c) <= 2) {
-                board[r][c] = '.';
+DimaondTicTacToe_Board::DimaondTicTacToe_Board() : Board(7, 7) {
+    for (int r = 0; r < 7; r++) {
+        for (int c = 0; c < 7; c++) {
+            if (insideDiamond(r, c)) {
+                board[r][c] = '.';  // Valid diamond cell
+            }
+            else {
+                board[r][c] = '#';  // Out of bounds
             }
         }
     }
