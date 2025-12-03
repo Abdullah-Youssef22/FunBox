@@ -1,12 +1,13 @@
 #pragma once
 #include "util/BoardGame_Classes.h"
+#include <vector>
 using namespace std;
 
 
 class SUS_Board : public Board<char> {
 private:
     char start_symbol = '.'; 
-
+    vector<vector<int>> move_order;
 public:
 
     SUS_Board();
