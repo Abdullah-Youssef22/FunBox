@@ -72,21 +72,19 @@ bool TicTacToe5x5_Board::end()
     if (n_moves < 24) return false;
     else
     {
-        char end;
         char x = 'X', o = 'O';
         player1_score = count_sequences(x);
         player2_score = count_sequences(o);
         desplay_scores();
-        cout << "enter any number to end the game " << "\n";
-        cin >> end;
+        cout << "Press enter to continue...";
+        cin.ignore();
+        cin.get();
         return true;
     }
 }
 void TicTacToe5x5_Board::desplay_scores()
 {
     cout << "Current Scores:\n";
-    cout << "Player X: " << player1_score << "\n";
-    cout << "Player O: " << player2_score << "\n";
     if (player1_score> player2_score)
     {
         cout << GREEN << "Player X: " << player1_score << RESET << "\n";
