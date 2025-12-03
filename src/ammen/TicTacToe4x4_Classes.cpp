@@ -3,6 +3,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cctype>  // for toupper()
+#include <cmath>
 #include "../../include/TicTacToe4x4_Classes.h"
 #include "../../include/util/util.h"
 using namespace std;
@@ -148,10 +149,19 @@ Move<char>* FourByFour_UI::get_move(Player<char>* player) {
         } 
         cout << "\nWhere do you want to move it? (row, column): ";
         cin >> targetY >> targetX;
-        while (isTokenAtYX(targetY, targetX)) {
+        int diffX, diffY, diffYandX;
+
+        diffX = targetX - x;
+        diffY = targetY - y;
+        diffYandX = abs(diffX) + abs(diffY);
+
+        while (isTokenAtYX(targetY, targetX) || abs(diffX) > 1 || abs(diffY) > 1 || diffYandX > 1) {
           util::errorInvalidMove(); 
           cout << "\nWhere do you want to move it? (row, column): ";
           cin >> targetY >> targetX;
+          diffX = targetX - x;
+          diffY = targetY - y;
+          diffYandX = abs(diffX) + abs(diffY);
         }      
         findAndUpdateToken(y, x, targetY, targetX);
         return new Move<char>(targetX, targetY, symbol);
