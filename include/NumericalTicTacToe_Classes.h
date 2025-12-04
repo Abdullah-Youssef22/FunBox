@@ -1,5 +1,6 @@
 #pragma once
 #include "util/BoardGame_Classes.h"
+#include "util/colors.h"
 using namespace std;
 
 class NumericalTicTacToe_Board : public Board<int> {
@@ -30,6 +31,10 @@ public:
     int get_cell(int r, int c) const;
     
     bool is_used(int n) const;
+
+	void display_winner(Player<int>* player);
+
+	void display_draw();
 
 
 };
