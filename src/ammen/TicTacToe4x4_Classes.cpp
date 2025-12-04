@@ -75,23 +75,35 @@ bool FourByFour_Board::is_win(Player<char>* player) {
     };
 
     // Check rows and columns
-    for (int i = 0; i < rows; ++i) {
-        if ((all_equal(board[i][0], board[i][1], board[i][2]) && board[i][0] == sym) ||
-            (all_equal(board[0][i], board[1][i], board[2][i]) && board[0][i] == sym)) {
-            return true;
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 2; j++) {
+
+            if ((all_equal(board[i][j], board[i][j+1], board[i][j+2]) && board[i][j] == sym) ||
+                (all_equal(board[j][i], board[j+1][i], board[j+2][i]) && board[j][i] == sym)) {
+                display_winner(player);
+                return true;
+            }
         }
     }
 
-    // Check diagonals
-    if ((all_equal(board[0][0], board[1][1], board[2][2]) && board[1][1] == sym) ||
-        (all_equal(board[0][2], board[1][1], board[2][0]) && board[1][1] == sym)) {
-        return true;
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 2; j++) {
+            if ((all_equal(board[i][j], board[i+1][j+1], board[i+2][j+2]) && board[i][j] == sym) ||
+                (all_equal(board[i][j+2], board[i+1][j+1], board[i+2][j]) && board[i+1][j+1] == sym)) {
+                display_winner(player);
+                return true;
+            }
+        }
     }
 
     return false;
 }
 
 bool FourByFour_Board::is_draw(Player<char>* player) {
+    if (n_moves == 9 && !is_win(player)) {
+		display_draw();
+    }
+
     return (n_moves == 9 && !is_win(player));
 }
 
@@ -116,6 +128,21 @@ void FourByFour_Board::putTokensAtPositions() {
       }
     }
   }
+}
+
+
+void FourByFour_Board::display_winner(Player<char>* player) {
+    cout << GREEN << "\nCongratulations " << player->get_name() 
+         << "! You have won the game as player " << player->get_symbol() << "!" << RESET << endl;
+    cout << "\nGame Over! Press Enter to continue...";
+    cin.ignore();
+    cin.get();
+}
+void FourByFour_Board::display_draw() {
+    cout << YELLOW << "\nThe game ended in a draw!" << RESET << endl;
+    cout << "\nGame Over! Press Enter to continue...";
+    cin.ignore();
+    cin.get();
 }
 
 //--------------------------------------- XO_UI Implementation
