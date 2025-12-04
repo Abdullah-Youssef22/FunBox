@@ -296,5 +296,3 @@ bool DimaondTicTacToe_Board::game_is_over(Player<char>* player)
 {
     return is_win(player) || is_draw(player);
 }
-
-
