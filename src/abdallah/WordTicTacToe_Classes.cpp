@@ -177,17 +177,17 @@ bool WordTicTacToe_board::game_is_over(Player<char>* player) {
 void WordTicTacToe_board::desplay_winner(Player<char>* player)
 {
     cout << "\n"<< GREEN << "***" << player->get_name() << " wins by forming a valid 3 - letter word!("<< valid_word <<")***" << RESET << endl;
-    cout << "Press any character to continue...";
-    char end;
-    cin >> end;
+    cout << "Press any key to continue...";
+    cin.ignore();
+	cin.get();
 }
 
 void WordTicTacToe_board::display_draw()
 {
     cout << YELLOW << "The game ended in a draw!" << RESET << endl;
-    cout << "Press any character to continue...";
-    char end;
-    cin >> end;
+    cout << "Press enter to continue...";
+    cin.ignore();
+    cin.get();
 }
 
 WordTicTacToe_UI::WordTicTacToe_UI():UI<char>("Weclome to FCAI WordTicTacToe Game by Abdallah Youssef", 3) {}

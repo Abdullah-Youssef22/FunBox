@@ -1,6 +1,7 @@
 //--------------------------------------- IMPLEMENTATION
 #include <iostream>
 #include <iomanip>
+#include <algorithm>
 #include <cctype>  // for toupper()
 #include "../../include/SUS_Classes.h"
 
@@ -9,11 +10,14 @@ using namespace std;
 //--------------------------------------- SUS_Board Implementation
 
 SUS_Board::SUS_Board() : Board(3, 3) {
+
+    move_order.resize(3, vector<int>(3, -1)); 
     // Initialize all cells with blank_symbol
     for (auto& row : board)
         for (auto& cell : row)
             cell = start_symbol;
 }
+
 Player<char> **SUS_UI::setup_players() {
   Player<char> **players = new Player<char> *[2];
   vector<string> type_options = {"Human", "Computer"};
@@ -42,31 +46,50 @@ bool SUS_Board::update_board(Move<char>* move) {
             board[x][y] = start_symbol;
         }
         else {         // Apply move
-            n_moves++;
-            board[x][y] = toupper(mark);
+          move_order[x][y] = n_moves;
+          board[x][y] = toupper(mark);
+          n_moves++;
         }
         return true;
     }
+
+
     return false;
 }
 
 int SUS_Board::calculate_score(char sym) {
     int score = 0;
-
-    auto SUS_win = [&](char a, char b, char c) {
-        return (a=='S' && b=='U' && c=='S' && sym=='S') ||
-               (a=='S' && b=='U' && c=='S' && sym=='U');
+    
+    auto check_SUS = [&](int r1, int c1, int r2, int c2, int r3, int c3) {
+        if (board[r1][c1] == 'S' && 
+            board[r2][c2] == 'U' && 
+            board[r3][c3] == 'S') {
+            
+            /* which move was placed last?? */
+            int last_move = max({move_order[r1][c1], 
+                                move_order[r2][c2], 
+                                move_order[r3][c3]});
+            
+            if (move_order[r1][c1] == last_move && board[r1][c1] == sym) score++;
+            else if (move_order[r2][c2] == last_move && board[r2][c2] == sym) score++;
+            else if (move_order[r3][c3] == last_move && board[r3][c3] == sym) score++;
+        }
     };
-
+    
+    // Check rows
     for (int i = 0; i < rows; ++i) {
-        
-        if (SUS_win(board[i][0], board[i][1], board[i][2])) score++;
-        if (SUS_win(board[0][i], board[1][i], board[2][i])) score++;
+        check_SUS(i, 0, i, 1, i, 2);
     }
-
-    if (SUS_win(board[0][0], board[1][1], board[2][2])) score++;
-    if (SUS_win(board[0][2], board[1][1], board[2][0])) score++;
-
+    
+    // Check columns  
+    for (int i = 0; i < columns; ++i) {
+        check_SUS(0, i, 1, i, 2, i);
+    }
+    
+    // Check diagonals
+    check_SUS(0, 0, 1, 1, 2, 2);
+    check_SUS(0, 2, 1, 1, 2, 0);
+    
     return score;
 }
 

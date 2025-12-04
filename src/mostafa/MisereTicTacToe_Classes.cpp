@@ -1,6 +1,7 @@
 #include "../../include/MisereTicTacToe_Classes.h"
 #include <iostream>
 #include "../../include/InfinityTicTacToe_Classes.h"
+#include <util/colors.h>
 
 using namespace std;
 
@@ -68,6 +69,10 @@ bool MisereTicTacToeBoard::is_win(Player<char>* player)
 bool MisereTicTacToeBoard::is_lose(Player<char>* player)
 {
     char s = player->get_symbol();
+    if (check_three_in_row(s))
+    {
+        cout << RED << player->get_name() << " YOU DIED" << RESET << "\n";
+    }
     return check_three_in_row(s);
 
 }
@@ -78,7 +83,7 @@ bool MisereTicTacToeBoard::is_draw(Player<char>* player)
 
 bool MisereTicTacToeBoard::game_is_over(Player<char>* player)
 {
-
+   
     return is_lose(player) || is_draw(player);
 
 }
