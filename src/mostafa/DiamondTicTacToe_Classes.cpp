@@ -6,7 +6,13 @@ bool insideDiamond(int r, int c) {
     int mid = 3; 
     return abs(mid - r) + abs(mid - c) <= 3;
 }
-
+bool DimaondTicTacToe_Board::is_valid_cell(int x, int y)
+{
+    return x >= 0 && x < rows &&
+        y >= 0 && y < columns &&
+        insideDiamond(x, y) &&
+        board[x][y] == '.';
+}
 DimaondUI::DimaondUI() : UI("Welcome to Diamond Tic Tac Toe!", 3) {}
 
 DimaondTicTacToe_Board::DimaondTicTacToe_Board() : Board(7, 7) {

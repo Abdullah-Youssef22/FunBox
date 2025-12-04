@@ -13,9 +13,7 @@ public :
     bool is_lose(Player<char>* player) override;
     bool is_draw(Player<char>* player) override;
     bool game_is_over(Player<char>* player) override;
-    bool is_valid_cell(int x, int y) {
-        return x >= 0 && x < rows &&y >= 0 && y < columns &&board[x][y] == '.';
-    }
+    bool is_valid_cell(int x, int y);
 private :
     /*bool checkThree(char sym); */
     /*bool checkFive(char sym);*/
