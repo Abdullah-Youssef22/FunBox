@@ -50,7 +50,5 @@ void GameLaunchers::launch_infinity_tic_tac_toe() {
     // Delete the dynamically allocated array of player pointers itself.
     delete[] players;
     delete game_ui;
-    cout << "\nGame Over! Press Enter to continue...";
-    cin.ignore();
-    cin.get();
+
 }
