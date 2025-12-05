@@ -211,7 +211,7 @@ int Menu::displayMenu(bool enhancedMenu) {
 
               if (i == currentSelection) {
                   // Highlight the selected option
-                  std::cout << BLUE << "  ║  " << CYAN << "  > " << BG_WHITE << BLUE << "  " << option  << RESET << BLUE  << "    ║" << RESET << "\n";
+                  std::cout << BLUE << "  ║  " << CYAN << "  > " << BG_WHITE << YELLOW << "  " << option  << RESET << BLUE  << "    ║" << RESET << "\n";
               } else {
                   // Regular option
                   std::cout << BLUE << "  ║       " << WHITE  << option << RESET << BLUE  << "     ║ \n" << RESET ;
@@ -228,7 +228,7 @@ int Menu::displayMenu(bool enhancedMenu) {
 
           int lines = asciiArt.size();
           for (size_t i = 0; i < asciiArt.size(); i++) {
-              std::cout << WHITE << std::string(offsets[i] * bobOffset, ' ') << asciiArt[i] << "\n" << RESET;
+              std::cout << YELLOW << std::string(offsets[i] * bobOffset, ' ') << asciiArt[i] << "\n" << RESET;
           }
 
 
