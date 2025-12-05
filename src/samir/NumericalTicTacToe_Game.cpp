@@ -32,8 +32,6 @@ void GameLaunchers::launch_numerical_tic_tac_toe() {
     }
 
     delete[] players;
-    cout << "\nGame Over! Press Enter to continue...";
-    cin.ignore();
-    cin.get();
+
 
 }

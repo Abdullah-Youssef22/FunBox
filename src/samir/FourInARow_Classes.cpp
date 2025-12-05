@@ -102,6 +102,15 @@ int FourInARow_Board::calculate_score(char sym) {
 bool FourInARow_Board::is_win(Player<char>* player) {
     if (!player) return false;
     char sym = static_cast<char>(toupper(player->get_symbol()));
+    if (calculate_score(sym) > 0)
+    {
+        cout<<GREEN << "=====================================\n"
+             << "  the winner is player: " << sym << "\n"
+             << "=====================================\n" << RESET;
+        cout << "\nGame Over! Press Enter to continue...";
+        cin.ignore();
+        cin.get();
+    }
     return calculate_score(sym) > 0;
 }
 
@@ -109,8 +118,18 @@ bool FourInARow_Board::is_win(Player<char>* player) {
  is_draw:
  True when board is full and nobody has a winning 4-in-a-row.
 */
-bool FourInARow_Board::is_draw(Player<char>*) {
-    if (n_moves < rows * columns) return false;
+bool FourInARow_Board::is_draw(Player<char>* player) {
+    if (n_moves < rows * columns) { return false; }
+
+    if (n_moves < rows * columns && !is_win(player))
+    {
+        cout << YELLOW << "=====================================\n"
+            << "  it's a draw! \n"
+            << "=====================================\n" << RESET;
+        cout << "\nGame Over! Press Enter to continue...";
+        cin.ignore();
+        cin.get();
+    }
     return (calculate_score('X') == 0 && calculate_score('O') == 0);
 }
 
@@ -161,7 +180,6 @@ bool FourInARow_Board::game_is_over(Player<char>* player) {
 
     return false;
 }
-
 
 
 

@@ -4,6 +4,7 @@
 #include <iostream>
 #include<queue>
 #include<utility>
+#include <util/colors.h>
 using namespace std; 
 
 class Infinity_TicTacToe_Board : public Board<char>{
@@ -15,6 +16,8 @@ public :
     bool is_lose(Player<char>* player) override;
     bool is_draw(Player<char>* player) override;
     bool game_is_over(Player<char>* player) override;
+	void display_winner(Player<char>* player);
+	void display_draw();
 private:
     int counter = 0;
     bool checking(char sym);

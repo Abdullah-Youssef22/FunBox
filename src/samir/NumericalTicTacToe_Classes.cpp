@@ -88,6 +88,10 @@ bool NumericalTicTacToe_Board::check_sum_15() {
 
 bool NumericalTicTacToe_Board::is_win(Player<int>* player) {
     // if there is any line = 15
+    if (check_sum_15())
+    {
+        display_winner(player);
+    }
     return check_sum_15();
 }
 
@@ -100,11 +104,11 @@ bool NumericalTicTacToe_Board::is_draw(Player<int>* player) {
         for (int j = 0; j < 3; j++)
             if (board[i][j] == 0)
                 return false;
-
+	display_draw();
     return true;
 }
 
-bool NumericalTicTacToe_Board::game_is_over(Player<int>* player) {
+bool NumericalTicTacToe_Board::game_is_over(Player<int>* player) { 
     return is_win(player) || is_draw(player);
 }
 
@@ -118,6 +122,22 @@ int NumericalTicTacToe_Board::get_cell(int r, int c) const {
 
 bool NumericalTicTacToe_Board::is_used(int n) const {
     return used_numbers[n];
+}
+
+
+void NumericalTicTacToe_Board::display_winner(Player<int>* player) {
+    cout << GREEN << "\nCongratulations " << player->get_name()
+        << "! You have won the game as player " << player->get_symbol() << "!" << RESET << endl;
+    cout << "\nGame Over! Press Enter to continue...";
+    cin.ignore();
+    cin.get();
+}
+
+void NumericalTicTacToe_Board::display_draw() {
+    cout << YELLOW << "\nThe game ended in draw!" << RESET << endl;
+    cout << "\nGame Over! Press Enter to continue...";
+    cin.ignore();
+    cin.get();
 }
 
 //--------------------------------------- NumericalTicTacToe_UI Implementation
@@ -184,7 +204,7 @@ Move<int>* NumericalTicTacToe_UI::get_move(Player<int>* player) {
     int x, y, number;
 
     cout << "\nPlayer " << player->get_symbol()
-         << " turn. Enter: row col number (e.g. 0 2 7)\n";
+        << " turn. Enter: row col number (e.g. 0 2 7)\n";
 
     while (true) {
         cout << "Input: ";
@@ -201,6 +221,15 @@ Move<int>* NumericalTicTacToe_UI::get_move(Player<int>* player) {
         if (x < 0 || x > 2 || y < 0 || y > 2 || number < 1 || number > 9) {
             cout << "Values out of range. Rows and cols must be 0..2. Number must be 1..9.\n";
             continue;
+        }
+
+        while(player->get_symbol() == 1 && number % 2 == 0) {
+            cout <<RED<< "Player 1 can only use odd numbers. Enter a valid odd number: \n"<<RESET;
+            cin >> number;
+		}
+        while (player->get_symbol() == 2 && number % 2 != 0) {
+            cout << RED << "Player 2 can only use even numbers. Enter a valid even number: \n" << RESET;
+            cin >> number;
         }
 
         return new Move<int>(x, y, number);

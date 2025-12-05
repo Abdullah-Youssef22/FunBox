@@ -72,12 +72,26 @@ bool MisereTicTacToeBoard::is_lose(Player<char>* player)
     if (check_three_in_row(s))
     {
         cout << RED << player->get_name() << " YOU DIED" << RESET << "\n";
+        if (s == 'X') { cout << GREEN << "Player O is the winner" << RESET << "\n"; }
+        if (s == 'O') { cout << GREEN << "Player X is the winner" << RESET << "\n"; }
+        cout << "\nGame Over! Press Enter to continue...";
+        cin.ignore();
+        cin.get();
+
+
     }
     return check_three_in_row(s);
 
 }
 bool MisereTicTacToeBoard::is_draw(Player<char>* player)
 {
+    if (n_moves == 9 && !is_lose(player)) {
+        cout << YELLOW << "The game is draw" << RESET << "\n";
+        cout << "\nGame Over! Press Enter to continue...";
+        cin.ignore();
+        cin.get();
+
+    }
     return n_moves == rows * columns && !check_three_in_row('X') && !check_three_in_row('O');
 }
 
