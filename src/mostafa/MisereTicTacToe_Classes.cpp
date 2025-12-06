@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// ========== MisereTicTacToeBoard Implementation ==========
 
 MisereTicTacToeBoard::MisereTicTacToeBoard()
     : Board<char>(3, 3)
@@ -102,30 +103,183 @@ bool MisereTicTacToeBoard::game_is_over(Player<char>* player)
 
 }
 
+
+// ========== MisereAIPlayer Implementation ==========
+
+MisereAIPlayer::MisereAIPlayer(string n, char s)
+    : Player(n, s, PlayerType::AI)
+{
+}
+
+bool MisereAIPlayer::check_three_in_row_static(const vector<vector<char>>& b, char sym)
+{
+    for (int i = 0; i < 3; i++) {
+        if (b[i][0] == sym && b[i][1] == sym && b[i][2] == sym) return true;
+        if (b[0][i] == sym && b[1][i] == sym && b[2][i] == sym) return true;
+    }
+    if (b[0][0] == sym && b[1][1] == sym && b[2][2] == sym) return true;
+    if (b[0][2] == sym && b[1][1] == sym && b[2][0] == sym) return true;
+    return false;
+}
+
+bool MisereAIPlayer::is_board_full(const vector<vector<char>>& b)
+{
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            if (b[i][j] == '.') return false;
+    return true;
+}
+
+int MisereAIPlayer::minimax(vector<vector<char>>& board, int depth, bool isMaximizing,
+    char aiSymbol, char oppSymbol, int alpha, int beta)
+{
+    // Check terminal states
+    if (check_three_in_row_static(board, aiSymbol)) {
+        return -10 + depth; // AI loses (bad)
+    }
+    if (check_three_in_row_static(board, oppSymbol)) {
+        return 10 - depth; // Opponent loses (good for AI)
+    }
+    if (is_board_full(board)) {
+        return 0; // Draw
+    }
+
+    if (isMaximizing) {
+        int maxEval = -1000;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == '.') {
+                    board[i][j] = aiSymbol;
+                    int eval = minimax(board, depth + 1, false, aiSymbol, oppSymbol, alpha, beta);
+                    board[i][j] = '.';
+                    maxEval = max(maxEval, eval);
+                    alpha = max(alpha, eval);
+                    if (beta <= alpha) break;
+                }
+            }
+        }
+        return maxEval;
+    }
+    else {
+        int minEval = 1000;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == '.') {
+                    board[i][j] = oppSymbol;
+                    int eval = minimax(board, depth + 1, true, aiSymbol, oppSymbol, alpha, beta);
+                    board[i][j] = '.';
+                    minEval = min(minEval, eval);
+                    beta = min(beta, eval);
+                    if (beta <= alpha) break;
+                }
+            }
+        }
+        return minEval;
+    }
+}
+
+pair<int, int> MisereAIPlayer::get_best_move()
+{
+    vector<vector<char>> board = boardPtr->get_board_matrix();
+    char aiSymbol = symbol;
+    char oppSymbol = (symbol == 'X') ? 'O' : 'X';
+
+    int bestScore = -1000;
+    pair<int, int> bestMove = { -1, -1 };
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (board[i][j] == '.') {
+                board[i][j] = aiSymbol;
+                int score = minimax(board, 0, false, aiSymbol, oppSymbol, -1000, 1000);
+                board[i][j] = '.';
+
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestMove = { i, j };
+                }
+            }
+        }
+    }
+
+    return bestMove;
+}
+
+
+// ========== MisereTicTacToeUI Implementation ==========
+
 MisereTicTacToeUI::MisereTicTacToeUI()
     : UI<char>("Welcome to Misère Tic Tac Toe!", 3)
-{}
+{
+}
 
 Move<char>* MisereTicTacToeUI::get_move(Player<char>* player)
 {
     int x, y;
-    if (player->get_type() == PlayerType::HUMAN)
-    {
+
+    if (player->get_type() == PlayerType::HUMAN) {
         cout << "\nPlease enter your move x and y (0 to 2): ";
         cin >> x >> y;
     }
-    else if (player->get_type() == PlayerType::COMPUTER)
-    {
+    else if (player->get_type() == PlayerType::COMPUTER) {
         x = rand() % player->get_board_ptr()->get_rows();
         y = rand() % player->get_board_ptr()->get_columns();
     }
+    else if (player->get_type() == PlayerType::AI) {
+        MisereAIPlayer* aiPlayer = dynamic_cast<MisereAIPlayer*>(player);
+        auto [best_x, best_y] = aiPlayer->get_best_move();
+        x = best_x;
+        y = best_y;
+    }
+
     return new Move<char>(x, y, player->get_symbol());
 }
 
 Player<char>* MisereTicTacToeUI::create_player(string& name, char symbol, PlayerType type)
 {
-    cout << "Creating " << (type == PlayerType::HUMAN ? "human" : "computer")
-        << " player: " << name << " (" << symbol << ")\n";
+    cout << "Creating ";
+    if (type == PlayerType::HUMAN) cout << "human";
+    else if (type == PlayerType::COMPUTER) cout << "computer (random)";
+    else if (type == PlayerType::AI) cout << "AI (smart)";
+    cout << " player: " << name << " (" << symbol << ")\n";
 
+    if (type == PlayerType::AI) {
+        return new MisereAIPlayer(name, symbol);
+    }
     return new MiserePlayer(name, symbol, type);
+}
+
+Player<char>** MisereTicTacToeUI::setup_players()
+{
+    Player<char>** players = new Player<char>*[2];
+
+    cout << "Enter Player X name: ";
+    string nameX;
+    getline(cin >> ws, nameX);
+
+    cout << "Choose Player X type:\n";
+    cout << "1. Human\n";
+    cout << "2. Computer (Random)\n";
+    cout << "3. AI (Smart)\n";
+    int choiceX;
+    cin >> choiceX;
+    PlayerType typeX = (choiceX == 2) ? PlayerType::COMPUTER :
+        (choiceX == 3) ? PlayerType::AI : PlayerType::HUMAN;
+    players[0] = create_player(nameX, 'X', typeX);
+
+    cout << "Enter Player O name: ";
+    string nameO;
+    getline(cin >> ws, nameO);
+
+    cout << "Choose Player O type:\n";
+    cout << "1. Human\n";
+    cout << "2. Computer (Random)\n";
+    cout << "3. AI (Smart)\n";
+    int choiceO;
+    cin >> choiceO;
+    PlayerType typeO = (choiceO == 2) ? PlayerType::COMPUTER :
+        (choiceO == 3) ? PlayerType::AI : PlayerType::HUMAN;
+    players[1] = create_player(nameO, 'O', typeO);
+
+    return players;
 }

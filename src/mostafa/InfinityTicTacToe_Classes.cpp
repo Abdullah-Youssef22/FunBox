@@ -50,8 +50,10 @@ bool Infinity_TicTacToe_Board::update_board(Move<char>* move)
    
     if (counter % 3 == 0)
     {
-        checking('X');
-        checking('O');
+        if (checking('X'))
+            return true;
+        if (checking('O'))
+            return true;
 
         auto oldest = moveQueue.front();
         moveQueue.pop(); // each three moving --> remove old moving

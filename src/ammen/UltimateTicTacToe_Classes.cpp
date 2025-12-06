@@ -424,7 +424,7 @@ void Ultimate_UI::displaySingleMiniBoard(Mini_Board* mini, int miniRow, int mini
     
     // Display with highlighting if active
     if (isActive) {
-        cout << " *** ACTIVE *** \n";
+        cout << BLUE << " *** ACTIVE *** \n" << RESET;
     }
     
     cout << " Mini[" << miniRow << "][" << miniCol << "]\n";
@@ -436,7 +436,7 @@ void Ultimate_UI::displaySingleMiniBoard(Mini_Board* mini, int miniRow, int mini
     
     char winner = mini->get_winner();
     if (winner != ' ') {
-        cout << " WINNER: " << winner << "\n";
+        cout << GREEN << " WINNER: " << winner << "\n" << RESET;
     }
 }
 
@@ -474,7 +474,7 @@ void Ultimate_UI::display_ultimate_board(Ultimate_Board* board) const {
         for (int miniCol = 0; miniCol < 3; miniCol++) {
             cout << "  Mini[" << miniRow << "][" << miniCol << "]";
             if (miniRow == activeRow && miniCol == activeCol) {
-                cout << " *ACTIVE*";
+                cout << BLUE << " *ACTIVE*" << RESET;
             }
             cout << "    ";
         }
@@ -504,7 +504,7 @@ void Ultimate_UI::display_ultimate_board(Ultimate_Board* board) const {
         for (int miniCol = 0; miniCol < 3; miniCol++) {
             char winner = board->getMiniBoard(miniRow, miniCol)->get_winner();
             if (winner != ' ') {
-                cout << "  Winner:" << winner << "    ";
+                cout << GREEN << "  Winner:" << winner << "    " << RESET;
             } else {
                 cout << "              ";
             }
