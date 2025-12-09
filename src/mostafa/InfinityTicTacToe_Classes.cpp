@@ -103,7 +103,6 @@ bool Infinity_TicTacToe_Board::is_lose(Player<char>* player)
  */
 bool Infinity_TicTacToe_Board::is_draw(Player<char>* player)
 {
-    return counter == 13 && !checking('X') && !checking('O');
     if(counter == 13 && !checking('X') && !checking('O'))
     
         {
