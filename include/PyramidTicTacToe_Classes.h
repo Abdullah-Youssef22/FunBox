@@ -63,6 +63,9 @@ public:
 
     friend bool isPrintable(int y, int x);
     friend void initPrintableLocations();
+
+	void display_winner(Player<char>* player);
+	void display_draw();
 };
 
 

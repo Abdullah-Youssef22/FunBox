@@ -67,8 +67,10 @@ bool Infinity_TicTacToe_Board::update_board(Move<char>* move)
     // Infinity rule: after every 3 moves, remove oldest
     if (counter % 3 == 0)
     {
-        checking('X');
-        checking('O');
+        if (checking('X'))
+            return true;
+        if (checking('O'))
+            return true;
 
         auto oldest = moveQueue.front();
         moveQueue.pop();
@@ -78,8 +80,7 @@ bool Infinity_TicTacToe_Board::update_board(Move<char>* move)
         board[ox][oy] = '.';
         n_moves--;
     }
-
-    return true;
+     return true;
 }
 
 /**
@@ -103,6 +104,12 @@ bool Infinity_TicTacToe_Board::is_lose(Player<char>* player)
 bool Infinity_TicTacToe_Board::is_draw(Player<char>* player)
 {
     return counter == 13 && !checking('X') && !checking('O');
+    if(counter == 13 && !checking('X') && !checking('O'))
+    
+        {
+            display_draw();
+        }
+    return counter==13 && !checking('X') && !checking('O');
 }
 
 /**
@@ -145,6 +152,10 @@ bool Infinity_TicTacToe_Board::checking(char sym)
  */
 bool Infinity_TicTacToe_Board::is_win(Player<char>* player)
 {
+    if (checking(player->get_symbol()))
+    {
+        display_winner(player);
+    }
     return checking(player->get_symbol());
 }
 
@@ -152,6 +163,27 @@ bool Infinity_TicTacToe_Board::is_win(Player<char>* player)
  * @class Infinity_TicTacToe_UI
  * @brief User interface for Infinity Tic Tac Toe.
  */
+void Infinity_TicTacToe_Board::display_winner(Player<char>* player) {
+    cout << GREEN << "\nCongratulations " << player->get_name()
+        << "! You have won the game as player " << player->get_symbol() << "!" << RESET << endl;
+    cout << "\nGame Over! Press Enter to continue...";
+    cin.ignore();
+    cin.get();
+    return;
+    
+}
+void Infinity_TicTacToe_Board::display_draw() {
+    cout << YELLOW << "\nThe game ended in draw!" << RESET << endl;
+    cout << "\nGame Over! Press Enter to continue...";
+    cin.ignore();
+    cin.get();
+	return;
+}
+
+
+
+
+
 Infinity_TicTacToe_UI::Infinity_TicTacToe_UI()
     : UI<char>("Welcome to Infinity_TicTacToe_UI!", 3) {}
 

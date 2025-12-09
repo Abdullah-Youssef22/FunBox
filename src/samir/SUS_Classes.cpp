@@ -16,8 +16,9 @@ using namespace std;
  * Inherits from Board and manages moves, scoring, and game state.
  */
 SUS_Board::SUS_Board() : Board(3, 3) {
+
     move_order.resize(3, vector<int>(3, -1));
-    /// Initialize all cells with start_symbol
+    // Initialize all cells with blank_symbol
     for (auto& row : board)
         for (auto& cell : row)
             cell = start_symbol;
@@ -94,6 +95,7 @@ int SUS_Board::calculate_score(char sym) {
             board[r3][c3] == 'S') {
 
             // Determine which move was placed last
+            /* which move was placed last?? */
             int last_move = max({ move_order[r1][c1],
                                 move_order[r2][c2],
                                 move_order[r3][c3] });
@@ -131,16 +133,23 @@ int SUS_Board::calculate_score(char sym) {
  * @return true if the player has won, false otherwise.
  */
 bool SUS_Board::is_win(Player<char>* player) {
+
     if (n_moves < rows* columns)
         return false;
 
     int score_S = calculate_score('S');
     int score_U = calculate_score('U');
-
-    if (player->get_symbol() == 'S')
+    if (!displayed)
+    {
+        display_scores();
+    }
+    if (player->get_symbol() == 'S') {
         return score_S > score_U;
-    else
+    }
+    else {
         return score_U > score_S;
+    }
+
 }
 
 /**
@@ -152,6 +161,7 @@ bool SUS_Board::is_win(Player<char>* player) {
  * @return true if the game is a draw, false otherwise.
  */
 bool SUS_Board::is_draw(Player<char>* player) {
+
     return (n_moves == rows * columns && !is_win(player));
 }
 
@@ -166,6 +176,40 @@ bool SUS_Board::is_draw(Player<char>* player) {
 bool SUS_Board::game_is_over(Player<char>* player) {
     return is_win(player) || is_draw(player);
 }
+
+void SUS_Board::display_scores() {
+
+    int score_S = calculate_score('S');
+    int score_U = calculate_score('U');
+    cout << "\nScores:\n";
+    if (score_S > score_U) {
+
+        cout << GREEN << "Player S: " << score_S << RESET << "\n";
+        cout << RED << "Player U: " << score_U << RESET << "\n";
+        cout << GREEN << "Player S is the winner!" << RESET << "\n";
+    }
+
+    else if (score_U > score_S) {
+        cout << RED << "Player S: " << score_S << RESET << "\n";
+        cout << GREEN << "Player U: " << score_U << RESET << "\n";
+        cout << GREEN << "Player U is the winner!" << RESET << "\n";
+    }
+    else
+    {
+        cout << YELLOW << "Player S: " << score_S << RESET << "\n";
+        cout << YELLOW << "Player U: " << score_U << RESET << "\n";
+        cout << YELLOW << "The game is a draw!" << RESET << "\n";
+    }
+    cout << "\nGame Over! Press Enter to continue...";
+    cin.ignore();
+    cin.get();
+    displayed = true;
+}
+
+
+
+
+
 
 //--------------------------------------- SUS_UI Implementation
 

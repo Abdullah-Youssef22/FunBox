@@ -19,6 +19,8 @@ public:
     bool is_draw(Player<char>* player);
     bool game_is_over(Player<char>* player);
     void print_board() const;
+    void display_winner(Player<char>* player) const;
+	void display_draw()const;
 };
 
 class FourInARow_UI : public UI<char> {

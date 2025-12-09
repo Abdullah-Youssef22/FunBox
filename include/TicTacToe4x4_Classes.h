@@ -75,6 +75,9 @@ public:
      * @brief Updates token positions
      */
     void putTokensAtPositions();
+
+	void display_winner(Player<char>* player);
+	void display_draw();
 };
 
 

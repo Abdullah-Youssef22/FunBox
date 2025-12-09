@@ -1,13 +1,15 @@
 #pragma once
 #include "util/BoardGame_Classes.h"
+#include "util/colors.h"
 #include <vector>
 using namespace std;
 
 
 class SUS_Board : public Board<char> {
 private:
-    char start_symbol = '.'; 
+    char start_symbol = '.';
     vector<vector<int>> move_order;
+    bool displayed = false;
 public:
 
     SUS_Board();
@@ -22,7 +24,9 @@ public:
 
     bool game_is_over(Player<char>* player);
     int calculate_score(char sym);
-    
+
+    void display_scores();
+
 };
 
 
@@ -35,7 +39,7 @@ public:
 
     ~SUS_UI() {};
 
-    Player<char> **setup_players()override;
+    Player<char>** setup_players()override;
 
     Player<char>* create_player(string& name, char symbol, PlayerType type);
 

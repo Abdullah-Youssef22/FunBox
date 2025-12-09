@@ -106,20 +106,20 @@ bool Pyramid_Board::is_win(Player<char>* player) {
     const char sym = toupper(player->get_symbol());
 
     auto check = [&](int r1, int c1, int r2, int c2, int r3, int c3) {
-        return board[r1][c1] == sym &&
-            board[r2][c2] == sym &&
-            board[r3][c3] == sym;
-        };
+        return board[r1][c1] == sym && 
+               board[r2][c2] == sym && 
+               board[r3][c3] == sym;
+    };
 
-    if (check(4, 0, 4, 1, 4, 2)) return true;  // Bottom row left
-    if (check(4, 1, 4, 2, 4, 3)) return true;  // Bottom row center
-    if (check(4, 2, 4, 3, 4, 4)) return true;  // Bottom row right
-    if (check(3, 1, 3, 2, 3, 3)) return true;  // Middle row
-    if (check(2, 2, 3, 2, 4, 2)) return true;  // Vertical center
-    if (check(2, 2, 3, 1, 4, 0)) return true;  // Diagonal top to bottom-left
-    if (check(2, 2, 3, 3, 4, 4)) return true;  // Diagonal top to bottom-right
-    if (check(4, 0, 3, 1, 2, 2)) return true;  // Diagonal bottom-left to top
-    if (check(4, 4, 3, 3, 2, 2)) return true;  // Diagonal bottom-right to top
+    if (check(4, 0, 4, 1, 4, 2)) {display_winner (player) ; return true; }
+    if (check(4,1, 4,2, 4,3)) { display_winner(player); return true;}
+    if (check(4,2, 4,3, 4,4)) { display_winner(player); return true;}
+    if (check(3,1, 3,2, 3,3)) { display_winner(player); return true;}
+    if (check(2,2, 3,2, 4,2)) { display_winner(player); return true;}
+    if (check(2,2, 3,1, 4,0)) { display_winner(player); return true;}
+    if (check(2,2, 3,3, 4,4)) { display_winner(player); return true;}
+    if (check(4,0, 3,1, 2,2)) { display_winner(player); return true;}
+    if (check(4, 4, 3, 3, 2, 2)) { display_winner(player); return true; }
 
     return false;
 }
@@ -134,6 +134,9 @@ bool Pyramid_Board::is_win(Player<char>* player) {
  * @return false if the game is not yet a draw
  */
 bool Pyramid_Board::is_draw(Player<char>* player) {
+    if (n_moves == 9 && !is_win(player)) {
+		display_draw();
+    }
     return (n_moves == 9 && !is_win(player));
 }
 
@@ -149,6 +152,20 @@ bool Pyramid_Board::is_draw(Player<char>* player) {
  */
 bool Pyramid_Board::game_is_over(Player<char>* player) {
     return is_win(player) || is_draw(player);
+}
+
+void Pyramid_Board::display_winner(Player<char>* player) {
+    cout << GREEN << "\nCongratulations " << player->get_name()
+        << "! You have won the game as player " << player->get_symbol() << "!" << RESET << endl;
+    cout << "\nGame Over! Press Enter to continue...";
+    cin.ignore();
+    cin.get();
+}
+void Pyramid_Board::display_draw() {
+    cout << YELLOW << "\nThe game ended in draw!" << RESET << endl;
+    cout << "\nGame Over! Press Enter to continue...";
+    cin.ignore();
+    cin.get();
 }
 
 //--------------------------------------- XO_UI Implementation
