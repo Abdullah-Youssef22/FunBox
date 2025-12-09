@@ -782,18 +782,20 @@ void Ultimate_UI::display_ultimate_board(Ultimate_Board* board) const {
         }
 
         // show winner for each mini-board
-            for (int miniCol = 0; miniCol < 3; miniCol++) {
-        char winner = board->getMiniBoard(miniRow, miniCol)->get_winner();
-        if (winner != ' ') {
-            cout << "  Winner:" << winner << "    ";
-        } else {
-            cout << "              ";
+        for (int miniCol = 0; miniCol < 3; miniCol++) {
+            char winner = board->getMiniBoard(miniRow, miniCol)->get_winner();
+            if (winner != ' ') {
+                cout << GREEN << "  Winner:" << winner << "    " << RESET;
+            }
+            else {
+                cout << "              ";
+            }
+        }
+        cout << "\n";
+
+        if (miniRow < 2) {
+            cout << "\n========================================\n";
         }
     }
     cout << "\n";
-    
-    if (miniRow < 2) {
-        cout << "\n========================================\n";
-    }
 }
-cout << "\n"
