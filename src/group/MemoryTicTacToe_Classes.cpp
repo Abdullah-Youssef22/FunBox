@@ -164,9 +164,7 @@ Move<char>* MemoryTicTacToeUI::get_move(Player<char>* player) {
     cin >> x >> y;
     return new Move<char>(x, y, player->get_symbol());
 }
-/**
- * @brief Reveals the hidden memory board at the end of the game.
- */
+
 
 void MemoryTicTacToeBoard::reveal_final_board() {
 
