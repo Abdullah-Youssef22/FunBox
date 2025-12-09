@@ -1,5 +1,12 @@
 #include "TicTacToe5x5_Classes.h"
+/**
+ * @class TicTacToe5x5_Board
+ * @brief Represents a 5x5 TicTacToe board with scoring logic for sequences of 3.
+ */
 
+ /**
+  * @brief Constructs a 5x5 TicTacToe board and initializes all cells as blank.
+  */
 TicTacToe5x5_Board::TicTacToe5x5_Board() : Board(5, 5)
 {
     
@@ -13,6 +20,13 @@ TicTacToe5x5_Board::~TicTacToe5x5_Board()
 {
 
 }
+/**
+ * @brief Updates the board with a new move if valid.
+ *
+ * @param move Pointer to the Move object containing x, y, and symbol.
+ * @return true if the move is valid and applied.
+ * @return false if the move is invalid.
+ */
 bool TicTacToe5x5_Board::update_board(Move<char>* move)
 {
     int x = move->get_x();
@@ -31,20 +45,34 @@ bool TicTacToe5x5_Board::update_board(Move<char>* move)
     }
     return false;
 }
-
+/**
+ * @brief Updates player scores by recounting sequences of X and Y.
+ */
 void TicTacToe5x5_Board::update_scores()
 {
     player1_score = count_sequences('X');
     player2_score = count_sequences('Y');
 }
-
+/**
+ * @brief Checks if the game ended in a draw.
+ *
+ * @param player Pointer to the current player.
+ * @return true if draw.
+ * @return false otherwise.
+ */
 bool TicTacToe5x5_Board::is_draw(Player<char>* player)
 {
     if (!end()) return false;
 
     return player1_score == player2_score;
 }
-
+/**
+ * @brief Checks if a given player has won the game.
+ *
+ * @param player Pointer to the current player.
+ * @return true if the player won.
+ * @return false otherwise.
+ */
 bool TicTacToe5x5_Board::is_win(Player<char>* player)
 {
     if (!end()) return false; 
@@ -61,12 +89,24 @@ bool TicTacToe5x5_Board::is_win(Player<char>* player)
     }
 
 }
-
+/**
+ * @brief Checks whether the game is over by win or draw.
+ *
+ * @param player Pointer to the current player.
+ * @return true if game is over.
+ * @return false otherwise.
+ */
 bool TicTacToe5x5_Board::game_is_over(Player<char>* player)
 {
         return is_win(player) || is_draw(player);
 
 }
+/**
+ * @brief Determines if the game has reached the end (board full).
+ *
+ * @return true if the game has ended.
+ * @return false otherwise.
+ */
 bool TicTacToe5x5_Board::end()
 {
     if (n_moves < 24) return false;
@@ -82,6 +122,9 @@ bool TicTacToe5x5_Board::end()
         return true;
     }
 }
+/**
+ * @brief Displays the current scores and announces the winner or draw.
+ */
 void TicTacToe5x5_Board::desplay_scores()
 {
     cout << "Current Scores:\n";
@@ -104,7 +147,12 @@ void TicTacToe5x5_Board::desplay_scores()
         cout << YELLOW << "The game is a draw" << RESET << "\n";
     }
 }
-
+/**
+ * @brief Counts all sequences of 3 identical symbols on the board.
+ *
+ * @param symbol The symbol ('X' or 'O') to count sequences for.
+ * @return int Number of sequences found.
+ */
 
 int TicTacToe5x5_Board::count_sequences(char symbol)
 {
@@ -153,14 +201,28 @@ int TicTacToe5x5_Board::count_sequences(char symbol)
 
     return sequences;
 }
+/**
+ * @class TicTacToe5x5_UI
+ * @brief Handles user interface for the 5x5 TicTacToe game.
+ */
 
+ /**
+  * @brief Constructs the UI and initializes the welcome message.
+  */
 
 TicTacToe5x5_UI::TicTacToe5x5_UI() : UI<char>("Weclome to FCAI TicTacToe5x5 Game by Abdallah Youssef", 5) {}
 
 TicTacToe5x5_UI::~TicTacToe5x5_UI()
 {
 }
-
+/**
+ * @brief Creates a new player.
+ *
+ * @param name Player name.
+ * @param symbol Player symbol (X or O).
+ * @param type HUMAN or COMPUTER.
+ * @return Pointer to the created player.
+ */
 Player<char>* TicTacToe5x5_UI::create_player(string& name, char symbol, PlayerType type) {
     // Create player based on type
     cout << "Creating " << (type == PlayerType::HUMAN ? "human" : "computer")
@@ -168,6 +230,13 @@ Player<char>* TicTacToe5x5_UI::create_player(string& name, char symbol, PlayerTy
 
     return new Player<char>(name, symbol, type);
 }
+
+/**
+ * @brief Gets a move either from user input or computer AI.
+ *
+ * @param player Pointer to current player.
+ * @return Move<char>* Pointer to the created move.
+ */
 Move<char>* TicTacToe5x5_UI::get_move(Player<char>* player) {
     int x, y;
 
