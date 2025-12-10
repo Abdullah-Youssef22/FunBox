@@ -1,18 +1,31 @@
 ﻿#include "../../include/DiamondTicTacToe_Classes.h"
 
-
-
+/**
+ * @brief Check if a cell is inside the diamond-shaped playable area.
+ * @param r Row index
+ * @param c Column index
+ * @return true if the cell is inside the diamond, false otherwise
+ */
 bool insideDiamond(int r, int c) {
     int mid = 3; 
     return abs(mid - r) + abs(mid - c) <= 3;
 }
+/**
+ * @brief Verify if a cell is valid for a move.
+ * @param x Row index
+ * @param y Column index
+ * @return true if the cell is inside the board, inside the diamond, and empty
+ */
+
 bool DimaondTicTacToe_Board::is_valid_cell(int x, int y)
 {
     return x >= 0 && x < rows &&
         y >= 0 && y < columns &&
         insideDiamond(x, y) &&
         board[x][y] == '.';
+
 }
+
 DimaondUI::DimaondUI() : UI("Welcome to Diamond Tic Tac Toe!", 3) {}
 
 DimaondTicTacToe_Board::DimaondTicTacToe_Board() : Board(7, 7) {
@@ -28,6 +41,12 @@ DimaondTicTacToe_Board::DimaondTicTacToe_Board() : Board(7, 7) {
     }
 }
 
+
+/**
+ * @brief Update the board with a player's move.
+ * @param move Pointer to the move object containing coordinates and symbol
+ * @return true if the move was valid and applied, false otherwise
+ */
 
 bool DimaondTicTacToe_Board::update_board(Move<char>* move)
 {
@@ -51,6 +70,11 @@ bool DimaondTicTacToe_Board::update_board(Move<char>* move)
     }
     return false;
 }
+/**
+ * @brief Get a move from a player (human or computer).
+ * @param player Pointer to the player object
+ * @return A new Move object containing coordinates and symbol
+ */
 
 Move<char>* DimaondUI::get_move(Player<char>* player)
 {
@@ -74,6 +98,13 @@ Move<char>* DimaondUI::get_move(Player<char>* player)
     return new Move<char>(x, y, player->get_symbol());
 }
 
+/**
+ * @brief Create a new player (human or computer).
+ * @param name Player name
+ * @param symbol Player symbol (X or O)
+ * @param type Player type (HUMAN or COMPUTER)
+ * @return Pointer to the newly created player
+ */
 
 Player<char>* DimaondUI::create_player(string& name, char symbol, PlayerType type)
 {
@@ -82,7 +113,11 @@ Player<char>* DimaondUI::create_player(string& name, char symbol, PlayerType typ
 
     return new DimaondPlayer(name, symbol, type);
 }
-
+/**
+ * @brief Check if there are three consecutive symbols in any row.
+ * @param sym Symbol to check (X or O)
+ * @return true if found, false otherwise
+ */
 
 bool DimaondTicTacToe_Board::checkThreeinrows(char sym)
 {
@@ -103,6 +138,11 @@ bool DimaondTicTacToe_Board::checkThreeinrows(char sym)
     }
     return false;
 }
+/**
+ * @brief Check if there are three consecutive symbols in any column.
+ * @param sym Symbol to check (X or O)
+ * @return true if found, false otherwise
+ */
 
 bool DimaondTicTacToe_Board::checkThreeincolumns(char sym)
 {
@@ -123,7 +163,11 @@ bool DimaondTicTacToe_Board::checkThreeincolumns(char sym)
     }
     return false;
 }
-
+/**
+ * @brief Check if there are three consecutive symbols in any diagonal.
+ * @param sym Symbol to check (X or O)
+ * @return true if found, false otherwise
+ */
 
 bool DimaondTicTacToe_Board::checkThreeindiagonals(char sym)
 {
@@ -165,6 +209,11 @@ bool DimaondTicTacToe_Board::checkThreeindiagonals(char sym)
 }
 
 
+/**
+ * @brief Check if there four consecutive symbols in any column.
+ * @param sym Symbol to check (X or O)
+ * @return true if found, false otherwise
+ */
 
 bool DimaondTicTacToe_Board::checkFourincolumns(char sym)
 {
@@ -186,6 +235,11 @@ bool DimaondTicTacToe_Board::checkFourincolumns(char sym)
     }
     return false;
 }
+/**
+ * @brief Check if four are three consecutive symbols in any row.
+ * @param sym Symbol to check (X or O)
+ * @return true if found, false otherwise
+ */
 
 
 bool DimaondTicTacToe_Board::checkFourinrows(char sym)
@@ -207,6 +261,11 @@ bool DimaondTicTacToe_Board::checkFourinrows(char sym)
     }
     return false;
 }
+/**
+ * @brief Check if there are four consecutive symbols in any digonal.
+ * @param sym Symbol to check (X or O)
+ * @return true if found, false otherwise
+ */
 
 bool DimaondTicTacToe_Board::checkFourindiagonals(char sym)
 {
@@ -246,6 +305,12 @@ bool DimaondTicTacToe_Board::checkFourindiagonals(char sym)
 
     return false;
 }
+/**
+ * @brief Determine if a player has won the game.
+ * Winning requires 3 in a line plus 4 in another line.
+ * @param player Pointer to the player
+ * @return true if the player has won, false otherwise
+ */
 
 bool DimaondTicTacToe_Board::is_win(Player<char>* player)
 {
@@ -282,10 +347,22 @@ bool DimaondTicTacToe_Board::is_win(Player<char>* player)
 }
 
 
+/**
+ * @brief Determine if a player has lost the game.
+ * Currently always returns false.
+ * @param player Pointer to the player
+ * @return false
+ */
+
 bool DimaondTicTacToe_Board::is_lose(Player<char>* player)
 {
     return false;
 }
+/**
+ * @brief Check if the game is a draw.
+ * @param player Pointer to the player
+ * @return true if all cells are filled and no win condition is met
+ */
 
 bool DimaondTicTacToe_Board::is_draw(Player<char>* player)
 {
@@ -297,6 +374,12 @@ bool DimaondTicTacToe_Board::is_draw(Player<char>* player)
 
     return !is_win(player);
 }
+
+/**
+ * @brief Check if the game is over (win or draw).
+ * @param player Pointer to the player
+ * @return true if the game is finished
+ */
 
 bool DimaondTicTacToe_Board::game_is_over(Player<char>* player)
 {
