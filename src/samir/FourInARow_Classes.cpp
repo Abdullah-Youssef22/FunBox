@@ -37,13 +37,13 @@ FourInARow_Board::FourInARow_Board() : Board(6, 7) {//6 rows, 7 columns
 bool FourInARow_Board::update_board(Move<char>* move) {
     if (!move) return false;
 
-    int col = move->get_y();               // اللاعب يختار العمود فقط
+    int col = move->get_y();               
     char mark = static_cast<char>(toupper(move->get_symbol()));
 
-    // تحقق من صحة العمود (افترض أن columns متاح)
+
     if (col < 0 || col >= columns) return false;
 
-    // ابحث عن الصف الأدنى الفاضي
+
     for (int r = rows - 1; r >= 0; --r) {
         if (board[r][col] == blank_symbol) {
             board[r][col] = mark;
@@ -52,7 +52,7 @@ bool FourInARow_Board::update_board(Move<char>* move) {
         }
     }
 
-    // لو وصلنا هنا العمود ممتلئ
+
     return false;
 }
 int FourInARow_Board::calculate_score(char sym) {
@@ -65,7 +65,7 @@ int FourInARow_Board::calculate_score(char sym) {
     for (int r = 0; r < rows; ++r) {
         for (int c = 0; c < columns; ++c) {
 
-            // لازم نطابق board cell بـ toupper
+
             if (toupper(board[r][c]) != sym) continue;
 
             for (int d = 0; d < 4; ++d) {
@@ -81,7 +81,7 @@ int FourInARow_Board::calculate_score(char sym) {
                         break;
                     }
 
-                    // نفس الفكرة: matching by toupper
+
                     if (toupper(board[nr][nc]) != sym) {
                         ok = false;
                         break;
@@ -202,7 +202,7 @@ Player<char>* FourInARow_UI::create_player(string& name, char symbol, PlayerType
 }
 
 Move<char>* FourInARow_UI::get_move(Player<char>* player) {
-    if (!player) return nullptr; // لو player مش موجود
+    if (!player) return nullptr; 
 
     Board<char>* board_ptr = player->get_board_ptr();
     auto* fir = dynamic_cast<FourInARow_Board*>(board_ptr);
@@ -216,7 +216,7 @@ Move<char>* FourInARow_UI::get_move(Player<char>* player) {
     int column = -1;
     char symbol = player->get_symbol();
 
-    // حالة اللاعب البشري
+    
     if (player->get_type() == PlayerType::HUMAN) {
         cout << GREEN << "\nPlayer " << symbol << RESET 
              << ": please enter the column (0-" << columns-1 << ") to drop your token: ";
@@ -243,7 +243,7 @@ Move<char>* FourInARow_UI::get_move(Player<char>* player) {
         return new Move<char>(row, column, symbol);
     } 
 
-    // حالة الكمبيوتر
+   
     else if (player->get_type() == PlayerType::COMPUTER) {
         int row = -1;
         do {
@@ -259,7 +259,7 @@ Move<char>* FourInARow_UI::get_move(Player<char>* player) {
         return new Move<char>(row, column, symbol);
     }
 
-    // fallback: أي حالة غير متوقعة
+    
     return nullptr;
 }
 

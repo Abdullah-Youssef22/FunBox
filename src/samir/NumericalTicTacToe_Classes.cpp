@@ -235,7 +235,7 @@ NumericalTicTacToe_UI::NumericalTicTacToe_UI(NumericalTicTacToe_Board* b)
  * @return Pointer to the created Player<int> object.
  */
 
-// create_player: symbol هنا = 1 أو 2 (مش رقم اللعبة)
+
 Player<int>* NumericalTicTacToe_UI::create_player(string& name, int symbol, PlayerType type) {
     return new Player<int>(name, symbol, type);
 }
@@ -277,11 +277,11 @@ Player<int>** NumericalTicTacToe_UI::setup_players() {
 
 Move<int>* NumericalTicTacToe_UI::get_move(Player<int>* player) {
     if (player->get_type() == PlayerType::COMPUTER) {
-        // الكمبيوتر يختار أول خانة فاضية ورقم متاح حسب الفردي/الزوجي
+     
         for (int r = 0; r < 3; r++) {
             for (int c = 0; c < 3; c++) {
-                if (board->get_cell(r, c) == 0) { // خانة فاضية
-                    // البحث عن رقم متاح حسب الفردي/الزوجي
+                if (board->get_cell(r, c) == 0) { 
+                    
                     for (int num = 1; num <= 9; num++) {
                         bool correct_parity =
                             (player->get_symbol() == 1 && num % 2 == 1) ||
@@ -290,10 +290,10 @@ Move<int>* NumericalTicTacToe_UI::get_move(Player<int>* player) {
                         if (correct_parity && !board->is_used(num)) {
                             cout << "Computer plays: " << r << " " << c << " " << num << endl;
 
-                            // تحديث البورد مباشرة لتفادي اختيار نفس الخانة مرة أخرى
+                            
                             board->update_board(new Move<int>(r, c, num));
 
-                            // ترجع الـ Move بعد التحديث
+                            
                             return new Move<int>(r, c, num);
                         }
                     }
@@ -301,7 +301,7 @@ Move<int>* NumericalTicTacToe_UI::get_move(Player<int>* player) {
             }
         }
 
-        // لو وصلنا هنا معناه ما فيش تحركات صالحة
+        
         cout << "ERROR: computer found no valid moves.\n";
         return new Move<int>(0, 0, 1);
     }
