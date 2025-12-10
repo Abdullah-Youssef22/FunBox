@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @file WordTicTacToe_Classes.cpp
  * @brief Implementation of Word Tic-Tac-Toe game classes
  * @author Abdallah Youssef
@@ -7,8 +7,7 @@
  * user interface, and game logic. Players place letters to form valid 3-letter
  * words in rows, columns, or diagonals.
  */
-
-#include"WordTicTacToe_Classes.h"
+#include "WordTicTacToe_Classes.h"
 #include <iostream>
 #include <iomanip>
 #include <cctype>
@@ -22,7 +21,7 @@
   * @return true if the word exists in the dictionary
   * @return false if the word is not found in the dictionary
   */
-bool WordTicTacToe_board::is_valid_word(const string& word) {
+bool WordTicTacToe_board::is_valid_word(const string & word) {
     return find(dictionary.begin(), dictionary.end(), word) != dictionary.end();
 }
 
@@ -304,22 +303,215 @@ void WordTicTacToe_board::display_draw()
     cin.get();
 }
 
+vector<vector<char>> WordTicTacToe_board::get_board_matrix() const {
+    vector<vector<char>> matrix(3, vector<char>(3));
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            matrix[i][j] = board[i][j];
+        }
+    }
+    return matrix;
+}
+
+// ============= WordTicTacToe_AIPlayer Implementation =============
+
+WordTicTacToe_AIPlayer::WordTicTacToe_AIPlayer(string n, char s, WordTicTacToe_board* board)
+    : Player<char>(n, s, PlayerType::AI), boardPtr(board) {}
+
+bool WordTicTacToe_AIPlayer::is_valid_word_in_dict(const string& word,
+    const vector<string>& dict) {
+    if (word.find('.') != string::npos) return false;
+    return find(dict.begin(), dict.end(), word) != dict.end();
+}
+
+int WordTicTacToe_AIPlayer::count_valid_words_in_board(const vector<vector<char>>& board,
+    const vector<string>& dict) {
+    int count = 0;
+
+    // Check rows
+    for (int i = 0; i < 3; i++) {
+        string row = "";
+        row += board[i][0];
+        row += board[i][1];
+        row += board[i][2];
+        if (is_valid_word_in_dict(row, dict)) count++;
+    }
+
+    // Check columns
+    for (int j = 0; j < 3; j++) {
+        string col = "";
+        col += board[0][j];
+        col += board[1][j];
+        col += board[2][j];
+        if (is_valid_word_in_dict(col, dict)) count++;
+    }
+
+    // Check diagonals
+    string diag1 = "";
+    diag1 += board[0][0];
+    diag1 += board[1][1];
+    diag1 += board[2][2];
+    if (is_valid_word_in_dict(diag1, dict)) count++;
+
+    string diag2 = "";
+    diag2 += board[0][2];
+    diag2 += board[1][1];
+    diag2 += board[2][0];
+    if (is_valid_word_in_dict(diag2, dict)) count++;
+
+    return count;
+}
+
+int WordTicTacToe_AIPlayer::evaluate_board_state(const vector<vector<char>>& board,
+    const vector<string>& dict) {
+    int score = 0;
+
+    int valid_words = count_valid_words_in_board(board, dict);
+    if (valid_words > 0) {
+        return 10000; 
+    }
+
+   
+
+    return score;
+}
+
+int WordTicTacToe_AIPlayer::minimax(vector<vector<char>>& board, int depth,
+    bool isMaximizing, int alpha, int beta, int maxDepth) {
+
+    // Check terminal state
+    int valid_words = count_valid_words_in_board(board, boardPtr->get_dictionary());
+    if (valid_words > 0) {
+        return isMaximizing ? -10000 + depth : 10000 - depth;
+    }
+
+    // Check if board is full
+    bool isFull = true;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (board[i][j] == '.') {
+                isFull = false;
+                break;
+            }
+        }
+        if (!isFull) break;
+    }
+
+    if (isFull || depth >= maxDepth) {
+        return evaluate_board_state(board, boardPtr->get_dictionary());
+    }
+
+    const vector<string>& dict = boardPtr->get_dictionary();
+
+    if (isMaximizing) {
+        int maxEval = -10000;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == '.') {
+                    // Try some common letters
+                    string letters = "AEIOU";
+                    for (char letter : letters) {
+                        board[i][j] = letter;
+                        int eval = minimax(board, depth + 1, false, alpha, beta, maxDepth);
+                        board[i][j] = '.';
+
+                        maxEval = max(maxEval, eval);
+                        alpha = max(alpha, eval);
+                        if (beta <= alpha) break;
+                    }
+                }
+            }
+        }
+        return maxEval;
+    }
+    else {
+        int minEval = 10000;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == '.') {
+                    string letters = "AEIOU";
+                    for (char letter : letters) {
+                        board[i][j] = letter;
+                        int eval = minimax(board, depth + 1, true, alpha, beta, maxDepth);
+                        board[i][j] = '.';
+
+                        minEval = min(minEval, eval);
+                        beta = min(beta, eval);
+                        if (beta <= alpha) break;
+                    }
+                }
+            }
+        }
+        return minEval;
+    }
+}
+
+WordTicTacToe_AIPlayer::MoveEval WordTicTacToe_AIPlayer::get_best_move() {
+    int bestScore = -10000;
+    vector<vector<char>> board = boardPtr->get_board_matrix();
+    MoveEval bestMove = { 0, 0, 'A', bestScore };
+
+    const vector<string>& dict = boardPtr->get_dictionary();
+
+    string letters = "AEIOUBCDFGHJKLMNPQRSTVWXYZ";
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (board[i][j] == '.') {
+                for (char letter : letters) {
+                    board[i][j] = letter;
+
+                    if (count_valid_words_in_board(board, dict) > 0) {
+                        board[i][j] = '.';
+                        return { i, j, letter, 10000 }; 
+                    }
+
+                    int score = minimax(board, 0, false, -10000, 10000, 2);
+                    board[i][j] = '.';
+
+                    if (score > bestScore) {
+                        bestScore = score;
+                        bestMove = { i, j, letter, score };
+                    }
+                }
+            }
+        }
+    }
+
+    return bestMove;
+}
+
+Move<char>* WordTicTacToe_AIPlayer::make_ai_move() {
+    MoveEval best = get_best_move();
+    cout << "AI " << get_name() << " chooses letter '"
+        << best.letter << "' at position ("
+        << best.x << ", " << best.y << ")" << endl;
+    return new Move<char>(best.x, best.y, best.letter);
+}
+
+
+// ============= WordTicTacToe_UI Implementation =============
+
 /**
  * @brief Default constructor for WordTicTacToe_UI
  *
  * Initializes the user interface with a welcome message and specifies
  * that the game uses a 3x3 board.
  */
+
 WordTicTacToe_UI::WordTicTacToe_UI() :UI<char>("Weclome to FCAI WordTicTacToe Game by Abdallah Youssef", 3) {}
+
 
 /**
  * @brief Destructor for WordTicTacToe_UI
  *
  * Cleans up resources allocated by the UI object.
  */
+
 WordTicTacToe_UI::~WordTicTacToe_UI()
 {
 }
+
 
 /**
  * @brief Factory method to create a player object
@@ -335,11 +527,20 @@ WordTicTacToe_UI::~WordTicTacToe_UI()
  * @note The symbol parameter is set to '?' as Word Tic-Tac-Toe uses letters, not fixed symbols
  * @warning Caller is responsible for deallocating the returned Player object
  */
+
 Player<char>* WordTicTacToe_UI::create_player(string& name, char symbol, PlayerType type) {
-    cout << "Creating " << (type == PlayerType::HUMAN ? "human" : "computer")
-        << " player: " << name << endl;
+    cout << "Creating ";
+    if (type == PlayerType::HUMAN) cout << "human";
+    else if (type == PlayerType::COMPUTER) cout << "computer (random)";
+    else if (type == PlayerType::AI) cout << "AI (smart)";
+    cout << " player: " << name << "\n";
     return new Player<char>(name, '?', type);
 }
+
+WordTicTacToe_AIPlayer* WordTicTacToe_UI::create_ai_player(string& name, char symbol, WordTicTacToe_board* board) {
+    return new WordTicTacToe_AIPlayer(name, symbol, board);
+}
+
 
 /**
  * @brief Gets a move from the player (human or computer)
@@ -353,10 +554,12 @@ Player<char>* WordTicTacToe_UI::create_player(string& name, char symbol, PlayerT
  * @note Human input: letter (A-Z) and position coordinates (0-2)
  * @note Computer move: randomly generated letter (A-Z) and position (0-2)
  * @warning Caller is responsible for deallocating the returned Move object
- */
+*/
+
+
 Move<char>* WordTicTacToe_UI::get_move(Player<char>* player) {
-    int x, y;
-    char letter;
+    int x = 0, y = 0;
+    char letter = 'A';
 
     if (player->get_type() == PlayerType::HUMAN) {
         cout << "\n" << player->get_name() << ", enter your move:" << endl;
@@ -365,13 +568,57 @@ Move<char>* WordTicTacToe_UI::get_move(Player<char>* player) {
         cout << "Enter position x and y (0-2): ";
         cin >> x >> y;
     }
-    else {
+    else if (player->get_type() == PlayerType::COMPUTER) {
+        // Random move for computer
         letter = 'A' + (rand() % 26);
         x = rand() % 3;
         y = rand() % 3;
         cout << "Computer " << player->get_name() << " chooses letter '"
             << letter << "' at position (" << x << ", " << y << ")" << endl;
     }
+    else if (player->get_type() == PlayerType::AI) {
+        // Cast to AI player and get best move
+        WordTicTacToe_AIPlayer* aiPlayer = dynamic_cast<WordTicTacToe_AIPlayer*>(player);
+        if (aiPlayer) {
+            Move<char>* aiMove = aiPlayer->make_ai_move();
+            return aiMove;
+        }
+    }
 
     return new Move<char>(x, y, letter);
+}
+
+Player<char>** WordTicTacToe_UI::setup_players() {
+    Player<char>** players = new Player<char>*[2];
+
+    cout << "Enter Player 1 name: ";
+    string name1;
+    getline(cin >> ws, name1);
+
+    cout << "Choose Player 1 type:\n";
+    cout << "1. Human\n";
+    cout << "2. Computer (Random)\n";
+    cout << "3. AI (Smart)\n";
+    int choice1;
+    cin >> choice1;
+    PlayerType type1 = (choice1 == 2) ? PlayerType::COMPUTER :
+        (choice1 == 3) ? PlayerType::AI : PlayerType::HUMAN;
+
+    cout << "Enter Player 2 name: ";
+    string name2;
+    getline(cin >> ws, name2);
+
+    cout << "Choose Player 2 type:\n";
+    cout << "1. Human\n";
+    cout << "2. Computer (Random)\n";
+    cout << "3. AI (Smart)\n";
+    int choice2;
+    cin >> choice2;
+    PlayerType type2 = (choice2 == 2) ? PlayerType::COMPUTER :
+        (choice2 == 3) ? PlayerType::AI : PlayerType::HUMAN;
+
+    players[0] = create_player(name1, 'X', type1);
+    players[1] = create_player(name2, 'O', type2);
+
+    return players;
 }
