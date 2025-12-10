@@ -1,0 +1,108 @@
+\doxysection{Ultimate\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h}
+\hypertarget{UltimateTicTacToe__Classes_8h_source}{}\label{UltimateTicTacToe__Classes_8h_source}\index{include/UltimateTicTacToe\_Classes.h@{include/UltimateTicTacToe\_Classes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ ULTIMATE\_CLASSES\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ ULTIMATE\_CLASSES\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}util/BoardGame\_Classes.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include"{}util/colors.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMini__Board_ac51f27245e0a5fba4d6aa6ed1821e327}{Mini\_Board}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBoard_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}<char>\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{char}\ winner\ =\ \textcolor{charliteral}{'\ '};\ \ \textcolor{comment}{//\ 'X',\ 'O',\ or\ '\ '}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{char}\ blank\_symbol\ =\ \textcolor{charliteral}{'\ '};\ }
+\DoxyCodeLine{00022\ \ \ \ \ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classMini__Board_ac51f27245e0a5fba4d6aa6ed1821e327}{Mini\_Board}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMini__Board_a7c7676a704e7bcd6ad21412a67945f06}{update\_board}}(\mbox{\hyperlink{classMove}{Move<char>}}*\ move)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMini__Board_a05857bae9fe25c1c1a2be1b834fa0168}{is\_win}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMini__Board_ada40d1019e29e85fce8a6d93a0248143}{is\_draw}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMini__Board_af6619c599caf4dd474436ff170f932c1}{is\_lose}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMini__Board_a1912b852feb7e37e836f423e199e762c}{game\_is\_over}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classMini__Board_af4158265f4d1ac1f93d5225061876441}{get\_winner}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMini__Board_ad79c4aacdd959dca61268dd3f2aa2fc5}{set\_winner}}(\textcolor{keywordtype}{char}\ w);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMini__Board_a3dc8af6cdbeabe90156ffe18a9a9891f}{is\_decided}}()\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }Mini\_UI\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classUI_ae50eed41905ca2f8dc103d9bef427fe6}{UI}}<char>\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ Mini\_UI();}
+\DoxyCodeLine{00043\ \ \ \ \ \string~Mini\_UI()\ \{\};}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<char>}}*\ \mbox{\hyperlink{classMini__UI_a94e5cbbb5c34bbaf2e25d1eea0dae751}{create\_player}}(\textcolor{keywordtype}{string}\&\ name,\ \textcolor{keywordtype}{char}\ symbol,\ PlayerType\ type);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classMove}{Move<char>}}*\ \mbox{\hyperlink{classMini__UI_ac62cd3348fb882c2d1f83ebf99e4834a}{get\_move}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ ====================================================================}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//}}
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUltimate__Board_a7217969045637563ae6d47d492a31fa9}{Ultimate\_Board}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBoard_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}<char>\ \{}
+\DoxyCodeLine{00063\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }Ultimate\_UI;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{char}\ blank\_symbol\ =\ \textcolor{charliteral}{'.'};\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classMini__Board}{Mini\_Board}}*\ miniBoards[3][3];}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{char}\ metaBoard[3][3];}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ activeMiniRow,\ activeMiniCol;\ \ \textcolor{comment}{//\ -\/1\ =\ any\ board}}
+\DoxyCodeLine{00069\ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ Helper\ methods}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ getMiniRow(\textcolor{keywordtype}{int}\ globalX)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ getMiniCol(\textcolor{keywordtype}{int}\ globalY)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{int}\ getLocalX(\textcolor{keywordtype}{int}\ globalX)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ getLocalY(\textcolor{keywordtype}{int}\ globalY)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ updateMetaBoard(\textcolor{keywordtype}{int}\ miniRow,\ \textcolor{keywordtype}{int}\ miniCol);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ isMiniboardPlayable(\textcolor{keywordtype}{int}\ miniRow,\ \textcolor{keywordtype}{int}\ miniCol)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkMetaBoardWin(\textcolor{keywordtype}{char}\ symbol)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{classUltimate__Board_a7217969045637563ae6d47d492a31fa9}{Ultimate\_Board}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classUltimate__Board_a8599973931f40039049ede71a7f8d969}{\string~Ultimate\_Board}}();\ \ \textcolor{comment}{//\ Delete\ miniBoards}}
+\DoxyCodeLine{00084\ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUltimate__Board_a9339ec67859e01c726adf55a8a77db72}{update\_board}}(\mbox{\hyperlink{classMove}{Move<char>}}*\ move)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUltimate__Board_a34b9605914ffff40dde2acb0be08f857}{is\_win}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUltimate__Board_a5737c7a2126711b10d5996eb07644fb1}{is\_draw}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUltimate__Board_af6444940093ff5b9ce1d9bbe73350248}{is\_lose}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUltimate__Board_adb5f3ecf194dae9f85a680f384422151}{game\_is\_over}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classUltimate__Board_a8f251de8b6214ad8f3e04401d2ec1c34}{getMetaBoardCell}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classMini__Board}{Mini\_Board}}*\ \mbox{\hyperlink{classUltimate__Board_a93861ee9310b9865d7ab118be47417db}{getMiniBoard}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classUltimate__Board_af71f20353717f6959f432481a3ca3907}{getActiveMiniRow}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classUltimate__Board_a0e70fe38cb3ec534f110c175701c351a}{getActiveMiniCol}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUltimate__UI_a9e3b3b9207e382ffc43d8e34bcb34ce0}{Ultimate\_UI}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classUI_ae50eed41905ca2f8dc103d9bef427fe6}{UI}}<char>\ \{}
+\DoxyCodeLine{00108\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ displaySingleMiniBoard(\mbox{\hyperlink{classMini__Board}{Mini\_Board}}*\ mini,\ \textcolor{keywordtype}{int}\ miniRow,\ \textcolor{keywordtype}{int}\ miniCol,\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isActive)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ displayMetaBoard(\mbox{\hyperlink{classUltimate__Board}{Ultimate\_Board}}*\ board)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ \ \ \ \ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{classUltimate__UI_a9e3b3b9207e382ffc43d8e34bcb34ce0}{Ultimate\_UI}}();}
+\DoxyCodeLine{00115\ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ Override\ pure\ virtual\ functions}}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{classMove}{Move<char>}}*\ \mbox{\hyperlink{classUltimate__UI_a4c3e6b4f77e281d67a946df1620ef822}{get\_move}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<char>}}*\ \mbox{\hyperlink{classUltimate__UI_a8b7c8b09278cdef5dc878ef89eaa83e7}{create\_player}}(\textcolor{keywordtype}{string}\&\ name,\ \textcolor{keywordtype}{char}\ symbol,\ PlayerType\ type)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00119\ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//\ Custom\ display\ for\ Ultimate\ board}}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUltimate__UI_a2512870f6c377bb69de3744ffe911e15}{display\_ultimate\_board}}(\mbox{\hyperlink{classUltimate__Board}{Ultimate\_Board}}*\ board)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ XO\_CLASSES\_H}}
+\DoxyCodeLine{00128\ }
+
+\end{DoxyCode}

@@ -1,0 +1,128 @@
+\doxysection{Four\+By\+Four\+\_\+\+UI Class Reference}
+\hypertarget{classFourByFour__UI}{}\label{classFourByFour__UI}\index{FourByFour\_UI@{FourByFour\_UI}}
+Inheritance diagram for Four\+By\+Four\+\_\+\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classFourByFour__UI}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFourByFour__UI_a018d318e6c0445d749ddf611a5219e5f}{Four\+By\+Four\+\_\+\+UI}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classXO__UI}{XO\+\_\+\+UI} object. \end{DoxyCompactList}\item 
+\Hypertarget{classFourByFour__UI_a073940cb18f806554422d351642006ed}\label{classFourByFour__UI_a073940cb18f806554422d351642006ed} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Four\+By\+Four\+\_\+\+UI} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classXO__UI}{XO\+\_\+\+UI}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFourByFour__UI_a1e78ece56de891ad46bcbf7b2bd1a7d7}{create\+\_\+player}} (string \&name, char symbol, Player\+Type type)
+\begin{DoxyCompactList}\small\item\em Creates a player of the specified type. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFourByFour__UI_a6bb7003eed87d7faa03d50d46bdf0d97}{get\+\_\+move}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Retrieves the next move from a player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFourByFour__UI_a0722034665c9bc5a2058dc3274bccd2f}{setup\+\_\+players}} () override
+\begin{DoxyCompactList}\small\item\em Set up players for the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UI} (string message, int cell\+\_\+display\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{classUI}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ char $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFourByFour__UI_a018d318e6c0445d749ddf611a5219e5f}\index{FourByFour\_UI@{FourByFour\_UI}!FourByFour\_UI@{FourByFour\_UI}}
+\index{FourByFour\_UI@{FourByFour\_UI}!FourByFour\_UI@{FourByFour\_UI}}
+\doxysubsubsection{\texorpdfstring{FourByFour\_UI()}{FourByFour\_UI()}}
+{\footnotesize\ttfamily \label{classFourByFour__UI_a018d318e6c0445d749ddf611a5219e5f} 
+Four\+By\+Four\+\_\+\+UI\+::\+Four\+By\+Four\+\_\+\+UI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{classXO__UI}{XO\+\_\+\+UI} object. 
+
+Initializes the base {\ttfamily \doxylink{classUI}{UI}\texorpdfstring{$<$}{<}char\texorpdfstring{$>$}{>}} class with the welcome message "{}\+FCAI X-\/\+O"{}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFourByFour__UI_a1e78ece56de891ad46bcbf7b2bd1a7d7}\index{FourByFour\_UI@{FourByFour\_UI}!create\_player@{create\_player}}
+\index{create\_player@{create\_player}!FourByFour\_UI@{FourByFour\_UI}}
+\doxysubsubsection{\texorpdfstring{create\_player()}{create\_player()}}
+{\footnotesize\ttfamily \label{classFourByFour__UI_a1e78ece56de891ad46bcbf7b2bd1a7d7} 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Four\+By\+Four\+\_\+\+UI\+::create\+\_\+player (\begin{DoxyParamCaption}\item[{string \&}]{name}{, }\item[{char}]{symbol}{, }\item[{Player\+Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a player of the specified type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the player. \\
+\hline
+{\em symbol} & Character symbol (\textquotesingle{}X\textquotesingle{} or \textquotesingle{}O\textquotesingle{}) assigned to the player. \\
+\hline
+{\em type} & The type of the player (Human or Computer). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created \doxylink{classPlayer}{Player$<$char$>$} instance. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUI_af9f043033208286cd56240a1f060dd7b}{UI$<$ char $>$}}.
+
+\Hypertarget{classFourByFour__UI_a6bb7003eed87d7faa03d50d46bdf0d97}\index{FourByFour\_UI@{FourByFour\_UI}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!FourByFour\_UI@{FourByFour\_UI}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{classFourByFour__UI_a6bb7003eed87d7faa03d50d46bdf0d97} 
+\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Four\+By\+Four\+\_\+\+UI\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the next move from a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player whose move is being requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a new {\ttfamily \doxylink{classMove}{Move}\texorpdfstring{$<$}{<}char\texorpdfstring{$>$}{>}} object representing the player\textquotesingle{}s action. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUI_a8befa259c38c57e6ae2e8ed81c476337}{UI$<$ char $>$}}.
+
+\Hypertarget{classFourByFour__UI_a0722034665c9bc5a2058dc3274bccd2f}\index{FourByFour\_UI@{FourByFour\_UI}!setup\_players@{setup\_players}}
+\index{setup\_players@{setup\_players}!FourByFour\_UI@{FourByFour\_UI}}
+\doxysubsubsection{\texorpdfstring{setup\_players()}{setup\_players()}}
+{\footnotesize\ttfamily \label{classFourByFour__UI_a0722034665c9bc5a2058dc3274bccd2f} 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Four\+By\+Four\+\_\+\+UI\+::setup\+\_\+players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set up players for the game. 
+
+Default implementation of setting up two players. 
+
+Reimplemented from \mbox{\hyperlink{classUI_a6966a040c995b2292e5edddaa94f889a}{UI$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Tic\+Tac\+Toe4x4\+\_\+\+Classes.\+h\item 
+src/ammen/Tic\+Tac\+Toe4x4\+\_\+\+Classes.\+cpp\end{DoxyCompactItemize}

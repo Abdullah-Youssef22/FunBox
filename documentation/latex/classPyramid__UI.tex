@@ -1,0 +1,196 @@
+\doxysection{Pyramid\+\_\+\+UI Class Reference}
+\hypertarget{classPyramid__UI}{}\label{classPyramid__UI}\index{Pyramid\_UI@{Pyramid\_UI}}
+Inheritance diagram for Pyramid\+\_\+\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPyramid__UI}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPyramid__UI_aba1636a5f5c0d1300a74b0620c1f58f6}{Pyramid\+\_\+\+UI}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classXO__UI}{XO\+\_\+\+UI} object. \end{DoxyCompactList}\item 
+\Hypertarget{classPyramid__UI_a527dd9ad6b62050abe0dff0a9efe0938}\label{classPyramid__UI_a527dd9ad6b62050abe0dff0a9efe0938} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Pyramid\+\_\+\+UI} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classXO__UI}{XO\+\_\+\+UI}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classPyramid__UI_a700efb45cce65c4ea1e0ea781ec67bf2}{create\+\_\+player}} (string \&name, char symbol, Player\+Type type)
+\begin{DoxyCompactList}\small\item\em Creates a player of the specified type. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classPyramid__UI_a6bd1983ff0cba1c68b83940b785a7efd}{get\+\_\+move}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Retrieves the next move from a player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classPyramid__UI_aa04e9edfc8bfb4614a9085982a7244be}{setup\+\_\+players}} () override
+\begin{DoxyCompactList}\small\item\em Sets up both players for the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UI} (string message, int cell\+\_\+display\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{classUI}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ char $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPyramid__UI_aba1636a5f5c0d1300a74b0620c1f58f6}\index{Pyramid\_UI@{Pyramid\_UI}!Pyramid\_UI@{Pyramid\_UI}}
+\index{Pyramid\_UI@{Pyramid\_UI}!Pyramid\_UI@{Pyramid\_UI}}
+\doxysubsubsection{\texorpdfstring{Pyramid\_UI()}{Pyramid\_UI()}}
+{\footnotesize\ttfamily \label{classPyramid__UI_aba1636a5f5c0d1300a74b0620c1f58f6} 
+Pyramid\+\_\+\+UI\+::\+Pyramid\+\_\+\+UI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{classXO__UI}{XO\+\_\+\+UI} object. 
+
+Default constructor for \doxylink{classPyramid__UI}{Pyramid\+\_\+\+UI}.
+
+Initializes the base {\ttfamily \doxylink{classUI}{UI}\texorpdfstring{$<$}{<}char\texorpdfstring{$>$}{>}} class with the welcome message "{}\+FCAI X-\/\+O"{}.
+
+Initializes the user interface with a welcome message and specifies that the game uses a pyramid board with 3 rows (pyramid levels). 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPyramid__UI_a700efb45cce65c4ea1e0ea781ec67bf2}\index{Pyramid\_UI@{Pyramid\_UI}!create\_player@{create\_player}}
+\index{create\_player@{create\_player}!Pyramid\_UI@{Pyramid\_UI}}
+\doxysubsubsection{\texorpdfstring{create\_player()}{create\_player()}}
+{\footnotesize\ttfamily \label{classPyramid__UI_a700efb45cce65c4ea1e0ea781ec67bf2} 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Pyramid\+\_\+\+UI\+::create\+\_\+player (\begin{DoxyParamCaption}\item[{string \&}]{name}{, }\item[{char}]{symbol}{, }\item[{Player\+Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a player of the specified type. 
+
+Factory method to create a player object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the player. \\
+\hline
+{\em symbol} & Character symbol (\textquotesingle{}X\textquotesingle{} or \textquotesingle{}O\textquotesingle{}) assigned to the player. \\
+\hline
+{\em type} & The type of the player (Human or Computer). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created \doxylink{classPlayer}{Player$<$char$>$} instance.
+\end{DoxyReturn}
+Creates either a human or computer player with the specified parameters. Prints confirmation message of player creation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Reference to string containing the player\textquotesingle{}s name \\
+\hline
+{\em symbol} & The symbol assigned to the player (\textquotesingle{}X\textquotesingle{} or \textquotesingle{}O\textquotesingle{}) \\
+\hline
+{\em type} & Player\+Type enum indicating HUMAN or COMPUTER player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classPlayer}{Player$<$char$>$}\texorpdfstring{$\ast$}{*} Pointer to newly created \doxylink{classPlayer}{Player} object
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Caller is responsible for deallocating the returned \doxylink{classPlayer}{Player} object 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classUI_af9f043033208286cd56240a1f060dd7b}{UI$<$ char $>$}}.
+
+\Hypertarget{classPyramid__UI_a6bd1983ff0cba1c68b83940b785a7efd}\index{Pyramid\_UI@{Pyramid\_UI}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!Pyramid\_UI@{Pyramid\_UI}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{classPyramid__UI_a6bd1983ff0cba1c68b83940b785a7efd} 
+\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Pyramid\+\_\+\+UI\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the next move from a player. 
+
+Gets a move from the player (human or computer)
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player whose move is being requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a new {\ttfamily \doxylink{classMove}{Move}\texorpdfstring{$<$}{<}char\texorpdfstring{$>$}{>}} object representing the player\textquotesingle{}s action.
+\end{DoxyReturn}
+For human players, prompts for position input via console and validates that the position is within the pyramid\textquotesingle{}s playable area. For computer players, generates random valid positions within the pyramid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the \doxylink{classPlayer}{Player} object making the move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classMove}{Move$<$char$>$}\texorpdfstring{$\ast$}{*} Pointer to newly created \doxylink{classMove}{Move} object containing the player\textquotesingle{}s move
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Human input is validated to ensure it\textquotesingle{}s within the pyramid shape 
+
+Invalid moves trigger error messages and re-\/prompt the user 
+
+Computer moves are automatically validated before being returned 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Caller is responsible for deallocating the returned \doxylink{classMove}{Move} object
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{PyramidTicTacToe__Classes_8cpp_a1a1ef830ad4b9ff9e0ae728bf117e011}{is\+Printable()} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classUI_a8befa259c38c57e6ae2e8ed81c476337}{UI$<$ char $>$}}.
+
+\Hypertarget{classPyramid__UI_aa04e9edfc8bfb4614a9085982a7244be}\index{Pyramid\_UI@{Pyramid\_UI}!setup\_players@{setup\_players}}
+\index{setup\_players@{setup\_players}!Pyramid\_UI@{Pyramid\_UI}}
+\doxysubsubsection{\texorpdfstring{setup\_players()}{setup\_players()}}
+{\footnotesize\ttfamily \label{classPyramid__UI_aa04e9edfc8bfb4614a9085982a7244be} 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Pyramid\+\_\+\+UI\+::setup\+\_\+players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets up both players for the game. 
+
+Prompts for player names and types (Human or Computer) for both \doxylink{classPlayer}{Player} X and \doxylink{classPlayer}{Player} O. Creates and returns an array of two player objects.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classPlayer}{Player$<$char$>$}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Array of two \doxylink{classPlayer}{Player} pointers \mbox{[}\doxylink{classPlayer}{Player} X, \doxylink{classPlayer}{Player} O\mbox{]}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Players\mbox{[}0\mbox{]} is always \doxylink{classPlayer}{Player} X 
+
+Players\mbox{[}1\mbox{]} is always \doxylink{classPlayer}{Player} O 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Caller is responsible for deallocating both the array and the player objects
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classPyramid__UI_a700efb45cce65c4ea1e0ea781ec67bf2}{create\+\_\+player()} 
+
+\doxylink{classUI_a8617bbf64a9ddf11ea6231912044805d}{get\+\_\+player\+\_\+name()} 
+
+\doxylink{classUI_ae62d61367ea51a5d7532db3b830c6445}{get\+\_\+player\+\_\+type\+\_\+choice()} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classUI_a6966a040c995b2292e5edddaa94f889a}{UI$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Pyramid\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h\item 
+src/ammen/\mbox{\hyperlink{PyramidTicTacToe__Classes_8cpp}{Pyramid\+Tic\+Tac\+Toe\+\_\+\+Classes.\+cpp}}\end{DoxyCompactItemize}

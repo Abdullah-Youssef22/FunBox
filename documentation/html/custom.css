@@ -1,0 +1,25 @@
+/* Main background - beige */
+body, #main-content, .contents {
+    background-color: #ECD8C0 !important;
+}
+
+/* Header/navigation - brown accent */
+#titlearea, .header, #nav-tree, .navpath {
+    /* background-color: #C07A50 !important; */
+}
+
+/* Links - brown accent */
+a, a:visited {
+    /* color: #C07A50 !important; */
+}
+
+/* Code blocks - slightly darker beige */
+div.fragment, pre.fragment {
+    background-color: #E0CAB0 !important;
+    /* border: 1px solid #C07A50 !important; */
+}
+
+/* Tables */
+table.directory tr.even {
+    background-color: #E5D5BD !important;
+}

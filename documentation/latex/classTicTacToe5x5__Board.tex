@@ -1,0 +1,205 @@
+\doxysection{Tic\+Tac\+Toe5x5\+\_\+\+Board Class Reference}
+\hypertarget{classTicTacToe5x5__Board}{}\label{classTicTacToe5x5__Board}\index{TicTacToe5x5\_Board@{TicTacToe5x5\_Board}}
+
+
+Represents a 5x5 Tic\+Tac\+Toe board with scoring logic for sequences of 3.  
+
+
+Inheritance diagram for Tic\+Tac\+Toe5x5\+\_\+\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTicTacToe5x5__Board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTicTacToe5x5__Board_ab0a4b2adece3ff967c40ba18696ee825}\label{classTicTacToe5x5__Board_ab0a4b2adece3ff967c40ba18696ee825} 
+{\bfseries Tic\+Tac\+Toe5x5\+\_\+\+Board} ()
+\begin{DoxyCompactList}\small\item\em Constructs a 5x5 Tic\+Tac\+Toe board and initializes all cells as blank. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTicTacToe5x5__Board_a702418259bcbfab826df211604945136}{update\+\_\+board}} (\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move)
+\begin{DoxyCompactList}\small\item\em Updates the board with a new move if valid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTicTacToe5x5__Board_a082f6a37cbc5b557a211168714b56cd4}{is\+\_\+win}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Checks if a given player has won the game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTicTacToe5x5__Board_afad971117c1683e8253d83b677a40e50}{is\+\_\+lose}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Check if a player has lost. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTicTacToe5x5__Board_afca92ee42e684bc89b4bcb61adf98027}{is\+\_\+draw}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Checks if the game ended in a draw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTicTacToe5x5__Board_af036d9b74a7a9d424c40c9df13e98eb3}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Checks whether the game is over by win or draw. \end{DoxyCompactList}\item 
+\Hypertarget{classTicTacToe5x5__Board_a88c16a6f45c580479be1c50a0abb800d}\label{classTicTacToe5x5__Board_a88c16a6f45c580479be1c50a0abb800d} 
+void {\bfseries set\+\_\+score} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\item 
+\Hypertarget{classTicTacToe5x5__Board_ac65ba990f8ad8789e2cd07b92d421fbe}\label{classTicTacToe5x5__Board_ac65ba990f8ad8789e2cd07b92d421fbe} 
+void {\bfseries get\+\_\+score} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\item 
+\Hypertarget{classTicTacToe5x5__Board_a0213a890e22b821e6ba82c1c878d1105}\label{classTicTacToe5x5__Board_a0213a890e22b821e6ba82c1c878d1105} 
+void {\bfseries update\+\_\+scores} ()
+\begin{DoxyCompactList}\small\item\em Updates player scores by recounting sequences of X and Y. \end{DoxyCompactList}\item 
+\Hypertarget{classTicTacToe5x5__Board_a547cac074cb0f6b56844c1692f515546}\label{classTicTacToe5x5__Board_a547cac074cb0f6b56844c1692f515546} 
+void {\bfseries desplay\+\_\+scores} ()
+\begin{DoxyCompactList}\small\item\em Displays the current scores and announces the winner or draw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTicTacToe5x5__Board_aae594cf539fbe4d3c44c876f72893d1c}{end}} ()
+\begin{DoxyCompactList}\small\item\em Determines if the game has reached the end (board full). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{classBoard_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{classBoard_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a 5x5 Tic\+Tac\+Toe board with scoring logic for sequences of 3. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTicTacToe5x5__Board_aae594cf539fbe4d3c44c876f72893d1c}\index{TicTacToe5x5\_Board@{TicTacToe5x5\_Board}!end@{end}}
+\index{end@{end}!TicTacToe5x5\_Board@{TicTacToe5x5\_Board}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \label{classTicTacToe5x5__Board_aae594cf539fbe4d3c44c876f72893d1c} 
+bool Tic\+Tac\+Toe5x5\+\_\+\+Board\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Determines if the game has reached the end (board full). 
+
+\begin{DoxyReturn}{Returns}
+true if the game has ended. 
+
+false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classTicTacToe5x5__Board_af036d9b74a7a9d424c40c9df13e98eb3}\index{TicTacToe5x5\_Board@{TicTacToe5x5\_Board}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!TicTacToe5x5\_Board@{TicTacToe5x5\_Board}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{classTicTacToe5x5__Board_af036d9b74a7a9d424c40c9df13e98eb3} 
+bool Tic\+Tac\+Toe5x5\+\_\+\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks whether the game is over by win or draw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the current player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if game is over. 
+
+false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{classTicTacToe5x5__Board_afca92ee42e684bc89b4bcb61adf98027}\index{TicTacToe5x5\_Board@{TicTacToe5x5\_Board}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!TicTacToe5x5\_Board@{TicTacToe5x5\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{classTicTacToe5x5__Board_afca92ee42e684bc89b4bcb61adf98027} 
+bool Tic\+Tac\+Toe5x5\+\_\+\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the game ended in a draw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the current player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if draw. 
+
+false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{classTicTacToe5x5__Board_afad971117c1683e8253d83b677a40e50}\index{TicTacToe5x5\_Board@{TicTacToe5x5\_Board}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!TicTacToe5x5\_Board@{TicTacToe5x5\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{classTicTacToe5x5__Board_afad971117c1683e8253d83b677a40e50} 
+bool Tic\+Tac\+Toe5x5\+\_\+\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Check if a player has lost. 
+
+
+
+Implements \mbox{\hyperlink{classBoard_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{classTicTacToe5x5__Board_a082f6a37cbc5b557a211168714b56cd4}\index{TicTacToe5x5\_Board@{TicTacToe5x5\_Board}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!TicTacToe5x5\_Board@{TicTacToe5x5\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{classTicTacToe5x5__Board_a082f6a37cbc5b557a211168714b56cd4} 
+bool Tic\+Tac\+Toe5x5\+\_\+\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if a given player has won the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the current player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the player won. 
+
+false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{classTicTacToe5x5__Board_a702418259bcbfab826df211604945136}\index{TicTacToe5x5\_Board@{TicTacToe5x5\_Board}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!TicTacToe5x5\_Board@{TicTacToe5x5\_Board}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{classTicTacToe5x5__Board_a702418259bcbfab826df211604945136} 
+bool Tic\+Tac\+Toe5x5\+\_\+\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the board with a new move if valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & Pointer to the \doxylink{classMove}{Move} object containing x, y, and symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the move is valid and applied. 
+
+false if the move is invalid. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Tic\+Tac\+Toe5x5\+\_\+\+Classes.\+h\item 
+src/abdallah/Tic\+Tac\+Toe5x5\+\_\+\+Classes.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,53 @@
+\doxysection{Word\+Tic\+Tac\+Toe\+\_\+\+AIPlayer Class Reference}
+\hypertarget{classWordTicTacToe__AIPlayer}{}\label{classWordTicTacToe__AIPlayer}\index{WordTicTacToe\_AIPlayer@{WordTicTacToe\_AIPlayer}}
+Inheritance diagram for Word\+Tic\+Tac\+Toe\+\_\+\+AIPlayer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classWordTicTacToe__AIPlayer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classWordTicTacToe__AIPlayer_a9fec16ca446f2042093d4488c77b81c9}\label{classWordTicTacToe__AIPlayer_a9fec16ca446f2042093d4488c77b81c9} 
+{\bfseries Word\+Tic\+Tac\+Toe\+\_\+\+AIPlayer} (string n, char s, \mbox{\hyperlink{classWordTicTacToe__board}{Word\+Tic\+Tac\+Toe\+\_\+board}} \texorpdfstring{$\ast$}{*}board)
+\item 
+\Hypertarget{classWordTicTacToe__AIPlayer_a6d104cbfaf9216774647f0c424735eca}\label{classWordTicTacToe__AIPlayer_a6d104cbfaf9216774647f0c424735eca} 
+Move\+Eval {\bfseries get\+\_\+best\+\_\+move} ()
+\item 
+\Hypertarget{classWordTicTacToe__AIPlayer_adccf110735642b242c30f1ce89109899}\label{classWordTicTacToe__AIPlayer_adccf110735642b242c30f1ce89109899} 
+\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} {\bfseries make\+\_\+ai\+\_\+move} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classPlayer}{Player$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Player} (string n, char s, Player\+Type t)
+\begin{DoxyCompactList}\small\item\em Construct a player with name, symbol, and type. \end{DoxyCompactList}\item 
+string {\bfseries get\+\_\+name} () const
+\begin{DoxyCompactList}\small\item\em Get the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries get\+\_\+type} () const
+\begin{DoxyCompactList}\small\item\em Get player type (e.\+g., \textquotesingle{}H\textquotesingle{} or \textquotesingle{}C\textquotesingle{}). \end{DoxyCompactList}\item 
+char {\bfseries get\+\_\+symbol} () const
+\begin{DoxyCompactList}\small\item\em Get the player\textquotesingle{}s symbol. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBoard}{Board}}$<$ char $>$ \texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+board\+\_\+ptr} () const
+\begin{DoxyCompactList}\small\item\em Get a pointer to the game board. \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+board\+\_\+ptr} (\mbox{\hyperlink{classBoard}{Board}}$<$ char $>$ \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Assign the board pointer for the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classPlayer}{Player$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em \doxylink{classPlayer}{Player} name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries type}
+\begin{DoxyCompactList}\small\item\em \doxylink{classPlayer}{Player} type (e.\+g., HUMAN or COMPUTER) \end{DoxyCompactList}\item 
+char {\bfseries symbol}
+\begin{DoxyCompactList}\small\item\em Players symbol on board. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBoard}{Board}}$<$ char $>$ \texorpdfstring{$\ast$}{*} {\bfseries board\+Ptr}
+\begin{DoxyCompactList}\small\item\em Pointer to the game board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Word\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h\item 
+src/abdallah/\mbox{\hyperlink{WordTicTacToe__Classes_8cpp}{Word\+Tic\+Tac\+Toe\+\_\+\+Classes.\+cpp}}\end{DoxyCompactItemize}

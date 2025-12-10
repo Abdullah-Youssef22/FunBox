@@ -1,0 +1,85 @@
+\doxysection{src/ammen/\+Pyramid\+Tic\+Tac\+Toe\+\_\+\+Classes.cpp File Reference}
+\hypertarget{PyramidTicTacToe__Classes_8cpp}{}\label{PyramidTicTacToe__Classes_8cpp}\index{src/ammen/PyramidTicTacToe\_Classes.cpp@{src/ammen/PyramidTicTacToe\_Classes.cpp}}
+
+
+Implementation of Pyramid Tic-\/\+Tac-\/\+Toe game classes.  
+
+
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}../../include/\+Pyramid\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h"{}}\newline
+{\ttfamily \#include "{}../../include/util/util.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{PyramidTicTacToe__Classes_8cpp_a1a1ef830ad4b9ff9e0ae728bf117e011}{is\+Printable}} (int y, int x)
+\begin{DoxyCompactList}\small\item\em Checks if a position is within the pyramid\textquotesingle{}s playable area. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PyramidTicTacToe__Classes_8cpp_a609664bdbf16a15504ad938f5eba377f}{init\+Printable\+Locations}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the list of valid playable positions on the pyramid board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of Pyramid Tic-\/\+Tac-\/\+Toe game classes. 
+
+\begin{DoxyAuthor}{Author}
+Ammen
+\end{DoxyAuthor}
+This file contains the implementation of the Pyramid Tic-\/\+Tac-\/\+Toe game, which uses a pyramid-\/shaped board instead of the traditional 3x3 grid. The board has 9 playable positions arranged in a pyramid formation. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{PyramidTicTacToe__Classes_8cpp_a609664bdbf16a15504ad938f5eba377f}\index{PyramidTicTacToe\_Classes.cpp@{PyramidTicTacToe\_Classes.cpp}!initPrintableLocations@{initPrintableLocations}}
+\index{initPrintableLocations@{initPrintableLocations}!PyramidTicTacToe\_Classes.cpp@{PyramidTicTacToe\_Classes.cpp}}
+\doxysubsubsection{\texorpdfstring{initPrintableLocations()}{initPrintableLocations()}}
+{\footnotesize\ttfamily \label{PyramidTicTacToe__Classes_8cpp_a609664bdbf16a15504ad938f5eba377f} 
+void init\+Printable\+Locations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the list of valid playable positions on the pyramid board. 
+
+Populates the Pyramid\+\_\+\+Board\+::printable vector with all 9 valid positions that form the pyramid shape\+:
+\begin{DoxyItemize}
+\item Row 2\+: position (2,2) -\/ pyramid top
+\item Row 3\+: positions (3,1), (3,2), (3,3) -\/ pyramid middle
+\item Row 4\+: positions (4,0), (4,1), (4,2), (4,3), (4,4) -\/ pyramid base
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+This function should be called once during board initialization 
+
+Modifies the static Pyramid\+\_\+\+Board\+::printable vector 
+\end{DoxyNote}
+\Hypertarget{PyramidTicTacToe__Classes_8cpp_a1a1ef830ad4b9ff9e0ae728bf117e011}\index{PyramidTicTacToe\_Classes.cpp@{PyramidTicTacToe\_Classes.cpp}!isPrintable@{isPrintable}}
+\index{isPrintable@{isPrintable}!PyramidTicTacToe\_Classes.cpp@{PyramidTicTacToe\_Classes.cpp}}
+\doxysubsubsection{\texorpdfstring{isPrintable()}{isPrintable()}}
+{\footnotesize\ttfamily \label{PyramidTicTacToe__Classes_8cpp_a1a1ef830ad4b9ff9e0ae728bf117e011} 
+bool is\+Printable (\begin{DoxyParamCaption}\item[{int}]{y}{, }\item[{int}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a position is within the pyramid\textquotesingle{}s playable area. 
+
+Validates whether the given coordinates correspond to a valid position in the pyramid structure by checking against the list of printable positions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Row coordinate of the position to check \\
+\hline
+{\em x} & Column coordinate of the position to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the position is playable (within pyramid boundaries) 
+
+false if the position is outside the pyramid or non-\/playable
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Uses the static Pyramid\+\_\+\+Board\+::printable vector for validation 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{PyramidTicTacToe__Classes_8cpp_a609664bdbf16a15504ad938f5eba377f}{init\+Printable\+Locations()} 
+\end{DoxySeeAlso}

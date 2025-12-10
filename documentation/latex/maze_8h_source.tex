@@ -1,0 +1,116 @@
+\doxysection{maze.\+h}
+\hypertarget{maze_8h_source}{}\label{maze_8h_source}\index{include/maze.h@{include/maze.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\#ifndef\ MAZE\_SOLVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\#define\ MAZE\_SOLVER\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\#include\ <utility>}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//typedef\ std::vector<std::vector<int>>\ Matrix;}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//typedef\ std::pair<int,\ int>\ Position;}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ *\ @brief\ Main\ class\ for\ loading\ and\ solving\ mazes}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ *\ }}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ *\ Cell\ values\ in\ matrix:}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ *\ 0\ =\ empty\ space}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ *\ 1\ =\ post\ (o)}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ *\ 2\ =\ horizontal\ obstacle\ (-\/)}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ *\ 3\ =\ vertical\ obstacle\ (|)}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ *\ 4\ =\ goal\ (G)}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ *\ 5\ =\ start\ (S)}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ *\ 8\ =\ path\ marker\ (*)}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ *\ 9\ =\ node\ (N)}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ */}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//class\ MazeSolver\ \{}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//private:}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ \ \ \ std::string\ mazePath;}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ \ \ \ int\ totalRows;}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ \ \ \ int\ totalCols;}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ \ \ \ Position\ startPos;}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ \ \ \ Position\ goalPos;}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ \ \ \ bool\ mazeLoaded;}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//public:}}
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ \ \ \ /**}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ \ \ \ \ *\ @brief\ Constructor}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ \ \ \ MazeSolver();}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//}}
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ \ \ \ /**}}
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ \ \ \ \ *\ @brief\ Load\ a\ maze\ from\ a\ file\ path}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ \ \ \ \ *\ @param\ path\ Full\ path\ to\ the\ maze\ file\ (e.g.,\ "{}/home/user/mazes/1.txt"{})}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ \ \ \ \ *\ @return\ true\ if\ maze\ loaded\ successfully,\ false\ otherwise}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ \ \ \ bool\ loadMaze(const\ std::string\&\ path);}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ \ \ \ /**}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ \ \ \ \ *\ @brief\ Get\ the\ maze\ as\ a\ matrix\ of\ integers}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ \ \ \ \ *\ @return\ Matrix\ representation\ of\ the\ maze}}
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ \ \ \ Matrix\ getMazeMatrix();}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ \ \ \ /**}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ \ \ \ \ *\ @brief\ Get\ the\ maze\ with\ detected\ nodes\ marked}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ \ \ \ \ *\ @return\ Matrix\ with\ nodes\ marked\ as\ 9}}
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ \ \ \ Matrix\ getMazeWithNodes();}}
+\DoxyCodeLine{00057\ \textcolor{comment}{//}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ \ \ \ /**}}
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ \ \ \ \ *\ @brief\ Solve\ the\ maze\ using\ Dijkstra's\ algorithm}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ \ \ \ \ *\ @return\ Matrix\ with\ the\ shortest\ path\ marked\ with\ 8,\ }}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ \ \ \ \ *\ \ \ \ \ \ \ \ \ connecting\ line\ segments\ marked\ with\ 8\ as\ well}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ \ \ \ Matrix\ solveMaze();}}
+\DoxyCodeLine{00064\ \textcolor{comment}{//}}
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ \ \ \ /**}}
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ \ \ \ \ *\ @brief\ Check\ if\ a\ position\ is\ valid\ (in\ bounds\ and\ not\ an\ obstacle)}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ \ \ \ \ *\ @param\ pos\ Position\ to\ check}}
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ \ \ \ \ *\ @return\ true\ if\ valid\ move,\ false\ otherwise}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ \ \ \ bool\ isValidMove(const\ Position\&\ pos);}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ \ \ \ /**}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ \ \ \ \ *\ @brief\ Check\ if\ player\ has\ reached\ the\ goal}}
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ \ \ \ \ *\ @param\ pos\ Current\ player\ position}}
+\DoxyCodeLine{00075\ \textcolor{comment}{//\ \ \ \ \ *\ @return\ true\ if\ at\ goal,\ false\ otherwise}}
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ \ \ \ bool\ isGoal(const\ Position\&\ pos);}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//}}
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ \ \ \ /**}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ \ \ \ \ *\ @brief\ Get\ the\ start\ position}}
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ \ \ \ \ *\ @return\ Position\ of\ 'S'\ in\ the\ maze}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ \ \ \ Position\ getStartPosition();}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//\ \ \ \ /**}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ \ \ \ \ *\ @brief\ Get\ the\ goal\ position}}
+\DoxyCodeLine{00087\ \textcolor{comment}{//\ \ \ \ \ *\ @return\ Position\ of\ 'G'\ in\ the\ maze}}
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00089\ \textcolor{comment}{//\ \ \ \ Position\ getGoalPosition();}}
+\DoxyCodeLine{00090\ \textcolor{comment}{//}}
+\DoxyCodeLine{00091\ \textcolor{comment}{//\ \ \ \ /**}}
+\DoxyCodeLine{00092\ \textcolor{comment}{//\ \ \ \ \ *\ @brief\ Get\ maze\ dimensions}}
+\DoxyCodeLine{00093\ \textcolor{comment}{//\ \ \ \ \ *\ @return\ pair\ of\ (rows,\ cols)}}
+\DoxyCodeLine{00094\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00095\ \textcolor{comment}{//\ \ \ \ std::pair<int,\ int>\ getDimensions();}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ \ \ \ /**}}
+\DoxyCodeLine{00098\ \textcolor{comment}{//\ \ \ \ \ *\ @brief\ Print\ the\ maze\ matrix\ to\ console\ (for\ debugging)}}
+\DoxyCodeLine{00099\ \textcolor{comment}{//\ \ \ \ \ *\ @param\ matrix\ The\ matrix\ to\ print}}
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00101\ \textcolor{comment}{//\ \ \ \ static\ void\ printMatrix(const\ Matrix\&\ matrix);}}
+\DoxyCodeLine{00102\ \textcolor{comment}{//}}
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ \ \ \ /**}}
+\DoxyCodeLine{00104\ \textcolor{comment}{//\ \ \ \ \ *\ @brief\ Get\ a\ human-\/readable\ character\ for\ a\ cell\ value}}
+\DoxyCodeLine{00105\ \textcolor{comment}{//\ \ \ \ \ *\ @param\ cellValue\ The\ integer\ value\ from\ the\ matrix}}
+\DoxyCodeLine{00106\ \textcolor{comment}{//\ \ \ \ \ *\ @return\ Character\ representation}}
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ \ \ \ \ */}}
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ \ \ \ static\ char\ cellToChar(int\ cellValue);}}
+\DoxyCodeLine{00109\ \textcolor{comment}{//\};}}
+\DoxyCodeLine{00110\ \textcolor{comment}{//}}
+\DoxyCodeLine{00111\ \textcolor{comment}{//\#endif\ //\ MAZE\_SOLVER\_H}}
+
+\end{DoxyCode}

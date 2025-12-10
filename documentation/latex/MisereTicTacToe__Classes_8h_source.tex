@@ -1,0 +1,60 @@
+\doxysection{Misere\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h}
+\hypertarget{MisereTicTacToe__Classes_8h_source}{}\label{MisereTicTacToe__Classes_8h_source}\index{include/MisereTicTacToe\_Classes.h@{include/MisereTicTacToe\_Classes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MISERE\_TICTACTOE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MISERE\_TICTACTOE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}util/BoardGame\_Classes.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMisereTicTacToeBoard_a5fc779bbb10242e4acc7ccbd2786e6fa}{MisereTicTacToeBoard}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBoard_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}<char>\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{classMisereTicTacToeBoard_a5fc779bbb10242e4acc7ccbd2786e6fa}{MisereTicTacToeBoard}}();}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMisereTicTacToeBoard_a257b79c0a652656dd1a7358a7d15c78a}{update\_board}}(\mbox{\hyperlink{classMove}{Move<char>}}*\ move)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMisereTicTacToeBoard_abe1462504dd65a2d6189ee8c92aae113}{is\_win}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMisereTicTacToeBoard_a4b63f6f7317cb05d506e75bb8ee3b056}{is\_lose}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMisereTicTacToeBoard_a329b35388e1492447d1c213a768b9adf}{is\_draw}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMisereTicTacToeBoard_ada9a0c4269fdae5e76338406fad89233}{game\_is\_over}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_three\_in\_row(\textcolor{keywordtype}{char}\ sym);}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }MiserePlayer\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classPlayer_adb4e803a7ac0356b111b8ca79d766976}{Player}}<char>\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ MiserePlayer(\textcolor{keywordtype}{string}\ n,\ \textcolor{keywordtype}{char}\ s,\ PlayerType\ t)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classPlayer_adb4e803a7ac0356b111b8ca79d766976}{Player}}(n,\ s,\ t)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ AI\ Player\ class}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }MisereAIPlayer\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classPlayer_adb4e803a7ac0356b111b8ca79d766976}{Player}}<char>\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ minimax(vector<vector<char>>\&\ board,\ \textcolor{keywordtype}{int}\ depth,\ \textcolor{keywordtype}{bool}\ isMaximizing,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ aiSymbol,\ \textcolor{keywordtype}{char}\ oppSymbol,\ \textcolor{keywordtype}{int}\ alpha,\ \textcolor{keywordtype}{int}\ beta);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ check\_three\_in\_row\_static(\textcolor{keyword}{const}\ vector<vector<char>>\&\ b,\ \textcolor{keywordtype}{char}\ sym);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ is\_board\_full(\textcolor{keyword}{const}\ vector<vector<char>>\&\ b);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ MisereAIPlayer(\textcolor{keywordtype}{string}\ n,\ \textcolor{keywordtype}{char}\ s);}
+\DoxyCodeLine{00042\ \ \ \ \ pair<int,\ int>\ get\_best\_move();}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ UI\ for\ Misere\ Tic\ Tac\ Toe}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }MisereTicTacToeUI\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classUI_ae50eed41905ca2f8dc103d9bef427fe6}{UI}}<char>\ \{}
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ MisereTicTacToeUI();}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classMove}{Move<char>}}*\ \mbox{\hyperlink{classMisereTicTacToeUI_a04a86802b2c1b919833070a5d949fd1e}{get\_move}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<char>}}*\ \mbox{\hyperlink{classMisereTicTacToeUI_a3fa2930dec7ed51f510b0491762b035a}{create\_player}}(\textcolor{keywordtype}{string}\&\ name,\ \textcolor{keywordtype}{char}\ symbol,\ PlayerType\ type)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<char>}}**\ \mbox{\hyperlink{classMisereTicTacToeUI_a6acc04d978ca03ce52cbbf958e60e4b6}{setup\_players}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MISERE\_TICTACTOE\_H}}
+
+\end{DoxyCode}

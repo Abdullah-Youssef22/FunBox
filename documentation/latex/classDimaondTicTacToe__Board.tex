@@ -1,0 +1,187 @@
+\doxysection{Dimaond\+Tic\+Tac\+Toe\+\_\+\+Board Class Reference}
+\hypertarget{classDimaondTicTacToe__Board}{}\label{classDimaondTicTacToe__Board}\index{DimaondTicTacToe\_Board@{DimaondTicTacToe\_Board}}
+Inheritance diagram for Dimaond\+Tic\+Tac\+Toe\+\_\+\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDimaondTicTacToe__Board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classDimaondTicTacToe__Board_a555227db8b9eb58070c6d129f57c3c68}{update\+\_\+board}} (\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move) override
+\begin{DoxyCompactList}\small\item\em Update the board with a player\textquotesingle{}s move. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDimaondTicTacToe__Board_a984ead9e1a2c971636d02fd0d5702701}{is\+\_\+win}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Determine if a player has won the game. Winning requires 3 in a line plus 4 in another line. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDimaondTicTacToe__Board_a8099a60f23da068ada12db2e9964d0b5}{is\+\_\+lose}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Determine if a player has lost the game. Currently always returns false. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDimaondTicTacToe__Board_a0c368b2ecd5afc58072a2ebbedb5b4a3}{is\+\_\+draw}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Check if the game is a draw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDimaondTicTacToe__Board_a8abe99980acf6b9cf01eb6930544b2ac}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Check if the game is over (win or draw). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDimaondTicTacToe__Board_a403fe48942215821ffdd7e07ec585afe}{is\+\_\+valid\+\_\+cell}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Verify if a cell is valid for a move. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{classBoard_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{classBoard_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDimaondTicTacToe__Board_a8abe99980acf6b9cf01eb6930544b2ac}\index{DimaondTicTacToe\_Board@{DimaondTicTacToe\_Board}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!DimaondTicTacToe\_Board@{DimaondTicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{classDimaondTicTacToe__Board_a8abe99980acf6b9cf01eb6930544b2ac} 
+bool Dimaond\+Tic\+Tac\+Toe\+\_\+\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the game is over (win or draw). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the game is finished 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{classDimaondTicTacToe__Board_a0c368b2ecd5afc58072a2ebbedb5b4a3}\index{DimaondTicTacToe\_Board@{DimaondTicTacToe\_Board}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!DimaondTicTacToe\_Board@{DimaondTicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{classDimaondTicTacToe__Board_a0c368b2ecd5afc58072a2ebbedb5b4a3} 
+bool Dimaond\+Tic\+Tac\+Toe\+\_\+\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the game is a draw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all cells are filled and no win condition is met 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{classDimaondTicTacToe__Board_a8099a60f23da068ada12db2e9964d0b5}\index{DimaondTicTacToe\_Board@{DimaondTicTacToe\_Board}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!DimaondTicTacToe\_Board@{DimaondTicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{classDimaondTicTacToe__Board_a8099a60f23da068ada12db2e9964d0b5} 
+bool Dimaond\+Tic\+Tac\+Toe\+\_\+\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Determine if a player has lost the game. Currently always returns false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{classDimaondTicTacToe__Board_a403fe48942215821ffdd7e07ec585afe}\index{DimaondTicTacToe\_Board@{DimaondTicTacToe\_Board}!is\_valid\_cell@{is\_valid\_cell}}
+\index{is\_valid\_cell@{is\_valid\_cell}!DimaondTicTacToe\_Board@{DimaondTicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_cell()}{is\_valid\_cell()}}
+{\footnotesize\ttfamily \label{classDimaondTicTacToe__Board_a403fe48942215821ffdd7e07ec585afe} 
+bool Dimaond\+Tic\+Tac\+Toe\+\_\+\+Board\+::is\+\_\+valid\+\_\+cell (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Verify if a cell is valid for a move. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Row index \\
+\hline
+{\em y} & Column index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the cell is inside the board, inside the diamond, and empty 
+\end{DoxyReturn}
+\Hypertarget{classDimaondTicTacToe__Board_a984ead9e1a2c971636d02fd0d5702701}\index{DimaondTicTacToe\_Board@{DimaondTicTacToe\_Board}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!DimaondTicTacToe\_Board@{DimaondTicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{classDimaondTicTacToe__Board_a984ead9e1a2c971636d02fd0d5702701} 
+bool Dimaond\+Tic\+Tac\+Toe\+\_\+\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Determine if a player has won the game. Winning requires 3 in a line plus 4 in another line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the player has won, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{classDimaondTicTacToe__Board_a555227db8b9eb58070c6d129f57c3c68}\index{DimaondTicTacToe\_Board@{DimaondTicTacToe\_Board}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!DimaondTicTacToe\_Board@{DimaondTicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{classDimaondTicTacToe__Board_a555227db8b9eb58070c6d129f57c3c68} 
+bool Dimaond\+Tic\+Tac\+Toe\+\_\+\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update the board with a player\textquotesingle{}s move. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & Pointer to the move object containing coordinates and symbol \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the move was valid and applied, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Diamond\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h\item 
+src/mostafa/Diamond\+Tic\+Tac\+Toe\+\_\+\+Classes.\+cpp\end{DoxyCompactItemize}

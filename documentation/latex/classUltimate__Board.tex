@@ -1,0 +1,307 @@
+\doxysection{Ultimate\+\_\+\+Board Class Reference}
+\hypertarget{classUltimate__Board}{}\label{classUltimate__Board}\index{Ultimate\_Board@{Ultimate\_Board}}
+Inheritance diagram for Ultimate\+\_\+\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUltimate__Board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUltimate__Board_a7217969045637563ae6d47d492a31fa9}{Ultimate\+\_\+\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Ultimate \doxylink{classBoard}{Board}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUltimate__Board_a8599973931f40039049ede71a7f8d969}{\texorpdfstring{$\sim$}{\string~}\+Ultimate\+\_\+\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classUltimate__Board}{Ultimate\+\_\+\+Board}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUltimate__Board_a9339ec67859e01c726adf55a8a77db72}{update\+\_\+board}} (\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move) override
+\begin{DoxyCompactList}\small\item\em Updates the ultimate board with a player\textquotesingle{}s move. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUltimate__Board_a34b9605914ffff40dde2acb0be08f857}{is\+\_\+win}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Checks if the specified player has won the ultimate game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUltimate__Board_a5737c7a2126711b10d5996eb07644fb1}{is\+\_\+draw}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Checks if the ultimate game has ended in a draw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUltimate__Board_af6444940093ff5b9ce1d9bbe73350248}{is\+\_\+lose}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Check if a player has lost. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUltimate__Board_adb5f3ecf194dae9f85a680f384422151}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Checks if the ultimate game has reached a terminal state. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classUltimate__Board_a8f251de8b6214ad8f3e04401d2ec1c34}{get\+Meta\+Board\+Cell}} (int row, int col) const
+\begin{DoxyCompactList}\small\item\em Gets the value of a cell in the meta-\/board. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMini__Board}{Mini\+\_\+\+Board}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUltimate__Board_a93861ee9310b9865d7ab118be47417db}{get\+Mini\+Board}} (int row, int col) const
+\begin{DoxyCompactList}\small\item\em getters \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUltimate__Board_af71f20353717f6959f432481a3ca3907}{get\+Active\+Mini\+Row}} () const
+\begin{DoxyCompactList}\small\item\em Gets the row index of the currently active mini-\/board. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUltimate__Board_a0e70fe38cb3ec534f110c175701c351a}{get\+Active\+Mini\+Col}} () const
+\begin{DoxyCompactList}\small\item\em Gets the column index of the currently active mini-\/board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{classBoard_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{classBoard_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classUltimate__Board_ab306b9a480d5de74defb766d37851429}\label{classUltimate__Board_ab306b9a480d5de74defb766d37851429} 
+class {\bfseries Ultimate\+\_\+\+UI}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classUltimate__Board_a7217969045637563ae6d47d492a31fa9}\index{Ultimate\_Board@{Ultimate\_Board}!Ultimate\_Board@{Ultimate\_Board}}
+\index{Ultimate\_Board@{Ultimate\_Board}!Ultimate\_Board@{Ultimate\_Board}}
+\doxysubsubsection{\texorpdfstring{Ultimate\_Board()}{Ultimate\_Board()}}
+{\footnotesize\ttfamily \label{classUltimate__Board_a7217969045637563ae6d47d492a31fa9} 
+Ultimate\+\_\+\+Board\+::\+Ultimate\+\_\+\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Ultimate \doxylink{classBoard}{Board}. 
+
+Default constructor for \doxylink{classUltimate__Board}{Ultimate\+\_\+\+Board}
+
+Initializes the 9x9 global board and creates 9 mini-\/boards in a 3x3 arrangement. Also initializes the meta-\/board that tracks mini-\/board winners.
+
+\begin{DoxyNote}{Note}
+Sets active\+Mini\+Row and active\+Mini\+Col to -\/1, indicating no active board initially 
+
+Allocates memory for 9 \doxylink{classMini__Board}{Mini\+\_\+\+Board} objects 
+\end{DoxyNote}
+\Hypertarget{classUltimate__Board_a8599973931f40039049ede71a7f8d969}\index{Ultimate\_Board@{Ultimate\_Board}!````~Ultimate\_Board@{\texorpdfstring{$\sim$}{\string~}Ultimate\_Board}}
+\index{````~Ultimate\_Board@{\texorpdfstring{$\sim$}{\string~}Ultimate\_Board}!Ultimate\_Board@{Ultimate\_Board}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Ultimate\_Board()}{\string~Ultimate\_Board()}}
+{\footnotesize\ttfamily \label{classUltimate__Board_a8599973931f40039049ede71a7f8d969} 
+Ultimate\+\_\+\+Board\+::\texorpdfstring{$\sim$}{\string~}\+Ultimate\+\_\+\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for \doxylink{classUltimate__Board}{Ultimate\+\_\+\+Board}. 
+
+Deallocates memory for all 9 mini-\/boards. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUltimate__Board_adb5f3ecf194dae9f85a680f384422151}\index{Ultimate\_Board@{Ultimate\_Board}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!Ultimate\_Board@{Ultimate\_Board}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{classUltimate__Board_adb5f3ecf194dae9f85a680f384422151} 
+bool Ultimate\+\_\+\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the ultimate game has reached a terminal state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the current \doxylink{classPlayer}{Player} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the game is won or drawn 
+
+false if the game can continue
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classUltimate__Board_a34b9605914ffff40dde2acb0be08f857}{is\+\_\+win()} 
+
+\doxylink{classUltimate__Board_a5737c7a2126711b10d5996eb07644fb1}{is\+\_\+draw()} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classBoard_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{classUltimate__Board_a0e70fe38cb3ec534f110c175701c351a}\index{Ultimate\_Board@{Ultimate\_Board}!getActiveMiniCol@{getActiveMiniCol}}
+\index{getActiveMiniCol@{getActiveMiniCol}!Ultimate\_Board@{Ultimate\_Board}}
+\doxysubsubsection{\texorpdfstring{getActiveMiniCol()}{getActiveMiniCol()}}
+{\footnotesize\ttfamily \label{classUltimate__Board_a0e70fe38cb3ec534f110c175701c351a} 
+int Ultimate\+\_\+\+Board\+::get\+Active\+Mini\+Col (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the column index of the currently active mini-\/board. 
+
+\begin{DoxyReturn}{Returns}
+int Active mini-\/board column (0-\/2), or -\/1 if no board is active 
+\end{DoxyReturn}
+\Hypertarget{classUltimate__Board_af71f20353717f6959f432481a3ca3907}\index{Ultimate\_Board@{Ultimate\_Board}!getActiveMiniRow@{getActiveMiniRow}}
+\index{getActiveMiniRow@{getActiveMiniRow}!Ultimate\_Board@{Ultimate\_Board}}
+\doxysubsubsection{\texorpdfstring{getActiveMiniRow()}{getActiveMiniRow()}}
+{\footnotesize\ttfamily \label{classUltimate__Board_af71f20353717f6959f432481a3ca3907} 
+int Ultimate\+\_\+\+Board\+::get\+Active\+Mini\+Row (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the row index of the currently active mini-\/board. 
+
+\begin{DoxyReturn}{Returns}
+int Active mini-\/board row (0-\/2), or -\/1 if no board is active 
+\end{DoxyReturn}
+\Hypertarget{classUltimate__Board_a8f251de8b6214ad8f3e04401d2ec1c34}\index{Ultimate\_Board@{Ultimate\_Board}!getMetaBoardCell@{getMetaBoardCell}}
+\index{getMetaBoardCell@{getMetaBoardCell}!Ultimate\_Board@{Ultimate\_Board}}
+\doxysubsubsection{\texorpdfstring{getMetaBoardCell()}{getMetaBoardCell()}}
+{\footnotesize\ttfamily \label{classUltimate__Board_a8f251de8b6214ad8f3e04401d2ec1c34} 
+char Ultimate\+\_\+\+Board\+::get\+Meta\+Board\+Cell (\begin{DoxyParamCaption}\item[{int}]{row}{, }\item[{int}]{col}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the value of a cell in the meta-\/board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Meta-\/board row index (0-\/2) \\
+\hline
+{\em col} & Meta-\/board column index (0-\/2) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char The cell value (\textquotesingle{}X\textquotesingle{}, \textquotesingle{}O\textquotesingle{}, \textquotesingle{}D\textquotesingle{} for draw, or blank\+\_\+symbol) 
+\end{DoxyReturn}
+\Hypertarget{classUltimate__Board_a93861ee9310b9865d7ab118be47417db}\index{Ultimate\_Board@{Ultimate\_Board}!getMiniBoard@{getMiniBoard}}
+\index{getMiniBoard@{getMiniBoard}!Ultimate\_Board@{Ultimate\_Board}}
+\doxysubsubsection{\texorpdfstring{getMiniBoard()}{getMiniBoard()}}
+{\footnotesize\ttfamily \label{classUltimate__Board_a93861ee9310b9865d7ab118be47417db} 
+\mbox{\hyperlink{classMini__Board}{Mini\+\_\+\+Board}} \texorpdfstring{$\ast$}{*} Ultimate\+\_\+\+Board\+::get\+Mini\+Board (\begin{DoxyParamCaption}\item[{int}]{row}{, }\item[{int}]{col}{}\end{DoxyParamCaption}) const}
+
+
+
+getters 
+
+Gets a pointer to a specific mini-\/board
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Mini-\/board row index (0-\/2) \\
+\hline
+{\em col} & Mini-\/board column index (0-\/2) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Mini\+\_\+\+Board\texorpdfstring{$\ast$}{*} Pointer to the requested mini-\/board 
+\end{DoxyReturn}
+\Hypertarget{classUltimate__Board_a5737c7a2126711b10d5996eb07644fb1}\index{Ultimate\_Board@{Ultimate\_Board}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!Ultimate\_Board@{Ultimate\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{classUltimate__Board_a5737c7a2126711b10d5996eb07644fb1} 
+bool Ultimate\+\_\+\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the ultimate game has ended in a draw. 
+
+A draw occurs when all mini-\/boards are decided (won or drawn) and neither player has won three mini-\/boards in a row.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the current \doxylink{classPlayer}{Player} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all mini-\/boards are decided with no winner 
+
+false if the game is still ongoing or someone has won 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{classUltimate__Board_af6444940093ff5b9ce1d9bbe73350248}\index{Ultimate\_Board@{Ultimate\_Board}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!Ultimate\_Board@{Ultimate\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{classUltimate__Board_af6444940093ff5b9ce1d9bbe73350248} 
+bool Ultimate\+\_\+\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if a player has lost. 
+
+
+
+Implements \mbox{\hyperlink{classBoard_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{classUltimate__Board_a34b9605914ffff40dde2acb0be08f857}\index{Ultimate\_Board@{Ultimate\_Board}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!Ultimate\_Board@{Ultimate\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{classUltimate__Board_a34b9605914ffff40dde2acb0be08f857} 
+bool Ultimate\+\_\+\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the specified player has won the ultimate game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the \doxylink{classPlayer}{Player} object to check for winning \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the player has won three mini-\/boards in a row on the meta-\/board 
+
+false if no winning combination exists
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+check\+Meta\+Board\+Win() 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classBoard_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{classUltimate__Board_a9339ec67859e01c726adf55a8a77db72}\index{Ultimate\_Board@{Ultimate\_Board}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!Ultimate\_Board@{Ultimate\_Board}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{classUltimate__Board_a9339ec67859e01c726adf55a8a77db72} 
+bool Ultimate\+\_\+\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the ultimate board with a player\textquotesingle{}s move. 
+
+Validates global coordinates, determines which mini-\/board to play in, enforces active board rules, updates the appropriate mini-\/board, and updates the meta-\/board if a mini-\/board becomes decided.
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & Pointer to \doxylink{classMove}{Move} object containing global position (x,y) and player symbol \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the move was valid and successfully placed 
+
+false if move is invalid (out of bounds, wrong mini-\/board, already decided, etc.)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Global coordinates must be 0-\/8 
+
+Active board rules\+: players must continue in the board determined by opponent\textquotesingle{}s last move 
+
+Prints error messages for invalid moves 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+is\+Miniboard\+Playable() 
+
+update\+Meta\+Board() 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classBoard_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Ultimate\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h\item 
+src/ammen/\mbox{\hyperlink{UltimateTicTacToe__Classes_8cpp}{Ultimate\+Tic\+Tac\+Toe\+\_\+\+Classes.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,32 @@
+\doxysection{Menu.\+h}
+\hypertarget{Menu_8h_source}{}\label{Menu_8h_source}\index{include/util/Menu.h@{include/util/Menu.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MENU\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MENU\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include"{}colors.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }Menu\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ std::vector<std::string>\ options;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ currentSelection;}
+\DoxyCodeLine{00011\ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ clearScreen();}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ getKeyPress();}
+\DoxyCodeLine{00014\ \ \ \ \ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ Menu();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ noOptionChosen;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ addOption(\textcolor{keyword}{const}\ std::string\&\ option);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ display(\textcolor{keywordtype}{bool}\ enhanced);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ kbhit();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ displayMenu(\textcolor{keywordtype}{bool}\ enhancedMenu);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ getOptionCount()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \string~Menu();}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

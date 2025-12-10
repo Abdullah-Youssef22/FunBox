@@ -1,0 +1,229 @@
+\doxysection{Board\+Game\+\_\+\+Classes.\+h}
+\hypertarget{BoardGame__Classes_8h_source}{}\label{BoardGame__Classes_8h_source}\index{include/util/BoardGame\_Classes.h@{include/util/BoardGame\_Classes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_BOARDGAME\_CLASSES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_BOARDGAME\_CLASSES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Forward\ declarations}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPlayer}{Player}};}
+\DoxyCodeLine{00015\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMove}{Move}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Class\ declarations}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{enum\ class}\ PlayerType\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ HUMAN,\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ COMPUTER,\ \ }
+\DoxyCodeLine{00027\ \ \ \ \ AI,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ RANDOM\ \ \ \ \ }
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBoard_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBoard_a948d978e3b5fc460559b588f5dee9572}{rows}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBoard_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}};\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ vector<vector<T>>\ \mbox{\hyperlink{classBoard_af00c1fc363eb640ca276b8a572040040}{board}};\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBoard_a5952baefabced65fecec333de638408d}{n\_moves}}\ =\ 0;\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{classBoard_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBoard_a948d978e3b5fc460559b588f5dee9572}{rows}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBoard_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classBoard_a948d978e3b5fc460559b588f5dee9572}{rows}}(\mbox{\hyperlink{classBoard_a948d978e3b5fc460559b588f5dee9572}{rows}}),\ \mbox{\hyperlink{classBoard_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}}(\mbox{\hyperlink{classBoard_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}}),\ \mbox{\hyperlink{classBoard_af00c1fc363eb640ca276b8a572040040}{board}}(\mbox{\hyperlink{classBoard_a948d978e3b5fc460559b588f5dee9572}{rows}},\ vector<T>(\mbox{\hyperlink{classBoard_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}}))\ \{\}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classBoard_a138a6378af669dd1ce55dc11217aea48}{\string~Board}}()\ \{\}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBoard_a93d9dec601dda58b7e206ccb47633e57}{update\_board}}(\mbox{\hyperlink{classMove}{Move<T>}}*\ move)\ =\ 0;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBoard_ab316fe3e79677b4617fc3d90d6c48f33}{is\_win}}(\mbox{\hyperlink{classPlayer}{Player<T>}}*)\ =\ 0;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBoard_a207d5f6feb77f81c51d1462f0245890d}{is\_lose}}(\mbox{\hyperlink{classPlayer}{Player<T>}}*)\ =\ 0;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBoard_a8dbe2a243881986f3e53b45799d377fc}{is\_draw}}(\mbox{\hyperlink{classPlayer}{Player<T>}}*)\ =\ 0;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBoard_ae0e4575ec3cc4b6eb9f367ffb2beed13}{game\_is\_over}}(\mbox{\hyperlink{classPlayer}{Player<T>}}*)\ =\ 0;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \ \ vector<vector<T>>\ \mbox{\hyperlink{classBoard_a117f2e61fdb7deccca333bbbc9c62d3a}{get\_board\_matrix}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classBoard_af00c1fc363eb640ca276b8a572040040}{board}};}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBoard_a93b130eff67bd4476fab27be8341cb78}{get\_rows}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classBoard_a948d978e3b5fc460559b588f5dee9572}{rows}};\ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBoard_ac665e1ed1f49125fab248e2c9ddfd608}{get\_columns}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classBoard_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}};\ \}}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00098\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00099\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMove_a100102cb072a2857304023233dac7b42}{Move}}\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{int}\ x;\ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{int}\ y;\ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ T\ symbol;\ \ \ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classMove_a100102cb072a2857304023233dac7b42}{Move}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ T\ symbol)\ :\ x(x),\ y(y),\ symbol(symbol)\ \{\}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classMove_a9d4f543a81e361f872d37bcfb64d5b55}{get\_x}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ x;\ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classMove_a96469802a55c9083a1e93c7edec8a00c}{get\_y}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ y;\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \ \ \ \ T\ \mbox{\hyperlink{classMove_a595bf740852c05a1cb425ef2640fd4ff}{get\_symbol}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ symbol;\ \}}
+\DoxyCodeLine{00116\ \};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00124\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00125\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPlayer_adb4e803a7ac0356b111b8ca79d766976}{Player}}\ \{}
+\DoxyCodeLine{00126\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classPlayer_af0ad0d4ca8584d23a98c723cd703a4f6}{name}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ PlayerType\ \mbox{\hyperlink{classPlayer_a81a15b1b507fd5f2157fb15bf0fd283f}{type}};\ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ T\ \mbox{\hyperlink{classPlayer_a272d6c4dab769930d4f8074918e7708a}{symbol}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{classBoard}{Board<T>}}*\ \mbox{\hyperlink{classPlayer_a26249e756f850b6585267bfbc928ac79}{boardPtr}};\ \ }
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{classPlayer_adb4e803a7ac0356b111b8ca79d766976}{Player}}(\textcolor{keywordtype}{string}\ n,\ T\ s,\ PlayerType\ t)}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classPlayer_af0ad0d4ca8584d23a98c723cd703a4f6}{name}}(n),\ \mbox{\hyperlink{classPlayer_a272d6c4dab769930d4f8074918e7708a}{symbol}}(s),\ \mbox{\hyperlink{classPlayer_a81a15b1b507fd5f2157fb15bf0fd283f}{type}}(t),\ \mbox{\hyperlink{classPlayer_a26249e756f850b6585267bfbc928ac79}{boardPtr}}(nullptr)\ \{\}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classPlayer}{\string~Player}}()\ \{\}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classPlayer_aed2af19790ba73190e3ebeea589518e1}{get\_name}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPlayer_af0ad0d4ca8584d23a98c723cd703a4f6}{name}};\ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \ \ \ \ PlayerType\ \mbox{\hyperlink{classPlayer_a2df3bd299bf7aecfa2275ec6902a60f8}{get\_type}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPlayer_a81a15b1b507fd5f2157fb15bf0fd283f}{type}};\ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00148\ \ \ \ \ T\ \mbox{\hyperlink{classPlayer_af56f0bf98c0423a3a75b0848607d03a4}{get\_symbol}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPlayer_a272d6c4dab769930d4f8074918e7708a}{symbol}};\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{classBoard}{Board<T>}}*\ \mbox{\hyperlink{classPlayer_a508617eddfae8915d098102d480fc888}{get\_board\_ptr}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPlayer_a26249e756f850b6585267bfbc928ac79}{boardPtr}};\ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlayer_a3617a3ad0db435176a06948065f9a3a6}{set\_board\_ptr}}(\mbox{\hyperlink{classBoard}{Board<T>}}*\ b)\ \{\ \mbox{\hyperlink{classPlayer_a26249e756f850b6585267bfbc928ac79}{boardPtr}}\ =\ b;\ \}}
+\DoxyCodeLine{00155\ \};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00163\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00164\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUI_ae50eed41905ca2f8dc103d9bef427fe6}{UI}}\ \{}
+\DoxyCodeLine{00165\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classUI_a6c79c489ae9aa3a7860fb58e5a14ddfe}{cell\_width}};\ }
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classUI_a8617bbf64a9ddf11ea6231912044805d}{get\_player\_name}}(\textcolor{keywordtype}{string}\ player\_label)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ name;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Enter\ "{}}\ <<\ player\_label\ <<\ \textcolor{stringliteral}{"{}\ name:\ "{}};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ getline(cin\ >>\ ws,\ name);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{00176\ \ \ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00181\ \ \ \ \ PlayerType\ \mbox{\hyperlink{classUI_ae62d61367ea51a5d7532db3b830c6445}{get\_player\_type\_choice}}(\textcolor{keywordtype}{string}\ player\_label,\ \textcolor{keyword}{const}\ vector<string>\&\ options)\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Choose\ "{}}\ <<\ player\_label\ <<\ \textcolor{stringliteral}{"{}\ type:\(\backslash\)n"{}};}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ options.size();\ ++i)}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ i\ +\ 1\ <<\ \textcolor{stringliteral}{"{}.\ "{}}\ <<\ options[i]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ choice;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ cin\ >>\ choice;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (choice==3)?PlayerType::AI:(choice\ ==\ 2)\ ?\ PlayerType::COMPUTER\ :\ PlayerType::HUMAN;}
+\DoxyCodeLine{00188\ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00194\ \ \ \ \ \mbox{\hyperlink{classUI_ae50eed41905ca2f8dc103d9bef427fe6}{UI}}(\textcolor{keywordtype}{string}\ message,\ \textcolor{keywordtype}{int}\ cell\_display\_width)}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classUI_a6c79c489ae9aa3a7860fb58e5a14ddfe}{cell\_width}}(cell\_display\_width)\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ cout\ <<\ message\ <<\ endl;}
+\DoxyCodeLine{00197\ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classUI}{\string~UI}}()\ \{\}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUI_a1eead148ee8726b8ea329c2cd8841d18}{display\_message}}(\textcolor{keywordtype}{string}\ message)\ \{\ cout\ <<\ message\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};\ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classMove}{Move<T>}}*\ \mbox{\hyperlink{classUI_a8befa259c38c57e6ae2e8ed81c476337}{get\_move}}(\mbox{\hyperlink{classPlayer}{Player<T>}}*)\ =\ 0;}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classPlayer}{Player<T>}}**\ \mbox{\hyperlink{classUI_a6966a040c995b2292e5edddaa94f889a}{setup\_players}}();}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classPlayer}{Player<T>}}*\ \mbox{\hyperlink{classUI_af9f043033208286cd56240a1f060dd7b}{create\_player}}(\textcolor{keywordtype}{string}\&\ name,\ T\ symbol,\ PlayerType\ type)\ =\ 0;}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUI_a5d4655d5ff273e284fd68b8547483a23}{display\_board\_matrix}}(\textcolor{keyword}{const}\ vector<vector<T>>\&\ matrix)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (matrix.empty()\ ||\ matrix[0].empty())\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rows\ =\ matrix.size();}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cols\ =\ matrix[0].size();}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n\ \ \ \ "{}};}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ cols;\ ++j)}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ setw(\mbox{\hyperlink{classUI_a6c79c489ae9aa3a7860fb58e5a14ddfe}{cell\_width}}\ +\ 1)\ <<\ j;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n\ \ \ "{}}\ <<\ string((\mbox{\hyperlink{classUI_a6c79c489ae9aa3a7860fb58e5a14ddfe}{cell\_width}}\ +\ 2)\ *\ cols,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rows;\ ++i)\ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ setw(2)\ <<\ i\ <<\ \textcolor{stringliteral}{"{}\ |"{}};}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ cols;\ ++j)}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ setw(\mbox{\hyperlink{classUI_a6c79c489ae9aa3a7860fb58e5a14ddfe}{cell\_width}})\ <<\ matrix[i][j]\ <<\ \textcolor{stringliteral}{"{}\ |"{}};}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n\ \ \ "{}}\ <<\ string((\mbox{\hyperlink{classUI_a6c79c489ae9aa3a7860fb58e5a14ddfe}{cell\_width}}\ +\ 2)\ *\ cols,\ \textcolor{charliteral}{'-\/'})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00240\ \ \ \ \ \}}
+\DoxyCodeLine{00241\ \};}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00249\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00250\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGameManager_addaf3682d9783bdc432a8e3273b5b92c}{GameManager}}\ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \mbox{\hyperlink{classBoard}{Board<T>}}*\ boardPtr;\ \ \ \ }
+\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<T>}}*\ players[2];\ }
+\DoxyCodeLine{00253\ \ \ \ \ \mbox{\hyperlink{classUI}{UI<T>}}*\ ui;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00259\ \ \ \ \ \mbox{\hyperlink{classGameManager_addaf3682d9783bdc432a8e3273b5b92c}{GameManager}}(\mbox{\hyperlink{classBoard}{Board<T>}}*\ b,\ \mbox{\hyperlink{classPlayer}{Player<T>}}*\ p[2],\ \mbox{\hyperlink{classUI}{UI<T>}}*\ u)}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ :\ boardPtr(b),\ ui(u)\ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ players[0]\ =\ p[0];}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ players[1]\ =\ p[1];}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ players[0]-\/>\mbox{\hyperlink{classPlayer_a3617a3ad0db435176a06948065f9a3a6}{set\_board\_ptr}}(b);}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ players[1]-\/>set\_board\_ptr(b);}
+\DoxyCodeLine{00265\ \ \ \ \ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameManager_a71f46d5189dac5c773f608cea1b5a203}{run}}()\ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ ui-\/>display\_board\_matrix(boardPtr-\/>get\_board\_matrix());}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<T>}}*\ currentPlayer\ =\ players[0];}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ :\ \{0,\ 1\})\ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentPlayer\ =\ players[i];}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMove}{Move<T>}}*\ move\ =\ ui-\/>get\_move(currentPlayer);}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!boardPtr-\/>update\_board(move))}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ move\ =\ ui-\/>get\_move(currentPlayer);}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>display\_board\_matrix(boardPtr-\/>get\_board\_matrix());}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boardPtr-\/>is\_win(currentPlayer))\ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>display\_message(currentPlayer-\/>\mbox{\hyperlink{classPlayer_aed2af19790ba73190e3ebeea589518e1}{get\_name}}()\ +\ \textcolor{stringliteral}{"{}\ wins!"{}});}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boardPtr-\/>is\_lose(currentPlayer))\ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>display\_message(players[1\ -\/\ i]-\/>get\_name()\ +\ \textcolor{stringliteral}{"{}\ wins!"{}});}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boardPtr-\/>is\_draw(currentPlayer))\ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>display\_message(\textcolor{stringliteral}{"{}Draw!"{}});}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00298\ \ \ \ \ \}}
+\DoxyCodeLine{00299\ \};}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00305\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00306\ \mbox{\hyperlink{classPlayer}{Player<T>}}**\ \mbox{\hyperlink{classUI_a6966a040c995b2292e5edddaa94f889a}{UI<T>::setup\_players}}()\ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<T>}}**\ players\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classPlayer}{Player<T>}}*[2];}
+\DoxyCodeLine{00308\ \ \ \ \ vector<string>\ type\_options\ =\ \{\ \textcolor{stringliteral}{"{}Human"{}},\ \textcolor{stringliteral}{"{}Computer"{}}\ \};}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordtype}{string}\ nameX\ =\ \mbox{\hyperlink{classUI_a8617bbf64a9ddf11ea6231912044805d}{get\_player\_name}}(\textcolor{stringliteral}{"{}Player\ X"{}});}
+\DoxyCodeLine{00311\ \ \ \ \ PlayerType\ typeX\ =\ \mbox{\hyperlink{classUI_ae62d61367ea51a5d7532db3b830c6445}{get\_player\_type\_choice}}(\textcolor{stringliteral}{"{}Player\ X"{}},\ type\_options);}
+\DoxyCodeLine{00312\ \ \ \ \ players[0]\ =\ \mbox{\hyperlink{classUI_af9f043033208286cd56240a1f060dd7b}{create\_player}}(nameX,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(\textcolor{charliteral}{'X'}),\ typeX);}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordtype}{string}\ nameO\ =\ \mbox{\hyperlink{classUI_a8617bbf64a9ddf11ea6231912044805d}{get\_player\_name}}(\textcolor{stringliteral}{"{}Player\ O"{}});}
+\DoxyCodeLine{00315\ \ \ \ \ PlayerType\ typeO\ =\ \mbox{\hyperlink{classUI_ae62d61367ea51a5d7532db3b830c6445}{get\_player\_type\_choice}}(\textcolor{stringliteral}{"{}Player\ O"{}},\ type\_options);}
+\DoxyCodeLine{00316\ \ \ \ \ players[1]\ =\ \mbox{\hyperlink{classUI_af9f043033208286cd56240a1f060dd7b}{create\_player}}(nameO,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(\textcolor{charliteral}{'O'}),\ typeO);}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordflow}{return}\ players;}
+\DoxyCodeLine{00319\ \}}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_BOARDGAME\_CLASSES\_H}}
+
+\end{DoxyCode}

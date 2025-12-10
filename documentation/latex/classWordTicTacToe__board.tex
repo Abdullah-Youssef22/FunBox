@@ -1,0 +1,270 @@
+\doxysection{Word\+Tic\+Tac\+Toe\+\_\+board Class Reference}
+\hypertarget{classWordTicTacToe__board}{}\label{classWordTicTacToe__board}\index{WordTicTacToe\_board@{WordTicTacToe\_board}}
+Inheritance diagram for Word\+Tic\+Tac\+Toe\+\_\+board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classWordTicTacToe__board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWordTicTacToe__board_ae925cd5f6b82d4359f2a8dbfb9bf049d}{Word\+Tic\+Tac\+Toe\+\_\+board}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{classWordTicTacToe__board}{Word\+Tic\+Tac\+Toe\+\_\+board}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWordTicTacToe__board_aab7c6a7368a57b11258e045b07f7992b}{\texorpdfstring{$\sim$}{\string~}\+Word\+Tic\+Tac\+Toe\+\_\+board}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classWordTicTacToe__board}{Word\+Tic\+Tac\+Toe\+\_\+board}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWordTicTacToe__board_a246257c155f787ef188a6a7443c00450}{update\+\_\+board}} (\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move)
+\begin{DoxyCompactList}\small\item\em Updates the board with a player\textquotesingle{}s move. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWordTicTacToe__board_a3e3d68f641d3514d8abe329e85fdc1e9}{is\+\_\+win}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Checks if the specified player has won the game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWordTicTacToe__board_a9d386abacb0e4465768dde8fabb730c8}{is\+\_\+lose}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Check if a player has lost. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWordTicTacToe__board_a1889bb644f7befd2fbf5e13acf174a98}{is\+\_\+draw}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Checks if the game has ended in a draw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWordTicTacToe__board_adc7ad95bc7cbad2113c6ae5d0ce114f0}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Checks if the game has reached a terminal state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWordTicTacToe__board_ac8cfad5cac7ef8bb673e3b0b3ea681c0}{desplay\+\_\+winner}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Displays the winner announcement with the valid word. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWordTicTacToe__board_a88a7eb38dd8fd6b4984803ac6d232b38}{display\+\_\+draw}} ()
+\begin{DoxyCompactList}\small\item\em Displays the draw game announcement. \end{DoxyCompactList}\item 
+\Hypertarget{classWordTicTacToe__board_a82657066c5de9ff8e44dbb30293d299d}\label{classWordTicTacToe__board_a82657066c5de9ff8e44dbb30293d299d} 
+const vector$<$ string $>$ \& {\bfseries get\+\_\+dictionary} () const
+\item 
+\Hypertarget{classWordTicTacToe__board_a88d425208ff736a5be670ca08dd71c13}\label{classWordTicTacToe__board_a88d425208ff736a5be670ca08dd71c13} 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{classBoard_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{classBoard_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classWordTicTacToe__board_ae925cd5f6b82d4359f2a8dbfb9bf049d}\index{WordTicTacToe\_board@{WordTicTacToe\_board}!WordTicTacToe\_board@{WordTicTacToe\_board}}
+\index{WordTicTacToe\_board@{WordTicTacToe\_board}!WordTicTacToe\_board@{WordTicTacToe\_board}}
+\doxysubsubsection{\texorpdfstring{WordTicTacToe\_board()}{WordTicTacToe\_board()}}
+{\footnotesize\ttfamily \label{classWordTicTacToe__board_ae925cd5f6b82d4359f2a8dbfb9bf049d} 
+Word\+Tic\+Tac\+Toe\+\_\+board\+::\+Word\+Tic\+Tac\+Toe\+\_\+board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor for \doxylink{classWordTicTacToe__board}{Word\+Tic\+Tac\+Toe\+\_\+board}. 
+
+Initializes a 3x3 board with all cells set to the blank symbol. Calls the base \doxylink{classBoard}{Board} constructor with dimensions 3x3. \Hypertarget{classWordTicTacToe__board_aab7c6a7368a57b11258e045b07f7992b}\index{WordTicTacToe\_board@{WordTicTacToe\_board}!````~WordTicTacToe\_board@{\texorpdfstring{$\sim$}{\string~}WordTicTacToe\_board}}
+\index{````~WordTicTacToe\_board@{\texorpdfstring{$\sim$}{\string~}WordTicTacToe\_board}!WordTicTacToe\_board@{WordTicTacToe\_board}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}WordTicTacToe\_board()}{\string~WordTicTacToe\_board()}}
+{\footnotesize\ttfamily \label{classWordTicTacToe__board_aab7c6a7368a57b11258e045b07f7992b} 
+Word\+Tic\+Tac\+Toe\+\_\+board\+::\texorpdfstring{$\sim$}{\string~}\+Word\+Tic\+Tac\+Toe\+\_\+board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for \doxylink{classWordTicTacToe__board}{Word\+Tic\+Tac\+Toe\+\_\+board}. 
+
+Cleans up resources allocated by the board object. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classWordTicTacToe__board_ac8cfad5cac7ef8bb673e3b0b3ea681c0}\index{WordTicTacToe\_board@{WordTicTacToe\_board}!desplay\_winner@{desplay\_winner}}
+\index{desplay\_winner@{desplay\_winner}!WordTicTacToe\_board@{WordTicTacToe\_board}}
+\doxysubsubsection{\texorpdfstring{desplay\_winner()}{desplay\_winner()}}
+{\footnotesize\ttfamily \label{classWordTicTacToe__board_ac8cfad5cac7ef8bb673e3b0b3ea681c0} 
+void Word\+Tic\+Tac\+Toe\+\_\+board\+::desplay\+\_\+winner (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Displays the winner announcement with the valid word. 
+
+Shows a formatted message with the winner\textquotesingle{}s name and the word they formed. Uses green color for emphasis and waits for user input to continue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the winning \doxylink{classPlayer}{Player} object\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Uses ANSI color codes (GREEN, RESET) for terminal output 
+
+Pauses execution until user presses a key 
+\end{DoxyNote}
+\Hypertarget{classWordTicTacToe__board_a88a7eb38dd8fd6b4984803ac6d232b38}\index{WordTicTacToe\_board@{WordTicTacToe\_board}!display\_draw@{display\_draw}}
+\index{display\_draw@{display\_draw}!WordTicTacToe\_board@{WordTicTacToe\_board}}
+\doxysubsubsection{\texorpdfstring{display\_draw()}{display\_draw()}}
+{\footnotesize\ttfamily \label{classWordTicTacToe__board_a88a7eb38dd8fd6b4984803ac6d232b38} 
+void Word\+Tic\+Tac\+Toe\+\_\+board\+::display\+\_\+draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the draw game announcement. 
+
+Shows a formatted message indicating the game ended without a winner. Uses yellow color for emphasis and waits for user input to continue.
+
+\begin{DoxyNote}{Note}
+Uses ANSI color codes (YELLOW, RESET) for terminal output 
+
+Pauses execution until user presses Enter 
+\end{DoxyNote}
+\Hypertarget{classWordTicTacToe__board_adc7ad95bc7cbad2113c6ae5d0ce114f0}\index{WordTicTacToe\_board@{WordTicTacToe\_board}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!WordTicTacToe\_board@{WordTicTacToe\_board}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{classWordTicTacToe__board_adc7ad95bc7cbad2113c6ae5d0ce114f0} 
+bool Word\+Tic\+Tac\+Toe\+\_\+board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the game has reached a terminal state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the current \doxylink{classPlayer}{Player} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the game is won or drawn 
+
+false if the game can continue
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classWordTicTacToe__board_a3e3d68f641d3514d8abe329e85fdc1e9}{is\+\_\+win()} 
+
+\doxylink{classWordTicTacToe__board_a1889bb644f7befd2fbf5e13acf174a98}{is\+\_\+draw()} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classBoard_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{classWordTicTacToe__board_a1889bb644f7befd2fbf5e13acf174a98}\index{WordTicTacToe\_board@{WordTicTacToe\_board}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!WordTicTacToe\_board@{WordTicTacToe\_board}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{classWordTicTacToe__board_a1889bb644f7befd2fbf5e13acf174a98} 
+bool Word\+Tic\+Tac\+Toe\+\_\+board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the game has ended in a draw. 
+
+A draw occurs when all 9 cells are filled and no player has won.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the current \doxylink{classPlayer}{Player} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the game is a draw (9 moves made and no winner) 
+
+false if the game is not yet a draw
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Displays draw message when condition is met 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classWordTicTacToe__board_a88a7eb38dd8fd6b4984803ac6d232b38}{display\+\_\+draw()} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classBoard_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{classWordTicTacToe__board_a9d386abacb0e4465768dde8fabb730c8}\index{WordTicTacToe\_board@{WordTicTacToe\_board}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!WordTicTacToe\_board@{WordTicTacToe\_board}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{classWordTicTacToe__board_a9d386abacb0e4465768dde8fabb730c8} 
+bool Word\+Tic\+Tac\+Toe\+\_\+board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Check if a player has lost. 
+
+
+
+Implements \mbox{\hyperlink{classBoard_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{classWordTicTacToe__board_a3e3d68f641d3514d8abe329e85fdc1e9}\index{WordTicTacToe\_board@{WordTicTacToe\_board}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!WordTicTacToe\_board@{WordTicTacToe\_board}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{classWordTicTacToe__board_a3e3d68f641d3514d8abe329e85fdc1e9} 
+bool Word\+Tic\+Tac\+Toe\+\_\+board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the specified player has won the game. 
+
+Determines if a winning condition exists by checking for valid words on the board. Displays the winner if a valid word is found.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the \doxylink{classPlayer}{Player} object to check for winning \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the player has formed a valid 3-\/letter word 
+
+false if no winning word has been formed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+check\+\_\+all\+\_\+words() 
+
+\doxylink{classWordTicTacToe__board_ac8cfad5cac7ef8bb673e3b0b3ea681c0}{desplay\+\_\+winner()} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classBoard_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{classWordTicTacToe__board_a246257c155f787ef188a6a7443c00450}\index{WordTicTacToe\_board@{WordTicTacToe\_board}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!WordTicTacToe\_board@{WordTicTacToe\_board}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{classWordTicTacToe__board_a246257c155f787ef188a6a7443c00450} 
+bool Word\+Tic\+Tac\+Toe\+\_\+board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the board with a player\textquotesingle{}s move. 
+
+Validates and places a letter on the board at the specified position. Performs bounds checking, occupancy checking, and letter validation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & Pointer to \doxylink{classMove}{Move} object containing position (x,y) and letter symbol \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the move was valid and successfully placed 
+
+false if the move was invalid (out of bounds, occupied cell, or invalid letter)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Automatically converts letters to uppercase 
+
+Increments the move counter on successful placement 
+
+Prints error messages for invalid moves 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classBoard_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Word\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h\item 
+src/abdallah/\mbox{\hyperlink{WordTicTacToe__Classes_8cpp}{Word\+Tic\+Tac\+Toe\+\_\+\+Classes.\+cpp}}\end{DoxyCompactItemize}

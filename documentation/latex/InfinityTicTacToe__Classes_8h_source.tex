@@ -1,0 +1,50 @@
+\doxysection{Infinity\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h}
+\hypertarget{InfinityTicTacToe__Classes_8h_source}{}\label{InfinityTicTacToe__Classes_8h_source}\index{include/InfinityTicTacToe\_Classes.h@{include/InfinityTicTacToe\_Classes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INFINITY\_TICTACTOE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INFINITY\_TICTACTOE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}util/BoardGame\_Classes.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include<queue>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include<utility>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <util/colors.h>}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInfinity__TicTacToe__Board_a581f735308b0afc9b5fa002067dd625a}{Infinity\_TicTacToe\_Board}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBoard_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}<char>\{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ public\ :}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classInfinity__TicTacToe__Board_a581f735308b0afc9b5fa002067dd625a}{Infinity\_TicTacToe\_Board}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInfinity__TicTacToe__Board_aa816a3f72f3047a353024f26582f33f2}{update\_board}}(\mbox{\hyperlink{classMove}{Move<char>}}*\ move)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInfinity__TicTacToe__Board_ad2bd5afcc29864d4f14e65f09516f024}{is\_win}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInfinity__TicTacToe__Board_a35ec8c5e2ec6cf81ccbb3cd00fa29179}{is\_lose}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInfinity__TicTacToe__Board_ab8eb27eb1de59876632c2e07cd60246f}{is\_draw}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInfinity__TicTacToe__Board_a0f50c1a5658475a9aab23101b0439928}{game\_is\_over}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ display\_winner(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ display\_draw();}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ counter\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ checking(\textcolor{keywordtype}{char}\ sym);}
+\DoxyCodeLine{00024\ \ \ \ \ queue<pair<int,\ int>>\ moveQueue;\ \ \ \ }
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }Infinity\_TicTacToe\_Player\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classPlayer_adb4e803a7ac0356b111b8ca79d766976}{Player}}<char>}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ Infinity\_TicTacToe\_Player(\textcolor{keywordtype}{string}\ n,\ \textcolor{keywordtype}{char}\ s,\ PlayerType\ t):\ \mbox{\hyperlink{classPlayer_adb4e803a7ac0356b111b8ca79d766976}{Player}}(n,\ s,\ t)\ \{\}}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }Infinity\_TicTacToe\_UI\ :\ \textcolor{keyword}{public}\ \ \mbox{\hyperlink{classUI_ae50eed41905ca2f8dc103d9bef427fe6}{UI}}<char>}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ Infinity\_TicTacToe\_UI();}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classMove}{Move<char>}}*\ \mbox{\hyperlink{classInfinity__TicTacToe__UI_a03a6b26f478c591af299de349a4d2902}{get\_move}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<char>}}*\ \mbox{\hyperlink{classInfinity__TicTacToe__UI_a23f71aaa7c4dcb184e0b0498df812c46}{create\_player}}(\textcolor{keywordtype}{string}\&\ name,\ \textcolor{keywordtype}{char}\ symbol,\ PlayerType\ type)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ INFINITY\_TICTACTOE\_H}}
+
+\end{DoxyCode}

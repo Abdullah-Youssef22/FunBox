@@ -1,0 +1,335 @@
+\doxysection{Pyramid\+\_\+\+Board Class Reference}
+\hypertarget{classPyramid__Board}{}\label{classPyramid__Board}\index{Pyramid\_Board@{Pyramid\_Board}}
+Inheritance diagram for Pyramid\+\_\+\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPyramid__Board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPyramid__Board_abb3758893582e50e90642aea896c59b4}{Pyramid\+\_\+\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor that initializes a 3x3 X-\/O board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPyramid__Board_a869591e11aaa15936d8396e33657e01e}{update\+\_\+board}} (\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move)
+\begin{DoxyCompactList}\small\item\em Updates the board with a player\textquotesingle{}s move. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPyramid__Board_a87ea9236eb5832d6455e7ac6410b9a5a}{is\+\_\+win}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Checks if the given player has won the game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPyramid__Board_a9f7dae7c3ac41aebb0e7f5e9d3900aa5}{is\+\_\+lose}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Checks if the given player has lost the game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPyramid__Board_a1bdf2b5d395524c9618efcb16ebcec2c}{is\+\_\+draw}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Checks if the game has ended in a draw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPyramid__Board_abf6f7af4c5e44d616c2b24f64ab3d5bd}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Determines if the game is over (win or draw). \end{DoxyCompactList}\item 
+\Hypertarget{classPyramid__Board_a7651ce4503a3b93915c52474f12227b4}\label{classPyramid__Board_a7651ce4503a3b93915c52474f12227b4} 
+void {\bfseries display\+\_\+winner} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\item 
+\Hypertarget{classPyramid__Board_a455d1d2b554c2769ae4675696456e56e}\label{classPyramid__Board_a455d1d2b554c2769ae4675696456e56e} 
+void {\bfseries display\+\_\+draw} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{classBoard_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{classBoard_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classPyramid__Board_a1a1ef830ad4b9ff9e0ae728bf117e011}{is\+Printable}} (int y, int x)
+\begin{DoxyCompactList}\small\item\em Checks if a position is within the pyramid\textquotesingle{}s playable area. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPyramid__Board_a609664bdbf16a15504ad938f5eba377f}{init\+Printable\+Locations}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the list of valid playable positions on the pyramid board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPyramid__Board_abb3758893582e50e90642aea896c59b4}\index{Pyramid\_Board@{Pyramid\_Board}!Pyramid\_Board@{Pyramid\_Board}}
+\index{Pyramid\_Board@{Pyramid\_Board}!Pyramid\_Board@{Pyramid\_Board}}
+\doxysubsubsection{\texorpdfstring{Pyramid\_Board()}{Pyramid\_Board()}}
+{\footnotesize\ttfamily \label{classPyramid__Board_abb3758893582e50e90642aea896c59b4} 
+Pyramid\+\_\+\+Board\+::\+Pyramid\+\_\+\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor that initializes a 3x3 X-\/O board. 
+
+Default constructor for \doxylink{classPyramid__Board}{Pyramid\+\_\+\+Board}.
+
+Initializes a 5x5 board with pyramid-\/shaped playable positions. The board has 9 valid positions arranged in a pyramid\+:
+\begin{DoxyItemize}
+\item Top level (row 2)\+: 1 position
+\item Middle level (row 3)\+: 3 positions
+\item Bottom level (row 4)\+: 5 positions
+\end{DoxyItemize}
+
+All non-\/playable positions are marked with \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}, and playable positions are initialized with the blank symbol.
+
+\begin{DoxyNote}{Note}
+Calls the base \doxylink{classBoard}{Board} constructor with dimensions 5x5 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classPyramid__Board_a609664bdbf16a15504ad938f5eba377f}{init\+Printable\+Locations()} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPyramid__Board_abf6f7af4c5e44d616c2b24f64ab3d5bd}\index{Pyramid\_Board@{Pyramid\_Board}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!Pyramid\_Board@{Pyramid\_Board}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{classPyramid__Board_abf6f7af4c5e44d616c2b24f64ab3d5bd} 
+bool Pyramid\+\_\+\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determines if the game is over (win or draw). 
+
+Checks if the game has reached a terminal state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the game has ended, false otherwise.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the current \doxylink{classPlayer}{Player} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the game is won or drawn 
+
+false if the game can continue
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classPyramid__Board_a87ea9236eb5832d6455e7ac6410b9a5a}{is\+\_\+win()} 
+
+\doxylink{classPyramid__Board_a1bdf2b5d395524c9618efcb16ebcec2c}{is\+\_\+draw()} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classBoard_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{classPyramid__Board_a1bdf2b5d395524c9618efcb16ebcec2c}\index{Pyramid\_Board@{Pyramid\_Board}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!Pyramid\_Board@{Pyramid\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{classPyramid__Board_a1bdf2b5d395524c9618efcb16ebcec2c} 
+bool Pyramid\+\_\+\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the game has ended in a draw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player being checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all cells are filled and no player has won, false otherwise.
+\end{DoxyReturn}
+A draw occurs when all 9 playable positions are filled and no player has won.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the current \doxylink{classPlayer}{Player} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the game is a draw (9 moves made and no winner) 
+
+false if the game is not yet a draw 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{classPyramid__Board_a9f7dae7c3ac41aebb0e7f5e9d3900aa5}\index{Pyramid\_Board@{Pyramid\_Board}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!Pyramid\_Board@{Pyramid\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{classPyramid__Board_a9f7dae7c3ac41aebb0e7f5e9d3900aa5} 
+bool Pyramid\+\_\+\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the given player has lost the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player being checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always returns false (not used in X-\/O logic). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{classPyramid__Board_a87ea9236eb5832d6455e7ac6410b9a5a}\index{Pyramid\_Board@{Pyramid\_Board}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!Pyramid\_Board@{Pyramid\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{classPyramid__Board_a87ea9236eb5832d6455e7ac6410b9a5a} 
+bool Pyramid\+\_\+\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the given player has won the game. 
+
+Checks if the specified player has won the game.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player being checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the player has a winning line, false otherwise.
+\end{DoxyReturn}
+Examines all possible winning combinations on the pyramid board\+:
+\begin{DoxyItemize}
+\item Three horizontal lines on the bottom row
+\item One horizontal line on the middle row
+\item One vertical line through the center
+\item Two diagonal lines from bottom corners to top
+\item Two diagonal lines from top to bottom corners
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the \doxylink{classPlayer}{Player} object to check for winning \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the player has three symbols in a row 
+
+false if no winning combination exists
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Total of 9 possible winning combinations are checked 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classBoard_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{classPyramid__Board_a869591e11aaa15936d8396e33657e01e}\index{Pyramid\_Board@{Pyramid\_Board}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!Pyramid\_Board@{Pyramid\_Board}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{classPyramid__Board_a869591e11aaa15936d8396e33657e01e} 
+bool Pyramid\+\_\+\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the board with a player\textquotesingle{}s move. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & Pointer to a \doxylink{classMove}{Move$<$char$>$} object containing move coordinates and symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the move is valid and successfully applied, false otherwise.
+\end{DoxyReturn}
+Validates and places a player\textquotesingle{}s symbol on the board at the specified position. The move is only valid if the target cell is currently blank.
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & Pointer to \doxylink{classMove}{Move} object containing position (x,y) and player symbol \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the move was valid and successfully placed 
+
+false if the cell is already occupied
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Automatically converts the symbol to uppercase 
+
+Increments the move counter on successful placement 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classBoard_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classPyramid__Board_a609664bdbf16a15504ad938f5eba377f}\index{Pyramid\_Board@{Pyramid\_Board}!initPrintableLocations@{initPrintableLocations}}
+\index{initPrintableLocations@{initPrintableLocations}!Pyramid\_Board@{Pyramid\_Board}}
+\doxysubsubsection{\texorpdfstring{initPrintableLocations}{initPrintableLocations}}
+{\footnotesize\ttfamily \label{classPyramid__Board_a609664bdbf16a15504ad938f5eba377f} 
+void init\+Printable\+Locations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Initializes the list of valid playable positions on the pyramid board. 
+
+Populates the Pyramid\+\_\+\+Board\+::printable vector with all 9 valid positions that form the pyramid shape\+:
+\begin{DoxyItemize}
+\item Row 2\+: position (2,2) -\/ pyramid top
+\item Row 3\+: positions (3,1), (3,2), (3,3) -\/ pyramid middle
+\item Row 4\+: positions (4,0), (4,1), (4,2), (4,3), (4,4) -\/ pyramid base
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+This function should be called once during board initialization 
+
+Modifies the static Pyramid\+\_\+\+Board\+::printable vector 
+\end{DoxyNote}
+\Hypertarget{classPyramid__Board_a1a1ef830ad4b9ff9e0ae728bf117e011}\index{Pyramid\_Board@{Pyramid\_Board}!isPrintable@{isPrintable}}
+\index{isPrintable@{isPrintable}!Pyramid\_Board@{Pyramid\_Board}}
+\doxysubsubsection{\texorpdfstring{isPrintable}{isPrintable}}
+{\footnotesize\ttfamily \label{classPyramid__Board_a1a1ef830ad4b9ff9e0ae728bf117e011} 
+bool is\+Printable (\begin{DoxyParamCaption}\item[{int}]{y}{, }\item[{int}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Checks if a position is within the pyramid\textquotesingle{}s playable area. 
+
+Validates whether the given coordinates correspond to a valid position in the pyramid structure by checking against the list of printable positions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Row coordinate of the position to check \\
+\hline
+{\em x} & Column coordinate of the position to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the position is playable (within pyramid boundaries) 
+
+false if the position is outside the pyramid or non-\/playable
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Uses the static Pyramid\+\_\+\+Board\+::printable vector for validation 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classPyramid__Board_a609664bdbf16a15504ad938f5eba377f}{init\+Printable\+Locations()} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Pyramid\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h\item 
+src/ammen/\mbox{\hyperlink{PyramidTicTacToe__Classes_8cpp}{Pyramid\+Tic\+Tac\+Toe\+\_\+\+Classes.\+cpp}}\end{DoxyCompactItemize}
