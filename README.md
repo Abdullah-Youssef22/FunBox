@@ -1,44 +1,44 @@
 # Fun Box Collection
 
-A comprehensive C++ game framework featuring 15+ strategic board games built on the BoardGame_Classes.h architecture
+University C++ OOP Course. Terminal-based boardgame collection.
+
+---
 
 
+- SUS tic tac toe: generate as many "SUS" combinations as you can
 
-- SUS tic tac toe
+- Four-in-a-Row:  Connect four pieces in a row to win
 
-- Strategy Classics
+- 5×5 Tic-Tac-Toe:  Extended grid tactical gameplay
 
-- Four-in-a-Row - Connect four pieces in a row to win
+- Word Tic-Tac-Toe:   Strategic word-building variant
 
-- 5×5 Tic-Tac-Toe - Extended grid tactical gameplay
+- Misère Tic-Tac-Toe:  Reverse objective: avoid three in a row
 
-- Word Tic-Tac-Toe - Strategic word-building variant
+- Diamond Tic-Tac-Toe:  Unique diamond-shaped board layout
 
-- Misère Tic-Tac-Toe - Reverse objective: avoid three in a row
+- 4×4 Tic-Tac-Toe:  Compact strategy challenge
 
-- Diamond Tic-Tac-Toe - Unique diamond-shaped board layout
+- Pyramid Tic-Tac-Toe:  Multi-level 3D gameplay
 
-- 4×4 Tic-Tac-Toe - Compact strategy challenge
+- Numerical Tic-Tac-Toe:  Number-based strategic variant
 
-- Pyramid Tic-Tac-Toe - Multi-level 3D gameplay
+- Obstacles Tic-Tac-Toe:  Navigate blocked square
 
-- Numerical Tic-Tac-Toe - Number-based strategic variant
+- Infinity Tic-Tac-Toe:  Endless expandable grid
 
-- Obstacles Tic-Tac-Toe - Navigate blocked square
+- Ultimate Tic-Tac-Toe:  Meta-game with 9 sub-boards
 
-- Infinity Tic-Tac-Toe - Endless expandable grid
-
-- Ultimate Tic-Tac-Toe - Meta-game with 9 sub-boards
-
-- Memory Tic-Tac-Toe - Hidden pieces memory challenge
+- Memory Tic-Tac-Toe:  Hidden pieces memory challenge
 
 
 ### Extras
 
-- Labyrinth - Navigate through maze challenges
+- Labyrinth: Navigate through maze challenges
 
-- Snake - Classic arcade growth game
+- Spaceship: avoid the falling asteroids
 
+- Snake: Classic arcade growth game
 
 
 ## Quick Start
@@ -59,6 +59,14 @@ mkdir build && cd build
 cmake ..
 cmake --build .
 
+
+or, on linux
+
+
+cmake ..
+make 
+
+
 ### Run the application
 ./BoardGameApp
 
@@ -77,9 +85,7 @@ cmake --build .
 ## Labyrinth
 ![Labyrinth](labyrinth.jpg)
 
-#### Developers
-
-Fun Box was developed by:
+##### Developered by:
 
 . Mostafa Ahmed
 
@@ -88,6 +94,3 @@ Fun Box was developed by:
 . Ammen
 
 . Abdallah Youssef
-
-Faculty: Faculty of Computers and Artificial Intelligence, Cairo University
-Supervisor: Dr. Mohamed Elramly
