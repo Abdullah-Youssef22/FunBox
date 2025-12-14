@@ -1,0 +1,57 @@
+\doxysection{Tic\+Tac\+Toe4x4\+\_\+\+Classes.\+h}
+\hypertarget{TicTacToe4x4__Classes_8h_source}{}\label{TicTacToe4x4__Classes_8h_source}\index{include/TicTacToe4x4\_Classes.h@{include/TicTacToe4x4\_Classes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ FOURBYFOUR\_CLASSES\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ FOURBYFOUR\_CLASSES\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}util/BoardGame\_Classes.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include"{}util/colors.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFourByFour__Board_afde0140f7c36fc611390b96b68769e58}{FourByFour\_Board}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBoard_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}<char>\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{char}\ blank\_symbol\ =\ \textcolor{charliteral}{'\ '};\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classFourByFour__Board_afde0140f7c36fc611390b96b68769e58}{FourByFour\_Board}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFourByFour__Board_aad154a197418fffb97362ea273f484ae}{update\_board}}(\mbox{\hyperlink{classMove}{Move<char>}}*\ move);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFourByFour__Board_ac12e81f30de4a27c37ebc6f54d3fcb58}{is\_win}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFourByFour__Board_a3dc380ec075e0988aecf662cec47106b}{is\_lose}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFourByFour__Board_ad4475af07f4e4af2c85904dce232b04a}{is\_draw}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFourByFour__Board_a44f2127c195f77899cfbb95d53e23d55}{game\_is\_over}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFourByFour__Board_af9e87c2d0c0c56ff0cab36f6e70b41cc}{putTokensAtPositions}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ display\_winner(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ display\_draw();}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFourByFour__UI_a018d318e6c0445d749ddf611a5219e5f}{FourByFour\_UI}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classUI_ae50eed41905ca2f8dc103d9bef427fe6}{UI}}<char>\ \{}
+\DoxyCodeLine{00094\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{classFourByFour__UI_a018d318e6c0445d749ddf611a5219e5f}{FourByFour\_UI}}();}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{classFourByFour__UI_a073940cb18f806554422d351642006ed}{\string~FourByFour\_UI}}()\ \{\};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<char>}}*\ \mbox{\hyperlink{classFourByFour__UI_a1e78ece56de891ad46bcbf7b2bd1a7d7}{create\_player}}(\textcolor{keywordtype}{string}\&\ name,\ \textcolor{keywordtype}{char}\ symbol,\ PlayerType\ type);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classMove}{Move<char>}}*\ \mbox{\hyperlink{classFourByFour__UI_a6bb7003eed87d7faa03d50d46bdf0d97}{get\_move}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<char>}}\ **\mbox{\hyperlink{classFourByFour__UI_a0722034665c9bc5a2058dc3274bccd2f}{setup\_players}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ XO\_CLASSES\_H}}
+
+\end{DoxyCode}

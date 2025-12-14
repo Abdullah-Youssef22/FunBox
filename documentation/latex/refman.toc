@@ -1,0 +1,321 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Fun Box Collection}{1}{chapter.1}%
+\contentsline {subsection}{\numberline {1.0.1}Extras}{1}{subsection.1.0.1}%
+\contentsline {section}{\numberline {1.1}Quick Start}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Create build directory}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Configure and build}{2}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Run the application}{2}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Screenshots}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Menu}{2}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Obstacles Tic Tac Toe}{2}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Word Tic Tac Toe}{2}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Labyrinth}{2}{subsection.1.2.4}%
+\contentsline {subsubsubsubsection}{\numberline {1.2.4.0.0.1}Developered by\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{2}{subsubsubsubsection.0.1}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Class Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Board$<$ T $>$ Class Template Reference}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{10}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Member Function Documentation}{10}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}game\_is\_over()}{10}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}is\_draw()}{10}{subsubsection.5.1.2.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.3}is\_lose()}{10}{subsubsection.5.1.2.3}%
+\contentsline {subsubsection}{\numberline {5.1.2.4}is\_win()}{10}{subsubsection.5.1.2.4}%
+\contentsline {subsubsection}{\numberline {5.1.2.5}update\_board()}{10}{subsubsection.5.1.2.5}%
+\contentsline {section}{\numberline {5.2}Dimaond\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player Class Reference}{11}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Dimaond\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{12}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Member Function Documentation}{13}{subsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.1}game\_is\_over()}{13}{subsubsection.5.3.1.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.2}is\_draw()}{13}{subsubsection.5.3.1.2}%
+\contentsline {subsubsection}{\numberline {5.3.1.3}is\_lose()}{13}{subsubsection.5.3.1.3}%
+\contentsline {subsubsection}{\numberline {5.3.1.4}is\_valid\_cell()}{13}{subsubsection.5.3.1.4}%
+\contentsline {subsubsection}{\numberline {5.3.1.5}is\_win()}{14}{subsubsection.5.3.1.5}%
+\contentsline {subsubsection}{\numberline {5.3.1.6}update\_board()}{14}{subsubsection.5.3.1.6}%
+\contentsline {section}{\numberline {5.4}Dimaond\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{14}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Member Function Documentation}{15}{subsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.1}create\_player()}{15}{subsubsection.5.4.1.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.2}get\_move()}{16}{subsubsection.5.4.1.2}%
+\contentsline {section}{\numberline {5.5}Four\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}By\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Four\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{17}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Member Function Documentation}{18}{subsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.1}game\_is\_over()}{18}{subsubsection.5.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.2}is\_draw()}{18}{subsubsection.5.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.5.1.3}is\_lose()}{18}{subsubsection.5.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.5.1.4}is\_win()}{19}{subsubsection.5.5.1.4}%
+\contentsline {subsubsection}{\numberline {5.5.1.5}update\_board()}{19}{subsubsection.5.5.1.5}%
+\contentsline {section}{\numberline {5.6}Four\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}By\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Four\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{19}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Constructor \& Destructor Documentation}{20}{subsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.1.1}FourByFour\_UI()}{20}{subsubsection.5.6.1.1}%
+\contentsline {subsection}{\numberline {5.6.2}Member Function Documentation}{20}{subsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.1}create\_player()}{20}{subsubsection.5.6.2.1}%
+\contentsline {subsubsection}{\numberline {5.6.2.2}get\_move()}{20}{subsubsection.5.6.2.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.3}setup\_players()}{21}{subsubsection.5.6.2.3}%
+\contentsline {section}{\numberline {5.7}Four\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}In\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ARow\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{21}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Member Function Documentation}{22}{subsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.1.1}game\_is\_over()}{22}{subsubsection.5.7.1.1}%
+\contentsline {subsubsection}{\numberline {5.7.1.2}is\_draw()}{22}{subsubsection.5.7.1.2}%
+\contentsline {subsubsection}{\numberline {5.7.1.3}is\_lose()}{22}{subsubsection.5.7.1.3}%
+\contentsline {subsubsection}{\numberline {5.7.1.4}is\_win()}{22}{subsubsection.5.7.1.4}%
+\contentsline {subsubsection}{\numberline {5.7.1.5}update\_board()}{23}{subsubsection.5.7.1.5}%
+\contentsline {section}{\numberline {5.8}Four\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}In\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ARow\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{23}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Member Function Documentation}{24}{subsection.5.8.1}%
+\contentsline {subsubsection}{\numberline {5.8.1.1}create\_player()}{24}{subsubsection.5.8.1.1}%
+\contentsline {subsubsection}{\numberline {5.8.1.2}get\_move()}{24}{subsubsection.5.8.1.2}%
+\contentsline {subsubsection}{\numberline {5.8.1.3}setup\_players()}{24}{subsubsection.5.8.1.3}%
+\contentsline {section}{\numberline {5.9}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager$<$ T $>$ Class Template Reference}{24}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{24}{subsection.5.9.1}%
+\contentsline {section}{\numberline {5.10}Infinity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{25}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{26}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Constructor \& Destructor Documentation}{26}{subsection.5.10.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.1}Infinity\_TicTacToe\_Board()}{26}{subsubsection.5.10.2.1}%
+\contentsline {subsection}{\numberline {5.10.3}Member Function Documentation}{26}{subsection.5.10.3}%
+\contentsline {subsubsection}{\numberline {5.10.3.1}game\_is\_over()}{26}{subsubsection.5.10.3.1}%
+\contentsline {subsubsection}{\numberline {5.10.3.2}is\_draw()}{26}{subsubsection.5.10.3.2}%
+\contentsline {subsubsection}{\numberline {5.10.3.3}is\_lose()}{26}{subsubsection.5.10.3.3}%
+\contentsline {subsubsection}{\numberline {5.10.3.4}is\_win()}{27}{subsubsection.5.10.3.4}%
+\contentsline {subsubsection}{\numberline {5.10.3.5}update\_board()}{27}{subsubsection.5.10.3.5}%
+\contentsline {section}{\numberline {5.11}Infinity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player Class Reference}{27}{section.5.11}%
+\contentsline {section}{\numberline {5.12}Infinity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{28}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{29}{subsection.5.12.1}%
+\contentsline {subsection}{\numberline {5.12.2}Member Function Documentation}{29}{subsection.5.12.2}%
+\contentsline {subsubsection}{\numberline {5.12.2.1}create\_player()}{29}{subsubsection.5.12.2.1}%
+\contentsline {subsubsection}{\numberline {5.12.2.2}get\_move()}{29}{subsubsection.5.12.2.2}%
+\contentsline {section}{\numberline {5.13}Memory\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{30}{section.5.13}%
+\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{31}{subsection.5.13.1}%
+\contentsline {subsection}{\numberline {5.13.2}Member Function Documentation}{31}{subsection.5.13.2}%
+\contentsline {subsubsection}{\numberline {5.13.2.1}display\_winner()}{31}{subsubsection.5.13.2.1}%
+\contentsline {subsubsection}{\numberline {5.13.2.2}game\_is\_over()}{31}{subsubsection.5.13.2.2}%
+\contentsline {subsubsection}{\numberline {5.13.2.3}is\_draw()}{31}{subsubsection.5.13.2.3}%
+\contentsline {subsubsection}{\numberline {5.13.2.4}is\_lose()}{31}{subsubsection.5.13.2.4}%
+\contentsline {subsubsection}{\numberline {5.13.2.5}is\_win()}{31}{subsubsection.5.13.2.5}%
+\contentsline {subsubsection}{\numberline {5.13.2.6}update\_board()}{32}{subsubsection.5.13.2.6}%
+\contentsline {section}{\numberline {5.14}Memory\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{32}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{33}{subsection.5.14.1}%
+\contentsline {subsection}{\numberline {5.14.2}Member Function Documentation}{33}{subsection.5.14.2}%
+\contentsline {subsubsection}{\numberline {5.14.2.1}create\_player()}{33}{subsubsection.5.14.2.1}%
+\contentsline {subsubsection}{\numberline {5.14.2.2}get\_move()}{33}{subsubsection.5.14.2.2}%
+\contentsline {section}{\numberline {5.15}Menu Class Reference}{34}{section.5.15}%
+\contentsline {section}{\numberline {5.16}Mini\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{34}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Constructor \& Destructor Documentation}{35}{subsection.5.16.1}%
+\contentsline {subsubsection}{\numberline {5.16.1.1}Mini\_Board()}{35}{subsubsection.5.16.1.1}%
+\contentsline {subsection}{\numberline {5.16.2}Member Function Documentation}{35}{subsection.5.16.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.1}game\_is\_over()}{35}{subsubsection.5.16.2.1}%
+\contentsline {subsubsection}{\numberline {5.16.2.2}get\_winner()}{36}{subsubsection.5.16.2.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.3}is\_decided()}{36}{subsubsection.5.16.2.3}%
+\contentsline {subsubsection}{\numberline {5.16.2.4}is\_draw()}{36}{subsubsection.5.16.2.4}%
+\contentsline {subsubsection}{\numberline {5.16.2.5}is\_lose()}{36}{subsubsection.5.16.2.5}%
+\contentsline {subsubsection}{\numberline {5.16.2.6}is\_win()}{37}{subsubsection.5.16.2.6}%
+\contentsline {subsubsection}{\numberline {5.16.2.7}set\_winner()}{37}{subsubsection.5.16.2.7}%
+\contentsline {subsubsection}{\numberline {5.16.2.8}update\_board()}{37}{subsubsection.5.16.2.8}%
+\contentsline {section}{\numberline {5.17}Mini\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{38}{section.5.17}%
+\contentsline {subsection}{\numberline {5.17.1}Member Function Documentation}{39}{subsection.5.17.1}%
+\contentsline {subsubsection}{\numberline {5.17.1.1}create\_player()}{39}{subsubsection.5.17.1.1}%
+\contentsline {subsubsection}{\numberline {5.17.1.2}get\_move()}{39}{subsubsection.5.17.1.2}%
+\contentsline {section}{\numberline {5.18}Misere\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AIPlayer Class Reference}{39}{section.5.18}%
+\contentsline {section}{\numberline {5.19}Misere\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player Class Reference}{40}{section.5.19}%
+\contentsline {section}{\numberline {5.20}Misere\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{41}{section.5.20}%
+\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{42}{subsection.5.20.1}%
+\contentsline {subsection}{\numberline {5.20.2}Constructor \& Destructor Documentation}{42}{subsection.5.20.2}%
+\contentsline {subsubsection}{\numberline {5.20.2.1}MisereTicTacToeBoard()}{42}{subsubsection.5.20.2.1}%
+\contentsline {subsection}{\numberline {5.20.3}Member Function Documentation}{42}{subsection.5.20.3}%
+\contentsline {subsubsection}{\numberline {5.20.3.1}game\_is\_over()}{42}{subsubsection.5.20.3.1}%
+\contentsline {subsubsection}{\numberline {5.20.3.2}is\_draw()}{42}{subsubsection.5.20.3.2}%
+\contentsline {subsubsection}{\numberline {5.20.3.3}is\_lose()}{42}{subsubsection.5.20.3.3}%
+\contentsline {subsubsection}{\numberline {5.20.3.4}is\_win()}{43}{subsubsection.5.20.3.4}%
+\contentsline {subsubsection}{\numberline {5.20.3.5}update\_board()}{43}{subsubsection.5.20.3.5}%
+\contentsline {section}{\numberline {5.21}Misere\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{43}{section.5.21}%
+\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{44}{subsection.5.21.1}%
+\contentsline {subsection}{\numberline {5.21.2}Member Function Documentation}{44}{subsection.5.21.2}%
+\contentsline {subsubsection}{\numberline {5.21.2.1}create\_player()}{44}{subsubsection.5.21.2.1}%
+\contentsline {subsubsection}{\numberline {5.21.2.2}get\_move()}{45}{subsubsection.5.21.2.2}%
+\contentsline {subsubsection}{\numberline {5.21.2.3}setup\_players()}{45}{subsubsection.5.21.2.3}%
+\contentsline {section}{\numberline {5.22}Move$<$ T $>$ Class Template Reference}{45}{section.5.22}%
+\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{45}{subsection.5.22.1}%
+\contentsline {section}{\numberline {5.23}Numerical\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{46}{section.5.23}%
+\contentsline {subsection}{\numberline {5.23.1}Detailed Description}{47}{subsection.5.23.1}%
+\contentsline {subsection}{\numberline {5.23.2}Member Function Documentation}{47}{subsection.5.23.2}%
+\contentsline {subsubsection}{\numberline {5.23.2.1}calculate\_score()}{47}{subsubsection.5.23.2.1}%
+\contentsline {subsubsection}{\numberline {5.23.2.2}check\_sum\_15()}{47}{subsubsection.5.23.2.2}%
+\contentsline {subsubsection}{\numberline {5.23.2.3}game\_is\_over()}{47}{subsubsection.5.23.2.3}%
+\contentsline {subsubsection}{\numberline {5.23.2.4}get\_cell()}{48}{subsubsection.5.23.2.4}%
+\contentsline {subsubsection}{\numberline {5.23.2.5}is\_draw()}{48}{subsubsection.5.23.2.5}%
+\contentsline {subsubsection}{\numberline {5.23.2.6}is\_lose()}{48}{subsubsection.5.23.2.6}%
+\contentsline {subsubsection}{\numberline {5.23.2.7}is\_used()}{48}{subsubsection.5.23.2.7}%
+\contentsline {subsubsection}{\numberline {5.23.2.8}is\_valid\_number()}{49}{subsubsection.5.23.2.8}%
+\contentsline {subsubsection}{\numberline {5.23.2.9}is\_win()}{49}{subsubsection.5.23.2.9}%
+\contentsline {subsubsection}{\numberline {5.23.2.10}update\_board()}{49}{subsubsection.5.23.2.10}%
+\contentsline {section}{\numberline {5.24}Numerical\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{50}{section.5.24}%
+\contentsline {subsection}{\numberline {5.24.1}Detailed Description}{50}{subsection.5.24.1}%
+\contentsline {subsection}{\numberline {5.24.2}Member Function Documentation}{50}{subsection.5.24.2}%
+\contentsline {subsubsection}{\numberline {5.24.2.1}create\_player()}{50}{subsubsection.5.24.2.1}%
+\contentsline {subsubsection}{\numberline {5.24.2.2}get\_move()}{51}{subsubsection.5.24.2.2}%
+\contentsline {subsubsection}{\numberline {5.24.2.3}setup\_players()}{51}{subsubsection.5.24.2.3}%
+\contentsline {section}{\numberline {5.25}Obstacles\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{51}{section.5.25}%
+\contentsline {subsection}{\numberline {5.25.1}Detailed Description}{52}{subsection.5.25.1}%
+\contentsline {subsection}{\numberline {5.25.2}Constructor \& Destructor Documentation}{52}{subsection.5.25.2}%
+\contentsline {subsubsection}{\numberline {5.25.2.1}ObstaclesTicTacToeBoard()}{52}{subsubsection.5.25.2.1}%
+\contentsline {subsection}{\numberline {5.25.3}Member Function Documentation}{53}{subsection.5.25.3}%
+\contentsline {subsubsection}{\numberline {5.25.3.1}display\_winner()}{53}{subsubsection.5.25.3.1}%
+\contentsline {subsubsection}{\numberline {5.25.3.2}game\_is\_over()}{53}{subsubsection.5.25.3.2}%
+\contentsline {subsubsection}{\numberline {5.25.3.3}is\_draw()}{53}{subsubsection.5.25.3.3}%
+\contentsline {subsubsection}{\numberline {5.25.3.4}is\_lose()}{53}{subsubsection.5.25.3.4}%
+\contentsline {subsubsection}{\numberline {5.25.3.5}is\_win()}{53}{subsubsection.5.25.3.5}%
+\contentsline {subsubsection}{\numberline {5.25.3.6}update\_board()}{54}{subsubsection.5.25.3.6}%
+\contentsline {section}{\numberline {5.26}Obstacles\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{54}{section.5.26}%
+\contentsline {subsection}{\numberline {5.26.1}Detailed Description}{55}{subsection.5.26.1}%
+\contentsline {subsection}{\numberline {5.26.2}Member Function Documentation}{55}{subsection.5.26.2}%
+\contentsline {subsubsection}{\numberline {5.26.2.1}create\_player()}{55}{subsubsection.5.26.2.1}%
+\contentsline {subsubsection}{\numberline {5.26.2.2}get\_move()}{55}{subsubsection.5.26.2.2}%
+\contentsline {section}{\numberline {5.27}Player$<$ T $>$ Class Template Reference}{56}{section.5.27}%
+\contentsline {subsection}{\numberline {5.27.1}Detailed Description}{56}{subsection.5.27.1}%
+\contentsline {section}{\numberline {5.28}Pyramid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{56}{section.5.28}%
+\contentsline {subsection}{\numberline {5.28.1}Constructor \& Destructor Documentation}{58}{subsection.5.28.1}%
+\contentsline {subsubsection}{\numberline {5.28.1.1}Pyramid\_Board()}{58}{subsubsection.5.28.1.1}%
+\contentsline {subsection}{\numberline {5.28.2}Member Function Documentation}{58}{subsection.5.28.2}%
+\contentsline {subsubsection}{\numberline {5.28.2.1}game\_is\_over()}{58}{subsubsection.5.28.2.1}%
+\contentsline {subsubsection}{\numberline {5.28.2.2}is\_draw()}{58}{subsubsection.5.28.2.2}%
+\contentsline {subsubsection}{\numberline {5.28.2.3}is\_lose()}{59}{subsubsection.5.28.2.3}%
+\contentsline {subsubsection}{\numberline {5.28.2.4}is\_win()}{59}{subsubsection.5.28.2.4}%
+\contentsline {subsubsection}{\numberline {5.28.2.5}update\_board()}{60}{subsubsection.5.28.2.5}%
+\contentsline {subsection}{\numberline {5.28.3}Friends And Related Symbol Documentation}{60}{subsection.5.28.3}%
+\contentsline {subsubsection}{\numberline {5.28.3.1}initPrintableLocations}{60}{subsubsection.5.28.3.1}%
+\contentsline {subsubsection}{\numberline {5.28.3.2}isPrintable}{61}{subsubsection.5.28.3.2}%
+\contentsline {section}{\numberline {5.29}Pyramid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{61}{section.5.29}%
+\contentsline {subsection}{\numberline {5.29.1}Constructor \& Destructor Documentation}{62}{subsection.5.29.1}%
+\contentsline {subsubsection}{\numberline {5.29.1.1}Pyramid\_UI()}{62}{subsubsection.5.29.1.1}%
+\contentsline {subsection}{\numberline {5.29.2}Member Function Documentation}{62}{subsection.5.29.2}%
+\contentsline {subsubsection}{\numberline {5.29.2.1}create\_player()}{62}{subsubsection.5.29.2.1}%
+\contentsline {subsubsection}{\numberline {5.29.2.2}get\_move()}{63}{subsubsection.5.29.2.2}%
+\contentsline {subsubsection}{\numberline {5.29.2.3}setup\_players()}{64}{subsubsection.5.29.2.3}%
+\contentsline {section}{\numberline {5.30}SUS\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{64}{section.5.30}%
+\contentsline {subsection}{\numberline {5.30.1}Detailed Description}{65}{subsection.5.30.1}%
+\contentsline {subsection}{\numberline {5.30.2}Member Function Documentation}{65}{subsection.5.30.2}%
+\contentsline {subsubsection}{\numberline {5.30.2.1}calculate\_score()}{65}{subsubsection.5.30.2.1}%
+\contentsline {subsubsection}{\numberline {5.30.2.2}game\_is\_over()}{65}{subsubsection.5.30.2.2}%
+\contentsline {subsubsection}{\numberline {5.30.2.3}is\_draw()}{66}{subsubsection.5.30.2.3}%
+\contentsline {subsubsection}{\numberline {5.30.2.4}is\_lose()}{66}{subsubsection.5.30.2.4}%
+\contentsline {subsubsection}{\numberline {5.30.2.5}is\_win()}{66}{subsubsection.5.30.2.5}%
+\contentsline {subsubsection}{\numberline {5.30.2.6}update\_board()}{66}{subsubsection.5.30.2.6}%
+\contentsline {section}{\numberline {5.31}SUS\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{67}{section.5.31}%
+\contentsline {subsection}{\numberline {5.31.1}Detailed Description}{68}{subsection.5.31.1}%
+\contentsline {subsection}{\numberline {5.31.2}Member Function Documentation}{68}{subsection.5.31.2}%
+\contentsline {subsubsection}{\numberline {5.31.2.1}create\_player()}{68}{subsubsection.5.31.2.1}%
+\contentsline {subsubsection}{\numberline {5.31.2.2}get\_move()}{68}{subsubsection.5.31.2.2}%
+\contentsline {subsubsection}{\numberline {5.31.2.3}setup\_players()}{68}{subsubsection.5.31.2.3}%
+\contentsline {section}{\numberline {5.32}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe5x5\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AIPlayer Class Reference}{69}{section.5.32}%
+\contentsline {section}{\numberline {5.33}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe5x5\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{69}{section.5.33}%
+\contentsline {subsection}{\numberline {5.33.1}Detailed Description}{71}{subsection.5.33.1}%
+\contentsline {subsection}{\numberline {5.33.2}Member Function Documentation}{71}{subsection.5.33.2}%
+\contentsline {subsubsection}{\numberline {5.33.2.1}end()}{71}{subsubsection.5.33.2.1}%
+\contentsline {subsubsection}{\numberline {5.33.2.2}game\_is\_over()}{71}{subsubsection.5.33.2.2}%
+\contentsline {subsubsection}{\numberline {5.33.2.3}is\_draw()}{71}{subsubsection.5.33.2.3}%
+\contentsline {subsubsection}{\numberline {5.33.2.4}is\_lose()}{71}{subsubsection.5.33.2.4}%
+\contentsline {subsubsection}{\numberline {5.33.2.5}is\_win()}{71}{subsubsection.5.33.2.5}%
+\contentsline {subsubsection}{\numberline {5.33.2.6}update\_board()}{72}{subsubsection.5.33.2.6}%
+\contentsline {section}{\numberline {5.34}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe5x5\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{72}{section.5.34}%
+\contentsline {subsection}{\numberline {5.34.1}Detailed Description}{73}{subsection.5.34.1}%
+\contentsline {subsection}{\numberline {5.34.2}Member Function Documentation}{73}{subsection.5.34.2}%
+\contentsline {subsubsection}{\numberline {5.34.2.1}create\_player()}{73}{subsubsection.5.34.2.1}%
+\contentsline {subsubsection}{\numberline {5.34.2.2}get\_move()}{73}{subsubsection.5.34.2.2}%
+\contentsline {subsubsection}{\numberline {5.34.2.3}setup\_players()}{74}{subsubsection.5.34.2.3}%
+\contentsline {section}{\numberline {5.35}Token Class Reference}{74}{section.5.35}%
+\contentsline {section}{\numberline {5.36}UI$<$ T $>$ Class Template Reference}{74}{section.5.36}%
+\contentsline {subsection}{\numberline {5.36.1}Detailed Description}{75}{subsection.5.36.1}%
+\contentsline {subsection}{\numberline {5.36.2}Member Function Documentation}{75}{subsection.5.36.2}%
+\contentsline {subsubsection}{\numberline {5.36.2.1}create\_player()}{75}{subsubsection.5.36.2.1}%
+\contentsline {subsubsection}{\numberline {5.36.2.2}get\_move()}{75}{subsubsection.5.36.2.2}%
+\contentsline {subsubsection}{\numberline {5.36.2.3}setup\_players()}{75}{subsubsection.5.36.2.3}%
+\contentsline {section}{\numberline {5.37}Ultimate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{75}{section.5.37}%
+\contentsline {subsection}{\numberline {5.37.1}Constructor \& Destructor Documentation}{77}{subsection.5.37.1}%
+\contentsline {subsubsection}{\numberline {5.37.1.1}Ultimate\_Board()}{77}{subsubsection.5.37.1.1}%
+\contentsline {subsubsection}{\numberline {5.37.1.2}$\sim $Ultimate\_Board()}{77}{subsubsection.5.37.1.2}%
+\contentsline {subsection}{\numberline {5.37.2}Member Function Documentation}{77}{subsection.5.37.2}%
+\contentsline {subsubsection}{\numberline {5.37.2.1}game\_is\_over()}{77}{subsubsection.5.37.2.1}%
+\contentsline {subsubsection}{\numberline {5.37.2.2}getActiveMiniCol()}{78}{subsubsection.5.37.2.2}%
+\contentsline {subsubsection}{\numberline {5.37.2.3}getActiveMiniRow()}{78}{subsubsection.5.37.2.3}%
+\contentsline {subsubsection}{\numberline {5.37.2.4}getMetaBoardCell()}{78}{subsubsection.5.37.2.4}%
+\contentsline {subsubsection}{\numberline {5.37.2.5}getMiniBoard()}{78}{subsubsection.5.37.2.5}%
+\contentsline {subsubsection}{\numberline {5.37.2.6}is\_draw()}{78}{subsubsection.5.37.2.6}%
+\contentsline {subsubsection}{\numberline {5.37.2.7}is\_lose()}{79}{subsubsection.5.37.2.7}%
+\contentsline {subsubsection}{\numberline {5.37.2.8}is\_win()}{79}{subsubsection.5.37.2.8}%
+\contentsline {subsubsection}{\numberline {5.37.2.9}update\_board()}{79}{subsubsection.5.37.2.9}%
+\contentsline {section}{\numberline {5.38}Ultimate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{80}{section.5.38}%
+\contentsline {subsection}{\numberline {5.38.1}Constructor \& Destructor Documentation}{81}{subsection.5.38.1}%
+\contentsline {subsubsection}{\numberline {5.38.1.1}Ultimate\_UI()}{81}{subsubsection.5.38.1.1}%
+\contentsline {subsection}{\numberline {5.38.2}Member Function Documentation}{81}{subsection.5.38.2}%
+\contentsline {subsubsection}{\numberline {5.38.2.1}create\_player()}{81}{subsubsection.5.38.2.1}%
+\contentsline {subsubsection}{\numberline {5.38.2.2}display\_ultimate\_board()}{81}{subsubsection.5.38.2.2}%
+\contentsline {subsubsection}{\numberline {5.38.2.3}get\_move()}{82}{subsubsection.5.38.2.3}%
+\contentsline {section}{\numberline {5.39}Word\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AIPlayer Class Reference}{82}{section.5.39}%
+\contentsline {section}{\numberline {5.40}Word\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}board Class Reference}{83}{section.5.40}%
+\contentsline {subsection}{\numberline {5.40.1}Constructor \& Destructor Documentation}{84}{subsection.5.40.1}%
+\contentsline {subsubsection}{\numberline {5.40.1.1}WordTicTacToe\_board()}{84}{subsubsection.5.40.1.1}%
+\contentsline {subsubsection}{\numberline {5.40.1.2}$\sim $WordTicTacToe\_board()}{84}{subsubsection.5.40.1.2}%
+\contentsline {subsection}{\numberline {5.40.2}Member Function Documentation}{85}{subsection.5.40.2}%
+\contentsline {subsubsection}{\numberline {5.40.2.1}desplay\_winner()}{85}{subsubsection.5.40.2.1}%
+\contentsline {subsubsection}{\numberline {5.40.2.2}display\_draw()}{85}{subsubsection.5.40.2.2}%
+\contentsline {subsubsection}{\numberline {5.40.2.3}game\_is\_over()}{85}{subsubsection.5.40.2.3}%
+\contentsline {subsubsection}{\numberline {5.40.2.4}is\_draw()}{85}{subsubsection.5.40.2.4}%
+\contentsline {subsubsection}{\numberline {5.40.2.5}is\_lose()}{86}{subsubsection.5.40.2.5}%
+\contentsline {subsubsection}{\numberline {5.40.2.6}is\_win()}{86}{subsubsection.5.40.2.6}%
+\contentsline {subsubsection}{\numberline {5.40.2.7}update\_board()}{86}{subsubsection.5.40.2.7}%
+\contentsline {section}{\numberline {5.41}Word\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{87}{section.5.41}%
+\contentsline {subsection}{\numberline {5.41.1}Constructor \& Destructor Documentation}{88}{subsection.5.41.1}%
+\contentsline {subsubsection}{\numberline {5.41.1.1}WordTicTacToe\_UI()}{88}{subsubsection.5.41.1.1}%
+\contentsline {subsubsection}{\numberline {5.41.1.2}$\sim $WordTicTacToe\_UI()}{88}{subsubsection.5.41.1.2}%
+\contentsline {subsection}{\numberline {5.41.2}Member Function Documentation}{88}{subsection.5.41.2}%
+\contentsline {subsubsection}{\numberline {5.41.2.1}create\_player()}{88}{subsubsection.5.41.2.1}%
+\contentsline {subsubsection}{\numberline {5.41.2.2}get\_move()}{89}{subsubsection.5.41.2.2}%
+\contentsline {subsubsection}{\numberline {5.41.2.3}setup\_players()}{89}{subsubsection.5.41.2.3}%
+\contentsline {section}{\numberline {5.42}X\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Board Class Reference}{89}{section.5.42}%
+\contentsline {subsection}{\numberline {5.42.1}Detailed Description}{90}{subsection.5.42.1}%
+\contentsline {subsection}{\numberline {5.42.2}Member Function Documentation}{90}{subsection.5.42.2}%
+\contentsline {subsubsection}{\numberline {5.42.2.1}game\_is\_over()}{90}{subsubsection.5.42.2.1}%
+\contentsline {subsubsection}{\numberline {5.42.2.2}is\_draw()}{91}{subsubsection.5.42.2.2}%
+\contentsline {subsubsection}{\numberline {5.42.2.3}is\_lose()}{91}{subsubsection.5.42.2.3}%
+\contentsline {subsubsection}{\numberline {5.42.2.4}is\_win()}{91}{subsubsection.5.42.2.4}%
+\contentsline {subsubsection}{\numberline {5.42.2.5}update\_board()}{91}{subsubsection.5.42.2.5}%
+\contentsline {section}{\numberline {5.43}XO\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{92}{section.5.43}%
+\contentsline {subsection}{\numberline {5.43.1}Detailed Description}{93}{subsection.5.43.1}%
+\contentsline {subsection}{\numberline {5.43.2}Constructor \& Destructor Documentation}{93}{subsection.5.43.2}%
+\contentsline {subsubsection}{\numberline {5.43.2.1}XO\_UI()}{93}{subsubsection.5.43.2.1}%
+\contentsline {subsection}{\numberline {5.43.3}Member Function Documentation}{93}{subsection.5.43.3}%
+\contentsline {subsubsection}{\numberline {5.43.3.1}create\_player()}{93}{subsubsection.5.43.3.1}%
+\contentsline {subsubsection}{\numberline {5.43.3.2}get\_move()}{93}{subsubsection.5.43.3.2}%
+\contentsline {chapter}{\numberline {6}File Documentation}{95}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Diamond\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{95}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Four\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}In\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ARow\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{95}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Infinity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{96}{section.6.3}%
+\contentsline {section}{\numberline {6.4}maze.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{96}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Memory\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{98}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Misere\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{98}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Numerical\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{99}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Obstacles\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{100}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Pyramid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{100}{section.6.9}%
+\contentsline {section}{\numberline {6.10}snake.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{101}{section.6.10}%
+\contentsline {section}{\numberline {6.11}spaceship.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{101}{section.6.11}%
+\contentsline {section}{\numberline {6.12}SUS\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{101}{section.6.12}%
+\contentsline {section}{\numberline {6.13}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe4x4\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{102}{section.6.13}%
+\contentsline {section}{\numberline {6.14}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe5x5\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{102}{section.6.14}%
+\contentsline {section}{\numberline {6.15}Ultimate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{103}{section.6.15}%
+\contentsline {section}{\numberline {6.16}Board\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{104}{section.6.16}%
+\contentsline {section}{\numberline {6.17}colors.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{107}{section.6.17}%
+\contentsline {section}{\numberline {6.18}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Launchers.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{108}{section.6.18}%
+\contentsline {section}{\numberline {6.19}Menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{108}{section.6.19}%
+\contentsline {section}{\numberline {6.20}util.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{108}{section.6.20}%
+\contentsline {section}{\numberline {6.21}Word\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{109}{section.6.21}%
+\contentsline {section}{\numberline {6.22}include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}XO\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.h File Reference}{111}{section.6.22}%
+\contentsline {subsection}{\numberline {6.22.1}Detailed Description}{111}{subsection.6.22.1}%
+\contentsline {section}{\numberline {6.23}XO\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{111}{section.6.23}%
+\contentsline {section}{\numberline {6.24}src/abdallah/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Word\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.cpp File Reference}{112}{section.6.24}%
+\contentsline {subsection}{\numberline {6.24.1}Detailed Description}{112}{subsection.6.24.1}%
+\contentsline {section}{\numberline {6.25}src/ammen/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pyramid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.cpp File Reference}{112}{section.6.25}%
+\contentsline {subsection}{\numberline {6.25.1}Detailed Description}{112}{subsection.6.25.1}%
+\contentsline {subsection}{\numberline {6.25.2}Function Documentation}{113}{subsection.6.25.2}%
+\contentsline {subsubsection}{\numberline {6.25.2.1}initPrintableLocations()}{113}{subsubsection.6.25.2.1}%
+\contentsline {subsubsection}{\numberline {6.25.2.2}isPrintable()}{113}{subsubsection.6.25.2.2}%
+\contentsline {section}{\numberline {6.26}src/ammen/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ultimate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tac\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Toe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.cpp File Reference}{113}{section.6.26}%
+\contentsline {subsection}{\numberline {6.26.1}Detailed Description}{114}{subsection.6.26.1}%

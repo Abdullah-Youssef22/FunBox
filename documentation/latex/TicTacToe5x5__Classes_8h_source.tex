@@ -1,0 +1,60 @@
+\doxysection{Tic\+Tac\+Toe5x5\+\_\+\+Classes.\+h}
+\hypertarget{TicTacToe5x5__Classes_8h_source}{}\label{TicTacToe5x5__Classes_8h_source}\index{include/TicTacToe5x5\_Classes.h@{include/TicTacToe5x5\_Classes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TicTacToe5x5\_Classes\_h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TicTacToe5x5\_Classes\_h}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}util/BoardGame\_Classes.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}util/colors.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTicTacToe5x5__Board_ab0a4b2adece3ff967c40ba18696ee825}{TicTacToe5x5\_Board}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBoard_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}<char>}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{char}\ blank\_symbol\ =\ \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ player1\_score\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ player2\_score\ =\ 0;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ game\_ended\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ count\_sequences(\textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classTicTacToe5x5__Board_ab0a4b2adece3ff967c40ba18696ee825}{TicTacToe5x5\_Board}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classTicTacToe5x5__Board_ab0a4b2adece3ff967c40ba18696ee825}{\string~TicTacToe5x5\_Board}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTicTacToe5x5__Board_a702418259bcbfab826df211604945136}{update\_board}}(\mbox{\hyperlink{classMove}{Move<char>}}*\ move);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTicTacToe5x5__Board_a082f6a37cbc5b557a211168714b56cd4}{is\_win}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTicTacToe5x5__Board_afad971117c1683e8253d83b677a40e50}{is\_lose}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTicTacToe5x5__Board_afca92ee42e684bc89b4bcb61adf98027}{is\_draw}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTicTacToe5x5__Board_af036d9b74a7a9d424c40c9df13e98eb3}{game\_is\_over}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_score(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ get\_score(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTicTacToe5x5__Board_a0213a890e22b821e6ba82c1c878d1105}{update\_scores}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTicTacToe5x5__Board_a547cac074cb0f6b56844c1692f515546}{desplay\_scores}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTicTacToe5x5__Board_aae594cf539fbe4d3c44c876f72893d1c}{end}}();}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }TicTacToe5x5\_AIPlayer\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classPlayer_adb4e803a7ac0356b111b8ca79d766976}{Player}}<char>\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ minimax(vector<vector<char>>\&\ board,\ \textcolor{keywordtype}{int}\ depth,\ \textcolor{keywordtype}{bool}\ isMaximizing,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ aiSymbol,\ \textcolor{keywordtype}{char}\ oppSymbol,\ \textcolor{keywordtype}{int}\ alpha,\ \textcolor{keywordtype}{int}\ beta,\ \textcolor{keywordtype}{int}\ maxDepth\ =\ 4);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ is\_board\_full(\textcolor{keyword}{const}\ vector<vector<char>>\&\ b,\ \textcolor{keywordtype}{int}\ moves);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ count\_sequences\_in\_board(\textcolor{keyword}{const}\ vector<vector<char>>\&\ board,\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classPlayer_a272d6c4dab769930d4f8074918e7708a}{symbol}});}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ TicTacToe5x5\_AIPlayer(\textcolor{keywordtype}{string}\ n,\ \textcolor{keywordtype}{char}\ s);}
+\DoxyCodeLine{00041\ \ \ \ \ pair<int,\ int>\ get\_best\_move();}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTicTacToe5x5__UI_a1f2f1237c2a141b0a64a9872af16f2e8}{TicTacToe5x5\_UI}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classUI_ae50eed41905ca2f8dc103d9bef427fe6}{UI}}<char>}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classTicTacToe5x5__UI_a1f2f1237c2a141b0a64a9872af16f2e8}{TicTacToe5x5\_UI}}();}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classTicTacToe5x5__UI_a1f2f1237c2a141b0a64a9872af16f2e8}{\string~TicTacToe5x5\_UI}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<char>}}*\ \mbox{\hyperlink{classTicTacToe5x5__UI_a3fbbb1ae8d5de37ae19ce1edeae09852}{create\_player}}(\textcolor{keywordtype}{string}\&\ name,\ \textcolor{keywordtype}{char}\ symbol,\ PlayerType\ type);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classMove}{Move<char>}}*\ \mbox{\hyperlink{classTicTacToe5x5__UI_a43c1bbdbc96d73a2df71da121975639a}{get\_move}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<char>}}**\ \mbox{\hyperlink{classTicTacToe5x5__UI_ae4b45936ecec8f366e3328adfd8abfd5}{setup\_players}}();}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

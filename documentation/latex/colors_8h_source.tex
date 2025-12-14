@@ -1,0 +1,68 @@
+\doxysection{colors.\+h}
+\hypertarget{colors_8h_source}{}\label{colors_8h_source}\index{include/util/colors.h@{include/util/colors.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COLORS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COLORS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ ===============================================}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ ANSI\ COLOR\ CODES\ —\ Text\ \&\ Background\ Styles}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ ===============================================}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Reset\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ RESET\ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[0m"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Regular\ Colors\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ BLACK\ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[30m"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ RED\ \ \ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[31m"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ GREEN\ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[32m"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ YELLOW\ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[33m"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ BLUE\ \ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[34m"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MAGENTA\ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[35m"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ CYAN\ \ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[36m"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ WHITE\ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[37m"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Bright\ (Bold)\ Colors\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ BRIGHT\_BLACK\ \ \ \ "{}\(\backslash\)033[90m"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ BRIGHT\_RED\ \ \ \ \ \ "{}\(\backslash\)033[91m"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ BRIGHT\_GREEN\ \ \ \ "{}\(\backslash\)033[92m"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ BRIGHT\_YELLOW\ \ \ "{}\(\backslash\)033[93m"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ BRIGHT\_BLUE\ \ \ \ \ "{}\(\backslash\)033[94m"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ BRIGHT\_MAGENTA\ \ "{}\(\backslash\)033[95m"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ BRIGHT\_CYAN\ \ \ \ \ "{}\(\backslash\)033[96m"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ BRIGHT\_WHITE\ \ \ \ "{}\(\backslash\)033[97m"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Background\ Colors\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ BG\_BLACK\ \ \ \ \ \ \ \ "{}\(\backslash\)033[40m"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ BG\_RED\ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[41m"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ BG\_GREEN\ \ \ \ \ \ \ \ "{}\(\backslash\)033[42m"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ BG\_YELLOW\ \ \ \ \ \ \ "{}\(\backslash\)033[43m"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ BG\_BLUE\ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[44m"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ BG\_MAGENTA\ \ \ \ \ \ "{}\(\backslash\)033[45m"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ BG\_CYAN\ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[46m"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ BG\_WHITE\ \ \ \ \ \ \ \ "{}\(\backslash\)033[47m"{}}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Bright\ Background\ Colors\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ BG\_BRIGHT\_BLACK\ \ \ "{}\(\backslash\)033[100m"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ BG\_BRIGHT\_RED\ \ \ \ \ "{}\(\backslash\)033[101m"{}}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ BG\_BRIGHT\_GREEN\ \ \ "{}\(\backslash\)033[102m"{}}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ BG\_BRIGHT\_YELLOW\ \ "{}\(\backslash\)033[103m"{}}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ BG\_BRIGHT\_BLUE\ \ \ \ "{}\(\backslash\)033[104m"{}}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ BG\_BRIGHT\_MAGENTA\ "{}\(\backslash\)033[105m"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ BG\_BRIGHT\_CYAN\ \ \ \ "{}\(\backslash\)033[106m"{}}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ BG\_BRIGHT\_WHITE\ \ \ "{}\(\backslash\)033[107m"{}}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Text\ Styles\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ BOLD\ \ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[1m"{}}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DIM\ \ \ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[2m"{}}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ ITALIC\ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[3m"{}}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ UNDERLINE\ \ \ \ \ \ \ "{}\(\backslash\)033[4m"{}}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ BLINK\ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[5m"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ REVERSE\ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[7m"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ HIDDEN\ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[8m"{}}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

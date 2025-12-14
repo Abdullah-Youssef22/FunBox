@@ -1,0 +1,50 @@
+\doxysection{Diamond\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h}
+\hypertarget{DiamondTicTacToe__Classes_8h_source}{}\label{DiamondTicTacToe__Classes_8h_source}\index{include/DiamondTicTacToe\_Classes.h@{include/DiamondTicTacToe\_Classes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once\ }}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}util/BoardGame\_Classes.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }DimaondTicTacToe\_Board\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBoard_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}<char>\ \{}
+\DoxyCodeLine{00008\ public\ :}
+\DoxyCodeLine{00009\ \ \ \ \ DimaondTicTacToe\_Board();}
+\DoxyCodeLine{00010\ \ \ \ \ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDimaondTicTacToe__Board_a555227db8b9eb58070c6d129f57c3c68}{update\_board}}(\mbox{\hyperlink{classMove}{Move<char>}}*\ move)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDimaondTicTacToe__Board_a984ead9e1a2c971636d02fd0d5702701}{is\_win}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDimaondTicTacToe__Board_a8099a60f23da068ada12db2e9964d0b5}{is\_lose}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDimaondTicTacToe__Board_a0c368b2ecd5afc58072a2ebbedb5b4a3}{is\_draw}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDimaondTicTacToe__Board_a8abe99980acf6b9cf01eb6930544b2ac}{game\_is\_over}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDimaondTicTacToe__Board_a403fe48942215821ffdd7e07ec585afe}{is\_valid\_cell}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00017\ private\ :}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{/*bool\ checkThree(char\ sym);\ */}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{/*bool\ checkFive(char\ sym);*/}}
+\DoxyCodeLine{00020\ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkThreeinrows(\textcolor{keywordtype}{char}\ sym);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkThreeincolumns(\textcolor{keywordtype}{char}\ sym);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkThreeindiagonals(\textcolor{keywordtype}{char}\ sym);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkFourinrows(\textcolor{keywordtype}{char}\ sym);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkFourincolumns(\textcolor{keywordtype}{char}\ sym);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkFourindiagonals(\textcolor{keywordtype}{char}\ sym);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }DimaondPlayer\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classPlayer_adb4e803a7ac0356b111b8ca79d766976}{Player}}<char>\ }
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ public\ :\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ DimaondPlayer(\textcolor{keywordtype}{string}\ n,\ \textcolor{keywordtype}{char}\ s,\ PlayerType\ t)\ :\ \mbox{\hyperlink{classPlayer_adb4e803a7ac0356b111b8ca79d766976}{Player}}(n,\ s,\ t)\ \{\}}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }DimaondUI\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classUI_ae50eed41905ca2f8dc103d9bef427fe6}{UI}}<char>\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ public\ :}
+\DoxyCodeLine{00041\ \ \ \ \ DimaondUI();}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classMove}{Move<char>}}*\ \mbox{\hyperlink{classDimaondUI_a2b5f9df09e2ef9da5c3c01c9bac68464}{get\_move}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<char>}}*\ \mbox{\hyperlink{classDimaondUI_aec9acdd01fe1facf11dc2dfa6e311063}{create\_player}}(\textcolor{keywordtype}{string}\&\ name,\ \textcolor{keywordtype}{char}\ symbol,\ PlayerType\ type)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ \};}
+
+\end{DoxyCode}

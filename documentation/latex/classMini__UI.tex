@@ -1,0 +1,75 @@
+\doxysection{Mini\+\_\+\+UI Class Reference}
+\hypertarget{classMini__UI}{}\label{classMini__UI}\index{Mini\_UI@{Mini\_UI}}
+Inheritance diagram for Mini\+\_\+\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMini__UI}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classMini__UI_a94e5cbbb5c34bbaf2e25d1eea0dae751}{create\+\_\+player}} (string \&name, char symbol, Player\+Type type)
+\begin{DoxyCompactList}\small\item\em Create a player object based on input name, symbol, and type. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classMini__UI_ac62cd3348fb882c2d1f83ebf99e4834a}{get\+\_\+move}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Ask the user (or AI) to make a move. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UI} (string message, int cell\+\_\+display\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{classUI}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUI_a6966a040c995b2292e5edddaa94f889a}{setup\+\_\+players}} ()
+\begin{DoxyCompactList}\small\item\em Set up players for the game. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ char $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMini__UI_a94e5cbbb5c34bbaf2e25d1eea0dae751}\index{Mini\_UI@{Mini\_UI}!create\_player@{create\_player}}
+\index{create\_player@{create\_player}!Mini\_UI@{Mini\_UI}}
+\doxysubsubsection{\texorpdfstring{create\_player()}{create\_player()}}
+{\footnotesize\ttfamily \label{classMini__UI_a94e5cbbb5c34bbaf2e25d1eea0dae751} 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Mini\+\_\+\+UI\+::create\+\_\+player (\begin{DoxyParamCaption}\item[{string \&}]{name}{, }\item[{char}]{symbol}{, }\item[{Player\+Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create a player object based on input name, symbol, and type. 
+
+
+
+Implements \mbox{\hyperlink{classUI_af9f043033208286cd56240a1f060dd7b}{UI$<$ char $>$}}.
+
+\Hypertarget{classMini__UI_ac62cd3348fb882c2d1f83ebf99e4834a}\index{Mini\_UI@{Mini\_UI}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!Mini\_UI@{Mini\_UI}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{classMini__UI_ac62cd3348fb882c2d1f83ebf99e4834a} 
+virtual \mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Mini\+\_\+\+UI\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Ask the user (or AI) to make a move. 
+
+
+
+Implements \mbox{\hyperlink{classUI_a8befa259c38c57e6ae2e8ed81c476337}{UI$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Ultimate\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h\end{DoxyCompactItemize}

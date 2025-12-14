@@ -1,0 +1,109 @@
+\doxysection{UI\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classUI}{}\label{classUI}\index{UI$<$ T $>$@{UI$<$ T $>$}}
+
+
+Base class for handling user interface and input/output.  
+
+
+
+
+{\ttfamily \#include $<$Board\+Game\+\_\+\+Classes.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classUI_ae50eed41905ca2f8dc103d9bef427fe6}\label{classUI_ae50eed41905ca2f8dc103d9bef427fe6} 
+{\bfseries UI} (string message, int cell\+\_\+display\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{classUI}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+\Hypertarget{classUI_a1eead148ee8726b8ea329c2cd8841d18}\label{classUI_a1eead148ee8726b8ea329c2cd8841d18} 
+void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMove}{Move}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUI_a8befa259c38c57e6ae2e8ed81c476337}{get\+\_\+move}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*})=0
+\begin{DoxyCompactList}\small\item\em Ask the user (or AI) to make a move. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPlayer}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUI_a6966a040c995b2292e5edddaa94f889a}{setup\+\_\+players}} ()
+\begin{DoxyCompactList}\small\item\em Set up players for the game. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPlayer}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUI_af9f043033208286cd56240a1f060dd7b}{create\+\_\+player}} (string \&name, T symbol, Player\+Type type)=0
+\begin{DoxyCompactList}\small\item\em Create a player object based on input name, symbol, and type. \end{DoxyCompactList}\item 
+\Hypertarget{classUI_a5d4655d5ff273e284fd68b8547483a23}\label{classUI_a5d4655d5ff273e284fd68b8547483a23} 
+void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ T $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classUI_a8617bbf64a9ddf11ea6231912044805d}\label{classUI_a8617bbf64a9ddf11ea6231912044805d} 
+string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+\Hypertarget{classUI_ae62d61367ea51a5d7532db3b830c6445}\label{classUI_ae62d61367ea51a5d7532db3b830c6445} 
+Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classUI_a6c79c489ae9aa3a7860fb58e5a14ddfe}\label{classUI_a6c79c489ae9aa3a7860fb58e5a14ddfe} 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class UI$<$ T $>$}
+Base class for handling user interface and input/output. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of symbol used on the board. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUI_af9f043033208286cd56240a1f060dd7b}\index{UI$<$ T $>$@{UI$<$ T $>$}!create\_player@{create\_player}}
+\index{create\_player@{create\_player}!UI$<$ T $>$@{UI$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create\_player()}{create\_player()}}
+{\footnotesize\ttfamily \label{classUI_af9f043033208286cd56240a1f060dd7b} 
+template$<$typename T$>$ \\
+virtual \mbox{\hyperlink{classPlayer}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUI}{UI}}$<$ T $>$\+::create\+\_\+player (\begin{DoxyParamCaption}\item[{string \&}]{name}{, }\item[{T}]{symbol}{, }\item[{Player\+Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create a player object based on input name, symbol, and type. 
+
+
+
+Implemented in \mbox{\hyperlink{classDimaondUI_aec9acdd01fe1facf11dc2dfa6e311063}{Dimaond\+UI}}, \mbox{\hyperlink{classFourByFour__UI_a1e78ece56de891ad46bcbf7b2bd1a7d7}{Four\+By\+Four\+\_\+\+UI}}, \mbox{\hyperlink{classFourInARow__UI_a69ec9347ea1a3841addc0df104218870}{Four\+In\+ARow\+\_\+\+UI}}, \mbox{\hyperlink{classInfinity__TicTacToe__UI_a23f71aaa7c4dcb184e0b0498df812c46}{Infinity\+\_\+\+Tic\+Tac\+Toe\+\_\+\+UI}}, \mbox{\hyperlink{classMemoryTicTacToeUI_a418bf6835a04e16f1a44705ef929e6d5}{Memory\+Tic\+Tac\+Toe\+UI}}, \mbox{\hyperlink{classMini__UI_a94e5cbbb5c34bbaf2e25d1eea0dae751}{Mini\+\_\+\+UI}}, \mbox{\hyperlink{classMisereTicTacToeUI_a3fa2930dec7ed51f510b0491762b035a}{Misere\+Tic\+Tac\+Toe\+UI}}, \mbox{\hyperlink{classNumericalTicTacToe__UI_a685fbad24ae84bd13314b1a45873b2dd}{Numerical\+Tic\+Tac\+Toe\+\_\+\+UI}}, \mbox{\hyperlink{classObstaclesTicTacToeUI_a336a06d3306103e75a4722dde8ccd0dc}{Obstacles\+Tic\+Tac\+Toe\+UI}}, \mbox{\hyperlink{classPyramid__UI_a700efb45cce65c4ea1e0ea781ec67bf2}{Pyramid\+\_\+\+UI}}, \mbox{\hyperlink{classSUS__UI_a03be65e7b3ef9d336bb5078cd7b604a8}{SUS\+\_\+\+UI}}, \mbox{\hyperlink{classTicTacToe5x5__UI_a3fbbb1ae8d5de37ae19ce1edeae09852}{Tic\+Tac\+Toe5x5\+\_\+\+UI}}, \mbox{\hyperlink{classUltimate__UI_a8b7c8b09278cdef5dc878ef89eaa83e7}{Ultimate\+\_\+\+UI}}, \mbox{\hyperlink{classWordTicTacToe__UI_af27403ce7223eb11a7cdfd4eb6168230}{Word\+Tic\+Tac\+Toe\+\_\+\+UI}}, and \mbox{\hyperlink{classXO__UI_abd2ec8bc2c0ad1e60499c84e45ad6776}{XO\+\_\+\+UI}}.
+
+\Hypertarget{classUI_a8befa259c38c57e6ae2e8ed81c476337}\index{UI$<$ T $>$@{UI$<$ T $>$}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!UI$<$ T $>$@{UI$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{classUI_a8befa259c38c57e6ae2e8ed81c476337} 
+template$<$typename T$>$ \\
+virtual \mbox{\hyperlink{classMove}{Move}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUI}{UI}}$<$ T $>$\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Ask the user (or AI) to make a move. 
+
+
+
+Implemented in \mbox{\hyperlink{classDimaondUI_a2b5f9df09e2ef9da5c3c01c9bac68464}{Dimaond\+UI}}, \mbox{\hyperlink{classFourByFour__UI_a6bb7003eed87d7faa03d50d46bdf0d97}{Four\+By\+Four\+\_\+\+UI}}, \mbox{\hyperlink{classFourInARow__UI_ad95d8bbbf32926ef9f23c14cdfaaaa9e}{Four\+In\+ARow\+\_\+\+UI}}, \mbox{\hyperlink{classInfinity__TicTacToe__UI_a03a6b26f478c591af299de349a4d2902}{Infinity\+\_\+\+Tic\+Tac\+Toe\+\_\+\+UI}}, \mbox{\hyperlink{classMemoryTicTacToeUI_a1364b3a453c8d81e865c5f7a88e5f43b}{Memory\+Tic\+Tac\+Toe\+UI}}, \mbox{\hyperlink{classMini__UI_ac62cd3348fb882c2d1f83ebf99e4834a}{Mini\+\_\+\+UI}}, \mbox{\hyperlink{classMisereTicTacToeUI_a04a86802b2c1b919833070a5d949fd1e}{Misere\+Tic\+Tac\+Toe\+UI}}, \mbox{\hyperlink{classNumericalTicTacToe__UI_a3bbab112ed4b3d69e29e92bf1113c13d}{Numerical\+Tic\+Tac\+Toe\+\_\+\+UI}}, \mbox{\hyperlink{classObstaclesTicTacToeUI_a453c2ec805a15985ee7a440fcb170d17}{Obstacles\+Tic\+Tac\+Toe\+UI}}, \mbox{\hyperlink{classPyramid__UI_a6bd1983ff0cba1c68b83940b785a7efd}{Pyramid\+\_\+\+UI}}, \mbox{\hyperlink{classSUS__UI_a621a4bfadf8d79f2b2b66f2241c310c3}{SUS\+\_\+\+UI}}, \mbox{\hyperlink{classTicTacToe5x5__UI_a43c1bbdbc96d73a2df71da121975639a}{Tic\+Tac\+Toe5x5\+\_\+\+UI}}, \mbox{\hyperlink{classUltimate__UI_a4c3e6b4f77e281d67a946df1620ef822}{Ultimate\+\_\+\+UI}}, \mbox{\hyperlink{classWordTicTacToe__UI_ac247c70a43e363575844d10487b444f5}{Word\+Tic\+Tac\+Toe\+\_\+\+UI}}, and \mbox{\hyperlink{classXO__UI_a4814913b14a2666667a2a90ab8205356}{XO\+\_\+\+UI}}.
+
+\Hypertarget{classUI_a6966a040c995b2292e5edddaa94f889a}\index{UI$<$ T $>$@{UI$<$ T $>$}!setup\_players@{setup\_players}}
+\index{setup\_players@{setup\_players}!UI$<$ T $>$@{UI$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setup\_players()}{setup\_players()}}
+{\footnotesize\ttfamily \label{classUI_a6966a040c995b2292e5edddaa94f889a} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{classPlayer}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUI}{UI}}$<$ T $>$\+::setup\+\_\+players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set up players for the game. 
+
+Default implementation of setting up two players. 
+
+Reimplemented in \mbox{\hyperlink{classFourByFour__UI_a0722034665c9bc5a2058dc3274bccd2f}{Four\+By\+Four\+\_\+\+UI}}, \mbox{\hyperlink{classFourInARow__UI_a672df17940c604e90d4c93ca0c4f09ec}{Four\+In\+ARow\+\_\+\+UI}}, \mbox{\hyperlink{classMisereTicTacToeUI_a6acc04d978ca03ce52cbbf958e60e4b6}{Misere\+Tic\+Tac\+Toe\+UI}}, \mbox{\hyperlink{classNumericalTicTacToe__UI_a92fedf8550a2cf0f9b0df1f20be0c975}{Numerical\+Tic\+Tac\+Toe\+\_\+\+UI}}, \mbox{\hyperlink{classPyramid__UI_aa04e9edfc8bfb4614a9085982a7244be}{Pyramid\+\_\+\+UI}}, \mbox{\hyperlink{classSUS__UI_a24c1d67ea76050e7bee6159e9ba39aa2}{SUS\+\_\+\+UI}}, \mbox{\hyperlink{classTicTacToe5x5__UI_ae4b45936ecec8f366e3328adfd8abfd5}{Tic\+Tac\+Toe5x5\+\_\+\+UI}}, and \mbox{\hyperlink{classWordTicTacToe__UI_a10b7ea5dfbb8062bb29e39d1f6533133}{Word\+Tic\+Tac\+Toe\+\_\+\+UI}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/util/Board\+Game\+\_\+\+Classes.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,177 @@
+\doxysection{Four\+By\+Four\+\_\+\+Board Class Reference}
+\hypertarget{classFourByFour__Board}{}\label{classFourByFour__Board}\index{FourByFour\_Board@{FourByFour\_Board}}
+Inheritance diagram for Four\+By\+Four\+\_\+\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classFourByFour__Board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classFourByFour__Board_afde0140f7c36fc611390b96b68769e58}\label{classFourByFour__Board_afde0140f7c36fc611390b96b68769e58} 
+{\bfseries Four\+By\+Four\+\_\+\+Board} ()
+\begin{DoxyCompactList}\small\item\em Default constructor that initializes a 3x3 X-\/O board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFourByFour__Board_aad154a197418fffb97362ea273f484ae}{update\+\_\+board}} (\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move)
+\begin{DoxyCompactList}\small\item\em Updates the board with a player\textquotesingle{}s move. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFourByFour__Board_ac12e81f30de4a27c37ebc6f54d3fcb58}{is\+\_\+win}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Checks if the given player has won the game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFourByFour__Board_a3dc380ec075e0988aecf662cec47106b}{is\+\_\+lose}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Checks if the given player has lost the game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFourByFour__Board_ad4475af07f4e4af2c85904dce232b04a}{is\+\_\+draw}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Checks if the game has ended in a draw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFourByFour__Board_a44f2127c195f77899cfbb95d53e23d55}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Determines if the game is over (win or draw). \end{DoxyCompactList}\item 
+\Hypertarget{classFourByFour__Board_af9e87c2d0c0c56ff0cab36f6e70b41cc}\label{classFourByFour__Board_af9e87c2d0c0c56ff0cab36f6e70b41cc} 
+void {\bfseries put\+Tokens\+At\+Positions} ()
+\begin{DoxyCompactList}\small\item\em Updates token positions. \end{DoxyCompactList}\item 
+\Hypertarget{classFourByFour__Board_a6f53d685ee8a8259d0a4ff679c1419d8}\label{classFourByFour__Board_a6f53d685ee8a8259d0a4ff679c1419d8} 
+void {\bfseries display\+\_\+winner} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\item 
+\Hypertarget{classFourByFour__Board_a2c4d2565eb4f3e4a375a8425cc6af5cc}\label{classFourByFour__Board_a2c4d2565eb4f3e4a375a8425cc6af5cc} 
+void {\bfseries display\+\_\+draw} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{classBoard_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{classBoard_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFourByFour__Board_a44f2127c195f77899cfbb95d53e23d55}\index{FourByFour\_Board@{FourByFour\_Board}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!FourByFour\_Board@{FourByFour\_Board}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{classFourByFour__Board_a44f2127c195f77899cfbb95d53e23d55} 
+bool Four\+By\+Four\+\_\+\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determines if the game is over (win or draw). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the game has ended, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{classFourByFour__Board_ad4475af07f4e4af2c85904dce232b04a}\index{FourByFour\_Board@{FourByFour\_Board}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!FourByFour\_Board@{FourByFour\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{classFourByFour__Board_ad4475af07f4e4af2c85904dce232b04a} 
+bool Four\+By\+Four\+\_\+\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the game has ended in a draw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player being checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all cells are filled and no player has won, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{classFourByFour__Board_a3dc380ec075e0988aecf662cec47106b}\index{FourByFour\_Board@{FourByFour\_Board}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!FourByFour\_Board@{FourByFour\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{classFourByFour__Board_a3dc380ec075e0988aecf662cec47106b} 
+bool Four\+By\+Four\+\_\+\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the given player has lost the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player being checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always returns false (not used in X-\/O logic). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{classFourByFour__Board_ac12e81f30de4a27c37ebc6f54d3fcb58}\index{FourByFour\_Board@{FourByFour\_Board}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!FourByFour\_Board@{FourByFour\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{classFourByFour__Board_ac12e81f30de4a27c37ebc6f54d3fcb58} 
+bool Four\+By\+Four\+\_\+\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if the given player has won the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player being checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the player has a winning line, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{classFourByFour__Board_aad154a197418fffb97362ea273f484ae}\index{FourByFour\_Board@{FourByFour\_Board}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!FourByFour\_Board@{FourByFour\_Board}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{classFourByFour__Board_aad154a197418fffb97362ea273f484ae} 
+bool Four\+By\+Four\+\_\+\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the board with a player\textquotesingle{}s move. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & Pointer to a \doxylink{classMove}{Move$<$char$>$} object containing move coordinates and symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the move is valid and successfully applied, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Tic\+Tac\+Toe4x4\+\_\+\+Classes.\+h\item 
+src/ammen/Tic\+Tac\+Toe4x4\+\_\+\+Classes.\+cpp\end{DoxyCompactItemize}

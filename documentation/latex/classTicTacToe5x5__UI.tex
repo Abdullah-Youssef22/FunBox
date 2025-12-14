@@ -1,0 +1,121 @@
+\doxysection{Tic\+Tac\+Toe5x5\+\_\+\+UI Class Reference}
+\hypertarget{classTicTacToe5x5__UI}{}\label{classTicTacToe5x5__UI}\index{TicTacToe5x5\_UI@{TicTacToe5x5\_UI}}
+
+
+Handles user interface for the 5x5 Tic\+Tac\+Toe game.  
+
+
+Inheritance diagram for Tic\+Tac\+Toe5x5\+\_\+\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTicTacToe5x5__UI}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTicTacToe5x5__UI_a1f2f1237c2a141b0a64a9872af16f2e8}\label{classTicTacToe5x5__UI_a1f2f1237c2a141b0a64a9872af16f2e8} 
+{\bfseries Tic\+Tac\+Toe5x5\+\_\+\+UI} ()
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classUI}{UI} and initializes the welcome message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTicTacToe5x5__UI_a3fbbb1ae8d5de37ae19ce1edeae09852}{create\+\_\+player}} (string \&name, char symbol, Player\+Type type)
+\begin{DoxyCompactList}\small\item\em Creates a new player. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTicTacToe5x5__UI_a43c1bbdbc96d73a2df71da121975639a}{get\+\_\+move}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Gets a move either from user input or computer AI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTicTacToe5x5__UI_ae4b45936ecec8f366e3328adfd8abfd5}{setup\+\_\+players}} ()
+\begin{DoxyCompactList}\small\item\em Set up players for the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UI} (string message, int cell\+\_\+display\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{classUI}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ char $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles user interface for the 5x5 Tic\+Tac\+Toe game. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTicTacToe5x5__UI_a3fbbb1ae8d5de37ae19ce1edeae09852}\index{TicTacToe5x5\_UI@{TicTacToe5x5\_UI}!create\_player@{create\_player}}
+\index{create\_player@{create\_player}!TicTacToe5x5\_UI@{TicTacToe5x5\_UI}}
+\doxysubsubsection{\texorpdfstring{create\_player()}{create\_player()}}
+{\footnotesize\ttfamily \label{classTicTacToe5x5__UI_a3fbbb1ae8d5de37ae19ce1edeae09852} 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Tic\+Tac\+Toe5x5\+\_\+\+UI\+::create\+\_\+player (\begin{DoxyParamCaption}\item[{string \&}]{name}{, }\item[{char}]{symbol}{, }\item[{Player\+Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a new player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \doxylink{classPlayer}{Player} name. \\
+\hline
+{\em symbol} & \doxylink{classPlayer}{Player} symbol (X or O). \\
+\hline
+{\em type} & HUMAN or COMPUTER. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created player. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUI_af9f043033208286cd56240a1f060dd7b}{UI$<$ char $>$}}.
+
+\Hypertarget{classTicTacToe5x5__UI_a43c1bbdbc96d73a2df71da121975639a}\index{TicTacToe5x5\_UI@{TicTacToe5x5\_UI}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!TicTacToe5x5\_UI@{TicTacToe5x5\_UI}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{classTicTacToe5x5__UI_a43c1bbdbc96d73a2df71da121975639a} 
+\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Tic\+Tac\+Toe5x5\+\_\+\+UI\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets a move either from user input or computer AI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to current player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classMove}{Move$<$char$>$}\texorpdfstring{$\ast$}{*} Pointer to the created move. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUI_a8befa259c38c57e6ae2e8ed81c476337}{UI$<$ char $>$}}.
+
+\Hypertarget{classTicTacToe5x5__UI_ae4b45936ecec8f366e3328adfd8abfd5}\index{TicTacToe5x5\_UI@{TicTacToe5x5\_UI}!setup\_players@{setup\_players}}
+\index{setup\_players@{setup\_players}!TicTacToe5x5\_UI@{TicTacToe5x5\_UI}}
+\doxysubsubsection{\texorpdfstring{setup\_players()}{setup\_players()}}
+{\footnotesize\ttfamily \label{classTicTacToe5x5__UI_ae4b45936ecec8f366e3328adfd8abfd5} 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Tic\+Tac\+Toe5x5\+\_\+\+UI\+::setup\+\_\+players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set up players for the game. 
+
+Default implementation of setting up two players. 
+
+Reimplemented from \mbox{\hyperlink{classUI_a6966a040c995b2292e5edddaa94f889a}{UI$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Tic\+Tac\+Toe5x5\+\_\+\+Classes.\+h\item 
+src/abdallah/Tic\+Tac\+Toe5x5\+\_\+\+Classes.\+cpp\end{DoxyCompactItemize}

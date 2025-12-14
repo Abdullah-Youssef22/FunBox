@@ -1,0 +1,204 @@
+\doxysection{Obstacles\+Tic\+Tac\+Toe\+Board Class Reference}
+\hypertarget{classObstaclesTicTacToeBoard}{}\label{classObstaclesTicTacToeBoard}\index{ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}}
+
+
+Represents the board for Obstacles Tic Tac Toe.  
+
+
+Inheritance diagram for Obstacles\+Tic\+Tac\+Toe\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classObstaclesTicTacToeBoard}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classObstaclesTicTacToeBoard_a81f60144c8ce63de591f63d661c64543}{Obstacles\+Tic\+Tac\+Toe\+Board}} ()
+\item 
+bool \mbox{\hyperlink{classObstaclesTicTacToeBoard_a2e378baba133edd0bc6de9c9ec91de1b}{update\+\_\+board}} (\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move)
+\begin{DoxyCompactList}\small\item\em Update the board with a player\textquotesingle{}s move. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classObstaclesTicTacToeBoard_ae9e6c40fb1e4e76b8f490e0e10a73a4a}{is\+\_\+win}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Check if the player has won. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classObstaclesTicTacToeBoard_a72cb6e271d0f0b358d20747e028ff5cc}{is\+\_\+lose}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Check if a player has lost. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classObstaclesTicTacToeBoard_a363998fc1297ca12191e8eaa391cad0f}{is\+\_\+draw}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Check if the game is a draw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classObstaclesTicTacToeBoard_aad9d287959d580365124a82726f0a75a}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Check if the game is over. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObstaclesTicTacToeBoard_a5f686b1395d8f4180d1735fd8033fac5}{display\+\_\+winner}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Display the winner message. \end{DoxyCompactList}\item 
+\Hypertarget{classObstaclesTicTacToeBoard_abbb6dea33d2f1a4ee2f1e502558345bb}\label{classObstaclesTicTacToeBoard_abbb6dea33d2f1a4ee2f1e502558345bb} 
+void {\bfseries display\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Display the draw message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{classBoard_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{classBoard_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classBoard}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the board for Obstacles Tic Tac Toe. 
+
+This variant uses a 6x6 board. When a player places \textquotesingle{}O\textquotesingle{}, two random empty cells are converted into obstacles. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classObstaclesTicTacToeBoard_a81f60144c8ce63de591f63d661c64543}\index{ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}!ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}}
+\index{ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}!ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}}
+\doxysubsubsection{\texorpdfstring{ObstaclesTicTacToeBoard()}{ObstaclesTicTacToeBoard()}}
+{\footnotesize\ttfamily \label{classObstaclesTicTacToeBoard_a81f60144c8ce63de591f63d661c64543} 
+Obstacles\+Tic\+Tac\+Toe\+Board\+::\+Obstacles\+Tic\+Tac\+Toe\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} Initialize all cells as blank
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classObstaclesTicTacToeBoard_a5f686b1395d8f4180d1735fd8033fac5}\index{ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}!display\_winner@{display\_winner}}
+\index{display\_winner@{display\_winner}!ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}}
+\doxysubsubsection{\texorpdfstring{display\_winner()}{display\_winner()}}
+{\footnotesize\ttfamily \label{classObstaclesTicTacToeBoard_a5f686b1395d8f4180d1735fd8033fac5} 
+void Obstacles\+Tic\+Tac\+Toe\+Board\+::display\+\_\+winner (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Display the winner message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the winning player \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classObstaclesTicTacToeBoard_aad9d287959d580365124a82726f0a75a}\index{ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{classObstaclesTicTacToeBoard_aad9d287959d580365124a82726f0a75a} 
+bool Obstacles\+Tic\+Tac\+Toe\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the game is over. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if win or draw 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{classObstaclesTicTacToeBoard_a363998fc1297ca12191e8eaa391cad0f}\index{ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{classObstaclesTicTacToeBoard_a363998fc1297ca12191e8eaa391cad0f} 
+bool Obstacles\+Tic\+Tac\+Toe\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the game is a draw. 
+
+A draw occurs when all cells are filled and no player has won.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if draw, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{classObstaclesTicTacToeBoard_a72cb6e271d0f0b358d20747e028ff5cc}\index{ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{classObstaclesTicTacToeBoard_a72cb6e271d0f0b358d20747e028ff5cc} 
+bool Obstacles\+Tic\+Tac\+Toe\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Check if a player has lost. 
+
+
+
+Implements \mbox{\hyperlink{classBoard_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{classObstaclesTicTacToeBoard_ae9e6c40fb1e4e76b8f490e0e10a73a4a}\index{ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{classObstaclesTicTacToeBoard_ae9e6c40fb1e4e76b8f490e0e10a73a4a} 
+bool Obstacles\+Tic\+Tac\+Toe\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the player has won. 
+
+A player wins if they have four consecutive symbols in a row, column, or diagonal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the player has won, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{classObstaclesTicTacToeBoard_a2e378baba133edd0bc6de9c9ec91de1b}\index{ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!ObstaclesTicTacToeBoard@{ObstaclesTicTacToeBoard}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{classObstaclesTicTacToeBoard_a2e378baba133edd0bc6de9c9ec91de1b} 
+bool Obstacles\+Tic\+Tac\+Toe\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update the board with a player\textquotesingle{}s move. 
+
+If the move is valid, applies the symbol. If the symbol is \textquotesingle{}O\textquotesingle{}, two random empty cells are turned into obstacles.
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & Pointer to the \doxylink{classMove}{Move} object containing coordinates and symbol \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the move was valid and applied, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Obstacles\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h\item 
+src/abdallah/Obstacles\+Tic\+Tac\+Toe\+\_\+\+Classes.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,107 @@
+\doxysection{Memory\+Tic\+Tac\+Toe\+UI Class Reference}
+\hypertarget{classMemoryTicTacToeUI}{}\label{classMemoryTicTacToeUI}\index{MemoryTicTacToeUI@{MemoryTicTacToeUI}}
+
+
+Handles \doxylink{classUI}{UI} and user interactions for Memory Tic Tac Toe.  
+
+
+Inheritance diagram for Memory\+Tic\+Tac\+Toe\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMemoryTicTacToeUI}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMemoryTicTacToeUI_a6309dfa20fbd8c24bbafdad2a689bb67}\label{classMemoryTicTacToeUI_a6309dfa20fbd8c24bbafdad2a689bb67} 
+{\bfseries Memory\+Tic\+Tac\+Toe\+UI} ()
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classUI}{UI} with a welcome message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classMemoryTicTacToeUI_a418bf6835a04e16f1a44705ef929e6d5}{create\+\_\+player}} (string \&name, char symbol, Player\+Type type)
+\begin{DoxyCompactList}\small\item\em Creates a player (human or computer). \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classMemoryTicTacToeUI_a1364b3a453c8d81e865c5f7a88e5f43b}{get\+\_\+move}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Takes user input (row and column) and returns a \doxylink{classMove}{Move} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UI} (string message, int cell\+\_\+display\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{classUI}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUI_a6966a040c995b2292e5edddaa94f889a}{setup\+\_\+players}} ()
+\begin{DoxyCompactList}\small\item\em Set up players for the game. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ char $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles \doxylink{classUI}{UI} and user interactions for Memory Tic Tac Toe. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMemoryTicTacToeUI_a418bf6835a04e16f1a44705ef929e6d5}\index{MemoryTicTacToeUI@{MemoryTicTacToeUI}!create\_player@{create\_player}}
+\index{create\_player@{create\_player}!MemoryTicTacToeUI@{MemoryTicTacToeUI}}
+\doxysubsubsection{\texorpdfstring{create\_player()}{create\_player()}}
+{\footnotesize\ttfamily \label{classMemoryTicTacToeUI_a418bf6835a04e16f1a44705ef929e6d5} 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Memory\+Tic\+Tac\+Toe\+UI\+::create\+\_\+player (\begin{DoxyParamCaption}\item[{string \&}]{name}{, }\item[{char}]{symbol}{, }\item[{Player\+Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a player (human or computer). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \doxylink{classPlayer}{Player} name. \\
+\hline
+{\em symbol} & \doxylink{classPlayer}{Player} symbol (X or O). \\
+\hline
+{\em type} & \doxylink{classPlayer}{Player} type (HUMAN or COMPUTER). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created \doxylink{classPlayer}{Player$<$char$>$} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUI_af9f043033208286cd56240a1f060dd7b}{UI$<$ char $>$}}.
+
+\Hypertarget{classMemoryTicTacToeUI_a1364b3a453c8d81e865c5f7a88e5f43b}\index{MemoryTicTacToeUI@{MemoryTicTacToeUI}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!MemoryTicTacToeUI@{MemoryTicTacToeUI}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{classMemoryTicTacToeUI_a1364b3a453c8d81e865c5f7a88e5f43b} 
+\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Memory\+Tic\+Tac\+Toe\+UI\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Takes user input (row and column) and returns a \doxylink{classMove}{Move} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the current player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a new \doxylink{classMove}{Move$<$char$>$} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUI_a8befa259c38c57e6ae2e8ed81c476337}{UI$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Memory\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h\item 
+src/group/Memory\+Tic\+Tac\+Toe\+\_\+\+Classes.\+cpp\end{DoxyCompactItemize}

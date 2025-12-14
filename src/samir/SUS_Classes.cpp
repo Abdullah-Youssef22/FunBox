@@ -9,6 +9,12 @@ using namespace std;
 
 //--------------------------------------- SUS_Board Implementation
 
+/**
+ * @class SUS_Board
+ * @brief Represents the game board for the SUS game.
+ *
+ * Inherits from Board and manages moves, scoring, and game state.
+ */
 SUS_Board::SUS_Board() : Board(3, 3) {
 
     move_order.resize(3, vector<int>(3, -1));
@@ -18,6 +24,13 @@ SUS_Board::SUS_Board() : Board(3, 3) {
             cell = start_symbol;
 }
 
+/**
+ * @brief Sets up the players for the SUS game.
+ *
+ * Prompts for player names and types (Human/Computer).
+ *
+ * @return Pointer array of two Player<char> objects.
+ */
 Player<char>** SUS_UI::setup_players() {
     Player<char>** players = new Player<char> *[2];
     vector<string> type_options = { "Human", "Computer" };
@@ -32,6 +45,14 @@ Player<char>** SUS_UI::setup_players() {
     return players;
 }
 
+/**
+ * @brief Updates the board with a given move.
+ *
+ * Validates the move, applies it if valid, or undoes it if mark == 0.
+ *
+ * @param move Pointer to the Move<char> object.
+ * @return true if the move was successfully applied or undone, false otherwise.
+ */
 bool SUS_Board::update_board(Move<char>* move) {
     int x = move->get_x();
     int y = move->get_y();
@@ -53,10 +74,18 @@ bool SUS_Board::update_board(Move<char>* move) {
         return true;
     }
 
-
     return false;
 }
 
+/**
+ * @brief Calculates the score for a given symbol.
+ *
+ * Checks all rows, columns, and diagonals for the "SUS" pattern.
+ * Only counts if the last move in the pattern belongs to the given symbol.
+ *
+ * @param sym The symbol ('S' or 'U') to calculate score for.
+ * @return The score for the given symbol.
+ */
 int SUS_Board::calculate_score(char sym) {
     int score = 0;
 
@@ -65,6 +94,7 @@ int SUS_Board::calculate_score(char sym) {
             board[r2][c2] == 'U' &&
             board[r3][c3] == 'S') {
 
+            // Determine which move was placed last
             /* which move was placed last?? */
             int last_move = max({ move_order[r1][c1],
                                 move_order[r2][c2],
@@ -93,7 +123,15 @@ int SUS_Board::calculate_score(char sym) {
     return score;
 }
 
-
+/**
+ * @brief Determines if the given player has won.
+ *
+ * A player wins if their score is greater than the opponent's score
+ * after all moves are played.
+ *
+ * @param player Pointer to the Player<char> object.
+ * @return true if the player has won, false otherwise.
+ */
 bool SUS_Board::is_win(Player<char>* player) {
 
     if (n_moves < rows* columns)
@@ -114,13 +152,27 @@ bool SUS_Board::is_win(Player<char>* player) {
 
 }
 
-
+/**
+ * @brief Determines if the game is a draw.
+ *
+ * A draw occurs when all cells are filled and no player has won.
+ *
+ * @param player Pointer to the Player<char> object.
+ * @return true if the game is a draw, false otherwise.
+ */
 bool SUS_Board::is_draw(Player<char>* player) {
 
     return (n_moves == rows * columns && !is_win(player));
 }
 
-
+/**
+ * @brief Checks if the game is over.
+ *
+ * The game is over if either a player has won or the game is a draw.
+ *
+ * @param player Pointer to the Player<char> object.
+ * @return true if the game is over, false otherwise.
+ */
 bool SUS_Board::game_is_over(Player<char>* player) {
     return is_win(player) || is_draw(player);
 }
@@ -161,16 +213,38 @@ void SUS_Board::display_scores() {
 
 //--------------------------------------- SUS_UI Implementation
 
+/**
+ * @class SUS_UI
+ * @brief Handles user interaction for the SUS game.
+ *
+ * Provides methods to create players and get moves from them.
+ */
 SUS_UI::SUS_UI() : UI<char>("Weclome to FCAI SUS Game in FUN BOX By SAMIR", 3) {}
 
+/**
+ * @brief Creates a player object.
+ *
+ * @param name The name of the player.
+ * @param symbol The symbol ('S' or 'U') assigned to the player.
+ * @param type The type of player (Human or Computer).
+ * @return Pointer to the created Player<char> object.
+ */
 Player<char>* SUS_UI::create_player(string& name, char symbol, PlayerType type) {
-    // Create player based on type
     cout << "Creating " << (type == PlayerType::HUMAN ? "human" : "computer")
         << " player: " << name << " (" << symbol << ")\n";
 
     return new Player<char>(name, symbol, type);
 }
 
+/**
+ * @brief Gets the next move from a player.
+ *
+ * If the player is human, prompts for input.
+ * If the player is computer, generates a random move.
+ *
+ * @param player Pointer to the Player<char> object.
+ * @return Pointer to the created Move<char> object.
+ */
 Move<char>* SUS_UI::get_move(Player<char>* player) {
     int x, y;
 

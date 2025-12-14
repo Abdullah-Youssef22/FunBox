@@ -1,0 +1,42 @@
+\doxysection{Memory\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h}
+\hypertarget{MemoryTicTacToe__Classes_8h_source}{}\label{MemoryTicTacToe__Classes_8h_source}\index{include/MemoryTicTacToe\_Classes.h@{include/MemoryTicTacToe\_Classes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MemoryTicTacToe\_CLASSES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MemoryTicTacToe\_CLASSES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}util/BoardGame\_Classes.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include"{}util/colors.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMemoryTicTacToeBoard_a0ca7b7d28e5b2ffeae8acd728ce09e82}{MemoryTicTacToeBoard}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBoard_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}<char>\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{char}\ blank\_symbol\ =\ \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{char}\ memory\_symbol\ =\ \textcolor{charliteral}{'!'};}
+\DoxyCodeLine{00014\ \ \ \ \ vector<vector<char>>\ memory\_board;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classMemoryTicTacToeBoard_a0ca7b7d28e5b2ffeae8acd728ce09e82}{MemoryTicTacToeBoard}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMemoryTicTacToeBoard_ad3138201763fc395a6363f5e972d3eca}{update\_board}}(\mbox{\hyperlink{classMove}{Move<char>}}*\ move);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMemoryTicTacToeBoard_a3578be51adff63b2efa25e8f5877c513}{is\_win}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMemoryTicTacToeBoard_ab2fb1fbc1bcccefc2fb99f54b4581f41}{is\_lose}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMemoryTicTacToeBoard_a5f027bf58e89e8dbd39ae733c44f0c7f}{is\_draw}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMemoryTicTacToeBoard_a37f08aed28f32e5c41d16bded17bf333}{game\_is\_over}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMemoryTicTacToeBoard_ae5bcbd7b42738dd8d1c92136c62d5217}{display\_winner}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMemoryTicTacToeBoard_a5d89290e2f0d664f161e48f2ecb9737b}{display\_draw}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ reveal\_final\_board();}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMemoryTicTacToeUI_a6309dfa20fbd8c24bbafdad2a689bb67}{MemoryTicTacToeUI}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classUI_ae50eed41905ca2f8dc103d9bef427fe6}{UI}}<char>\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classMemoryTicTacToeUI_a6309dfa20fbd8c24bbafdad2a689bb67}{MemoryTicTacToeUI}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classMemoryTicTacToeUI_a6309dfa20fbd8c24bbafdad2a689bb67}{\string~MemoryTicTacToeUI}}()\ \{\}}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classPlayer}{Player<char>}}*\ \mbox{\hyperlink{classMemoryTicTacToeUI_a418bf6835a04e16f1a44705ef929e6d5}{create\_player}}(\textcolor{keywordtype}{string}\&\ name,\ \textcolor{keywordtype}{char}\ symbol,\ PlayerType\ type);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classMove}{Move<char>}}*\ \mbox{\hyperlink{classMemoryTicTacToeUI_a1364b3a453c8d81e865c5f7a88e5f43b}{get\_move}}(\mbox{\hyperlink{classPlayer}{Player<char>}}*\ player);}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

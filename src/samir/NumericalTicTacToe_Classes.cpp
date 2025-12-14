@@ -8,6 +8,14 @@
 using namespace std;
 
 //--------------------------------------- NumericalTicTacToe_Board Implementation
+/**
+ * @class NumericalTicTacToe_Board
+ * @brief Represents the board for the Numerical Tic Tac Toe game.
+ *
+ * The board is a 3x3 grid where players place numbers (1–9).
+ * Player 1 uses odd numbers, Player 2 uses even numbers.
+ * A player wins if any row, column, or diagonal sums to 15.
+ */
 
 NumericalTicTacToe_Board::NumericalTicTacToe_Board() : Board(3, 3) {
     // Initialize all cells with blank_symbol
@@ -20,6 +28,18 @@ NumericalTicTacToe_Board::NumericalTicTacToe_Board() : Board(3, 3) {
         used_numbers[i] = false;
 
 }
+/**
+ * @brief Checks if a number is valid for the given player.
+ *
+ * - Must be between 1 and 9.
+ * - Must not have been used before.
+ * - Player 1 can only use odd numbers.
+ * - Player 2 can only use even numbers.
+ *
+ * @param player Pointer to the player making the move.
+ * @param number The number to validate.
+ * @return true if the number is valid, false otherwise.
+ */
 
 bool NumericalTicTacToe_Board::is_valid_number(Player<int>* player, int number) {
     if (number < 1 || number > 9)
@@ -39,6 +59,14 @@ bool NumericalTicTacToe_Board::is_valid_number(Player<int>* player, int number) 
     return true;
 }
 
+/**
+ * @brief Updates the board with a given move.
+ *
+ * Validates the move before applying it. Marks the number as used.
+ *
+ * @param move Pointer to the Move<int> object.
+ * @return true if the move was successfully applied, false otherwise.
+ */
 
 bool NumericalTicTacToe_Board::update_board(Move<int>* move) {
     int r = move->get_x(); 
@@ -56,6 +84,11 @@ bool NumericalTicTacToe_Board::update_board(Move<int>* move) {
     used_numbers[num] = true;
     return true;
 }
+/**
+ * @brief Checks if any row, column, or diagonal sums to 15.
+ *
+ * @return true if a winning condition is met, false otherwise.
+ */
 
 
 bool NumericalTicTacToe_Board::check_sum_15() {
@@ -85,7 +118,12 @@ bool NumericalTicTacToe_Board::check_sum_15() {
 
     return false;
 }
-
+/**
+ * @brief Determines if the given player has won.
+ *
+ * @param player Pointer to the Player<int> object.
+ * @return true if the player has won, false otherwise.
+ */
 bool NumericalTicTacToe_Board::is_win(Player<int>* player) {
     // if there is any line = 15
     if (check_sum_15())
@@ -94,6 +132,14 @@ bool NumericalTicTacToe_Board::is_win(Player<int>* player) {
     }
     return check_sum_15();
 }
+/**
+ * @brief Determines if the game is a draw.
+ *
+ * A draw occurs when the board is full and no winning condition is met.
+ *
+ * @param player Pointer to the Player<int> object.
+ * @return true if the game is a draw, false otherwise.
+ */
 
 bool NumericalTicTacToe_Board::is_draw(Player<int>* player) {
     if (check_sum_15())
@@ -107,18 +153,47 @@ bool NumericalTicTacToe_Board::is_draw(Player<int>* player) {
 	display_draw();
     return true;
 }
+/**
+ * @brief Checks if the game is over.
+ *
+ * The game ends if there is a win or a draw.
+ *
+ * @param player Pointer to the Player<int> object.
+ * @return true if the game is over, false otherwise.
+ */
 
 bool NumericalTicTacToe_Board::game_is_over(Player<int>* player) { 
     return is_win(player) || is_draw(player);
 }
+/**
+ * @brief Calculates score for a given number.
+ *
+ * In this implementation, the score is simply the number itself.
+ *
+ * @param number The number played.
+ * @return The score value.
+ */
 
 int NumericalTicTacToe_Board::calculate_score(int number) {
     return number;
 }
+/**
+ * @brief Gets the value of a cell.
+ *
+ * @param r Row index.
+ * @param c Column index.
+ * @return The number in the cell, or 0 if empty.
+ */
 
 int NumericalTicTacToe_Board::get_cell(int r, int c) const {
     return board[r][c];
 }
+/**
+ * @brief Checks if a number has already been used.
+ *
+ * @param n The number to check.
+ * @return true if the number is used, false otherwise.
+ */
 
 bool NumericalTicTacToe_Board::is_used(int n) const {
     return used_numbers[n];
@@ -141,14 +216,37 @@ void NumericalTicTacToe_Board::display_draw() {
 }
 
 //--------------------------------------- NumericalTicTacToe_UI Implementation
+/**
+ * @class NumericalTicTacToe_UI
+ * @brief Handles user interaction for the Numerical Tic Tac Toe game.
+ *
+ * Provides methods to create players and get moves from them.
+ */
 
 NumericalTicTacToe_UI::NumericalTicTacToe_UI(NumericalTicTacToe_Board* b)
     : UI<int>("Welcome to FCAI NumericalTicTacToe Game in FUN BOX By SAMIR", 3), board(b) {}
 
-// create_player: symbol هنا = 1 أو 2 (مش رقم اللعبة)
+/**
+ * @brief Creates a player object.
+ *
+ * @param name The name of the player.
+ * @param symbol The symbol (1 for odd, 2 for even).
+ * @param type The type of player (Human or Computer).
+ * @return Pointer to the created Player<int> object.
+ */
+
+
 Player<int>* NumericalTicTacToe_UI::create_player(string& name, int symbol, PlayerType type) {
     return new Player<int>(name, symbol, type);
 }
+/**
+ * @brief Sets up the two players for the game.
+ *
+ * Player 1 uses odd numbers, Player 2 uses even numbers.
+ *
+ * @return Pointer array of two Player<int> objects.
+ */
+
 
 Player<int>** NumericalTicTacToe_UI::setup_players() {
     Player<int>** players = new Player<int>*[2];
@@ -167,13 +265,23 @@ Player<int>** NumericalTicTacToe_UI::setup_players() {
 
     return players;
 }
+/**
+ * @brief Gets the next move from a player.
+ *
+ * - If the player is computer: chooses the first available cell and valid number.
+ * - If the player is human: prompts for input (row, column, number).
+ *
+ * @param player Pointer to the Player<int> object.
+ * @return Pointer to the created Move<int> object.
+ */
+
 Move<int>* NumericalTicTacToe_UI::get_move(Player<int>* player) {
     if (player->get_type() == PlayerType::COMPUTER) {
-        // الكمبيوتر يختار أول خانة فاضية ورقم متاح حسب الفردي/الزوجي
+     
         for (int r = 0; r < 3; r++) {
             for (int c = 0; c < 3; c++) {
-                if (board->get_cell(r, c) == 0) { // خانة فاضية
-                    // البحث عن رقم متاح حسب الفردي/الزوجي
+                if (board->get_cell(r, c) == 0) { 
+                    
                     for (int num = 1; num <= 9; num++) {
                         bool correct_parity =
                             (player->get_symbol() == 1 && num % 2 == 1) ||
@@ -182,10 +290,10 @@ Move<int>* NumericalTicTacToe_UI::get_move(Player<int>* player) {
                         if (correct_parity && !board->is_used(num)) {
                             cout << "Computer plays: " << r << " " << c << " " << num << endl;
 
-                            // تحديث البورد مباشرة لتفادي اختيار نفس الخانة مرة أخرى
+                            
                             board->update_board(new Move<int>(r, c, num));
 
-                            // ترجع الـ Move بعد التحديث
+                            
                             return new Move<int>(r, c, num);
                         }
                     }
@@ -193,7 +301,7 @@ Move<int>* NumericalTicTacToe_UI::get_move(Player<int>* player) {
             }
         }
 
-        // لو وصلنا هنا معناه ما فيش تحركات صالحة
+        
         cout << "ERROR: computer found no valid moves.\n";
         return new Move<int>(0, 0, 1);
     }

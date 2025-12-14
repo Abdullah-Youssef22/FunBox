@@ -1,0 +1,160 @@
+\doxysection{Ultimate\+\_\+\+UI Class Reference}
+\hypertarget{classUltimate__UI}{}\label{classUltimate__UI}\index{Ultimate\_UI@{Ultimate\_UI}}
+Inheritance diagram for Ultimate\+\_\+\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUltimate__UI}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUltimate__UI_a9e3b3b9207e382ffc43d8e34bcb34ce0}{Ultimate\+\_\+\+UI}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{classUltimate__UI}{Ultimate\+\_\+\+UI}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUltimate__UI_a4c3e6b4f77e281d67a946df1620ef822}{get\+\_\+move}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Gets a move from the player (human or computer) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUltimate__UI_a8b7c8b09278cdef5dc878ef89eaa83e7}{create\+\_\+player}} (string \&name, char symbol, Player\+Type type) override
+\begin{DoxyCompactList}\small\item\em Factory method to create a player object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUltimate__UI_a2512870f6c377bb69de3744ffe911e15}{display\+\_\+ultimate\+\_\+board}} (\mbox{\hyperlink{classUltimate__Board}{Ultimate\+\_\+\+Board}} \texorpdfstring{$\ast$}{*}board) const
+\begin{DoxyCompactList}\small\item\em Displays the complete ultimate board state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UI} (string message, int cell\+\_\+display\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{classUI}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUI_a6966a040c995b2292e5edddaa94f889a}{setup\+\_\+players}} ()
+\begin{DoxyCompactList}\small\item\em Set up players for the game. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ char $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUI}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classUltimate__UI_a9e3b3b9207e382ffc43d8e34bcb34ce0}\index{Ultimate\_UI@{Ultimate\_UI}!Ultimate\_UI@{Ultimate\_UI}}
+\index{Ultimate\_UI@{Ultimate\_UI}!Ultimate\_UI@{Ultimate\_UI}}
+\doxysubsubsection{\texorpdfstring{Ultimate\_UI()}{Ultimate\_UI()}}
+{\footnotesize\ttfamily \label{classUltimate__UI_a9e3b3b9207e382ffc43d8e34bcb34ce0} 
+Ultimate\+\_\+\+UI\+::\+Ultimate\+\_\+\+UI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor for \doxylink{classUltimate__UI}{Ultimate\+\_\+\+UI}. 
+
+Initializes the user interface with a welcome message and specifies that the game uses a 3x3 meta-\/board structure. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUltimate__UI_a8b7c8b09278cdef5dc878ef89eaa83e7}\index{Ultimate\_UI@{Ultimate\_UI}!create\_player@{create\_player}}
+\index{create\_player@{create\_player}!Ultimate\_UI@{Ultimate\_UI}}
+\doxysubsubsection{\texorpdfstring{create\_player()}{create\_player()}}
+{\footnotesize\ttfamily \label{classUltimate__UI_a8b7c8b09278cdef5dc878ef89eaa83e7} 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Ultimate\+\_\+\+UI\+::create\+\_\+player (\begin{DoxyParamCaption}\item[{string \&}]{name}{, }\item[{char}]{symbol}{, }\item[{Player\+Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Factory method to create a player object. 
+
+Creates either a human or computer player with the specified parameters. Prints confirmation message of player creation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Reference to string containing the player\textquotesingle{}s name \\
+\hline
+{\em symbol} & The symbol assigned to the player (\textquotesingle{}X\textquotesingle{} or \textquotesingle{}O\textquotesingle{}) \\
+\hline
+{\em type} & Player\+Type enum indicating HUMAN or COMPUTER player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classPlayer}{Player$<$char$>$}\texorpdfstring{$\ast$}{*} Pointer to newly created \doxylink{classPlayer}{Player} object
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Caller is responsible for deallocating the returned \doxylink{classPlayer}{Player} object 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classUI_af9f043033208286cd56240a1f060dd7b}{UI$<$ char $>$}}.
+
+\Hypertarget{classUltimate__UI_a2512870f6c377bb69de3744ffe911e15}\index{Ultimate\_UI@{Ultimate\_UI}!display\_ultimate\_board@{display\_ultimate\_board}}
+\index{display\_ultimate\_board@{display\_ultimate\_board}!Ultimate\_UI@{Ultimate\_UI}}
+\doxysubsubsection{\texorpdfstring{display\_ultimate\_board()}{display\_ultimate\_board()}}
+{\footnotesize\ttfamily \label{classUltimate__UI_a2512870f6c377bb69de3744ffe911e15} 
+void Ultimate\+\_\+\+UI\+::display\+\_\+ultimate\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUltimate__Board}{Ultimate\+\_\+\+Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption}) const}
+
+
+
+Displays the complete ultimate board state. 
+
+Shows the meta-\/board followed by all 9 mini-\/boards arranged in a 3x3 grid. Each mini-\/board is displayed side-\/by-\/side with its neighbors, and the active board is marked. Winners for each mini-\/board are shown below.
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & Pointer to the \doxylink{classUltimate__Board}{Ultimate\+\_\+\+Board} to display\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This provides a comprehensive view of the entire game state 
+
+Active mini-\/board is marked with "{}\texorpdfstring{$\ast$}{*}\+ACTIVE\texorpdfstring{$\ast$}{*}"{} 
+
+Mini-\/board winners are displayed below each board
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+display\+Meta\+Board() 
+\end{DoxySeeAlso}
+\Hypertarget{classUltimate__UI_a4c3e6b4f77e281d67a946df1620ef822}\index{Ultimate\_UI@{Ultimate\_UI}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!Ultimate\_UI@{Ultimate\_UI}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{classUltimate__UI_a4c3e6b4f77e281d67a946df1620ef822} 
+\mbox{\hyperlink{classMove}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Ultimate\+\_\+\+UI\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets a move from the player (human or computer) 
+
+For human players, displays which mini-\/board is active and prompts for global position input. For computer players, generates random valid positions within playable mini-\/boards.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the \doxylink{classPlayer}{Player} object making the move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classMove}{Move$<$char$>$}\texorpdfstring{$\ast$}{*} Pointer to newly created \doxylink{classMove}{Move} object containing the player\textquotesingle{}s move
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Human input\+: global row and column (0-\/8) 
+
+Computer moves are randomly generated within playable mini-\/boards 
+
+Displays active board information with color coding (RED for required, GREEN for open) 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Caller is responsible for deallocating the returned \doxylink{classMove}{Move} object
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+is\+Miniboard\+Playable() 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classUI_a8befa259c38c57e6ae2e8ed81c476337}{UI$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Ultimate\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h\item 
+src/ammen/\mbox{\hyperlink{UltimateTicTacToe__Classes_8cpp}{Ultimate\+Tic\+Tac\+Toe\+\_\+\+Classes.\+cpp}}\end{DoxyCompactItemize}

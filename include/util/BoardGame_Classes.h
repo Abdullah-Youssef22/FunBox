@@ -184,7 +184,7 @@ protected:
             cout << i + 1 << ". " << options[i] << "\n";
         int choice;
         cin >> choice;
-        return (choice == 2) ? PlayerType::COMPUTER : PlayerType::HUMAN;
+        return (choice==3)?PlayerType::AI:(choice == 2) ? PlayerType::COMPUTER : PlayerType::HUMAN;
     }
 
 public:

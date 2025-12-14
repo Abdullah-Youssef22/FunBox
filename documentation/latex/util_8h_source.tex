@@ -1,0 +1,29 @@
+\doxysection{util.\+h}
+\hypertarget{util_8h_source}{}\label{util_8h_source}\index{include/util/util.h@{include/util/util.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UTIL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UTIL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}colors.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }util\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ errorInvalidMove()\ \{}
+\DoxyCodeLine{00010\ \ \ std::cout\ <<\ RED\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n**\ ERROR:\ invalid\ move,\ please\ re-\/enter\ your\ move"{}}\ <<\ RESET;}
+\DoxyCodeLine{00011\ \}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ errorNoTokenHere(\textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ x)\ \{}
+\DoxyCodeLine{00014\ \ \ std::cout\ <<\ RED\ <<\ \textcolor{stringliteral}{"{}**\ ERROR:\ no\ token\ at\ row\ "{}}\ <<\ y\ <<\ \textcolor{stringliteral}{"{}\ column\ "{}}\ <<\ x\ <<\ RESET;}
+\DoxyCodeLine{00015\ \}\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ debugPrint(std::string\ message)\ \{}
+\DoxyCodeLine{00018\ \ \ std::cout\ <<\ GREEN\ <<\ \textcolor{stringliteral}{"{}**\ Debug:\ "{}}\ <<\ message\ <<\ RESET\ <<\ std::endl;}
+\DoxyCodeLine{00019\ \}}
+\DoxyCodeLine{00020\ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00023\ }
+
+\end{DoxyCode}

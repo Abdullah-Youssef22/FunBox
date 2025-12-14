@@ -1,0 +1,134 @@
+\doxysection{Numerical\+Tic\+Tac\+Toe\+\_\+\+UI Class Reference}
+\hypertarget{classNumericalTicTacToe__UI}{}\label{classNumericalTicTacToe__UI}\index{NumericalTicTacToe\_UI@{NumericalTicTacToe\_UI}}
+
+
+Handles user interaction for the Numerical Tic Tac Toe game.  
+
+
+Inheritance diagram for Numerical\+Tic\+Tac\+Toe\+\_\+\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNumericalTicTacToe__UI}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classNumericalTicTacToe__UI_ae3286b4393b262c684ebcc5f1d8ca109}\label{classNumericalTicTacToe__UI_ae3286b4393b262c684ebcc5f1d8ca109} 
+{\bfseries Numerical\+Tic\+Tac\+Toe\+\_\+\+UI} (\mbox{\hyperlink{classNumericalTicTacToe__Board}{Numerical\+Tic\+Tac\+Toe\+\_\+\+Board}} \texorpdfstring{$\ast$}{*}b)
+\item 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classNumericalTicTacToe__UI_a685fbad24ae84bd13314b1a45873b2dd}{create\+\_\+player}} (string \&name, int symbol, Player\+Type type) override
+\begin{DoxyCompactList}\small\item\em Creates a player object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classNumericalTicTacToe__UI_a92fedf8550a2cf0f9b0df1f20be0c975}{setup\+\_\+players}} () override
+\begin{DoxyCompactList}\small\item\em Sets up the two players for the game. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMove}{Move}}$<$ int $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classNumericalTicTacToe__UI_a3bbab112ed4b3d69e29e92bf1113c13d}{get\+\_\+move}} (\mbox{\hyperlink{classPlayer}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Gets the next move from a player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ int $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UI} (string message, int cell\+\_\+display\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{classUI}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ int $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classUI}{UI$<$ int $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUI}{UI$<$ int $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles user interaction for the Numerical Tic Tac Toe game. 
+
+Provides methods to create players and get moves from them. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classNumericalTicTacToe__UI_a685fbad24ae84bd13314b1a45873b2dd}\index{NumericalTicTacToe\_UI@{NumericalTicTacToe\_UI}!create\_player@{create\_player}}
+\index{create\_player@{create\_player}!NumericalTicTacToe\_UI@{NumericalTicTacToe\_UI}}
+\doxysubsubsection{\texorpdfstring{create\_player()}{create\_player()}}
+{\footnotesize\ttfamily \label{classNumericalTicTacToe__UI_a685fbad24ae84bd13314b1a45873b2dd} 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*} Numerical\+Tic\+Tac\+Toe\+\_\+\+UI\+::create\+\_\+player (\begin{DoxyParamCaption}\item[{string \&}]{name}{, }\item[{int}]{symbol}{, }\item[{Player\+Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a player object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the player. \\
+\hline
+{\em symbol} & The symbol (1 for odd, 2 for even). \\
+\hline
+{\em type} & The type of player (Human or Computer). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created \doxylink{classPlayer}{Player$<$int$>$} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUI_af9f043033208286cd56240a1f060dd7b}{UI$<$ int $>$}}.
+
+\Hypertarget{classNumericalTicTacToe__UI_a3bbab112ed4b3d69e29e92bf1113c13d}\index{NumericalTicTacToe\_UI@{NumericalTicTacToe\_UI}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!NumericalTicTacToe\_UI@{NumericalTicTacToe\_UI}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{classNumericalTicTacToe__UI_a3bbab112ed4b3d69e29e92bf1113c13d} 
+\mbox{\hyperlink{classMove}{Move}}$<$ int $>$ \texorpdfstring{$\ast$}{*} Numerical\+Tic\+Tac\+Toe\+\_\+\+UI\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the next move from a player. 
+
+
+\begin{DoxyItemize}
+\item If the player is computer\+: chooses the first available cell and valid number.
+\item If the player is human\+: prompts for input (row, column, number).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the \doxylink{classPlayer}{Player$<$int$>$} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created \doxylink{classMove}{Move$<$int$>$} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUI_a8befa259c38c57e6ae2e8ed81c476337}{UI$<$ int $>$}}.
+
+\Hypertarget{classNumericalTicTacToe__UI_a92fedf8550a2cf0f9b0df1f20be0c975}\index{NumericalTicTacToe\_UI@{NumericalTicTacToe\_UI}!setup\_players@{setup\_players}}
+\index{setup\_players@{setup\_players}!NumericalTicTacToe\_UI@{NumericalTicTacToe\_UI}}
+\doxysubsubsection{\texorpdfstring{setup\_players()}{setup\_players()}}
+{\footnotesize\ttfamily \label{classNumericalTicTacToe__UI_a92fedf8550a2cf0f9b0df1f20be0c975} 
+\mbox{\hyperlink{classPlayer}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Numerical\+Tic\+Tac\+Toe\+\_\+\+UI\+::setup\+\_\+players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets up the two players for the game. 
+
+\doxylink{classPlayer}{Player} 1 uses odd numbers, \doxylink{classPlayer}{Player} 2 uses even numbers.
+
+\begin{DoxyReturn}{Returns}
+Pointer array of two \doxylink{classPlayer}{Player$<$int$>$} objects. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classUI_a6966a040c995b2292e5edddaa94f889a}{UI$<$ int $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Numerical\+Tic\+Tac\+Toe\+\_\+\+Classes.\+h\item 
+src/samir/Numerical\+Tic\+Tac\+Toe\+\_\+\+Classes.\+cpp\end{DoxyCompactItemize}
