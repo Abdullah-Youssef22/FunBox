@@ -75,9 +75,9 @@ int main() {
               case 12: GameLaunchers::launch_memory_tic_tac_toe(); break;
 
               // extras        
-        /*      case 13: GameLaunchers::launch_labyrinth(); break;
+              case 13: GameLaunchers::launch_labyrinth(); break;
               case 14: GameLaunchers::launch_spaceship(); break;
-              case 15: GameLaunchers::launch_snake(); break;*/
+              case 15: GameLaunchers::launch_snake(); break;
 
               default: std::cout << "Invalid selection\n"; break;
             }
