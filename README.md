@@ -85,12 +85,3 @@ make
 ## Labyrinth
 ![Labyrinth](labyrinth.jpg)
 
-##### Developered by:
-
-. Mostafa Ahmed
-
-. Samir Kahlawy
-
-. Ammen
-
-. Abdallah Youssef
